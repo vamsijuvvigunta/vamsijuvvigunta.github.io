@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>3-juju-k8s.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="installing-kubernetes-with-juju">Installing Kubernetes with Juju</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#installing-kubernetes-with-juju">Installing Kubernetes with Juju</a></li>
+<li><a href="#pre-requisites">Pre-Requisites</a></li>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#latest-instructions">Latest Instructions</a>
+<ul>
+<li><a href="#bundle-overlay">Bundle overlay</a></li>
+<li><a href="#locate-bundle-versions">Locate bundle versions</a></li>
+<li><a href="#locate-stable-bundle">Locate stable bundle</a></li>
+<li><a href="#create-overlay">Create overlay</a></li>
+<li><a href="#juju-models">juju models</a>
+<ul>
+<li><a href="#create-the-k8s-model">Create the k8s model</a></li>
+</ul>
+</li>
+<li><a href="#dry-run-bundle">Dry run bundle</a></li>
+<li><a href="#deploy">Deploy</a>
+<ul>
+<li><a href="#watch-deployment-progress">Watch deployment progress</a></li>
+</ul>
+</li>
+<li><a href="#nvidia-driver-issue">Nvidia driver issue</a></li>
+<li><a href="#copy-kube-config-over">Copy kube config over</a></li>
+<li><a href="#verify-gpu-integration">Verify GPU integration</a>
+<ul>
+<li><a href="#verify-at-node-level">Verify at node level</a></li>
+<li><a href="#fix-gpu-sleep-issues">Fix GPU sleep issues</a></li>
+</ul>
+</li>
+<li><a href="#complete-the-kubernetes-client-installs">Complete the kubernetes client installs</a></li>
+<li><a href="#setup-k8s-storage">Setup k8s storage</a>
+<ul>
+<li><a href="#verify-storage-class">Verify storage class</a></li>
+</ul>
+</li>
+<li><a href="#register-the-kubernetes-cloud-with-juju">Register the kubernetes cloud with juju</a>
+<ul>
+<li><a href="#register-cloud">Register cloud</a></li>
+<li><a href="#bootstrap-k8s-cloud">Bootstrap k8s cloud</a></li>
+<li><a href="#notes">Notes</a></li>
+</ul>
+</li>
+<li><a href="#k8s-dashboard">K8s dashboard</a></li>
+</ul>
+</li>
+<li><a href="#shutting-down">Shutting down</a>
+<ul>
+<li><a href="#destroy">Destroy</a></li>
+<li><a href="#remove-units">Remove Units</a>
+<ul>
+<li><a href="#experiment-remove-unit-plus-add-unit">Experiment. remove-unit plus add-unit</a></li>
+<li><a href="#experiment-poweroff-machine-and-bring-it-back-up">Experiment. Poweroff machine and bring it back up</a></li>
+<li><a href="#experiment-poweroff-all-machines">Experiment. Poweroff all machines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#docker-registry">Docker registry</a>
+<ul>
+<li><a href="#prep-to-install-docker-community-edition">Prep to install docker community edition</a></li>
+<li><a href="#installing-the-latest-version">Installing the latest version</a></li>
+<li><a href="#verify-installation-works">Verify installation works</a></li>
+<li><a href="#install-the-registry">Install the registry</a></li>
+</ul>
+</li>
+<li><a href="#previous-install-log">Previous Install Log</a>
+<ul>
+<li><a href="#got-tags-wrong">Got tags wrong</a></li>
+<li><a href="#correcting-juju-mistakes">Correcting juju mistakes</a></li>
+<li><a href="#gpu-integration-sleep-problems">GPU Integration sleep problems</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1 id="pre-requisites">Pre-Requisites</h1>
+<ul>
+<li>MAAS Installed and machines in 'Ready state' (<code>New</code> + Commissioning ➡ <code>Ready</code>)</li>
+<li><a href="2-juju.md">Juju installed and bootstrapped</a></li>
+</ul>
+<h1 id="resources">Resources</h1>
+<ul>
+<li>https://medium.com/@madushan1000/how-to-run-kubernetes-on-bare-metal-with-maas-juju-d5ba8e981710</li>
+<li>https://stackoverflow.com/questions/57824094/how-to-consume-external-mongodb-service-in-kubernetes</li>
+<li>mongodb https://jaas.ai/mongodb</li>
+<li><a href="https://discourse.charmhub.io/t/charm-bundles/1058">Charm bundle references</a></li>
+</ul>
+<h1 id="latest-instructions">Latest Instructions</h1>
+<p>Previously I used the setup instructions from https://medium.com/@madushan1000/how-to-run-kubernetes-on-bare-metal-with-maas-juju-d5ba8e981710 but now switching to overlays to use the same effect. Overlays allow me to:</p>
+<ul>
+<li>Retain the original bundle file and upgrade when the original changes</li>
+<li>Reuse the same overlay file</li>
+</ul>
+<p>My node config</p>
+<ul>
+<li>
+<p>3 Node install</p>
+</li>
+<li>
+<p>flannel and containerd on all machines</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Machine</th>
+<th style="text-align:left">Charms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Tiny1</td>
+<td style="text-align:left">master, kubeapi-load-balancer, etcd, easyrsa</td>
+</tr>
+<tr>
+<td style="text-align:left">Tiny2</td>
+<td style="text-align:left">worker <em>or later reserve for CI/CD, Docker registry etc</em></td>
+</tr>
+<tr>
+<td style="text-align:left">Big 1</td>
+<td style="text-align:left">worker, gpu</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><img src="https://www.plantuml.com/plantuml/png/bLLTQzim57tthxXu3zrWPaaMkZ3A84lPsdM54WeTP24ebf88AvOdoKr3oN-VB4knP2UCvSNM_JW-L_VScvJn4iDh1FgNSqmWJXabkOhX5UmlSY-pYN7DZU4G7Q8exMHZyXnRWqd1f61yxwNKOTbeiKLI4U62LvnX8Y2-UKgoKO0mX9GB0lGJzEU09CH3cDI66Dumkjwe9Ij94z-__FuLfkDx5-xEdUZ3iRWPpTU2I5dJdA62WYJYcGXho4PGixLdWkHUIEIyvPA0J3S4byo5OAJG4abTAL4fZisN_E9tN6H4BBPKfjqRE5F-uF_A7_oh_AYf_vgdcWu8igPI2TkksUJsm-HwVhhF-agUJ0q-MQ-9kxxlC70V1tKfZzDVmzxy57aJTZci2P-F6FH6lKTwqd_eSBbRTOZSwOQj6DyvX8BcMHZneopskjsmAPVpyzYeA6GRUxitPZ-hwKsb54QK5QOznQ6_4FnbxqKank055HnBwwzUus1C3yUJ_ku5VECY9Q25h6YA632qvwNIz0KS1t1HzJCAfooPRIZ699ydNu9vYlpH2ACgcMk_URGyRbYERw7V6oxDs5BCR8iM26zf7eLJS9hUmC-lvojgQox8F0ejyZGNH3YXLS3rxWF5ePAFFfOLvyZjH4Xwxv9WTS1d63C6uuTRFLT_IYAL_9t3JuumB153UKfaYAjr0yyKWLr6RMYtepJkZLB5UrXF7oOshqkmkhmsWgzgZUAEELTaoNbcwDpcIY2j3WcsA_h-jjior_fHbEUX0gwypZTjzCqQyRw6qRoiuDk8NcRorX0zpadeD6ffHgIXMtUxXNlX9YLeQMKRLBZUg5qbpbE1kh-i-djs1zfdRUjiouwbuMhA-0i0" alt="k8s_arch" title="k8s_arch"></p>
+<p>Since this will be a simple low-load cluster, I want to see if I can get away with minimal machine counts.</p>
+<p>I can use the same setup except with just one master. Also I want to eventually publish to a private docker registry (<em>on Tiny 2</em>).</p>
+<p>Note: docker-registry is to be installed after the k8s clustering is done. It is not clear if the private registry needs to store all needed docker images or if k8s will go the public registry for missing entries ? l8r.</p>
+<h2 id="bundle-overlay">Bundle overlay</h2>
+<p>Wanted to create an overlay to achieve the same node-deployment as https://medium.com/@madushan1000/how-to-run-kubernetes-on-bare-metal-with-maas-juju-d5ba8e981710. However, simply copying stuff lead to various confusing errors.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Error</th>
+<th style="text-align:left">Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>-to : '0'</code></td>
+<td style="text-align:left">errors about not being able to parse into a []string. Took the hint and tried <code>-to : ['0']</code> and that worked</td>
+</tr>
+<tr>
+<td style="text-align:left">service key deprecated</td>
+<td style="text-align:left">Painful error. Main bundle still uses 'services' but deprecated for overlays!! https://discourse.charmhub.io/t/charm-bundles/1058 says to simply use <code>applications:</code> instead. Worked even though bundle uses <code>services:</code></td>
+</tr>
+</tbody>
+</table>
+<p>Using the same node count as https://medium.com/@madushan1000/how-to-run-kubernetes-on-bare-metal-with-maas-juju-d5ba8e981710 to get the above config. I end up with the following overlay file</p>
+<h2 id="locate-bundle-versions">Locate bundle versions</h2>
+<p>Locate the latest bundles for each version of k8s (<em>may need older versions of k8s based on what KF etc wants</em>). Look at</p>
+<ul>
+<li>http://charmhub.io and search</li>
+<li>http://ubuntu.com/kubernetes/docs/install-manual to see which versions of k8s have what bundles.</li>
+</ul>
+<p><img src="./img/charmhub-k8s-by-version.png" alt="k8s version bundles"></p>
+<h2 id="locate-stable-bundle">Locate stable bundle</h2>
+<p><img src="./img/charmhub-k8s-latest.png" alt="k8s 1.21.x stable version"></p>
+<p>Used the bundle:733 from https://charmhub.io/charmed-kubernetes</p>
+<h2 id="create-overlay">Create overlay</h2>
+<ul>
+<li>download the bundle.yaml for the 733 version</li>
+<li>add constraints as shown below</li>
+<li>remove everything except apps</li>
+<li>customize apps so we spread things around and do a non-HA deploy</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-comment"># Deployment</span>
+<span class="hljs-comment"># machine - 0: m93p (i7 4 Core + 16GB RAM)</span>
+<span class="hljs-comment">#  - etcd</span>
+<span class="hljs-comment">#  - easyrsa</span>
+<span class="hljs-comment">#  - kubeapi-load-balancer</span>
+<span class="hljs-comment">#  - kubernetes-master</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># machine - 1: m93p (i7 4 Core + 16GB RAM)</span>
+<span class="hljs-comment">#  - kubernetes-worker</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># machine - 2: Threadripper 32 core + 64GB RAM + 2080Ti</span>
+<span class="hljs-comment">#  - kubernetes-worker</span>
+<span class="hljs-attr">description:</span> <span class="hljs-string">overlay</span> <span class="hljs-string">for</span> <span class="hljs-string">dev-maas</span> <span class="hljs-string">installation</span> <span class="hljs-string">on</span> <span class="hljs-number">3</span> <span class="hljs-string">nodes</span>
+<span class="hljs-attr">series:</span> <span class="hljs-string">focal</span>
+
+<span class="hljs-attr">machines:</span>
+  <span class="hljs-attr">'0':</span>
+    <span class="hljs-attr">constraints:</span> <span class="hljs-string">tags=k8s,k8s_master</span>
+  <span class="hljs-attr">'1':</span>
+    <span class="hljs-attr">constraints:</span> <span class="hljs-string">tags=k8s,k8s_worker</span>
+  <span class="hljs-attr">'2':</span>
+    <span class="hljs-attr">constraints:</span> <span class="hljs-string">tags=k8s,k8s_worker,gpu</span>
+
+<span class="hljs-comment"># https://discourse.charmhub.io/t/charm-bundles/1058 says that 'services'</span>
+<span class="hljs-comment"># is deprecated, use applications instead.</span>
+<span class="hljs-attr">applications:</span>
+
+  <span class="hljs-attr">easyrsa:</span>
+    <span class="hljs-attr">num_units:</span> <span class="hljs-number">1</span>
+    <span class="hljs-attr">to:</span> <span class="hljs-string">['0']</span>
+  <span class="hljs-attr">etcd:</span>
+    <span class="hljs-attr">num_units:</span> <span class="hljs-number">1</span>
+    <span class="hljs-attr">to:</span> <span class="hljs-string">['0']</span>
+  <span class="hljs-attr">kubeapi-load-balancer:</span>
+    <span class="hljs-attr">num_units:</span> <span class="hljs-number">1</span>    
+    <span class="hljs-attr">to:</span> <span class="hljs-string">['0']</span>
+  <span class="hljs-attr">kubernetes-master:</span>    
+    <span class="hljs-attr">num_units:</span> <span class="hljs-number">1</span>    
+    <span class="hljs-attr">to:</span> <span class="hljs-string">['0']</span>
+  <span class="hljs-attr">kubernetes-worker:</span>    
+    <span class="hljs-attr">num_units:</span> <span class="hljs-number">2</span>
+    <span class="hljs-attr">to:</span> <span class="hljs-string">['1',</span> <span class="hljs-string">'2'</span><span class="hljs-string">]</span>
+</div></code></pre>
+<h2 id="juju-models">juju models</h2>
+<p>Not sure I grok the model bit fully. From what I understand</p>
+<ul>
+<li>A named entity on the controller</li>
+<li>A collection of deployments</li>
+</ul>
+<p>Enables neat things</p>
+<ul>
+<li>Wholesale cleaup: When needed, removing all the applications is as simple as <code>juju destroy-model &lt;modelName&gt;</code>: Mind the need for <code>--destroy-storage</code></li>
+<li>When a model is interactively built up from bundles and then we do more <code>add-unit</code> things. You can dump out the latest-model configuration as a bundle.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Model operation</th>
+<th style="text-align:left">Cmd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Adding model</td>
+<td style="text-align:left"><code>juju add-model modelName</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Deploying to a model</td>
+<td style="text-align:left"><code>juju -m modelName .. </code></td>
+</tr>
+<tr>
+<td style="text-align:left">Destroying a model</td>
+<td style="text-align:left"><code>juju destroy-model modelName</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Switch to a model</td>
+<td style="text-align:left"><code>juju switch modelName</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Listing models</td>
+<td style="text-align:left"><code>juju models</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="create-the-k8s-model">Create the k8s model</h3>
+<blockquote>
+<p>Want to keep the nomenclature clear here. This is a model of deployment on MAAS. Later, we will have <code>kubernetes</code> deployments: pods and such which will end up on a different model which we'll call k8s-model</p>
+</blockquote>
+<p><code>juju add-model maas-k8s-model</code></p>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/configs/juju/bundles$ juju add-model maas-k8s-model
+Added 'maas-k8s-model' model on devmaas/default with credential 'devmaas-admin-creds' for user 'admin'
+
+vamsi@MAAS:~/bitbucket/infrastructure/configs/juju/bundles$ juju status --color
+Model             Controller       Cloud/Region     Version  SLA          Timestamp
+maas-k8s-model    maas             devmaas/default  2.8.6    unsupported  19:06:13-08:00
+
+Model "admin/maas-k8s-model" is empty.
+</div></code></pre>
+<h2 id="dry-run-bundle">Dry run bundle</h2>
+<p><em>Dry run</em> with the downloaded bundle from https://jaas.ai/canonical-kubernetes</p>
+<blockquote>
+<p>Note</p>
+<ul>
+<li><code>-m maas-k8s-model</code> to deploy to the k8s model</li>
+<li>release number retained in the bundle name. This allows me to upgrade periodically as I see newer releases.</li>
+<li>I see no way to customize the default <code>juju-cluster</code> name given to this k8 cloud it creates!</li>
+</ul>
+</blockquote>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/configs/juju/bundles$ juju deploy -m maas-k8s-model --dry-run ./charmed-k8s-focal-733-bundle.yaml --overlay ./charmed-k8s-focal-733-devmaas-overlay.yaml
+WARNING "services" key found in bundle file is deprecated, superseded by "applications" key.
+Located charm "containerd" in charm-store, revision 146
+Located charm "easyrsa" in charm-store, revision 395
+Located charm "etcd" in charm-store, revision 607
+Located charm "flannel" in charm-store, revision 571
+Located charm "kubeapi-load-balancer" in charm-store, revision 814
+Located charm "kubernetes-master" in charm-store, revision 1034
+Located charm "kubernetes-worker" in charm-store, revision 788
+Changes to deploy bundle:
+- upload charm containerd from charm-store for series focal with architecture=amd64
+- deploy application containerd from charm-store on focal
+- set annotations for containerd
+- upload charm easyrsa from charm-store for series focal with architecture=amd64
+- deploy application easyrsa from charm-store on focal
+- set annotations for easyrsa
+- upload charm etcd from charm-store for series focal with architecture=amd64
+- deploy application etcd from charm-store on focal
+- set annotations for etcd
+- upload charm flannel from charm-store for series focal with architecture=amd64
+- deploy application flannel from charm-store on focal
+- set annotations for flannel
+- upload charm kubeapi-load-balancer from charm-store for series focal with architecture=amd64
+- deploy application kubeapi-load-balancer from charm-store on focal
+- expose all endpoints of kubeapi-load-balancer and allow access from CIDRs 0.0.0.0/0 and ::/0
+- set annotations for kubeapi-load-balancer
+- upload charm kubernetes-master from charm-store for series focal with architecture=amd64
+- deploy application kubernetes-master from charm-store on focal
+- set annotations for kubernetes-master
+- upload charm kubernetes-worker from charm-store for series focal with architecture=amd64
+- deploy application kubernetes-worker from charm-store on focal
+- expose all endpoints of kubernetes-worker and allow access from CIDRs 0.0.0.0/0 and ::/0
+- set annotations for kubernetes-worker
+- add new machine 0
+- add new machine 1
+- add new machine 2
+- add relation kubernetes-master:kube-api-endpoint - kubeapi-load-balancer:apiserver
+- add relation kubernetes-master:loadbalancer - kubeapi-load-balancer:loadbalancer
+- add relation kubernetes-master:kube-control - kubernetes-worker:kube-control
+- add relation kubernetes-master:certificates - easyrsa:client
+- add relation etcd:certificates - easyrsa:client
+- add relation kubernetes-master:etcd - etcd:db
+- add relation kubernetes-worker:certificates - easyrsa:client
+- add relation kubernetes-worker:kube-api-endpoint - kubeapi-load-balancer:website
+- add relation kubeapi-load-balancer:certificates - easyrsa:client
+- add relation flannel:etcd - etcd:db
+- add relation flannel:cni - kubernetes-master:cni
+- add relation flannel:cni - kubernetes-worker:cni
+- add relation containerd:containerd - kubernetes-worker:container-runtime
+- add relation containerd:containerd - kubernetes-master:container-runtime
+- add unit easyrsa/0 to new machine 0
+- add unit etcd/0 to new machine 0
+- add unit kubeapi-load-balancer/0 to new machine 0
+- add unit kubernetes-master/0 to new machine 0
+- add unit kubernetes-worker/0 to new machine 1
+- add unit kubernetes-worker/1 to new machine 2
+</div></code></pre>
+<p>The <code>add unit</code> lines at the end show the expected deployment</p>
+<ul>
+<li>add unit easyrsa/0 to new machine 0</li>
+<li>add unit etcd/0 to new machine 0</li>
+<li>add unit kubeapi-load-balancer/0 to new machine 0</li>
+<li>add unit kubernetes-master/0 to new machine 0</li>
+<li>add unit kubernetes-worker/0 to new machine 1</li>
+<li>add unit kubernetes-worker/1 to new machine 2</li>
+</ul>
+<h2 id="deploy">Deploy</h2>
+<blockquote>
+<p>Note the <code>-m maas-k8s-model</code> to deploy to the <code>maas-k8s-model</code> model</p>
+</blockquote>
+<p><code>juju deploy -m maas-k8s-model ./charmed-k8s-focal-733-bundle.yaml --overlay ./charmed-k8s-focal-733-devmaas-overlay.yaml</code></p>
+<h3 id="watch-deployment-progress">Watch deployment progress</h3>
+<ul>
+<li><code>juju status --color</code></li>
+<li><code>watch --color -n5 juju status --color</code></li>
+</ul>
+<h2 id="nvidia-driver-issue">Nvidia driver issue</h2>
+<p>After manual successful deployments, I suddenly ran into an error with nvidia drivers. Not sure if nvidia changed something or some server has bad data. In any case, simply following the latest nvidia driver installation worked.</p>
+<p>Specifically</p>
+<ul>
+<li>Look at the charm agent code on the failed machine and check which packages it is installing: I saw <code>cuda-drivers</code> and <code>nvidia-container-runtime</code></li>
+<li>Follow latest nvidia setup instructioons and install those packages.</li>
+</ul>
+<pre class="hljs"><code><div>wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
+sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/11.4.1/local_installers/cuda-repo-ubuntu2004-11-4-local_11.4.1-470.57.02-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu2004-11-4-local_11.4.1-470.57.02-1_amd64.deb
+sudo apt-key add /var/cuda-repo-ubuntu2004-11-4-local/7fa2af80.pub
+sudo apt-get update
+
+sudo apt-get -y install cuda-drivers
+sudo apt-get -y install nvidia-container-runtime
+</div></code></pre>
+<ul>
+<li>Normally, juju keeps retrying failed hooks for a while. If it stops, do a <code>juju resolved containerd/0</code> or whatever the contained unit is that is failing because of the nvidia install.</li>
+<li>reboot the node if <code>juju ssh kubernetes-worker/1 nvidia-smi</code> doesn't show the expected output (<em>maybe wait till <code>juju-wait</code> returns</em>)</li>
+</ul>
+<h2 id="copy-kube-config-over">Copy kube config over</h2>
+<p>Finally, to get <code>kubectl</code> to control the kubernetes cluster (<em>as well as getting juju to control it</em>) we need to copy over a configuration that specifies the newly created cluster. Use</p>
+<ul>
+<li><code>mkdir ~/.kube</code></li>
+<li><code>juju scp kubernetes-master/0:/home/ubuntu/config ~/.kube/config</code>.</li>
+</ul>
+<p><em>This is awesome as we address the <code>juju application unit</code> instead of the machine itself</em>.</p>
+<h2 id="verify-gpu-integration">Verify GPU integration</h2>
+<p>The latest <code>kubernetes-worker</code> charm is supposed to automatically handle GPGPU integration (NVidia, Cuda). So right after k8s was installed, I tried to check this via <code>nvidia-smi</code>:</p>
+<p><code>juju ssh kubernetes-worker/1 nvidia-smi</code>: got a <em>unable to communicate with driver</em> (<code>/var/log/juju/unit-kubernetes-worker-1.log</code> on that machine displayed the same thing in the logs)</p>
+<blockquote>
+<p>Turns out, the machine needs to be rebooted
+use <code>juju ssh kubernetes-worker/1 sudo poweroff</code> and reboot
+wait for <code>juju status</code> to show all green and try again</p>
+</blockquote>
+<ul>
+<li>Lots of searching and playing around</li>
+<li>Removing all nvidia, cuda and reinstalling: nope</li>
+<li>Rebooting : nope</li>
+<li>Checked BIOS (ASRock TR40) had Secure boot off. Clock was off, so fixed that. Also turned CSM (Compatibility startup mode) off : now it is finally back on and <code>nvidia-smi</code> reports things as expected.</li>
+<li>kubernetes-worker was supposed to keep polling for GPU and seems to have worked.</li>
+</ul>
+<h3 id="verify-at-node-level">Verify at node level</h3>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/configs/juju/bundles$ juju ssh kubernetes-worker/1 nvidia-smi
+Fri Feb 26 17:53:17 2021       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.39       Driver Version: 460.39       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  GeForce RTX 208...  Off  | 00000000:21:00.0 Off |                  N/A |
+| 24%   30C    P8    23W / 250W |     14MiB / 11019MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A      2094      G   /usr/lib/xorg/Xorg                  8MiB |
+|    0   N/A  N/A      2668      G   /usr/bin/gnome-shell                3MiB |
++-----------------------------------------------------------------------------+
+Connection to 192.168.23.113 closed.
+```console
+<span class="hljs-meta">
+#</span><span class="bash"><span class="hljs-comment">## Verify at K8s level</span></span>
+
+```console
+vamsi@MAAS:~/bitbucket/infrastructure/configs/juju$ kubectl get no -o wide -L cuda,gpu
+NAME      STATUS   ROLES    AGE    VERSION   INTERNAL-IP      EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION     CONTAINER-RUNTIME               CUDA   GPU
+big-boy   Ready    &lt;none&gt;   6h8m   v1.20.4   192.168.23.113   &lt;none&gt;        Ubuntu 20.04.2 LTS   5.4.0-66-generic   containerd://1.3.3-0ubuntu2.2   true   true
+tiny2     Ready    &lt;none&gt;   6h8m   v1.20.4   192.168.23.112   &lt;none&gt;        Ubuntu 20.04.2 LTS   5.4.0-66-generic   containerd://1.3.3-0ubuntu2.2          
+</div></code></pre>
+<h3 id="fix-gpu-sleep-issues">Fix GPU sleep issues</h3>
+<p>For now (Feb 2021), k8s GPU integration is performing default nvidia installations which turns the XServer on and sets graphical runlevels (See below). <strong>This enable pwer saving sleep and the machine drops out from the cloud soon after</strong>. Fiddling with the actual driver/cuda installs might mess up more things so am simply fixing sleep.</p>
+<ul>
+<li><code>juju ssh kubernetes-worker/1 systemctl status sleep.target</code></li>
+<li><code>juju ssh kubernetes-worker/1 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target</code></li>
+<li><code>juju ssh kubernetes-worker/1 systemctl status sleep.target</code></li>
+</ul>
+<pre class="hljs"><code><div>vamsi@MAAS:~$ juju ssh kubernetes-worker/1 systemctl status sleep.target
+● sleep.target - Sleep
+     Loaded: loaded (/lib/systemd/system/sleep.target; static; vendor preset: enabled)
+     Active: inactive (dead)
+       Docs: man:systemd.special(7)
+Connection to 192.168.23.113 closed.
+vamsi@MAAS:~$ juju ssh kubernetes-worker/1 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+Created symlink /etc/systemd/system/sleep.target → /dev/null.
+Created symlink /etc/systemd/system/suspend.target → /dev/null.
+Created symlink /etc/systemd/system/hibernate.target → /dev/null.
+Created symlink /etc/systemd/system/hybrid-sleep.target → /dev/null.
+Connection to 192.168.23.113 closed.
+vamsi@MAAS:~$ juju ssh kubernetes-worker/1 systemctl status sleep.target
+● sleep.target
+     Loaded: masked (Reason: Unit sleep.target is masked.)
+     Active: inactive (dead)
+Connection to 192.168.23.113 closed.
+</div></code></pre>
+<h2 id="complete-the-kubernetes-client-installs">Complete the kubernetes client installs</h2>
+<ul>
+<li><code>sudo snap install kubectl --classic</code></li>
+</ul>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/configs/juju$ kubectl cluster-info
+Kubernetes control plane is running at https://192.168.23.111:443
+CoreDNS is running at https://192.168.23.111:443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+Metrics-server is running at https://192.168.23.111:443/api/v1/namespaces/kube-system/services/https:metrics-server:/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+</div></code></pre>
+<h2 id="setup-k8s-storage">Setup k8s storage</h2>
+<blockquote>
+<ul>
+<li>When juju controller is bootstreapped onto the k8s cloud, we need storage setup so it can request space. This must be done before bootstrapping.</li>
+<li>👉 On MAAS, check the DNS and verify the IP assigned to the NAS. Update it in the config files as needed.</li>
+</ul>
+</blockquote>
+<p>I had tried various things and waster a ton of time writing my own charm (which either was broken or the kubernetes-worker relationship was broken). Finally discovered a new app from google maybe which worked out great.</p>
+<p><strong>Setup steps</strong>: see <a href="./3-juju-k8s-storage.md">./3-juju-k8s-storage.md</a></p>
+<h3 id="verify-storage-class">Verify storage class</h3>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/k8s/nfs$ kubectl get sc
+NAME                  PROVISIONER                                   RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+managed-nfs-storage   k8s-sigs.io/nfs-subdir-external-provisioner   Delete          Immediate           false                  9m53s
+</div></code></pre>
+<h2 id="register-the-kubernetes-cloud-with-juju">Register the kubernetes cloud with juju</h2>
+<p>So it looks like even though juju installed kubernetes as a set of bundles, it needs to be told to recognize it as a <code>k8s cloud</code>: a cloudy deployment target (<em>this makes sense since juju can be asked to manage any k8s cloud</em>). This allows juju to deploy kubernetes pods to the kubernetes cluster as well. Basically, juju can deploy apps to a machine cluster or kubernetes apps to a kubernetes cluster within a given machine cluster.</p>
+<blockquote>
+<p>This registration and the subsequent model creation triggers k8s specific configuration in juju.</p>
+</blockquote>
+<h3 id="register-cloud">Register cloud</h3>
+<p><code>juju add-k8s myk8scloud</code></p>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/k8s/nfs$ juju add-k8s myk8scloud
+This operation can be applied to both a copy on this client and to the one on a controller.
+Do you want to add k8s cloud myk8scloud to:
+    1. client only (--client)
+    2. controller "maas" only (--controller maas)
+    3. both (--client --controller maas)
+Enter your choice, or type Q|q to quit: 1
+
+k8s substrate added as cloud "myk8scloud" with storage provisioned
+by the existing "managed-nfs-storage" storage class.
+You can now bootstrap to this cloud by running 'juju bootstrap myk8scloud'.
+</div></code></pre>
+<blockquote>
+<p>Note that it has found the kubernetes sc and reported it.</p>
+</blockquote>
+<h3 id="bootstrap-k8s-cloud">Bootstrap k8s cloud</h3>
+<p><code>juju bootstrap myk8scloud</code></p>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/k8s/nfs$ juju bootstrap myk8scloud
+Creating Juju controller "myk8scloud" on myk8scloud
+Bootstrap to generic Kubernetes cluster
+Fetching Juju Dashboard 0.8.1
+Creating k8s resources for controller "controller-myk8scloud"
+Downloading images
+Starting controller pod
+Bootstrap agent now started
+Contacting Juju controller at 10.152.183.192 to verify accessibility...
+
+Bootstrap complete, controller "myk8scloud" is now available in namespace "controller-myk8scloud"
+
+Now you can run
+	juju add-model &lt;model-name&gt;
+to create a new model to deploy k8s workloads.
+</div></code></pre>
+<h3 id="notes">Notes</h3>
+<p>Apparently (<em>from a lot of resources</em>) simply doing <code>juju add-k8s</code> should be enough, but I get a <em>ERROR missing k8ds name</em>. Maybe it can target multiple kubernetes clusters. From the config file, I see a <code>name: juju-cluster</code> field, maybe thats the one to use</p>
+<p>While <code>juju add-k8s juju-cluster</code> should work, <a href="https://discourse.charmhub.io/t/trouble-using-add-k8s-to-access-kubernetes-core-cluster-on-openstack-created-by-another-client/1528/20">this discussion</a> states that we must use <code>juju add-k8s k8s-cloud --local --cloud=MAAS --region=&lt;fake&gt;</code>. Apparently this allows juju to create the correct load-balance for the controller! The previous one simply worked in the past though, now that I have storage configured correctly, the old one should work just as well. No ?</p>
+<pre class="hljs"><code><div>vamsi@MAAS:~$ juju add-k8s juju-cluster
+This operation can be applied to both a copy on this client and to the one on a controller.
+Do you want to add k8s cloud juju-cluster to:
+    1. client only (--client)
+    2. controller "juju-controller" only (--controller juju-controller)
+    3. both (--client --controller juju-controller)
+Enter your choice, or type Q|q to quit: 3
+
+k8s substrate added as cloud "juju-cluster" with storage provisioned
+by the existing "default" storage class.
+You can now bootstrap to this cloud by running 'juju bootstrap juju-cluster'.
+</div></code></pre>
+<h2 id="k8s-dashboard">K8s dashboard</h2>
+<ul>
+<li><code>kubectl proxy</code> <em>which gives a localhost:8001</em></li>
+<li>Visit http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login</li>
+</ul>
+<p>On visit, it offers two ways of auth, choose the config and upload the saved <code>.kube/config</code> file.</p>
+<h1 id="shutting-down">Shutting down</h1>
+<ul>
+<li>Not sure if this is a juju thing.</li>
+<li>Likely more of a k8s thing. Need to research, not many hits</li>
+</ul>
+<p>Strangely hardly any docs. Guess everyone simply uses a cloud provider for the most part or tear-down/recreate as needed.</p>
+<ul>
+<li>https://www.reddit.com/r/kubernetes/comments/9ykmxk/how_to_properly_shutdown_a_kubernetes_cluster/</li>
+<li>https://stackoverflow.com/questions/57567609/can-we-shutdown-the-kubernetes-clusters-without-deleting-them
+<ul>
+<li>shutdown kubelet on all nodes</li>
+<li>shut down docker (in my case containerd)</li>
+<li>shut down etcd if running externally (not applicable to me)</li>
+</ul>
+</li>
+</ul>
+<p>From the official docs, it looks like</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/53973872/how-to-stop-a-self-built-kubernetes-cluster">SO Stop Self Build Cluster</a></li>
+<li><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#tear-down">Official k8s Teardown</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Unit</th>
+<th style="text-align:left">Steps</th>
+<th style="text-align:left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Node</td>
+<td style="text-align:left">Drain</td>
+<td style="text-align:left">removes all pods. Subject to pod budgets so involved maybe <br> <code>kubectl drain &lt;node name&gt; --delete-local-data --force --ignore-daemonsets</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Node</td>
+<td style="text-align:left">Reset</td>
+<td style="text-align:left">Reset the state installed by kubeadm<br> <code>kubeadmn reset</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Node</td>
+<td style="text-align:left">Clear iptables</td>
+<td style="text-align:left">Apparently not done by reset <br> <code>iptables -F &amp;&amp; iptables -t nat -F &amp;&amp; iptables -t mangle -F &amp;&amp; iptables -X</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Node</td>
+<td style="text-align:left">Clear ipvs</td>
+<td style="text-align:left">Hmm, a native linux virtual server /cluster stuff<br><code>ipvsadm -C</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Node</td>
+<td style="text-align:left">Remove node</td>
+<td style="text-align:left"><code>kubectl delete node &lt;node name&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Control Pane</td>
+<td style="text-align:left">Reset</td>
+<td style="text-align:left"><code>kubeadm reset</code> on control pane node <br>Comfortingly does a best-attempt</td>
+</tr>
+</tbody>
+</table>
+<p>Looks complex and may not work either: needs experimentation. At a minimum pods need to be drained out so that needs work.</p>
+<h2 id="destroy">Destroy</h2>
+<p>Destroying the cluster is certainly an option.</p>
+<pre><code>* kubectl drain all nodes
+* juju destroy model
+</code></pre>
+<p>Later bringing it up
+* MAAS set to <code>Ready</code>
+* juju deploy model</p>
+<p><strong>30-45 minutes</strong> cost to bring it up later on but guaranteed fresh.</p>
+<h2 id="remove-units">Remove Units</h2>
+<p>Need to experiment
+* kubectl drain all nodes
+* juju remove-unit kubernetes-worker/0
+* juju remove-unit kubernetes-worker/1
+* juju remove-unit etcd/1
+* juju remove-unit etcd/2</p>
+<p>Can keep the master running (small enough PC). If that needs to go as well
+* juju remove easyrsa/0
+* juju remove etcd/0
+* juju remove kubeapi-load-balancer/0
+* juju remove kubernetes-master/0</p>
+<p>Can run basic experiments now but ideally after I have a single test app working on k8s which means building a docker container and all that.</p>
+<h3 id="experiment-remove-unit-plus-add-unit">Experiment. remove-unit plus add-unit</h3>
+<p><strong>Remove Unit &amp; Shutdown</strong></p>
+<p><code>juju remove-unit kubernetes-worker/0</code> and then status shows
+* containerd (maintenance -&gt;stop -&gt; terminated)<br>
+* kubernetes-worker/0 (maintenance -&gt; blocked -&gt; gone)
+* etcd/2 is <em>Workload:Unknown Agent:lost</em>
+* Node itself (<em>machine 2</em>) is still on</p>
+<p><code>juju ssh 2 sudo poweroff</code>
+* <code>juju status</code> shows machine as down</p>
+<p><strong>Power on and Add Unit</strong></p>
+<pre><code>* Power Cycle node k8s-biggy from MAAS UI
+* `juju add-unit kubernetes-worker --to 2`
+    * installs sharm software, containerd, nvidia drivers etc again (per status: not sure how it actually could be reinstalling)
+* Then kubernetes-master stuck in *waiting for 3 kube-system pods* for a while
+* Quite slow process actually.
+</code></pre>
+<p><strong>Worked</strong>. However, I see that though I have done nothing, <em>etcd/2</em> running on <em>k8s-biggy</em> also came back up. Maybe I simply have to shut the node down and bring it up ?</p>
+<h3 id="experiment-poweroff-machine-and-bring-it-back-up">Experiment. Poweroff machine and bring it back up</h3>
+<pre><code>* Ideally, drain the pods first
+* `juju ssh 2 sudo poweroff`
+</code></pre>
+<p><img src="img/juju-k8s-machineDownStatus.png" alt="Machine down status"></p>
+<p>Power it back on under MAAS</p>
+<p><strong>Yay</strong>. Came back up and status was all green within 2 minutes. Definitely the best solution so far for bringing a power hungry worker down.</p>
+<h3 id="experiment-poweroff-all-machines">Experiment. Poweroff all machines</h3>
+<p><strong>Power Down</strong>
+* Workers first
+* master last</p>
+<p><img src="img/juju-k8s-allDownStatus.png" alt="All down status"></p>
+<p><strong>Power up</strong>
+* Master first
+* Workers next
+<strong>All green in a few minutes</strong>
+* However, two of the <code>etcd</code> instances say <strong>UnHealthy with two peers</strong> while one says <strong>Healthy with two peers</strong>
+* All healthy in a few minutes
+* So great. I can bring the whole cluster down and up fast. If I leave master alone, I leave the etcds alone. Thought maybe I could get away with just one etcd.</p>
+<p>Follow progress using <code>watch --color juju status --color</code></p>
+<h1 id="docker-registry">Docker registry</h1>
+<p>Instead of dealing with roundtrips to docker and pulling things down from it, I thought it'd be simpler for now to have a local registry for the pods to pull their images from.</p>
+<h2 id="prep-to-install-docker-community-edition">Prep to install docker community edition</h2>
+<ul>
+<li>https://docs.docker.com/engine/install/ubuntu/</li>
+</ul>
+<p><code>sudo apt update -y</code></p>
+<p><code>sudo apt-get install apt-transport-https ca-certificates curl    gnupg-agent software-properties-common</code></p>
+<p><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</code></p>
+<p><code>lsb_release -cs</code> returns the name of the distribution.</p>
+<pre class="hljs"><code><div>sudo add-apt-repository \
+   &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable&quot;
+</div></code></pre>
+<h2 id="installing-the-latest-version">Installing the latest version</h2>
+<p><code>sudo apt-get update</code>
+<code>sudo apt-get install docker-ce docker-ce-cli containerd.io</code></p>
+<h2 id="verify-installation-works">Verify installation works</h2>
+<pre class="hljs"><code><div>vamsi@maas:~/bitbucket/kubernetes$ systemctl status docker
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sat 2020-08-01 00:46:05 PDT; 26s ago
+     Docs: https://docs.docker.com
+ Main PID: 26847 (dockerd)
+    Tasks: 13
+   CGroup: /system.slice/docker.service
+           └─26847 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+Aug 01 00:46:05 maas dockerd[26847]: time="2020-08-01T00:46:05.009901793-07:00" level=warning msg="Your kernel does not support cgroup rt runti
+Aug 01 00:46:05 maas dockerd[26847]: time="2020-08-01T00:46:05.009908104-07:00" level=warning msg="Your kernel does not support cgroup blkio we
+Aug 01 00:46:05 maas dockerd[26847]: time="2020-08-01T00:46:05.009919727-07:00" level=warning msg="Your kernel does not support cgroup blkio we
+Aug 01 00:46:05 maas dockerd[26847]: time="2020-08-01T00:46:05.010114868-07:00" level=info msg="Loading containers: start."
+Aug 01 00:46:05 maas dockerd[26847]: time="2020-08-01T00:46:05.131581644-07:00" level=info msg="Default bridge (docker0) is assigned with an IP
+Aug 01 00:46:05 maas dockerd[26847]: time="2020-08-01T00:46:05.225912455-07:00" level=info msg="Loading containers: done."
+Aug 01 00:46:05 maas dockerd[26847]: time="2020-08-01T00:46:05.304930857-07:00" level=info msg="Docker daemon" commit=48a66213fe graphdriver(s)
+Aug 01 00:46:05 maas dockerd[26847]: time="2020-08-01T00:46:05.305071697-07:00" level=info msg="Daemon has completed initialization"
+Aug 01 00:46:05 maas dockerd[26847]: time="2020-08-01T00:46:05.360820586-07:00" level=info msg="API listen on /var/run/docker.sock"
+Aug 01 00:46:05 maas systemd[1]: Started Docker Application Container Engine.
+</div></code></pre>
+<pre class="hljs"><code><div>vamsi@maas:~/bitbucket/kubernetes$ sudo docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+0e03bdcc26d7: Pull complete 
+Digest: sha256:49a1c8800c94df04e9658809b006fd8a686cab8028d33cfba2cc049724254202
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+<span class="hljs-meta"> $</span><span class="bash"> docker run -it ubuntu bash</span>
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+</div></code></pre>
+<h2 id="install-the-registry">Install the registry</h2>
+<p><strong>Ref</strong>: https://geekflare.com/docker-private-registry-ubuntu/</p>
+<p><code>docker pull registry</code></p>
+<pre class="hljs"><code><div>vamsi@maas:~/bitbucket/kubernetes$ sudo docker pull registry
+Using default tag: latest
+latest: Pulling from library/registry
+cbdbe7a5bc2a: Pull complete 
+47112e65547d: Pull complete 
+46bcb632e506: Pull complete 
+c1cc712bcecd: Pull complete 
+3db6272dcbfa: Pull complete 
+Digest: sha256:8be26f81ffea54106bae012c6f349df70f4d5e7e2ec01b143c46e2c03b9e551d
+Status: Downloaded newer image for registry:latest
+docker.io/library/registry:latest
+</div></code></pre>
+<h1 id="previous-install-log">Previous Install Log</h1>
+<h2 id="got-tags-wrong">Got tags wrong</h2>
+<p>Turns out I got the MAAS tags wrong in the overlay file and juju was simply searching for <code>kf_master</code> when it should have been <code>kubeflow</code>.</p>
+<ul>
+<li>Simply updated the overlay file and re-did the deploy. Nothing changed.</li>
+<li>Since I had the model I did the following
+<ul>
+<li><code>juju destroy-model k8s</code></li>
+<li><code>juju add-model k8s</code></li>
+<li>Fix the overlay yaml with the correct machine tag</li>
+<li><code>juju deploy -m k8s...</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="correcting-juju-mistakes">Correcting juju mistakes</h2>
+<p>After <code>juju deploy</code>, it sends information to the controller and quits. Juju-controller takes over after that I guess. A few seconds later, Maas UI shows:
+* Nodes with managed power turned on and showed a status of <em>Deploying Ubuntu.</em>
+* Nodes with manual power showed <em>Deploying Ubuntu</em> and needed me to power them on manually (and ensure PXE boot)</p>
+<p>Check using <code>juju status --color</code> and it turns out it seems to be waiting for two more machines: a second master and a third node. I forgot to edit the <strong>num_units</strong> items in the bundle. Edited those and simply ran a <code>juju deploy ./configs/charmed-k8s-464-bundle.yaml</code> and it updated the config.</p>
+<p>Took a while for everything to come up. Not sure how long as I crashed and am checking status early next day.</p>
+<p><img src="img/juju-k8s-status1.png" alt="juju k8s status1"></p>
+<ul>
+<li>Looks like my correcting the mistake (<code>num_units: </code>) in the bundle and deploying it out did not actually change things. It seems to still be expecting the two extra nodes.</li>
+<li>from https://juju.is/docs/scaling-applications, looks like I need to use a <code>remove-unit</code> command</li>
+</ul>
+<pre class="hljs"><code><div>vamsi@maas:~/bitbucket/kubernetes$ juju remove-unit kubernetes-master/1
+removing unit kubernetes-master/1
+vamsi@maas:~/bitbucket/kubernetes$ juju remove-unit kubernetes-worker/2
+removing unit kubernetes-worker/2
+</div></code></pre>
+<p><strong>and that worked</strong></p>
+<p><img src="img/juju-k8s-statusFixed.png" alt="juju k8s status"></p>
+<h2 id="gpu-integration-sleep-problems">GPU Integration sleep problems</h2>
+<p>Started noticing wierd problems with this: after some time, the <code>big-boy</code> node would simply sleep. Initially I thought it was a crash and the power-supply or something had died: however</p>
+<ul>
+<li><code>last</code> does not show me a crash.</li>
+<li>BIOS has sleep turned off, so something else is happening.</li>
+<li>I thought this was related to the Desktop (X) installed on that machine by my manual fiddling: so tore k8s down and redid the whole thing. Still got X!</li>
+</ul>
+<p>Following online instructions, I have some options to explore:</p>
+<ul>
+<li>❌ Wait and see if ubuntu installed drivers keeps awake. Maybe my fiddling had somethig to do with it. Nope. Still goes off.</li>
+<li>✅  Instead of re-doing cuda and stuff and mess with things (god knows what else is done). Try to do some system adjustments to stop it from sleeping and try overnight
+<ul>
+<li>✅ mask all sleep states (<a href="https://www.unixtutorial.org/disable-sleep-on-ubuntu-server/">Ref</a>)</li>
+</ul>
+</li>
+<li>🔳  Redo cuda/nvidia without X ?
+<ul>
+<li>remove nvidia, cuda manually</li>
+<li>install it without X</li>
+<li>check nvidia-smi</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div>vamsi@MAAS:~$ juju ssh kubernetes-worker/1 systemctl status sleep.target
+● sleep.target - Sleep
+     Loaded: loaded (/lib/systemd/system/sleep.target; static; vendor preset: enabled)
+     Active: inactive (dead)
+       Docs: man:systemd.special(7)
+Connection to 192.168.23.113 closed.
+vamsi@MAAS:~$ juju ssh kubernetes-worker/1 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+Created symlink /etc/systemd/system/sleep.target → /dev/null.
+Created symlink /etc/systemd/system/suspend.target → /dev/null.
+Created symlink /etc/systemd/system/hibernate.target → /dev/null.
+Created symlink /etc/systemd/system/hybrid-sleep.target → /dev/null.
+Connection to 192.168.23.113 closed.
+vamsi@MAAS:~$ juju ssh kubernetes-worker/1 systemctl status sleep.target
+● sleep.target
+     Loaded: masked (Reason: Unit sleep.target is masked.)
+     Active: inactive (dead)
+Connection to 192.168.23.113 closed.
+</div></code></pre>
+
+</body>
+</html>

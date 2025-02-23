@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>4-juju-k8s-storage.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<!-- TOC -->
+<ul>
+<li><a href="#status">Status</a></li>
+<li><a href="#juju-and-k8s-storage">Juju and k8s storage</a></li>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#setup-storage">Setup storage</a></li>
+<li><a href="#k8s-concepts">K8s concepts</a>
+<ul>
+<li><a href="#static-strorage">Static strorage</a></li>
+<li><a href="#dynamic-storage">Dynamic storage</a></li>
+</ul>
+</li>
+<li><a href="#history---attempt-juju-storage-on-external-nfs">History - Attempt Juju storage on external NFS</a>
+<ul>
+<li><a href="#configure-and-test-nas-share">Configure and test NAS share</a></li>
+<li><a href="#test-via-nfs-mount">Test via NFS mount</a></li>
+<li><a href="#test-juju-charm-nfs-mounting">Test juju charm nfs mounting</a></li>
+<li><a href="#tying-juju-and-k8s-storage-together">Tying juju and k8s storage together</a>
+<ul>
+<li><a href="#test-k8s-storage-via-pvc">Test k8s storage via PVC</a></li>
+</ul>
+</li>
+<li><a href="#plain-k8s-storage">Plain K8s storage</a>
+<ul>
+<li><a href="#add-rbac">Add RBAC</a></li>
+<li><a href="#create-storage-class">Create storage class</a></li>
+<li><a href="#deploy-provisioner">Deploy provisioner</a></li>
+<li><a href="#test-provisioner">Test provisioner</a></li>
+</ul>
+</li>
+<li><a href="#make-storage-class-default">Make storage class default</a></li>
+<li><a href="#retest--nfs-charm-k8s-storage">Retest  nfs charm k8s storage</a>
+<ul>
+<li><a href="#why-is-juju-not-showing-kubernetes-pool">Why is juju not showing kubernetes pool</a></li>
+</ul>
+</li>
+<li><a href="#%EF%B8%8F-official-nfs-subir-provisioner">✅️ Official nfs-subir provisioner</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1 id="status">Status</h1>
+<ul>
+<li>✅️ Kubernetes-sigs/nfs-subdir-external-provisioner</li>
+<li>My own charm works but I see no containers in the deployed pods. So ditching it</li>
+</ul>
+<h1 id="juju-and-k8s-storage">Juju and k8s storage</h1>
+<p>Kubernetes has a complex storage setup: a layering of abstractions when your storage can be anywhere in the cloud. Looks like juju has similar ones too but can help initiailize k8s storage from it's own. I am just trying to figure out from various sources how I can get storage for</p>
+<ul>
+<li>kubernetes itself</li>
+<li>kubernetes apps including kubeflow</li>
+<li>juju storage is a different beast that is not particularly useful for me now.</li>
+</ul>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><strong>Main</strong>
+<ul>
+<li>✅️ https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner</li>
+<li>https://discourse.charmhub.io/t/setting-up-static-kubernetes-storage-tutorial/1193</li>
+</ul>
+</li>
+<li>Secondary:
+<ul>
+<li>https://medium.com/@knobby/nfs-default-storage-in-kubernetes-with-cdk-847336cc4a72</li>
+<li>Kubernetes NFS provisioning
+<ul>
+<li>https://blog.exxactcorp.com/deploying-dynamic-nfs-provisioning-in-kubernetes/</li>
+<li>https://app.cnvrg.io/docs/guides/on-prem-volumes.html#deploy-the-nfs-provisioner</li>
+<li>These directly provision nfs for kubernetes. Useful but it seems simpler to go with juju and setup a juju relationship</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="setup-storage">Setup storage</h1>
+<p><strong>Pre-Reqs</strong></p>
+<ul>
+<li>NAS and using ext4 fs</li>
+<li>NAS reachable from cluster switch (<em>MAAS provided DHCP in my case</em>)</li>
+<li>K8s deployed on MAAS cluster</li>
+</ul>
+<p><strong>Steps</strong></p>
+<ul>
+<li><code>cd bitbucket/infrastructure/configs/k8s-nfs</code></li>
+<li><code>export ENABLE_LEADER_ELECTION=false</code></li>
+<li><code>kubectl create -f rbac.yaml</code></li>
+<li><code>kubectl create -f class.yaml</code></li>
+<li><code>kubectl create -f deployment.yaml</code></li>
+<li><code>kubectl patch storageclass managed-nfs-storage -p '{&quot;metadata&quot;: {&quot;annotations&quot;:{&quot;storageclass.kubernetes.io/is-default-class&quot;:&quot;true&quot;}}}'</code></li>
+</ul>
+<p><strong>Test</strong></p>
+<ul>
+<li>K8s checks
+<ul>
+<li><code>kubectl get sc</code> <em>should show the new storage class marked as default</em></li>
+</ul>
+</li>
+<li>Pod level checks
+<ul>
+<li><code>kubectl get all</code> <em>locate the nfs-client-provisioner-xxx</em></li>
+<li><code>kubectl describe pod nfs-client-provisioner-xxxx</code> <em>verify therer is an events section that shows image pull, container start etc</em></li>
+</ul>
+</li>
+<li>functionality checks
+<ul>
+<li><code>kubectl create -f test-claim.yaml</code></li>
+<li><code>kubectl get all pv,pvc</code> <em>you should see a test-claim pvc</em></li>
+<li><code>kubectl create -f test-pod.yaml</code> <em>you should see a SUCCESS file in the pv on the NAS</em></li>
+</ul>
+</li>
+</ul>
+<h1 id="k8s-concepts">K8s concepts</h1>
+<p>The main goal here is that you can autoscale!</p>
+<ul>
+<li>You can have many pods of different types running</li>
+<li>Each could need it's own storage</li>
+<li>Since the scaling happens automatically, storage allocation also needs to happens automatically</li>
+</ul>
+<h2 id="static-strorage">Static strorage</h2>
+<p>PV (<em>persistent volumes</em>)</p>
+<p>These are manually specified in yaml files and deployed via <code>kubectl</code>. One can reuse the same PV for multiple pods I think. Pain mostly because you need manual intervention.</p>
+<h2 id="dynamic-storage">Dynamic storage</h2>
+<ul>
+<li>Provisioners</li>
+<li>Persistent Volume Claims (PVCs)</li>
+</ul>
+<p>The key is the <code>claim</code> which is satisfied by a <code>provisioner</code>. No manual intervention needed.</p>
+<h1 id="history---attempt-juju-storage-on-external-nfs">History - Attempt Juju storage on external NFS</h1>
+<p>There seems to be no direct support for juju storage on external nfs. All the examples use <code>ceph</code>, <code>aws</code> etc. The abstractions juju uses seems to mirror the k8s ones.</p>
+<ul>
+<li>juju storage class is the type of storage</li>
+<li>juju storage pools are storage pools created for a certain storage-class</li>
+<li>these seem to be a thin abstraction over the cloud-native concepts of <code>storageclass</code>, <code>provider</code> etc.</li>
+</ul>
+<p>I am trying to see about providing storage for the kubernetes clouds that juju manages via NFS from my existing NAS. I think the way this works is to work at a kubernetes-level (which is a <em>cloud</em> for juju) and then make juju use the kubernetes provided storage classes.</p>
+<h2 id="configure-and-test-nas-share">Configure and test NAS share</h2>
+<p>Added a share called <code>K8s</code> on vamsi-nas and turned on nfs access.</p>
+<h2 id="test-via-nfs-mount">Test via NFS mount</h2>
+<p><code>sudo apt install nfs-common</code> was needed to get <code>showmount</code></p>
+<pre class="hljs"><code><div>vamsi@MAAS:~$ showmount -e vamsi-nas
+Export list for vamsi-nas:
+/data/Pub    *
+/data/K8s    *
+/data/Backup *
+/data/Vamsi  127.0.0.1
+/data/Kumar  127.0.0.1
+/data/Hema   127.0.0.1
+</div></code></pre>
+<p>Now try to mount!</p>
+<pre class="hljs"><code><div>vamsi@MAAS:~$ sudo mount vamsi-nas:/data/K8s /mnt/K8s
+</div></code></pre>
+<p>Success! Unmount it</p>
+<pre class="hljs"><code><div>vamsi@MAAS:~$ sudo umount /mnt/K8s
+</div></code></pre>
+<h2 id="test-juju-charm-nfs-mounting">Test juju charm nfs mounting</h2>
+<ul>
+<li>Uses the <code>remote-nfs</code> charm (See <a href="https://jaas.ai/u/chris.macnaughton/remote-nfs/2">remote-nfs on charm store</a>)</li>
+</ul>
+<p><code>juju deploy -m k8s cs:~chris.macnaughton/remote-nfs-2 --config &quot;nfs-server=vamsi-nas&quot; --config &quot;nfs-target=/data/K8s&quot; --config &quot;local-target=/mnt/cluster-io&quot;</code></p>
+<pre class="hljs"><code><div>vamsi@MAAS:~$ juju deploy -m juju-k8s cs:~chris.macnaughton/remote-nfs-2 --config "nfs-server=vamsi-nas" --config "nfs-target=/data/K8s" --config "local-target=/mnt/cluster-io"
+Located charm "cs:~chris.macnaughton/remote-nfs-2".
+Deploying charm "cs:~chris.macnaughton/remote-nfs-2".
+</div></code></pre>
+<pre><font color="#4E9A06"><b>vamsi@MAAS</b></font>:<font color="#3465A4"><b>~</b></font>$ juju status
+Model  Controller       Cloud/Region     Version  SLA          Timestamp
+juju-k8s    juju-controller  devmaas/default  2.8.6    unsupported  10:41:55-08:00
+
+App                    Version  Status   Scale  Charm                  Store       Rev  OS      Notes
+containerd             1.3.3    <font color="#4E9A06">active       </font>3  containerd             jujucharms   96  ubuntu  
+easyrsa                3.0.1    <font color="#4E9A06">active       </font>1  easyrsa                jujucharms  338  ubuntu  
+etcd                   3.4.5    <font color="#4E9A06">active       </font>1  etcd                   jujucharms  543  ubuntu  
+flannel                0.11.0   <font color="#4E9A06">active       </font>3  flannel                jujucharms  512  ubuntu  
+kubeapi-load-balancer  1.18.0   <font color="#4E9A06">active       </font>1  kubeapi-load-balancer  jujucharms  752  ubuntu  exposed
+kubernetes-master      1.19.4   <font color="#4E9A06">active       </font>1  kubernetes-master      jujucharms  908  ubuntu  
+kubernetes-worker      1.19.4   <font color="#4E9A06">active       </font>2  kubernetes-worker      jujucharms  711  ubuntu  exposed
+remote-nfs                      <font color="#C4A000">unknown      </font>0  remote-nfs             jujucharms    2  ubuntu  
+
+Unit                      Workload  Agent  Machine  Public address  Ports           Message
+easyrsa/0*                <font color="#4E9A06">active    idle   </font>0        192.168.23.103                  Certificate Authority connected.
+etcd/0*                   <font color="#4E9A06">active    idle   </font>0        192.168.23.103  2379/tcp        Healthy with 1 known peer
+kubeapi-load-balancer/0*  <font color="#4E9A06">active    idle   </font>0        192.168.23.103  443/tcp         Loadbalancer ready.
+kubernetes-master/0*      <font color="#4E9A06">active    idle   </font>0        192.168.23.103  6443/tcp        Kubernetes master running.
+  containerd/2            <font color="#4E9A06">active    idle   </font>         192.168.23.103                  Container runtime available
+  flannel/2               <font color="#4E9A06">active    idle   </font>         192.168.23.103                  Flannel subnet 10.1.6.1/24
+kubernetes-worker/0*      <font color="#4E9A06">active    idle   </font>1        192.168.23.104  80/tcp,443/tcp  Kubernetes worker running.
+  containerd/1            <font color="#4E9A06">active    idle   </font>         192.168.23.104                  Container runtime available
+  flannel/1               <font color="#4E9A06">active    idle   </font>         192.168.23.104                  Flannel subnet 10.1.72.1/24
+kubernetes-worker/1       <font color="#4E9A06">active    idle   </font>2        192.168.23.105  80/tcp,443/tcp  Kubernetes worker running.
+  containerd/0*           <font color="#4E9A06">active    idle   </font>         192.168.23.105                  Container runtime available
+  flannel/0*              <font color="#4E9A06">active    idle   </font>         192.168.23.105                  Flannel subnet 10.1.22.1/24
+
+Machine  State    DNS             Inst id  Series  AZ       Message
+0        <font color="#4E9A06">started  </font>192.168.23.103  tiny1    focal   default  Deployed
+1        <font color="#4E9A06">started  </font>192.168.23.104  tiny2    focal   default  Deployed
+2        <font color="#4E9A06">started  </font>192.168.23.105  big-boy  focal   default  Deployed
+</pre>
+<blockquote>
+<p>Note the <code>remote-nfs</code> name even though we installed <code>remote-nfs-2</code> charm</p>
+</blockquote>
+<h2 id="tying-juju-and-k8s-storage-together">Tying juju and k8s storage together</h2>
+<p>Example show a relation to <code>kubernetes-worker</code> and says that the relationship can work on either kubernetes-worker or kubernetes-master.</p>
+<pre><font color="#4E9A06"><b>vamsi@MAAS</b></font>:<font color="#3465A4"><b>~</b></font>$ juju add-relation kubernetes-worker remote-nfs
+</pre>
+<ul>
+<li>This failed badly</li>
+<li>Needed some fixes to deal with python 3.8. See <a href="./problemLog.md#remote-nfs-install-fails">Problem log</a> for how this was eventually fixed
+<ul>
+<li>Repackage the charmhelpers python libs with a fix</li>
+<li>install charm from local disk.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>The learning here is to examine the metadata.yaml files for all involved charms. You need to match <code>requires</code> and <code>provides</code> sections. I was expecting magic but there is no such. The relation only works when one charm provides and the other requires a <code>nfs</code> endpoint with a <code>mount</code> interface.</p>
+</blockquote>
+<p>Now everything works and the status shows the nfs paths!</p>
+<pre><font color="#4E9A06"><b>vamsi@MAAS</b></font>:<font color="#3465A4"><b>~</b></font>$ juju status --color
+Model  Controller       Cloud/Region     Version  SLA          Timestamp
+k8s    juju-controller  devmaas/default  2.8.6    unsupported  08:21:23-08:00
+
+App                    Version  Status  Scale  Charm                  Store       Rev  OS      Notes
+containerd             1.3.3    <font color="#4E9A06">active      </font>3  containerd             jujucharms   96  ubuntu  
+easyrsa                3.0.1    <font color="#4E9A06">active      </font>1  easyrsa                jujucharms  338  ubuntu  
+etcd                   3.4.5    <font color="#4E9A06">active      </font>1  etcd                   jujucharms  543  ubuntu  
+flannel                0.11.0   <font color="#4E9A06">active      </font>3  flannel                jujucharms  512  ubuntu  
+kubeapi-load-balancer  1.18.0   <font color="#4E9A06">active      </font>1  kubeapi-load-balancer  jujucharms  752  ubuntu  exposed
+kubernetes-master      1.19.4   <font color="#4E9A06">active      </font>1  kubernetes-master      jujucharms  908  ubuntu  
+kubernetes-worker      1.19.4   <font color="#4E9A06">active      </font>2  kubernetes-worker      jujucharms  711  ubuntu  exposed
+remote-nfs                      <font color="#4E9A06">active      </font>2  remote-nfs             local         1  ubuntu  
+
+Unit                      Workload  Agent  Machine  Public address  Ports           Message
+easyrsa/0*                <font color="#4E9A06">active    idle   </font>0        192.168.23.103                  Certificate Authority connected.
+etcd/0*                   <font color="#4E9A06">active    idle   </font>0        192.168.23.103  2379/tcp        Healthy with 1 known peer
+kubeapi-load-balancer/0*  <font color="#4E9A06">active    idle   </font>0        192.168.23.103  443/tcp         Loadbalancer ready.
+kubernetes-master/0*      <font color="#4E9A06">active    idle   </font>0        192.168.23.103  6443/tcp        Kubernetes master running.
+  containerd/2            <font color="#4E9A06">active    idle   </font>         192.168.23.103                  Container runtime available
+  flannel/2               <font color="#4E9A06">active    idle   </font>         192.168.23.103                  Flannel subnet 10.1.6.1/24
+kubernetes-worker/0*      <font color="#4E9A06">active    idle   </font>1        192.168.23.104  80/tcp,443/tcp  Kubernetes worker running.
+  containerd/1            <font color="#4E9A06">active    idle   </font>         192.168.23.104                  Container runtime available
+  flannel/1               <font color="#4E9A06">active    idle   </font>         192.168.23.104                  Flannel subnet 10.1.72.1/24
+  remote-nfs/5            <font color="#4E9A06">active    idle   </font>         192.168.23.104                  vamsi-nas:/data/K8s -&gt; /mnt/cluster-io
+kubernetes-worker/1       <font color="#4E9A06">active    idle   </font>2        192.168.23.105  80/tcp,443/tcp  Kubernetes worker running.
+  containerd/0*           <font color="#4E9A06">active    idle   </font>         192.168.23.105                  Container runtime available
+  flannel/0*              <font color="#4E9A06">active    idle   </font>         192.168.23.105                  Flannel subnet 10.1.22.1/24
+  remote-nfs/4*           <font color="#4E9A06">active    idle   </font>         192.168.23.105                  vamsi-nas:/data/K8s -&gt; /mnt/cluster-io
+
+Machine  State    DNS             Inst id  Series  AZ       Message
+0        <font color="#4E9A06">started  </font>192.168.23.103  tiny1    focal   default  Deployed
+1        <font color="#4E9A06">started  </font>192.168.23.104  tiny2    focal   default  Deployed
+2        <font color="#4E9A06">started  </font>192.168.23.105  big-boy  focal   default  Deployed
+</pre>
+<h3 id="test-k8s-storage-via-pvc">Test k8s storage via PVC</h3>
+<p>Claim a PVC and see what happens (courtesy: https://medium.com/@knobby/nfs-default-storage-in-kubernetes-with-cdk-847336cc4a72)</p>
+<p><code>kubectl get sc</code> Fails!</p>
+<pre class="hljs"><code><div>vamsi@MAAS:~$ kubectl get sc
+No resources found
+</div></code></pre>
+<blockquote>
+<p>Figured out much later after I created the <a href="charms.md">remote-nfs-mount charm</a> and dug into the code for kubernetes-worker charm that it really needs the <code>nfs</code> relation: specifically one that implements the <code>mount</code> interface.</p>
+</blockquote>
+<p><strong>Create a PVC</strong></p>
+<pre class="hljs"><code><div>vamsi@MAAS:~ kubectl apply -f - &lt;&lt;EOF
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: test
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+EOF
+
+persistentvolumeclaim/test created
+
+vamsi@MAAS:~$ kubectl get pv
+No resources found
+</div></code></pre>
+<p>Gah! Still broken!!</p>
+<p><strong>Juju pools</strong></p>
+<pre class="hljs"><code><div>vamsi@MAAS:~$ juju storage-pools
+Name    Provider  Attrs
+loop    loop      
+maas    maas      
+rootfs  rootfs    
+tmpfs   tmpfs     
+</div></code></pre>
+<p>So looks like it is not even showing up as a storage-pool.</p>
+<blockquote>
+<p>From what I read, this needs the addition of a <code>k8s</code> cloud to juju and then it automatically adds a <code>kubernetes</code> pool. I thought I did it but still no luck. Dig more.</p>
+</blockquote>
+<h2 id="plain-k8s-storage">Plain K8s storage</h2>
+<p>No juju involvement here. Follow instructions from https://blog.exxactcorp.com/deploying-dynamic-nfs-provisioning-in-kubernetes/</p>
+<ul>
+<li>Seems complete</li>
+<li>Examples for creating PVC and PVs</li>
+<li>Example pod that uses a PVC</li>
+</ul>
+<h3 id="add-rbac">Add RBAC</h3>
+<p>role based authorization for nfs ?</p>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/nfs-provisioning$ kubectl create -f rbac.yaml 
+serviceaccount/nfs-client-provisioner created
+clusterrole.rbac.authorization.k8s.io/nfs-client-provisioner-runner created
+clusterrolebinding.rbac.authorization.k8s.io/run-nfs-client-provisioner created
+role.rbac.authorization.k8s.io/leader-locking-nfs-client-provisioner created
+rolebinding.rbac.authorization.k8s.io/leader-locking-nfs-client-provisioner created
+vamsi@MAAS:~/bitbucket/nfs-provisioning$ 
+</div></code></pre>
+<p>Verify</p>
+<pre class="hljs"><code><div>amsi@MAAS:~/bitbucket/nfs-provisioning$ kubectl get clusterrole,clusterrolebinding,role,rolebinding | grep nfs
+clusterrole.rbac.authorization.k8s.io/nfs-client-provisioner-runner                                          2020-11-28T18:06:30Z
+clusterrolebinding.rbac.authorization.k8s.io/run-nfs-client-provisioner                                 ClusterRole/nfs-client-provisioner-runner                          2m47s
+role.rbac.authorization.k8s.io/leader-locking-nfs-client-provisioner   2020-11-28T18:06:30Z
+rolebinding.rbac.authorization.k8s.io/leader-locking-nfs-client-provisioner   Role/leader-locking-nfs-client-provisioner   2m47s
+</div></code></pre>
+<h3 id="create-storage-class">Create storage class</h3>
+<ul>
+<li>They retain a example.com/nfs as provider. This <strong>is important</strong>. Changing it to &quot;vamsi-nas/K8s&quot; and keeping it consistent across the other files fails PV provisioning later on.</li>
+</ul>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/nfs-provisioning$ kubectl create -f class.yaml 
+storageclass.storage.k8s.io/managed-nfs-storage created
+vamsi@MAAS:~/bitbucket/nfs-provisioning$ kubectl get storageclass
+NAME                  PROVISIONER       RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+managed-nfs-storage   example.com/nfs   Delete          Immediate           false                  9s
+</div></code></pre>
+<pre><font color="#4E9A06"><b>vamsi@MAAS</b></font>:<font color="#3465A4"><b>~/bitbucket/nfs-provisioning</b></font>$ kubectl create -f class.yaml 
+storageclass.storage.k8s.io/managed-nfs-storage created
+<font color="#4E9A06"><b>vamsi@MAAS</b></font>:<font color="#3465A4"><b>~/bitbucket/nfs-provisioning</b></font>$ kubectl get storageclass
+NAME                  PROVISIONER       RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+managed-nfs-storage   example.com/nfs   Delete          Immediate           false                  9s
+</pre>
+<h3 id="deploy-provisioner">Deploy provisioner</h3>
+<ul>
+<li>Update the NFS server IPs in the file to vamsi-nas's IP of 192.168.1.228</li>
+<li>Update paths to /data/K8s</li>
+</ul>
+<p>End up with the following:</p>
+<pre class="hljs"><code><div><span class="hljs-attr">kind:</span> <span class="hljs-string">Deployment</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">apps/v1</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">nfs-client-provisioner</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">selector:</span>
+    <span class="hljs-attr">matchLabels:</span>
+      <span class="hljs-attr">app:</span> <span class="hljs-string">nfs-client-provisioner</span>
+  <span class="hljs-attr">replicas:</span> <span class="hljs-number">1</span>
+  <span class="hljs-attr">strategy:</span>
+    <span class="hljs-attr">type:</span> <span class="hljs-string">Recreate</span>
+  <span class="hljs-attr">template:</span>
+    <span class="hljs-attr">metadata:</span>
+      <span class="hljs-attr">labels:</span>
+        <span class="hljs-attr">app:</span> <span class="hljs-string">nfs-client-provisioner</span>
+    <span class="hljs-attr">spec:</span>
+      <span class="hljs-attr">serviceAccountName:</span> <span class="hljs-string">nfs-client-provisioner</span>
+      <span class="hljs-attr">containers:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">nfs-client-provisioner</span>
+          <span class="hljs-attr">image:</span> <span class="hljs-string">quay.io/external_storage/nfs-client-provisioner:latest</span>
+          <span class="hljs-attr">volumeMounts:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">nfs-client-root</span>
+              <span class="hljs-attr">mountPath:</span> <span class="hljs-string">/persistentvolumes</span>
+          <span class="hljs-attr">env:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">PROVISIONER_NAME</span>
+              <span class="hljs-attr">value:</span> <span class="hljs-string">example.com/nfs</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">NFS_SERVER</span>
+              <span class="hljs-attr">value:</span> <span class="hljs-number">192.168</span><span class="hljs-number">.1</span><span class="hljs-number">.228</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">NFS_PATH</span>
+              <span class="hljs-attr">value:</span> <span class="hljs-string">/data/K8s</span>
+      <span class="hljs-attr">volumes:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">nfs-client-root</span>
+          <span class="hljs-attr">nfs:</span>
+            <span class="hljs-attr">server:</span> <span class="hljs-number">192.168</span><span class="hljs-number">.1</span><span class="hljs-number">.228</span>
+            <span class="hljs-attr">path:</span> <span class="hljs-string">/data/K8s</span>
+</div></code></pre>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/nfs-provisioning$ kubectl create -f deployment.yaml 
+deployment.apps/nfs-client-provisioner created
+</div></code></pre>
+<p>Verify pods created</p>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/nfs-provisioning$ kubectl get all
+NAME                                          READY   STATUS    RESTARTS   AGE
+pod/nfs-client-provisioner-57c66fdb77-5v7hz   1/1     Running   0          25s
+
+NAME                 TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.152.183.1   &lt;none&gt;        443/TCP   37h
+
+NAME                                     READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nfs-client-provisioner   1/1     1            1           26s
+
+NAME                                                DESIRED   CURRENT   READY   AGE
+replicaset.apps/nfs-client-provisioner-57c66fdb77   1         1         1       26s
+</div></code></pre>
+<p>Get some details. Use the <em>provisioner</em> pod name listed above</p>
+<pre class="hljs"><code><div>vamsi@MAAS:~$ kubectl describe pod nfs-client-provisioner-7f4dcddb7d-kr55w
+Name:         nfs-client-provisioner-7f4dcddb7d-kr55w
+Namespace:    default
+Priority:     0
+Node:         big-boy/192.168.23.105
+Start Time:   Sat, 28 Nov 2020 11:28:46 -0800
+Labels:       app=nfs-client-provisioner
+              pod-template-hash=7f4dcddb7d
+Annotations:  kubernetes.io/psp: privileged
+Status:       Running
+IP:           10.1.22.13
+IPs:
+  IP:           10.1.22.13
+Controlled By:  ReplicaSet/nfs-client-provisioner-7f4dcddb7d
+Containers:
+  nfs-client-provisioner:
+    Container ID:   containerd://858ff332e17608543532e77a79c10402a2c2ca4917da90e9841c32e92807b83c
+    Image:          quay.io/external_storage/nfs-client-provisioner:latest
+    Image ID:       sha256:fb50e11b84fec7ee64a2ae3d4f9d36edc358d151c95dbd796c03b9dd1dc1a446
+    Port:           &lt;none&gt;
+    Host Port:      &lt;none&gt;
+    State:          Running
+      Started:      Sat, 28 Nov 2020 11:28:48 -0800
+    Ready:          True
+    Restart Count:  0
+    Environment:
+      PROVISIONER_NAME:  example.com/nfs
+      NFS_SERVER:        192.168.1.228
+      NFS_PATH:          /data/K8s
+    Mounts:
+      /persistentvolumes from nfs-client-root (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from nfs-client-provisioner-token-zmh7j (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  nfs-client-root:
+    Type:      NFS (an NFS mount that lasts the lifetime of a pod)
+    Server:    192.168.1.228
+    Path:      /data/K8s
+    ReadOnly:  false
+  nfs-client-provisioner-token-zmh7j:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  nfs-client-provisioner-token-zmh7j
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  &lt;none&gt;
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:          &lt;none&gt;
+</div></code></pre>
+<h3 id="test-provisioner">Test provisioner</h3>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/nfs-provisioning$ kubectl create -f 4-pvc-nfs.yaml 
+persistentvolumeclaim/pvc1 created
+</div></code></pre>
+<pre class="hljs"><code><div>vamsi@MAAS:~$ kubectl get pv,pvc
+NAME                                                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM          STORAGECLASS          REASON   AGE
+persistentvolume/pvc-fc82dddc-8fd3-4411-9e12-e5e957ac2bee   500Mi      RWX            Delete           Bound    default/pvc1   managed-nfs-storage            5h8m
+
+NAME                         STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS          AGE
+persistentvolumeclaim/pvc1   Bound    pvc-fc82dddc-8fd3-4411-9e12-e5e957ac2bee   500Mi      RWX            managed-nfs-storage   5h8m
+</div></code></pre>
+<p><strong>Check the NFS dir</strong></p>
+<pre class="hljs"><code><div>total 4
+drwxrwxrwx+ 1    99    99  144 Nov 28 11:29 .
+drwxr-xr-x  3 root  root  4096 Nov 27 10:25 ..
+drwxrwxrwx+ 1 root  root     0 Nov 28 11:29 default-pvc1-pvc-fc82dddc-8fd3-4411-9e12-e5e957ac2bee
+-rw-rw-rw-+ 1 vamsi vamsi    0 Nov 28 09:26 hello.txt
+</div></code></pre>
+<p>Works!!</p>
+<h2 id="make-storage-class-default">Make storage class default</h2>
+<blockquote>
+<p>Kubeflow notebook etc want a default storage class to work well. If there isn't one, they expect the user to create PVs manually.</p>
+</blockquote>
+<p><code>kubeflow get storageclass</code> does not mark the <code>managed-nfs-storage</code> as default. Do it here (<em>the yaml files for creating the storage class itself could be modified but this will work just fine</em>)</p>
+<p><code>kubectl patch storageclass managed-nfs-storage -p '{&quot;metadata&quot;: {&quot;annotations&quot;:{&quot;storageclass.kubernetes.io/is-default-class&quot;:&quot;true&quot;}}}'</code></p>
+<pre class="hljs"><code><div>vamsi@MAAS:~$ kubectl get storageclass
+NAME                            PROVISIONER                                   RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+managed-nfs-storage (default)   k8s-sigs.io/nfs-subdir-external-provisioner   Delete          Immediate           false                  3d12h
+</div></code></pre>
+<h2 id="retest-nfs-charm-k8s-storage">Retest  nfs charm k8s storage</h2>
+<p><a href="https://medium.com/@knobby/nfs-default-storage-in-kubernetes-with-cdk-847336cc4a72">Mike wilson's article</a> demonstrates that the <code>nfs</code> charm seems to do what the exxactcorp nfs provisioner example detailed above does. Much simpler if I can get that to work.</p>
+<p>I learnt a lot by trying to build my own charm</p>
+<ul>
+<li>remote-nfs-charm` (see charms/remote-nfs-mount)</li>
+<li>reading the code for <code>kubernetes-worker</code> shows that it needs the <code>nfs</code> endpoing with a <code>mount</code> interface</li>
+<li>I copied code from the <code>nfs</code> charm and simplified it to take advantage of nfs4 exports but had to ensure that I was indeed providing the <code>nfs</code> endpoint.</li>
+</ul>
+<p>Once this was done, I can se the manually provisioned storageclass as well as the one that the nfs relationship adds.</p>
+<pre class="hljs"><code><div>juju add-relation remote-nfs-mount:nfs kubernetes-worker
+</div></code></pre>
+<pre class="hljs"><code><div>vamsi@MAAS:~/charms/builds$ kubectl get sc
+NAME                  PROVISIONER       RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+<span class="hljs-addition">+default (default)     fuseim.pri/ifs    Delete          Immediate           false                  86s</span>
+managed-nfs-storage   example.com/nfs   Delete          Immediate           false                  78d
+</div></code></pre>
+<p>So. Are we all set ?</p>
+<h3 id="why-is-juju-not-showing-kubernetes-pool">Why is juju not showing kubernetes pool</h3>
+<p>I have added the <code>k8s</code> cloud to juju.</p>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/charms/remote-nfs-mount$ juju clouds
+Only clouds with registered credentials are shown.
+There are more clouds, use --all to see them.
+
+Clouds available on the controller:
+Cloud         Regions  Default  Type
+devmaas       1        default  maas  
+juju-cluster  1        default  k8s   
+
+Clouds available on the client:
+Cloud         Regions  Default    Type  Credentials  Source    Description
+devmaas       1        default    maas  1            local     Metal As A Service
+juju-cluster  0                   k8s   1            local     A Kubernetes Cluster
+localhost     1        localhost  lxd   0            built-in  LXD Container Hypervisor
+</div></code></pre>
+<p>It was supposed to automatically enable a <code>kubernetes</code> storage pool. I see the <code>type:k8s</code> cloud but no associated storage-pool.</p>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/charms/remote-nfs-mount$ juju storage-pools
+Name    Provider  Attrs
+loop    loop      
+maas    maas      
+rootfs  rootfs    
+tmpfs   tmpfs    
+</div></code></pre>
+<p>https://discourse.charmhub.io/t/setting-up-static-kubernetes-storage-tutorial/1193 hoowever says that we need a k8s-model. <em>Am assuming all kubernetes deployments are done to the k8s-model</em>. Since I created MAAS mostly for kubernetes, I sillily called my main model (which includes the juju k8s deployment) <code>k8s</code>. Will likely redo the reployment to get things correct. Messed up names</p>
+<ul>
+<li><code>juju-cluster</code> could be <code>k8s-cloud</code> to make it clear</li>
+<li><code>k8s</code> model can be <code>MAAS-model</code> instead</li>
+</ul>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/charms/remote-nfs-mount$ juju models
+Controller: juju-controller
+
+Model       Cloud/Region     Type  Status     Machines  Cores  Units  Access  Last connection
+controller  devmaas/default  maas  available         1      1  -      admin   just now
+default     devmaas/default  maas  available         0      -  -      admin   2020-11-27
+k8s*        devmaas/default  maas  available         3     80  13     admin   3 minutes ago
+</div></code></pre>
+<p>Ok, add a k8s-model per the page above and see.</p>
+<pre class="hljs"><code><div>vamsi@MAAS:~$ juju add-model k8s-model juju-cluster
+Added 'k8s-model' model on juju-cluster/default with credential 'juju-cluster' for user 'admin'
+</div></code></pre>
+<p>Now check pools again</p>
+<pre class="hljs"><code><div>vamsi@MAAS:~$ juju storage-pools
+Name        Provider    Attrs
+kubernetes  kubernetes 
+</div></code></pre>
+<p>Yay!! The others are gone since I am in the <code>k8s-model</code>: the preceeding <code>add-model</code> call made it current!</p>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/charms/remote-nfs-mount$ juju models
+Controller: juju-controller
+
+Model       Cloud/Region          Type        Status     Machines  Cores  Units  Access  Last connection
+controller  devmaas/default       maas        available         1      1  -      admin   just now
+default     devmaas/default       maas        available         0      -  -      admin   2020-11-27
+k8s         devmaas/default       maas        available         3     80  13     admin   9 minutes ago
+k8s-model*  juju-cluster/default  kubernetes  available         0      -  -      admin   1 minute ago
+</div></code></pre>
+<blockquote>
+<p><strong>Smack head</strong>: Reading the docs, I did not need to spend the inordinate amount of time I did for the remote-nfs-charm. I could have simply used the <code>remote-nfs</code> charm to make sure there was a mount on all the nodes. Then created the PV etc per the page above. Gah!! Anyway, learnt a lot.</p>
+</blockquote>
+<p>The page uses</p>
+<pre class="hljs"><code><div>juju create-storage-pool operator-storage kubernetes \
+    storage-class=juju-operator-storage \
+    storage-provisioner=kubernetes.io/no-provisioner
+</div></code></pre>
+<p>From my status, looks like I should use</p>
+<pre class="hljs"><code><div>juju create-storage-pool operator-storage kubernetes \
+    storage-class=storageclass.storage.k8s.io/default \
+    storage-provisioner=fuseim.pri/ifs
+
+juju create-storage-pool k8s-pool kubernetes \
+    storage-class=storageclass.storage.k8s.io/default\
+    storage-provisioner=fuseim.pri/ifs    
+</div></code></pre>
+<p>Check the pools</p>
+<pre class="hljs"><code><div>vamsi@MAAS:~$ juju storage-pools
+Name              Provider    Attrs
+k8s-pool          kubernetes  storage-class=storageclass.storage.k8s.io/default storage-provisioner=fuseim.pri/ifs
+kubernetes        kubernetes  
+operator-storage  kubernetes  storage-class=storageclass.storage.k8s.io/default storage-provisioner=fuseim.pri/ifs
+</div></code></pre>
+<p>Hmm, worked with no error! Did it really though ?</p>
+<ul>
+<li>Using native k8s, we can check this by making a claim and by using that claim in a new pod.</li>
+<li>Using juju, try to install kubeflow (which is what started this whole thing) and see if it uses the storage</li>
+</ul>
+<blockquote>
+<p>This did not workout finally as creatign a k8s pvc did not do anything. It would get stuck at <code>waiting for provisioner to create volumes</code>. Later realized that the nfs-client-provisioner-clientxxxx pod did not have any containers running.</p>
+</blockquote>
+<h2 id="%E2%9C%85%EF%B8%8F-official-nfs-subir-provisioner">✅️ Official nfs-subir provisioner</h2>
+<p>Looks pretty active. Similar to the exxactcorp ones.</p>
+<ul>
+<li><code>cd github</code></li>
+<li><code>git clone https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner.git</code></li>
+<li>Use the files under <code>nfs-subdir-external-provisioner/deploy</code> per https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner</li>
+<li>I have saved these under <code>infrastructure/k8s-nfs</code></li>
+</ul>
+
+</body>
+</html>

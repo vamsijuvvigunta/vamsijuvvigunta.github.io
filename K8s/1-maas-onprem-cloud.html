@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>1-maas-onprem-cloud.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="maas">MAAS</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#maas">MAAS</a></li>
+<li><a href="#basic-setup-on-the-master-ubuntu-2004-lts">Basic setup on the Master Ubuntu 20.04 LTS</a>
+<ul>
+<li><a href="#git-setup">Git Setup</a></li>
+</ul>
+</li>
+<li><a href="#setup-flow">Setup Flow</a></li>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#cluster-specification">Cluster Specification</a></li>
+<li><a href="#networking">Networking</a>
+<ul>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#network-setup">Network Setup</a></li>
+<li><a href="#configure-network">Configure Network</a></li>
+</ul>
+</li>
+<li><a href="#maas-setup">MAAS Setup</a>
+<ul>
+<li><a href="#latest-maas-install---29">Latest MAAS Install - 2.9</a>
+<ul>
+<li><a href="#create-admin">Create admin</a></li>
+<li><a href="#initial-configure">Initial Configure</a></li>
+<li><a href="#network-config">Network config</a></li>
+<li><a href="#add-machines">Add machines</a></li>
+<li><a href="#set-machine-power">Set machine Power</a></li>
+<li><a href="#add-vm">Add vm</a></li>
+<li><a href="#commission-the-machines">Commission the machines</a></li>
+</ul>
+</li>
+<li><a href="#older-maas-install">Older MAAS Install</a>
+<ul>
+<li><a href="#as-snap">As Snap</a></li>
+<li><a href="#as-apt-install">As Apt install</a></li>
+</ul>
+</li>
+<li><a href="#maas-setup-subnets">MAAS Setup Subnets</a></li>
+<li><a href="#maas-settings">MAAS Settings</a></li>
+<li><a href="#maas-user-config">MAAS user config</a>
+<ul>
+<li><a href="#generate-ssh-keys">Generate SSH Keys</a></li>
+<li><a href="#create-maas-users">Create MAAS users</a></li>
+<li><a href="#load-the-keys-into-maas-ui">Load the keys into MAAS UI</a></li>
+</ul>
+</li>
+<li><a href="#maas-dns-setup">MAAS DNS setup</a></li>
+<li><a href="#maas-logging-in">MAAS Logging in</a>
+<ul>
+<li><a href="#debugging-the-failing-smartctl-validate">Debugging the failing smartctl-validate</a></li>
+<li><a href="#revisit-after-a-month-july-2020">Revisit after a month July 2020</a></li>
+<li><a href="#revisit-in-nov-2020">Revisit in Nov 2020</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#maas-logs-and-troubleshooting">MAAS logs and troubleshooting</a></li>
+<li><a href="#maas-node-power">MAAS Node Power</a>
+<ul>
+<li><a href="#apc-pdu">APC PDU</a></li>
+<li><a href="#resetting-the-pdc">Resetting the PDC</a></li>
+</ul>
+</li>
+<li><a href="#install-non-snap-maas">Install Non-snap maas</a>
+<ul>
+<li><a href="#enable-apc-querying">Enable APC Querying</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1 id="basic-setup-on-the-master-ubuntu-2004-lts">Basic setup on the Master (Ubuntu 20.04 LTS)</h1>
+<ul>
+<li>remove firefox, install chrome, code, gvim <a href="../tools/README.md">../tools/README.md</a></li>
+</ul>
+<h2 id="git-setup">Git Setup</h2>
+<pre class="hljs"><code><div>&gt; mkdir bitbucket
+&gt; cd bitbucket/
+&gt; git clone https://vamsijuvvigunta@bitbucket.org/vamsijuvvigunta/tools.git
+&gt; git clone https://vamsijuvvigunta@bitbucket.org/vamsijuvvigunta/infrastructure.git
+</div></code></pre>
+<h1 id="setup-flow">Setup Flow</h1>
+<p><img src="https://www.plantuml.com/plantuml/png/bLJVRnen37xdhx3wCksaAzCUgsegWtK32OQ6g2O1cjmx0ncvf4e224tzt-SSzolZkgttT8u_svy_Excp3etRPxAZT4fmDUxrPZ0r8aDpke9V7U1lhMLAfl1zeutG2cPa3cHAXFyMtlsZDnsk83uRm4O1N7b428K1Edn4IwjEvNW3zzea11pXH88I99xqthNMM6n5cf9QnHykyddeSwU5EoQxDkQDSnXywKzNxQu9kQCsE_YejMj0livWcE66x6iQUJ5lsDW5C_WBwp2qGQj5ZwAcK9jG2IP9S0EvN0yI5Tnohg4YbrkDhWUJMSCQJk7-cBv6W28Yv1mczLRW_qz-p_coSSE9rFkqQA-ntXF-BRjUJBz_AeGlD_GSVhazFWpU1tADvgCvzBLoHal9Mrvvb6QQajPrmwFzppqeejH2jrk7TBlrHFbQkIr155dC27BoKGHeQuHtQqKW70WB6IhSy0IlQzdxhCWZ0SB3k4oNSwy0KLHSRiwSOR8LFjiQU3OrveZAWTDWyU1J5R3AJIhD-_kNrZFDNJIrRaWc1IbNBYP7lxGk5mg7-rAjNMECjt7yvyq9Bsv00U9tR-FBGVAApIrPADyRbcEfK4gTeFEQ91MKZraF5fhLHhcpNZZXMelKZzSDV2PdGQW3kxKvGPu3DxPhdoYnrqirHfTicG0NiiwWKCwUAwNq9FN9-kbc7iFpNwfSSTkvuz7mK_uR" alt="MAAS_Server" title="MAAS_Server"></p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li>https://docs.google.com/document/d/15IhYDfA_32ATZzE_u0ouljlMkbVYfqn_LKVE2VYTmys/edit</li>
+<li><a href="https://askubuntu.com/questions/652293/using-maas-to-deploy-graphical-shell-on-office-workstations/">Using MAAS to deploy graphical desktops</a></li>
+<li><a href="https://linuxize.com/post/how-to-set-up-ssh-keys-on-ubuntu-1804/">HOWTO setup ssh keys on Ubuntu 18.04</a></li>
+<li><a href="https://www.redhat.com/sysadmin/manage-multiple-ssh-key-pairs">Manage multiple SSH key pairs</a></li>
+</ul>
+<h1 id="cluster-specification">Cluster Specification</h1>
+<p>A basic maas server will have to be setup. I have chosen a small 4-core i7 NUC for this. Will see if it suffices. It needs to handle multiple roles, some of which need their own nodes/containers. MAAS master is the important one here, MAAS nodes can change as needed.</p>
+<p><img src="https://www.plantuml.com/plantuml/png/0/PL5V2u8m47_tKno--mKY8fC29KEI8X09QLT8QmTpwaFqtPkRfj8zRVVxi_lTrfKgfAfVt1744DpOzrE8YqgXTE7jWAwkTVMJ43p839oYR53c7UOOnfquGmdk0LLBybcAnw3jAZjIhH0MnWZEl12mz5OG2bJcbe_CC85TospZC_VU1nS8U3qTp4YYKtJg1nvqMddZLBEUDWbsqCT1dIMNBMo8b9NfQ6aAYQIch4eIWvlr3tY9Gjd4lpT60vt7qubcst7-3QUqRg6QCvqUvjWQ1TF_yWK0" alt="MAAS_Server" title="MAAS_Server"></p>
+<h1 id="networking">Networking</h1>
+<p><img src="https://www.plantuml.com/plantuml/png/bLBHQiCW57ttAoGVO6VQRYjXqBBdGbaVnn295qbhD5ortHZvzoMbwsp8EdRnvHxlEPphSUc3n11hGuWzgafg-abeLnR2qU6UhbUhxHdgIog5u3rzeXbVv8pVFx9yokuc-Ioxp9JEEEmd45H6Bh165njgdGAV2FQrYxieIcS3EcC0YwlBwa7uMXfJfE1mGZVncXLGJFCJF4fhXxPgAJjN0-5-Tx71gfRuGL_7L-VPM_6BhnFzHPPxiGKy0DwI6262hfpz3xKboMhV-JqxR6xdnzdxU7mQ0MmIu9_FmHbVp5D7DfRT-UaXd9kMj6G9LdN_xWi0" alt="Networking" title="Networking"></p>
+<h2 id="configuration">Configuration</h2>
+<ul>
+<li>Cluster fabric in on the 192.1658.23.x/24 network: 8 bits for the hosts</li>
+<li>Corp/Home network is on the 192.168.1.x/24 network.</li>
+<li><strong>MAAS_Master is the gateway</strong> between Cluster and Corp networks and routes traffic across the networks.</li>
+</ul>
+<h2 id="network-setup">Network Setup</h2>
+<p><em>Hardware checklist</em>
+The MAAS Master needs two interfaces (one via USB in my case) which define two fabrics: one vlan each</p>
+<ul>
+<li>MAAS Cloud vlan</li>
+<li>Other (which is the inet)</li>
+</ul>
+<p><em>Update USB Names</em></p>
+<p>Always good to do a</p>
+<ul>
+<li>18.04: <code>sudo update-usbids</code></li>
+<li>20.04 <code>sudo apt update usb.ids</code></li>
+</ul>
+<p>followed by <code>lsusb</code> to make sure the vendor IDs are updated to a recognizeable string.</p>
+<p><em>Drivers for USB ethernet</em></p>
+<blockquote>
+<p>Usually not needed. If <code>ifconfig -a</code> does not show the two interfaces, replug the USB and it will show.</p>
+</blockquote>
+<ul>
+<li>The one I have is the tp-link UE-300. https://www.realtek.com/en/component/zoo/category/network-interface-controllers-10-100-1000m-gigabit-ethernet-usb-3-0-software
+<ul>
+<li>Install driver (src) seems to be same as https://github.com/wget/realtek-r8152-linux <em>(cached on google driver under hillops</em>)</li>
+<li><code>make</code></li>
+<li><code>make install</code></li>
+<li><code>sudo depmod -a</code></li>
+<li><code>sudo update-initramfs -u</code></li>
+</ul>
+</li>
+<li>Ensure <code>ifconfig -a</code> shows it and it matches the name in the netplan config.</li>
+</ul>
+<p><em>Workaround for TR40</em></p>
+<ul>
+<li>The <em>ASRock TRX40 Creator</em> motherboard seems to be having random headaches
+<ul>
+<li>With 18.04, the Realtek 2.5G LAN fails on PXE boot itself. Driver issues maybe. Seems to have worked ok with 20.04 but that has additional issues for the T92p machines so I am using only 18.04: (<em>Update: fixed as of Nov 2020 so back to 20.04</em>)</li>
+<li>The Aquantica 10G LAN fails (<code>no media detected</code>) when machine boots up after bios boot priority is configured. However, when I use <code>F11</code> and choose the <em>PXE Aquantica 10G</em>, it works correctly. so this is the sequence for commissioning and deployment. Once that is done, PXE is no longer needed. (<em>Update: Nov 2020, updated to latest BIOS and with 20.04, simply works!</em>)</li>
+</ul>
+</li>
+</ul>
+<p><em>Networking Roles</em></p>
+<p><strong>Note that users and their SSH keys must be imported before deployment for the keys to make it to the deployed machines. The key of the <code>owner</code> who requests the machine from MAAS are deployed to the machine as the <code>ubuntu</code> user</strong></p>
+<ul>
+<li>Gateway machine for the MAAS vlan: routes packets between the two networks via Ip Forward (turn this on)</li>
+<li>MAAS provided DNS for the maas nodes</li>
+<li>Corp interface specifies
+<ul>
+<li>Gateway as internet gateway <em>Is this needed?</em></li>
+<li>route to cluster network</li>
+<li>via MAAS Master's Cluster network IP (192.168.195.1)</li>
+</ul>
+</li>
+<li>Cluster interface species
+<ul>
+<li>Network address and host range (182.168.23.1/24)</li>
+<li>no DHCP <em>MAAS Server will take over ?</em></li>
+<li>route to corp network via MAAS Master's Corp network IP (192.168.23.1)</li>
+<li>route to everywhere else (internet) via the same MAAS Master's Corp network IP (192.168.23.1)</li>
+</ul>
+</li>
+</ul>
+<h2 id="configure-network">Configure Network</h2>
+<ul>
+<li>Examine the <a href="configs/01-network-manager-all.yaml">01-network-manager-all.yaml</a> file to ensure the IP and networks still make sense.
+<ul>
+<li>Ensure MAAS machine is served a fixed IP of 192.168.1.195</li>
+</ul>
+</li>
+<li>Setup Netplan
+<ul>
+<li>Originally, I followed various examples to setup netplan based routing. However, nothing really worked so I ditched that and am using iptables for the routing.</li>
+<li><code>sudo cp configs/01-network-manager-all.yaml /etc/netplan</code></li>
+<li><code>sudo netplan apply</code> to apply it
+<ul>
+<li>Two networks</li>
+<li>Routing between them, Gateways</li>
+<li>MAAS IP added as DNS</li>
+</ul>
+</li>
+<li>Ensure IP settings are reflected</li>
+</ul>
+</li>
+<li>Setup IP Forwarding
+<ul>
+<li><code>sudo vi /etc/sysctl.conf</code> and uncomment <code>#net.ipv4.ip_forward=1</code></li>
+<li><code>sudo sysctl -p</code></li>
+</ul>
+</li>
+<li>Setup iptables routing.
+<ul>
+<li>Copy <a href="configs/rc.local">rc.local</a> to <code>/etc</code></li>
+<li><code>chmod a+x /etc/rc.local</code></li>
+<li>run it once.</li>
+</ul>
+</li>
+<li>Ensure routing works
+<ul>
+<li>connect a pc/laptop to the switch handling <em>192.168.23.x</em> and give it a static IP</li>
+<li>on the maas node, start <code>tcpdump</code></li>
+<li>on the test machine, <code>ping 8.8.8.8</code> and ensure it works. You can see the ping packets come through on the maas node.</li>
+</ul>
+</li>
+</ul>
+<h1 id="maas-setup">MAAS Setup</h1>
+<p>See the <a href="https://maas.io/docs/concepts-and-terms">MAAS concepts and terms</a>, our single MAAS master needs to behave like a</p>
+<ul>
+<li>Maas region server
+<ul>
+<li>API gateway</li>
+<li>Fabric configurator</li>
+<li>Talks to each <em>rack-controller</em></li>
+</ul>
+</li>
+<li>MAAS Rack controller
+<ul>
+<li>Located on the rack, close to a bunch of machines and provides services to those machines</li>
+<li>Attached to each fabric</li>
+<li>DHCP</li>
+<li>Network boot</li>
+<li>Control the rack of nodes (power on/off etc)</li>
+<li>Caches OS images (close to rack for fast transfers)</li>
+</ul>
+</li>
+</ul>
+<h2 id="latest-maas-install---29">Latest MAAS Install - 2.9</h2>
+<p><code>sudo snap install maas --channel=2.9/stable</code>
+<code>sudo snap install maas-test-db</code>
+<code>sudo maas init region+rack</code></p>
+<pre class="hljs"><code><div>vamsi@MAAS:/snap/maas/current$ sudo maas init region+rack
+Database URI [default=maas-test-db:///]: 
+MAAS URL [default=http://192.168.1.195:5240/MAAS]: 
+MAAS has been set up.             
+
+If you want to configure external authentication or use
+MAAS with Canonical RBAC, please run
+
+  sudo maas configauth
+
+To create admins when not using external authentication, run
+
+  sudo maas createadmin
+</div></code></pre>
+<h3 id="create-admin">Create admin</h3>
+<p>Per output above, run <code>sudo maas createadmin</code></p>
+<pre class="hljs"><code><div>vamsi@MAAS:/snap/maas/current$ sudo maas createadmin
+Username: admin
+Password: maasAdmin
+Again: maasAdmin
+Email: vamsi.juvvigunta@gmail.com
+Import SSH keys [] (lp:user-id or gh:user-id): 
+</div></code></pre>
+<h3 id="initial-configure">Initial Configure</h3>
+<ul>
+<li>Connectivity
+<ul>
+<li>Update DNS forwarders to <code>8.8.8.8</code> (192.168.1.1 also ?)</li>
+</ul>
+</li>
+<li>Upload my <code>~/.ssh/id_rsa.pub</code> when asked for SSH key. Important to ssh into MAAS nodes</li>
+</ul>
+<h3 id="network-config">Network config</h3>
+<p><img src="img/MAAS-Subnets-1.png" alt="Maas subnets"></p>
+<ul>
+<li>Click on <em>fabric-0 192.168.1.0/24</em> and rename to <strong>Corp</strong></li>
+<li>Click on <em>fabric-1 192.168.23.0/24</em> and rename to <strong>Cluster</strong></li>
+<li>Click on <strong>vlan</strong> column for <strong>Cluster</strong> and turn DHCP on
+<ul>
+<li><strong>Ensure Gateway is set correctly to 192.168.23.1</strong>. Default is 192.168.23.254 and makes all nodes fail routing to the internet! If you get this wrong, you will have to recommision the node as updated info is not getting pushed to the nodes.</li>
+</ul>
+</li>
+</ul>
+<p><img src="img/vlanDHCPEnable.png" alt="Maas Enable DHCP"></p>
+<p><img src="img/vlanDHCP-Configure.png" alt="Maas Configure DHCP"></p>
+<p><img src="img/MAAS-SubnetSetup-2.png" alt="Maas Subnets after config"></p>
+<ul>
+<li>Reserve some IPs as needed. I use a static address on the APC PDU so am reserving that range.</li>
+<li>Click on the Subnet column in <code>Cluster</code> fabric (192.168.23.0/24)</li>
+<li>Click on <code>Reserve Range</code> and go from there.</li>
+</ul>
+<p><img src="img/vlanDHCPReserveRange.png" alt="Maas DHCP Reserve range"></p>
+<h3 id="add-machines">Add machines</h3>
+<ul>
+<li>Turn each machine on (Ensure already set to PXE) <em>PXE did not reach server: !@#!@# USB Eth from MAAS needed to be cycled</em></li>
+<li>Once it registers, rename as needed</li>
+</ul>
+<h3 id="set-machine-power">Set machine Power</h3>
+<ul>
+<li>Click on each machine</li>
+<li>Click on <code>Power Type</code></li>
+<li>Choose APC</li>
+<li>IP is <code>192.168.23.100</code> (statically assigned in the PDU)</li>
+</ul>
+<p><img src="img/MAAS-APC-PowerType.png" alt="Machine Power Type"></p>
+<h3 id="add-vm">Add vm</h3>
+<p>preconfigured for juju controller</p>
+<ul>
+<li>See <a href="./20juju.md">2-juju.md</a> for details on setting it up and it's power type</li>
+</ul>
+<h3 id="commission-the-machines">Commission the machines</h3>
+<ul>
+<li>They start as <code>new</code></li>
+<li>When you commission, they get to <code>ready</code></li>
+<li>Note that without this, when you bootstrap juju, you get errors.</li>
+</ul>
+<p><em>Process</em></p>
+<ul>
+<li>Check the machines (all except BigBoy)</li>
+<li>Under Actions, select &quot;Commission&quot; and on the next page, ask it to start</li>
+<li>Once these are all done, select BigBoy and do that separately
+<ul>
+<li>As soon as you hit the commissio button, switch to it's console</li>
+<li>F11 for boot menu</li>
+<li>And repeatedly try the <em>Acuantia 10G PEX IPV4</em> till it succeeds.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="older-maas-install">Older MAAS Install</h2>
+<h3 id="as-snap">As Snap</h3>
+<p>Snap works great in most cases as it is an overlay that does not edit the existing filesystem. However, after using it, I needed to make some edits to the apc.py power driver and realized that /snap is a ro filesystem. Have to wait for a PR to go through, packaging and all that. Simpler to use a standard install (not available for 2.9 and above I think but certainly available for 2.7)</p>
+<p><em>Update: 2.9 as of Nov 2020 has the apc power drivers fixed</em></p>
+<pre class="hljs"><code><div>&gt; sudo snap install maas --channel=2.7
+&gt; sudo maas init
+ Mode (all/region+rack/region/rack/none) [default=all]? 
+ MAAS URL [default=http://192.168.1.195:5240/MAAS]: 
+ Create first admin account        
+ Username: admin
+ Password: maasAdmin
+ Again: maasAdmin
+ Email: vamsi.juvvigunta@gmail.com
+ Import SSH keys [] (lp:user-id or gh:user-id): 
+
+</div></code></pre>
+<h3 id="as-apt-install">As Apt install</h3>
+<pre class="hljs"><code><div>vamsi@maas:~$ sudo apt-add-repository -yu ppa:maas/2.7
+vamsi@maas:~$ sudo apt install maas
+vamsi@maas:~$ sudo maas init
+vamsi@maas:~$ sudo maas init
+Create first admin account
+Username: admin
+Password: 
+Again: 
+Email: vamsi.juvvigunta@gmail.com
+Import SSH keys [] (lp:user-id or gh:user-id): 
+</div></code></pre>
+<p><em>Update: As of Nov 2020, on 20.04 even the 2.7 release installs as a snap! Thankfully MAAS 2.9 beta as a snap works!</em></p>
+<p>Apt install gets an older version with some issues. During install, it ends up listing the MAAS url as http://localhost:5240/MAAS. This gets passed on to the nodes during deployment and they cannot hit it meaningfully. Needs to be updated to the actual IP.</p>
+<ul>
+<li>During PXE boot, you'll notice errors like <em>handler.py. Failed to post event</em></li>
+</ul>
+<p>Can also be checked from <code>cat /etc/maas/rackd.conf</code></p>
+<p><code>sudo dpkg-reconfigure maas-rack-controller</code>
+<img src="img/reconfigureMassRackController.png" alt="Rack IP"></p>
+<h2 id="maas-setup-subnets">MAAS Setup Subnets</h2>
+<ul>
+<li>Ensure that http://192.168.1.195:5240/MAAS is alive</li>
+<li>Loging using the admin creds provided to <em>maas init</em></li>
+<li>Complete the basic stuff and click on the <em>Subnets</em> menu on top</li>
+</ul>
+<p><img src="img/MAAS-Subnets-1.png" alt="Maas subnets"></p>
+<ul>
+<li>Click on <em>fabric-0 192.168.1.0/24</em> and rename to <strong>Corp</strong></li>
+<li>Click on <em>fabric-1 192.168.23.0/24</em> and rename to <strong>Cluster</strong></li>
+<li>Click on <strong>vlan</strong> column for <strong>Cluster</strong> and turn DHCP on
+<ul>
+<li><strong>Ensure Gateway is set correctly to 192.168.23.1</strong>. Default is 192.168.23.254 and makes all nodes fail routing to the internet! If you get this wrong, you will have to recommision the node as updated info is not getting pushed to the nodes.</li>
+</ul>
+</li>
+</ul>
+<p><img src="img/vlanDHCPEnable.png" alt="Maas Enable DHCP"></p>
+<p><img src="img/vlanDHCP-Configure.png" alt="Maas Configure DHCP"></p>
+<p><img src="img/MAAS-SubnetSetup-2.png" alt="Maas Subnets after config"></p>
+<ul>
+<li>Reserve some IPs as needed. I use a static address on the APC PDU so am reserving that range.</li>
+</ul>
+<p><img src="img/vlanDHCPReserveRange.png" alt="Maas DHCP Reserve range"></p>
+<h2 id="maas-settings">MAAS Settings</h2>
+<p>I realized after a lot of pain that Ubuntu 18.04 simply does not boot on a Threadripper TR40 board unless <code>mce=off</code> is supplied as kernel parameters. This was very frustrating initially as it looked like a USB device error.</p>
+<blockquote>
+<p>Not needed with latest Ubuntu 20.04 as it supports the TRX40 natively.</p>
+</blockquote>
+<p>Under <strong>Settings/Kernel Parameters</strong>, set the approp params.</p>
+<p><img src="img/MAASMceKernelParams.png" alt="Maas Kernel Params"></p>
+<h2 id="maas-user-config">MAAS user config</h2>
+<h3 id="generate-ssh-keys">Generate SSH Keys</h3>
+<p>Note: You can generate as many users as you want and generate keys for all of them. However, note that only users with Admin privileges can acquire/release machines. Usually a nuisance for the home lab. Stick with Admin is fine.</p>
+<ul>
+<li>Configure for <code>Admin</code></li>
+<li><a href="../tools/SSH.md">SSH FAQ</a></li>
+</ul>
+<pre class="hljs"><code><div>vamsi@maas:/etc/default$ ssh-keygen -C "MAAS Admin Key"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/vamsi/.ssh/id_rsa): /home/vamsi/.ssh/maas_admin_id_rsa
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/vamsi/.ssh/maas_admin_id_rsa.
+Your public key has been saved in /home/vamsi/.ssh/maas_admin_id_rsa.pub.
+The key fingerprint is:
+SHA256:WHmQe3vyvIVuVlsEoC+4vCRr7+R35geNVGftj22/J4o MAAS Admin Key
+The key's randomart image is:
++---[RSA 2048]----+
+|        ..  ..  .|
+|        .o .  o +|
+|        o.o  . = |
+|       o.o...   o|
+|      . S..o.o +.|
+|       . .o.+.+ =|
+|      . =  =.o.+.|
+|      .* ..oB.+ o|
+|     ..o=.E*=+ oo|
++----[SHA256]-----+
+</div></code></pre>
+<ul>
+<li><strong>Use id_rsa only as this is what ssh checks by default. Using -i ~/.ssh/vamsi_id_rsa did not work</strong></li>
+<li><strong>ssh ubuntu@machine.maas</strong> only. Even if <em>vamsi</em> deployed it. The <strong>user that deployed the node</strong> (directly or via juju) is the one whose ssh pub key is used.</li>
+</ul>
+<h3 id="create-maas-users">Create MAAS users</h3>
+<ul>
+<li>Keep Admin separate</li>
+<li>Create as many users as needed. The uses come into play for requesting machine. Since only admin role reclaiming machines, it is simplest to just use admin.</li>
+</ul>
+<p><img src="img/MAASUserScreen.png" alt="MAAS User Screen"></p>
+<h3 id="load-the-keys-into-maas-ui">Load the keys into MAAS UI</h3>
+<ul>
+<li>Log in as each-user</li>
+<li>Click on user name in top-right corner and under <em>SSH Keys</em> Upload the generated public key</li>
+</ul>
+<p><img src="img/MAASImportSSHKey.png" alt="MAAS Import SSH Keys"></p>
+<p><img src="img/MAASImportSshKey2.png" alt="MAAS Import SSH Keys"></p>
+<h2 id="maas-dns-setup">MAAS DNS setup</h2>
+<ul>
+<li>On the comissioned machines, I can do a ping, nslookup, dig etc with other mass names and resolve works great</li>
+<li>On the MAAS machine however, there seems to be no connection to the maas resolver.</li>
+<li><input type="checkbox" id="checkbox0" checked="true"><label for="checkbox0">Needed a rearrangement of the DNS resolvers in netplan! Note that </label><code>192.168.1.195</code> is the maas regiond address.</li>
+</ul>
+<pre class="hljs"><code><div>       nameservers:
+<span class="hljs-addition">+       addresses: [192.168.1.195, 8.8.8.8]</span>
+<span class="hljs-deletion">-       addresses: [8.8.8.8, 192.168.1.195]</span>
+        search: [maas]
+</div></code></pre>
+<h2 id="maas-logging-in">MAAS Logging in</h2>
+<p><code>ssh ubuntu@box_name.maas</code></p>
+<p>From the MAAS perspective, every time the machine deploys, cloud-init imports the SSH key from MAAS allowing the user to SSH in. This is the current behavior in all versions of MAAS.</p>
+<p><strong>Note</strong></p>
+<ul>
+<li>Setup MAAS as the DNS in order to resolve the <em>.maas</em> names.</li>
+<li>Always log in a <em>ubuntu</em> which will use the ssh public key of the <em>user that deployed the node</em></li>
+<li>Your SSH private key should be under <code>~/.ssh/id_rsa</code> and not another specially named file.</li>
+</ul>
+<h3 id="debugging-the-failing-smartctl-validate">Debugging the failing smartctl-validate</h3>
+<ul>
+<li>Asked it to run the tests but keep machine alive for ssh</li>
+<li>ssh ubuntu@game-ewe.maas failed</li>
+<li>ssh ubuntu@IP worked. I used non-standard names in ~/.ssh but it picked up the right private key</li>
+<li>smartctl exists, python3 exists</li>
+<li>smartctl --scan shows the drive</li>
+<li>copying and running the code for the smartctl-validate works!</li>
+</ul>
+<p><a href="https://maas.io/docs/commissioning-and-hardware-testing-scripts#heading--environment-variables">Debugging Instructions</a></p>
+<ul>
+<li>run on the machine <code>/tmp/user_data.sh.*/bin/maas-run-remote-scripts --no-download /tmp/user_data.sh.*</code> fails with the exact same error!</li>
+<li>Need to step through the python code to see whats going on.</li>
+</ul>
+<h3 id="revisit-after-a-month-july-2020">Revisit after a month (July 2020)</h3>
+<ul>
+<li>I had posted to https://discourse.maas.io/t/not-able-to-get-past-smartctl-validation/1713/2</li>
+<li>Response said, known issue at https://bugs.launchpad.net/maas/+bug/1869116</li>
+<li>Fixed for Beaver (18.04 LTS) but Focal Fossa fix, no ETA but hopefully soon (All for MAAS 2.7). <em>Glad I did not spend time going through this. Would not have been able to isolate the issue so nicely I think</em></li>
+<li>In the meantime, I can simply start working with kubernets on bigboy ?</li>
+<li>Spend a couple hours and switch everything back to tried and tested 18.04 ? with <code>mce=off</code> ofcourse. Simplest I think.</li>
+</ul>
+<p><strong>Switched back to 18.04</strong></p>
+<h3 id="revisit-in-nov-2020">Revisit in Nov 2020</h3>
+<p>Only because I had trashed the 18.04 config with VLAN setups and wanted to revert to clean config</p>
+<ul>
+<li>20.04 has fixed the smartctl issues as of 09/2020.</li>
+<li>20.04 has fixed the APC power issues</li>
+<li>No mce=off headaches.</li>
+</ul>
+<p><strong>Switching to 20.04</strong></p>
+<h1 id="maas-logs-and-troubleshooting">MAAS logs and troubleshooting</h1>
+<p>Under snap, the notable logs are at <code>/var/snap/maas/common/logs/maas.log</code></p>
+<p>After spending a lot of time trying to figure things out, thought I should upgrade maas and see if it fixes the APC issue. Clearly, it is able to power on/off, just not query and there are no log items either!</p>
+<p>https://maas.io/docs/install-from-a-snap#heading--upgrade-maas-snap
+<code>sudo snap refresh --channel=2.8 maas</code></p>
+<h1 id="maas-node-power">MAAS Node Power</h1>
+<p>I knew going in that MAAS could not automatically power on/off nodes unless they have a BMC (Baseband Controller) built in. This typically implies IMPI but Intel AMT would work as well. The two Lenovo T93P Micros I have come with vPro/AMT but the new TR40 board does not and neither do my existing i7 PCs or Skullcanyon NUCs. Did some research on how to work around these.</p>
+<p>Links</p>
+<ul>
+<li><a href="https://stgraber.org/2017/04/02/using-wake-on-lan-with-maas-2-x/">Using Wake On Lan with MAAS</a></li>
+<li><a href="https://bugs.launchpad.net/maas/+bug/1589140">WOL Removed from MAAS</a> as they couldn't reliabily figure out if the machine was on. Hacks listed including supplmenting with <code>ping</code></li>
+<li><a href="https://askubuntu.com/questions/639474/maas-shutdown-node-issue">Power Off not working with WOL</a></li>
+<li><a href="https://ubuntu.com/blog/adding-hardware-support-to-maas">Adding Custom hardware to MAAS</a></li>
+</ul>
+<p>So it turns out that I might not need to throw my expensive TR40 board out or look only for IMPI server boards. APC PDU may be good enough. Turns out you have to avoid the ones marked <em>basic</em> since they do not have any snmp control ports.</p>
+<p>No videos of how the APC thing would actually work. I understand that</p>
+<ul>
+<li>Setup PC to bootup when powered on, then turn on the socket will power the PC on.</li>
+<li>MAAS can check if the outlet is powered on and can shut an outlet down. How does it actually shutdown the PC down though ?</li>
+</ul>
+<p>I installed MAAS as a snap and cycling through available resources, turns out that</p>
+<ul>
+<li><code>/etc/maas/power/templates</code> does not exist</li>
+<li><code>/usr/lib/python/dist-packages/provisioningserver/drivers/power</code> does not exist</li>
+<li>but <code>/snap/maas/lib/current/lib/python3.6/site-packages/provisioningserver</code> does exist</li>
+</ul>
+<p>There is a <code>drivers/power/apc.py</code> in there with these relevant functions.</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">APCPowerDriver</span><span class="hljs-params">(PowerDriver)</span>:</span>
+    
+    ....
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">power_on</span><span class="hljs-params">(self, system_id, context)</span>:</span>
+        <span class="hljs-string">"""Power on Apc outlet."""</span>
+        <span class="hljs-keyword">if</span> self.power_query(system_id, context) == <span class="hljs-string">"on"</span>:
+            self.power_off(system_id, context)
+        sleep(float(context[<span class="hljs-string">"power_on_delay"</span>]))
+        self.run_process(
+            <span class="hljs-string">"snmpset"</span>,
+            *_get_common_args(
+                context[<span class="hljs-string">"power_address"</span>], context[<span class="hljs-string">"node_outlet"</span>]
+            ),
+            <span class="hljs-string">"i"</span>,
+            <span class="hljs-string">"1"</span>,
+        )
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">power_off</span><span class="hljs-params">(self, system_id, context)</span>:</span>
+        <span class="hljs-string">"""Power off APC outlet."""</span>
+        self.run_process(
+            <span class="hljs-string">"snmpset"</span>,
+            *_get_common_args(
+                context[<span class="hljs-string">"power_address"</span>], context[<span class="hljs-string">"node_outlet"</span>]
+            ),
+            <span class="hljs-string">"i"</span>,
+            <span class="hljs-string">"2"</span>,
+        )
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">power_query</span><span class="hljs-params">(self, system_id, context)</span>:</span>
+        <span class="hljs-string">"""Power query APC outlet."""</span>
+        power_state = self.run_process(
+            <span class="hljs-string">"snmpget"</span>,
+            *_get_common_args(
+                context[<span class="hljs-string">"power_address"</span>], context[<span class="hljs-string">"node_outlet"</span>]
+            ),
+        )
+        <span class="hljs-keyword">if</span> power_state == APCState.OFF:
+            <span class="hljs-keyword">return</span> <span class="hljs-string">"off"</span>
+        <span class="hljs-keyword">elif</span> power_state == APCState.ON:
+            <span class="hljs-keyword">return</span> <span class="hljs-string">"on"</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">raise</span> PowerActionError(
+                <span class="hljs-string">"APC Power Driver retrieved unknown power state: %r"</span>
+                % power_state
+            )
+</div></code></pre>
+<p>From <a href="https://askubuntu.com/questions/639474/maas-shutdown-node-issue">Power Off not working with WOL</a>, It turns out MAAS uses <code>ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ubuntu@${ip_address} -C &quot;echo 'sleep 2 &amp;&amp; sudo /sbin/poweroff -f' | at now&quot;</code> to power a node down but only if it knows that the machine is <strong>on</strong>. This seems to be the sticking point with WOL.</p>
+<p>Since the <code>apc.py</code> driver implements a proper <code>power_query</code>, it should allow MAAS to shut it down gracefully.</p>
+<h2 id="apc-pdu">APC PDU</h2>
+<p><img src="img/APC_pdu_ports.jpg" alt="APC Control Ports"></p>
+<p>Lots of variables when choosing the right APC PDU</p>
+<ul>
+<li>❌ <em>Basic</em> models do not have any control. Avoid these.</li>
+<li>✔️ Should say <em>Switchable</em> and have a SNMP/RJ-45 port on the back</li>
+<li>⚠️ Most have a 10/100 Port. Make sure they work with your switch.</li>
+<li>⚠️ Pay attention to 208/240v vs 110v models. I needed a 110v to work with my outlets.</li>
+<li>⚠️ Pay attention to the <em>Input Plug</em>
+<ul>
+<li><em>15A</em> models have standard Nema 5-15 which will plug into your standard 110v outlets</li>
+<li><em>20A</em> models have a different L5-20P which will require you to have a different outlet rated for 20A continuos draw.</li>
+<li>Visually check the plug/socket images or use <a href="https://www.stayonline.com/product-resources/nema-straight-blade-reference-chart.asp">Nema Reference</a> or similar based on the specs you find.</li>
+</ul>
+</li>
+</ul>
+<p>I purchased a <a href="https://www.apc.com/shop/us/en/products/Rack-PDU-Switched-1U-15A-100-120V-8-5-15/P-AP7900">APC AP7900 Switched PDU</a> on eBay for 115$ which ticked all the boxes. If it works out, cheap way to work with non IPMI boxes (can power 8 of em with one strip). You just need to verify that the bios allows you to set a <em>Start on Power On</em> flag.</p>
+<p>⚠️ The APC PDU Switable models do have a separate serial port (<em>smaller RJ-12 port</em>) which is needed to reset the unit's password. If you do choose to do this, you will need an approp serial cable: The AP7900 model (<em>and bunch of others</em>) use <a href="https://www.amazon.com/APC-940-0144-Configuration-Replacement-Console/dp/B00SPGCHA2/ref=sr_1_3?dchild=1&amp;keywords=APC+Serial+cable&amp;qid=1595614539&amp;sr=8-3">APC PDU Serial Cable 940-0144 DB9 to RJ12</a>. Amazon or eBay.</p>
+<ul>
+<li>Note that the MAAS <em>APC PDU</em> configuration only asks for the <em>IP</em>. Need to see if it somehow also needs the password or expects the password to be the default <em>apc/apc</em>. Will buy the cable later on if needed.</li>
+<li>Possible I need to get to the configuration just to set the IP/DHCP.</li>
+<li>APC FAQs and others list how to use the cable for configuration.</li>
+</ul>
+<h2 id="resetting-the-pdc">Resetting the PDC</h2>
+<p>The unit I got from eBay looks to be in great condition. Turned it on and randomly long pressed the grey button and after some flashy it listed the IP. Some 172.xx thing. Definitely need the serial cable to reset it. Will see how it goes.</p>
+<h1 id="install-non-snap-maas">Install Non-snap maas</h1>
+<p>Turns out the snap install is a pain. You cannot edit it, the launchpad location for mass code does not have any instructions on how to build etc. It seems simplest to switch to the 2.7 non-snap edition (since that is all I need) and update apc and graceful shutdown myself as a patch.</p>
+<p>2.8 Has this nuisance about a separate postgres db and offers no advantages for my use-case. So just stick to 2.7 for now.</p>
+<p><code>sudo apt-add-repository -yu ppa:maas/2.7</code>
+<code>sudo apt install maas</code></p>
+<ul>
+<li><em>Update: Even if MAAS 2.8 and 2.9beta need a separate postgeSQL. They supply a snap maas-test-db for install on the same machine</em></li>
+<li><em>Update: MAAS 2.9Beta fixes the APC power drivers so everything works out of the box (Code has changed significantly as well. No queryable field any more)</em></li>
+</ul>
+<h2 id="enable-apc-querying">Enable APC Querying</h2>
+<p><code>/usr/lib/python3/dist-packages/provisioningserver/drivers/power/apc.py</code></p>
+<pre class="hljs"><code><div>class APCPowerDriver(PowerDriver):
+
+    name = "apc"
+    chassis = True
+    description = "American Power Conversion (APC) PDU"
+    settings = [
+        make_setting_field("power_address", "IP for APC PDU", required=True),
+        make_setting_field(
+            "node_outlet",
+            "APC PDU node outlet number (1-16)",
+            scope=SETTING_SCOPE.NODE,
+            required=True,
+        ),
+        make_setting_field(
+            "power_on_delay", "Power ON outlet delay (seconds)", default="5"
+        ),
+    ]
+    ip_extractor = make_ip_extractor("power_address")
+<span class="hljs-deletion">-    queryable = False</span>
+<span class="hljs-addition">+    queryable = True</span>
+</div></code></pre>
+
+</body>
+</html>

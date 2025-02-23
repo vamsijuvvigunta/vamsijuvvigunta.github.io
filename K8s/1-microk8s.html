@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>1-microk8s.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="microk8s">MicroK8s</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#microk8s">MicroK8s</a></li>
+<li><a href="#microk8s-resources">Microk8s Resources</a></li>
+<li><a href="#motivation">Motivation</a></li>
+<li><a href="#setup">Setup</a>
+<ul>
+<li><a href="#check-versions">Check versions</a></li>
+<li><a href="#install-microk8s">Install microk8s</a></li>
+<li><a href="#configure-firewall">Configure firewall</a></li>
+<li><a href="#save-cluster-config-information">Save cluster config information</a></li>
+<li><a href="#add-user-to-group">Add user to group</a></li>
+<li><a href="#setup-aliases">Setup aliases</a></li>
+<li><a href="#enable-addons">Enable addons</a>
+<ul>
+<li><a href="#list-addons">List addons</a></li>
+<li><a href="#which-ones-do-i-want">Which ones do I want</a></li>
+</ul>
+</li>
+<li><a href="#kubeflow">Kubeflow</a>
+<ul>
+<li><a href="#earlier-problems">Earlier problems</a></li>
+<li><a href="#jupyter-problem">Jupyter problem</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1 id="microk8s-resources">Microk8s Resources</h1>
+<ul>
+<li><a href="https://ubuntu.com/tutorials/install-a-local-kubernetes-with-microk8s">Main webpage</a></li>
+<li><a href="https://microk8s.io/docs/ref-launch-config">Launch Configurations</a></li>
+</ul>
+<h1 id="motivation">Motivation</h1>
+<p>I had initially started with full fat kubernetes as I thought I simply had to replicate a HA system at home. The goal was to be able to seamlessly move to a k8s platform on GKE for instance.</p>
+<p>I did spend an inordinate amount of time getting started with k8s and still stuck on kubeflow. More recently <em>Aug 2021</em> I was wondering how to handle linux development and how I could reuse my big 32 core system for that and all that. Turns out I can simply use that threadripper system as-is</p>
+<ul>
+<li>Directly connect to my network</li>
+<li>no MAAS, subnets etc</li>
+<li>Login directly as a dev box</li>
+<li>Use microk8s with storage, gpu, kf for all the experiments. 32 cores should be plenty and I can always add more RAM.</li>
+</ul>
+<h1 id="setup">Setup</h1>
+<p>Follow instructions from <a href="https://ubuntu.com/tutorials/install-a-local-kubernetes-with-microk8s">official Ubuntu docs</a></p>
+<h2 id="check-versions">Check versions</h2>
+<pre class="hljs"><code><div>vamsi@tr32:~/Documents/bitbucket$ snap info microk8s
+name:      microk8s
+summary:   Lightweight Kubernetes for workstations and appliances
+publisher: Canonical✓
+store-url: https://snapcraft.io/microk8s
+contact:   https://github.com/ubuntu/microk8s
+license:   Apache-2.0
+description: |
+  MicroK8s is the smallest, simplest, pure production Kubernetes for
+  clusters, laptops, IoT and Edge, on Intel and ARM. One command installs a
+  single-node K8s cluster with carefully selected add-ons on Linux, Windows
+  and macOS.  MicroK8s requires no configuration, supports automatic updates
+  and GPU acceleration. Use it for offline development, prototyping, testing,
+  to build your CI/CD pipeline or your IoT apps.
+snap-id: EaXqgt1lyCaxKaQCU349mlodBkDCXRcg
+channels:
+  1.21/stable:      v1.21.3  2021-07-27 (2346) 191MB classic
+  1.21/candidate:   v1.21.4  2021-08-20 (2407) 191MB classic
+  1.21/beta:        v1.21.4  2021-08-20 (2407) 191MB classic
+  1.21/edge:        v1.21.4  2021-08-23 (2427) 191MB classic
+  latest/stable:    v1.21.3  2021-07-28 (2346) 191MB classic
+  latest/candidate: v1.22.1  2021-08-20 (2424) 195MB classic
+</div></code></pre>
+<h2 id="install-microk8s">Install microk8s</h2>
+<p><code>sudo snap install microk8s --classic</code></p>
+<p>Ran very fast! Few seconds.</p>
+<h2 id="configure-firewall">Configure firewall</h2>
+<p>Not sure if this is needed but doing it anyway</p>
+<p><code>sudo ufw allow in on cni0 &amp;&amp; sudo ufw allow out on cni0</code>
+<code>sudo ufw default allow routed</code></p>
+<h2 id="save-cluster-config-information">Save cluster config information</h2>
+<p>There are many misc tool clis that are used to work with a k8ds cluster <em>(kubectl, helm, argocd etc)</em> and all of these need to know how to contact the cluster. By convention, this information is stored in <code>~/.kube/config</code>.</p>
+<p>For a newly created cluster, we need to generate this file. Do this via</p>
+<pre class="hljs"><code><div>mkdir  ~/.kube
+microk8s config &gt; ~/.kube/config
+</div></code></pre>
+<h2 id="add-user-to-group">Add user to group</h2>
+<p>Some commands (<em>specifically <code>microk8s enable kubeflow</code></em>) cannot be run as root or as regular user. Do this instead and then we can run as regular user.</p>
+<ul>
+<li><code>sudo usermod -a -G microk8s vamsi</code></li>
+<li><code>sudo chown -f -R vamsi ~/.kube</code></li>
+<li><code>newgrp microk8s</code> to load the new info (or reboot)</li>
+</ul>
+<h2 id="setup-aliases">Setup aliases</h2>
+<p>There are two ways of controlling/querying this microk8s cluster.</p>
+<ul>
+<li>Use the builtin <code>kubectl</code> via <code>microk8s kubectl</code></li>
+<li>Use a separately installed <code>kubectl</code>
+<ul>
+<li>This needs to know how to communicaz=te with the cluster. This is done via the <code>~/.kube/config</code> file that was created in the earlier steps</li>
+</ul>
+</li>
+</ul>
+<p>Save this in <code>~/.bashrc</code> or <code>~/.bash_aliases</code></p>
+<pre class="hljs"><code><div>alias kubectl='microk8s kubectl'
+alias ktl='microk8s kubectl'
+alias mk8s=microk8s
+</div></code></pre>
+<h2 id="enable-addons">Enable addons</h2>
+<h3 id="list-addons">List addons</h3>
+<p>Note that this list keeps changing. The following is true as of August 2023</p>
+<p><code>microk8s status</code></p>
+<pre class="hljs"><code><div>vamsi@mk8s:~$ mk8s version
+MicroK8s v1.27.4 revision 5643
+
+vamsi@mk8s:~$ mk8s status
+microk8s is running
+high-availability: no
+  datastore master nodes: 127.0.0.1:19001
+  datastore standby nodes: none
+addons:
+  enabled:
+    dns                  # (core) CoreDNS
+    ha-cluster           # (core) Configure high availability on the current node
+    helm                 # (core) Helm - the package manager for Kubernetes
+    helm3                # (core) Helm 3 - the package manager for Kubernetes
+  disabled:
+    cert-manager         # (core) Cloud native certificate management
+    community            # (core) The community addons repository
+    dashboard            # (core) The Kubernetes dashboard
+    gpu                  # (core) Automatic enablement of Nvidia CUDA
+    host-access          # (core) Allow Pods connecting to Host services smoothly
+    hostpath-storage     # (core) Storage class; allocates storage from host directory
+    ingress              # (core) Ingress controller for external access
+    kube-ovn             # (core) An advanced network fabric for Kubernetes
+    mayastor             # (core) OpenEBS MayaStor
+    metallb              # (core) Loadbalancer for your Kubernetes cluster
+    metrics-server       # (core) K8s Metrics Server for API access to service metrics
+    minio                # (core) MinIO object storage
+    observability        # (core) A lightweight observability stack for logs, traces and metrics
+    prometheus           # (core) Prometheus operator for monitoring and logging
+    rbac                 # (core) Role-Based Access Control for authorisation
+    registry             # (core) Private image registry exposed on localhost:32000
+    storage              # (core) Alias to hostpath-storage add-on, deprecated
+</div></code></pre>
+<p>Compared to the last time I ran this maybe 2 years ago.</p>
+<ul>
+<li>cilium moved to a higher level <code>mk8s cilium</code></li>
+<li>openebs replaced with <code>mayastor</code> ?</li>
+<li>storage is deprecated and replaced with <code>host-access</code></li>
+<li>Following were deleted
+<ul>
+<li><code>kubeflow</code>    # Kubeflow for easy ML deployments</li>
+</ul>
+</li>
+<li>Following are moved to <em>community addon</em> which is enabled by <code>microk8s enable community</code>
+<ul>
+<li><code>ambassador</code> # Ambassador API Gateway and Ingress</li>
+<li><code>cilium</code>     # SDN, fast with full network policy</li>
+<li><code>fluentd</code>    # Elasticsearch-Fluentd-Kibana logging and monitoring</li>
+<li><code>istio</code>      # Core Istio service mesh services</li>
+<li><code>jaeger</code>     # Kubernetes Jaeger operator with its simple config</li>
+<li><code>keda</code>       # Kubernetes-based Event Driven Autoscaling</li>
+<li><code>knative</code>    # The Knative framework on Kubernetes.</li>
+<li><code>linkerd</code>    # Linkerd is a service mesh for Kubernetes and other frameworks</li>
+<li><code>openebs</code>    # OpenEBS is the open-source storage solution for Kubernetes</li>
+<li><code>openfaas</code>   # openfaas serverless framework</li>
+<li><code>portainer</code>  # Portainer UI for your Kubernetes cluster</li>
+<li><code>traefik</code>    # traefik Ingress controller for external access</li>
+<li><code>multus</code>     # Multus CNI enables attaching multiple network interfaces to pods</li>
+</ul>
+</li>
+<li>Following new, interesting ones are in community
+<ul>
+<li><code>argocd</code> <em>argocd</em></li>
+<li><code>gopaddle-lite</code> <em>Simple “no-code” platform for Kubernetes developers.</em></li>
+<li><code>kwasm</code> <em>Add WebAssembly support to your Kubernetes nodes</em></li>
+<li><code>parking</code> <em>Parking for static sites</em></li>
+<li><code>trivy</code> <em>Open source security scanner for Kubernetes</em></li>
+<li><code>nfs</code> <em>Add nfs based storage</em></li>
+<li><code>microrocks</code> <em>Cloud native mocking and testing</em></li>
+</ul>
+</li>
+</ul>
+<h3 id="which-ones-do-i-want">Which ones do I want</h3>
+<table>
+<thead>
+<tr>
+<th><em>Addon</em></th>
+<th><em>Status</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dashboard</td>
+<td>Overall dashboard. Likely always need it</td>
+</tr>
+<tr>
+<td>dns</td>
+<td>needed for pod to pod comm ?</td>
+</tr>
+<tr>
+<td>gpu</td>
+<td>needed for ML tasks</td>
+</tr>
+<tr>
+<td><s>ingress</s></td>
+<td>Need to talk from outside. The other options here are <code>Ambassador</code>, <code>Traefik</code> and even <code>istio</code>. However (<a href="./FAQ-Kubernetes.md">./FAQ-Kubernetes</a>) looks like <em>ingress</em> is plenty for me since all i care about at this point is <code>gRPC</code> and <code>http(s)</code></td>
+</tr>
+<tr>
+<td>istio</td>
+<td>The service mesh that also does ingress. Kubeflow needs this anyway so might as well use this instead of the standard <code>ingress</code></td>
+</tr>
+<tr>
+<td>kubeflow</td>
+<td>The ML framework</td>
+</tr>
+<tr>
+<td>storage</td>
+<td>expose host disks</td>
+</tr>
+<tr>
+<td>registry</td>
+<td>private docker registry to load my builds. Esposed on <code>localhost:32000</code></td>
+</tr>
+<tr>
+<td>prometheus</td>
+<td>Monitoring and logging</td>
+</tr>
+<tr>
+<td>openfaas</td>
+<td>Need to explore !</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>looks like I need to install things in a specific order for kubeflow to work properly</p>
+</blockquote>
+<ul>
+<li><code>microk8s enable storage dns gpu</code></li>
+<li><code>microk8s status --wait-ready</code></li>
+<li><code>microk8s enable registry</code></li>
+<li><code>microk8s status --wait-ready</code></li>
+<li><code>microk8s enable istio</code></li>
+<li><s><code>microk8s status --wait-ready</code></s></li>
+<li><s><code>microk8s enable kubeflow</code></s> <em>No longer using. Too resource intensive. Using kserve (previously KFServing) instead for serving</em></li>
+</ul>
+<h2 id="kubeflow">Kubeflow</h2>
+<pre class="hljs"><code><div>The dashboard is available at http://10.64.140.44.nip.io
+
+   Username: admin
+   Password: XWN43SYWQM50653KH84R3V5VTPXWWJ
+
+To see these values again, run:
+
+   microk8s juju config dex-auth static-username
+   microk8s juju config dex-auth static-password
+</div></code></pre>
+<h3 id="earlier-problems">Earlier problems</h3>
+<p>Now, if I visit http://10.64.140.44.nip.io and supply the creds (<em>using admin when asked for email</em>), I get an <em>Access denied</em> error. Searching on the net leads me to <a href="https://stackoverflow.com/questions/67805796/microk8s-kubeflow-dashboard-access-failed-to-exchange-authorization-code-with">this</a> from which I did a</p>
+<ul>
+<li><code>microk8s kubectl get services -n kubeflow</code></li>
+<li>saw 10.152.183.238:8082 for kubeflow-dashboard and when I try that, I immediately get to the dashboard with no authentication. Maybe the other IP only works from outside ? Who does the DNS then ?</li>
+</ul>
+<p>Turns out that the installation needs to be done in a specific way. I have redone it with the updated instructions above. Basically, dns and istio first and wait for it before kubeflow.</p>
+<h3 id="jupyter-problem">Jupyter problem</h3>
+<p>When using 1.21/stable, I see some notebook server problems: If I hit the <code>Create new notebook server</code>, I get a <em>The URL was not found on the server</em> error.</p>
+<p>I re-installed multiple times</p>
+<ul>
+<li>without registry</li>
+<li>with nothing, just kubeflow</li>
+<li>with everything else (- registry) and then kubeflow</li>
+</ul>
+<p>1.20/stable also has the same problems</p>
+<p>None of them worked. I continue to get the same error with notebook servers. Looks like this microk8s is on top of juju and other layers, maybe simplest to simply go back to full k8s and just deal with the multiple machines!</p>
+
+</body>
+</html>

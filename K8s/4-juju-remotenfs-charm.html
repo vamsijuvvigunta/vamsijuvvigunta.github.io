@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>4-juju-remotenfs-charm.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<!-- TOC -->
+<ul>
+<li><a href="#remote-nfs-mount-charm">Remote nfs mount charm</a>
+<ul>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#sequencing-flow-via-reactive-calls">Sequencing flow via reactive calls</a></li>
+<li><a href="#remote-nfs-mount-charm-flow">Remote NFS Mount charm flow</a></li>
+<li><a href="#build-charm-locally">Build charm locally</a></li>
+<li><a href="#deploy-local-charm">Deploy local charm</a></li>
+<li><a href="#relate-to-consumer-k8s-charm">Relate to consumer K8s charm</a></li>
+<li><a href="#resulting-k8s-storageclass">Resulting K8s storageclass</a></li>
+<li><a href="#create-juju-storage-class-and-pool-from-k8s">Create juju storage class and pool from K8s</a></li>
+<li><a href="#todo">TODO</a></li>
+</ul>
+</li>
+<li><a href="#charm-development-log">Charm development log</a>
+<ul>
+<li><a href="#create-charm-skeleton">Create charm skeleton</a></li>
+<li><a href="#add-charm-content">Add charm content</a>
+<ul>
+<li><a href="#layers">layers</a></li>
+<li><a href="#metadata">Metadata</a></li>
+<li><a href="#reactive-code">Reactive code</a></li>
+</ul>
+</li>
+<li><a href="#build-charm">Build charm</a></li>
+<li><a href="#deploy">Deploy</a></li>
+<li><a href="#deploy-1">Deploy 1</a></li>
+<li><a href="#deploy-to-machine-1">Deploy to machine 1</a></li>
+<li><a href="#deploy-after-fix">Deploy after fix</a></li>
+<li><a href="#deploy-after-fix">Deploy after fix</a></li>
+<li><a href="#deploy-and-test-again">Deploy and test again</a></li>
+</ul>
+</li>
+<li><a href="#what-be-the-problem">What be the problem!</a>
+<ul>
+<li><a href="#deploy-and-test-again">Deploy and test again</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1 id="remote-nfs-mount-charm">Remote nfs mount charm</h1>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="charm-FAQ.md">Charm FAQ</a></li>
+<li><a href="https://juju.is/tutorials/tutorial-charm-development-part1">Charm development KB</a></li>
+<li><a href="https://medium.com/@knobby/nfs-default-storage-in-kubernetes-with-cdk-847336cc4a72">Mike wilson's article</a></li>
+<li><a href="https://discourse.charmhub.io/t/setting-up-static-kubernetes-storage-tutorial/1193">Setting up static storage with kubernetes</a></li>
+</ul>
+<h2 id="sequencing-flow-via-reactive-calls">Sequencing flow via reactive calls</h2>
+<p>Built up from the recommendations. See <a href="charms-FAQ.md">charms-FAQ.md</a>. The remote-nfs charm follows this except, it also uses an extra <em>joined</em> flag to handle relations.</p>
+<p><img src="https://www.plantuml.com/plantuml/png/dLPjYnCn4FwUNp7UbzukjtlS-KtaE105FmY2WegLaardNsYQr2IrTuZ_tIUxUsssje8k57OpRy_CF3FflG_IXUrQ2p6ZJ_AHWgNGTcP5ihBRG6kxPDsPXYHv_hvbevXiJKfgxM7H6GWSInMw7qogbMvD_j47NWiu3amRwyEYC_ZGMeREcaKVa5w-hArRtTt5i1zwpPiNzDunfRgZZulxNSjcOMoud7tkOvIZ5YzdsGL9JmzHkjYV2dmnQQv317iiVFt0QXlzKu_5KykEnHij6qyI46gfFLFrI4kkvLO7yQOpdM_PJy15pnl7XUFlFa8GSXDe8zLADapIB556HWI6Vqdxu5GZZ6288yH3zhV87gKwd_vVKZyu_oa4qTHAbYxs3Itf3Ku_S2CNUprwGKgpT9TvdbZdUJRNSvtdH4kxa9TPdiTl9DZhoH-oqxBItEl5quiyhrBpY-m4kBtPB9kRyRIQGWQuwYIuwXouQWgkEWrE_IUuKwVg3yXg0XbyG5mxr-WgJMfT57UJz22kZiIfA_5huBRhcdOazu7OVp28j6qw9GQQb_HQgfRghL6z39DUSQHmtJt0ywuBBKbnbcn2l8t3hgHNSiabSDwC7W5iCpG54n9cdaQuSMtqTEyvTdtjBSIqisOMQCMmQJZqIgeFSNqDnTkItactYeuywvhsnORiUKaVaNV3Y8FX8eCOVN38af4wjt9YATDgOVQUNNu-f9WH52O7ucl-RJIRRf2ZxzZWJMIQjsiky5gCUm1qEw4xi389T4ejXZsJYTZZKjRKNVEgbQO1gibNJ2OCrK98iBqNbcgGbgfkRlByNqrk_z44j2-yBQo9WqcHs-DEEzYSsJJcS3uPNdDc-9Fpq_hgZBuwqY_npCtJLajjn1FelxLcEfoZXJWgovShIhfF71H6mA2RQoOHhrJpIDOjsO7mbd1Huj8TRr-CozLmAOiu0hNLskwUPYXUm9qHKj1yGHNrSuSt9SOrZtVG7ilfy8Xnu1FIuzOZhFUu3r65fFvPty5uc1G_U_AGAev74xNe5eivyP7eqyY3r6AlgL8tQ4_yGVWH-GzMQkiScr0qe5OsrCk3ZDPmuLiRG5hUN_aMPNExplCLxHXB3rMRx28nBADaduXxlECVqcy0" alt="charm-sequencing" title="charm-sequencing"></p>
+<h2 id="remote-nfs-mount-charm-flow">Remote NFS Mount charm flow</h2>
+<p><img src="https://www.plantuml.com/plantuml/png/dLR1Rjim3BtxAuXSdBfrTkcfM8i20tRiW6stjZ1KXxQrAf8doKcp8ly-odBI9P4TPq61k2Bv-FX8ohatbcdRB4GKHVHe4IRtgmfb9fMTnXeNoc8g2vCkL2FjZ4jo4WBdySK4c867RpypicRUCJjmYXwJPqZJkrDkmsQu0LRRQP8u6hbQB9HCaelJGGPTK7y98q0Szm7UG9yzrKOeDf3jdG3fRolQYd6R5Kfdk4HfoKIsBjbtp94lAQGrjRWevxNYX4S9Ph_egTKWIGBdIK981-YKB-19VY7SyzdbIXQy_58nMNQy_CaizqUpj_MVbbO7GRtBhEPbYHhm3VF6uhm5sXxUG2wGQMgmK3aJNikCBHaNx4MWw-rnZKHxZmYvx1CZXuy4Hnn9WUlKe5wYRhcU6PlIffLepmvj2zm5jpDt111g2En0dVbVcIJYdAh_a7jevOFwTiCS08N0uGqqilqVb9XtTbzFZxiZuTmbhjp2W1SzxXA2DteXGk5-y-CmSpyQ0s4Q1RDSILhJGgEfEhiBxCrv9F4kNxzxJvwFjcpFTuwbE_tycPhyUdTtn6INiaCF15D4JzR1cBux8EpV9Wan3uMOYjUUlpcSn-7Bz4dqEVKCR1UGCRcUFWdNoJXGLtpr95lR4UoMSTgLa7PZuR7yFWnLvxm6xBJvMCFjJkkiq6gH5OALqqc0vsGxYwT0yw8ar4gfLvJBcRysfXSZ0hs0v52J1JF_uYMezqePAza2hw0mTbtJjwhRyCq8L9fTP7b5jSve_RDjajyD6cj6yGAecQs8Y5RAmYVFyp5cTIruxgVDiOkVHs7HRKk4w6NiGDkh-NJClZ9E4dohbRQPLuNFwVxb1KTzvLtRti5c91_h-81fNj8vrw0AUFZwmzTA0yOa-5ndKlLCBo_3NVsFgWrStXuSZPhmRW8RZTC3GDVxZPlfJHJHcmZ1gjgLF_Jxoqcpl8OLGaxAL6o9mC1mMT8bw7K2Bi5MI9lYto7mqjZMUKzcuxJbXVDS4vfs_amOrO6OY3OG7AaekgT7-hdy5m00" alt="charm-remote-nfs" title="charm-remote-nfs"></p>
+<p>When you have multiple reactive functions, ensuring deterministic sequencing is the most important.</p>
+<ul>
+<li>Use custom flags for each function</li>
+<li>use <code>register_trigger</code> to prioritize charm-system flags which we convert to custom flags.</li>
+<li>Make sure you consider which system/interface flags are auto-reset and which should be manually reset</li>
+</ul>
+<p>If you look at the code below, this is what should happen.</p>
+<p><strong>init</strong></p>
+<ul>
+<li>All functions except <code>install_nfs</code> are blocked as they wait for <code>remote-nfs-mount.installed</code> which defaults to <code>False</code>.</li>
+<li><code>install_nfs</code> sets the <code>remote-nfs-mount.installed</code> flag which allows the rest to proceed (they are gated on additional flags as well)</li>
+</ul>
+<p>Passing through the <code>@when(remote-nfs-mount.installed)</code> gate, I want local nfs mounting to be done next</p>
+<ul>
+<li>gate <code>setup_local_mount()</code> with a <code>@when_not(remote-nfs-mount.local_mount_available)</code>
+<ul>
+<li>default state allows it to execute as soon as <code>@when(remote-nfs-mount.installed)</code> allows</li>
+<li>mark as available and refresh_needed</li>
+</ul>
+</li>
+</ul>
+<p>Note that the <code>set_trigger</code> calls ensure that any cnofig change immeditely clears <code>remote-nfs-mount.local_mount_available</code>. Since this gates the refresh_relation_mounts. Any incoming join will not take effect till the config changes are processed first.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> charms.reactive <span class="hljs-keyword">import</span> when, when_any, when_not
+<span class="hljs-keyword">from</span> charms.reactive <span class="hljs-keyword">import</span> set_flag, clear_flag
+<span class="hljs-keyword">from</span> charms.reactive <span class="hljs-keyword">import</span> register_trigger
+...
+...
+register_trigger(when=<span class="hljs-string">'config.changed.nfs4-server'</span>  , clear_flag=<span class="hljs-string">'remote-nfs-mount.local_mount_available'</span>)
+register_trigger(when=<span class="hljs-string">'config.changed.nfs-target'</span>  , clear_flag=<span class="hljs-string">'remote-nfs-mount.local_mount_available'</span>)
+register_trigger(when=<span class="hljs-string">'config.changed.local-target'</span>, clear_flag=<span class="hljs-string">'remote-nfs-mount.local_mount_available'</span>)
+
+<span class="hljs-meta">@when_not('remote-nfs-mount.installed')</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">install_nfs</span><span class="hljs-params">()</span>:</span>
+    ...
+    ...    
+    set_flag(<span class="hljs-string">'remote-nfs-mount.installed'</span>)
+
+<span class="hljs-meta">@when('remote-nfs-mount.installed')</span>
+<span class="hljs-meta">@when_not('remote-nfs-mount.local_mount_available')</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setup_local_mount</span><span class="hljs-params">()</span>:</span>
+    ...
+    ...
+    set_flag(<span class="hljs-string">'remote-nfs-mount.local_mount_available'</span>)
+    set_flag(<span class="hljs-string">'remote-nfs-mount.relation_refresh_needed'</span>)
+
+
+<span class="hljs-meta">@when('remote-nfs-mount.installed')</span>
+<span class="hljs-meta">@when('remote-nfs-mount.local_mount_available')</span>
+<span class="hljs-meta">@when_any(</span>
+    <span class="hljs-string">'endpoint.nfs.joined'</span>,
+    <span class="hljs-string">'remote-nfs-mount.relation-refresh-needed'</span>
+    )
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">refresh_relation_mounts</span><span class="hljs-params">()</span>:</span>
+   clear_flag(<span class="hljs-string">'remote-nfs-mount.relation_refresh_needed'</span>)
+
+</div></code></pre>
+<h2 id="build-charm-locally">Build charm locally</h2>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/charms$ charm build remote-nfs-mount
+</div></code></pre>
+<h2 id="deploy-local-charm">Deploy local charm</h2>
+<blockquote>
+<p>Deploys to <strong>juju-k8s</strong> model.
+see output of <code>juju status</code> to ensure machine <code>1</code> is acceptable
+Note: One of the NAS's 10G ports is attached to the same switch as MAAS. So will be on the MAAS subnet. Confirm the IP from vamsi-nas.</p>
+</blockquote>
+<pre class="hljs"><code><div>cd ~/charms/builds
+juju deploy -m juju-k8s ./remote-nfs-mount --to 1 --config &quot;nfs4-server=192.168.23.190&quot; --config &quot;nfs-target=/data/K8s&quot; --config &quot;local-target=/mnt/cluster-io&quot;
+</div></code></pre>
+<ul>
+<li>deploy to <code>juju-k8s</code> model. Allows me to delete the entire model out for cleanup.</li>
+<li>all configs specified inline</li>
+<li>deployed to specified machine (<em>see output of <code>juju status</code></em>) otherwise juju will request MAAS for a new node and wait forever for a new machine.</li>
+</ul>
+<h2 id="relate-to-consumer-k8s-charm">Relate to consumer K8s charm</h2>
+<pre class="hljs"><code><div>juju add-relation remote-nfs-mount:nfs kubernetes-worker:nfs
+</div></code></pre>
+<ul>
+<li>explicitly joins the <code>nfs</code> endpoint to make things clear</li>
+<li>kubernetes-worker's metadata.yaml specifies that it consumes <code>nfs</code> with <code>mount</code> interface</li>
+<li>kubernetes-master does it as well. Not sure how that join differs though.</li>
+<li>See <a href="https://gist.github.com/vfarcic/2a19d910db0fda391494709dbff8de5f">kubernetes-nfs-client</a> for the amount of work the kubernetes-worker charm does when the <code>nfs</code> relation is setup! Awesome.</li>
+</ul>
+<h2 id="resulting-k8s-storageclass">Resulting K8s storageclass</h2>
+<pre class="hljs"><code><div>vamsi@MAAS:~/charms/builds$ kubectl get sc
+NAME                  PROVISIONER       RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+<span class="hljs-addition">+default (default)     fuseim.pri/ifs    Delete          Immediate           false                  86s</span>
+</div></code></pre>
+<h2 id="create-juju-storage-class-and-pool-from-k8s">Create juju storage class and pool from K8s</h2>
+<pre class="hljs"><code><div>juju create-storage-pool operator-storage kubernetes \
+    storage-class=storageclass.storage.k8s.io/default \
+    storage-provisioner=fuseim.pri/ifs
+
+juju create-storage-pool k8s-pool kubernetes \
+    storage-class=storageclass.storage.k8s.io/default\
+    storage-provisioner=fuseim.pri/ifs    
+</div></code></pre>
+<p>Check the pools</p>
+<pre class="hljs"><code><div>vamsi@MAAS:~$ juju storage-pools
+Name              Provider    Attrs
+k8s-pool          kubernetes  storage-class=storageclass.storage.k8s.io/default storage-provisioner=fuseim.pri/ifs
+kubernetes        kubernetes  
+operator-storage  kubernetes  storage-class=storageclass.storage.k8s.io/default storage-provisioner=fuseim.pri/ifs
+</div></code></pre>
+<h2 id="todo">TODO</h2>
+<ul>
+<li><input type="checkbox" id="checkbox0"><label for="checkbox0">Actually test that the NFS server and exports are v4</label></li>
+<li><input type="checkbox" id="checkbox1"><label for="checkbox1">Lifecycle handling</label>
+<ul>
+<li><input type="checkbox" id="checkbox2"><label for="checkbox2">Break relationship</label></li>
+<li><input type="checkbox" id="checkbox3"><label for="checkbox3">Upgrade</label></li>
+</ul>
+</li>
+<li><input type="checkbox" id="checkbox4"><label for="checkbox4">Multiple unit: Connect more than one unit of the same name.</label></li>
+</ul>
+<h1 id="charm-development-log">Charm development log</h1>
+<h2 id="create-charm-skeleton">Create charm skeleton</h2>
+<p>create under <code>~/bitbucket/infrastructure/charms</code></p>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/charms$ charm create remote-nfs-mount
+INFO: Using default charm template (reactive-python). To select a different template, use the -t option.
+INFO: Generating charm for remote-nfs-mount in ./remote-nfs-mount
+INFO: No remote-nfs-mount in apt cache; creating an empty charm instead.
+Cloning into '/tmp/tmpth8cpmzs'...
+warning: templates not found /snap/charm/562/share/git-core/templates
+remote: Enumerating objects: 32, done.
+remote: Total 32 (delta 0), reused 0 (delta 0), pack-reused 32
+Unpacking objects: 100% (32/32), done.
+vamsi@MAAS:~/bitbucket/infrastructure/charms$ ls -l
+total 4
+drwx------ 4 vamsi vamsi 4096 Dec 12 07:58 remote-nfs-mount
+
+vamsi@MAAS:~/bitbucket/infrastructure/charms$ tree
+.
+└── remote-nfs-mount
+    ├── config.yaml
+    ├── icon.svg
+    ├── layer.yaml
+    ├── metadata.yaml
+    ├── reactive
+    │   └── remote_nfs_mount.py
+    ├── README.ex
+    └── tests
+        ├── 00-setup
+        └── 10-deploy
+</div></code></pre>
+<h2 id="add-charm-content">Add charm content</h2>
+<p>Left most things untouched except the meat of the charm. Updated the following (details below)</p>
+<ul>
+<li>metadata.yaml</li>
+<li>config.yaml</li>
+<li>reactive_code</li>
+</ul>
+<h3 id="layers">layers</h3>
+<p>Added the following layers</p>
+<ul>
+<li>basic : standard for everything. Provides basic support</li>
+<li>apt   : provides suport for apt as we need it to install new packages</li>
+</ul>
+<p>Added this one interface that we must provide for kubernetes-worker. Initially simply took it from whatever the nfs charm specified. But later, I read the <code>metadata.yaml</code> and saw that it consumed a <code>nfs</code> endpoint with a <code>mount</code> interface: this is right way to figure dependencies.</p>
+<ul>
+<li>mount</li>
+</ul>
+<h3 id="metadata">Metadata</h3>
+<p>This is where the overall description of the charm is specified. I started with copying items from <code>nfs</code> and <code>remote-nfs</code> and adjusting. Ended up with</p>
+<pre class="hljs"><code><div><span class="hljs-attr">name:</span> <span class="hljs-string">remote-nfs-mount</span>
+
+<span class="hljs-attr">summary:</span> <span class="hljs-string">Provides</span> <span class="hljs-string">mount</span> <span class="hljs-string">relation</span> <span class="hljs-string">for</span> <span class="hljs-string">external</span> <span class="hljs-string">NFS4</span> <span class="hljs-string">exports</span>
+
+<span class="hljs-attr">maintainer:</span> <span class="hljs-string">Vamsidhar</span> <span class="hljs-string">Juvvigunta</span> <span class="hljs-string">&lt;Vamsidhar.Juvvigunta@MAAS&gt;</span>
+
+<span class="hljs-attr">description:</span> <span class="hljs-string">|
+  Mounts an NFS4 share via a specified mount point
+  Provides the 'nfs' endpoint with 'mount' interface (same as nfs charm)
+    so that any charm that can relate to nfs will work here except it 
+    uses an exteral mount.
+  Uses nfs4 capability of being able to mount sub-directories of the one
+  single export asif the sub-directory were also explicitly exported.
+</span>
+<span class="hljs-attr">tags:</span>  
+  <span class="hljs-bullet">-</span> <span class="hljs-string">storage</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">network</span>
+
+<span class="hljs-comment"># This is not a subordinate (does not need to be running in the same container</span>
+<span class="hljs-comment"># as the apps it is related to).</span>
+<span class="hljs-attr">subordinate:</span> <span class="hljs-literal">false</span>
+
+<span class="hljs-attr">provides:</span>
+  <span class="hljs-comment"># The goal is to interface with kubernetes via nfs as shown in the examples of</span>
+  <span class="hljs-comment"># the nfs charm: except use an external nfs mount</span>
+  <span class="hljs-comment"># Needs the 'nfs` endpoint with mount interface as this is what kubernetes-worker</span>
+  <span class="hljs-comment"># expects (See it's charm code)</span>
+  <span class="hljs-attr">nfs:</span>
+    <span class="hljs-attr">interface:</span> <span class="hljs-string">mount</span>
+
+<span class="hljs-attr">series:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">focal</span>
+</div></code></pre>
+<h3 id="reactive-code">Reactive code</h3>
+<p>This is where the fun was. Copied the code for <code>nfs</code> charm and started iterating it. Ended up with something very different. Now that I have one under my belt, any new one can start with a proper flag flow.</p>
+<p>started iterating along these lines</p>
+<ul>
+<li>simply creating local mount point from my readynas nfs</li>
+<li>plenty of bug fixes and debugging loops</li>
+<li>added joining flag</li>
+<li>bug fixes</li>
+<li>switch metadata to use the <code>nfs</code> endpoint instead of the initial <code>remote-nfs-mount</code> one where I assumed that the <code>mount</code> interface was all that was needed. However <code>kubernetes-worker</code> consumes the <code>nfs</code> endpoint.</li>
+<li>ended with <code>kubectl get sc</code> showed me the right output.</li>
+</ul>
+<h2 id="build-charm">Build charm</h2>
+<blockquote>
+<p><code>charm build remote-nfs-mount</code></p>
+</blockquote>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/charms$ charm build remote-nfs-mount
+build: Please add a `repo` key to your layer.yaml, with a url from which your layer can be cloned.
+build: Destination charm directory: /home/vamsi/charms/builds/remote-nfs-mount
+build: Processing layer: layer:options
+build: Processing layer: layer:basic
+build: Processing layer: layer:status
+build: Processing layer: layer:apt
+build: Processing layer: remote-nfs-mount (from remote-nfs-mount)
+build: Processing interface: mount
+build: 
+build: ---------------------------------------
+build:               Build Report
+build: ---------------------------------------
+build: New build; all files were modified.
+proof: I: `display-name` not provided, add for custom naming in the UI
+proof: W: Includes template README.ex file
+proof: W: README.ex includes boilerplate: Step by step instructions on using the charm:
+proof: W: README.ex includes boilerplate: You can then browse to http://ip-address to configure the service.
+proof: W: README.ex includes boilerplate: - Upstream mailing list or contact information
+proof: W: README.ex includes boilerplate: - Feel free to add things if it's useful for users
+proof: I: config.yaml: option nfs-server has no default value
+proof: I: config.yaml: option nfs-target has no default value
+proof: I: config.yaml: option local-target has no default value
+</div></code></pre>
+<h2 id="deploy">Deploy</h2>
+<p>To debug while deploying. Keep juju logs open</p>
+<ul>
+<li><code>watch -n0.5 --color juju status --color</code></li>
+<li><code>juju debug-log --tail-true</code></li>
+</ul>
+<hr>
+<h2 id="deploy-1">Deploy 1</h2>
+<pre class="hljs"><code><div>cd ~/charms/builds
+juju deploy -m k8s ./remote-nfs-mount --config "nfs-server=192.168.23.196" --config "nfs-target=/data/K8s" --config "local-target=/mnt/cluster-io"
+</div></code></pre>
+<p><strong>Errors</strong></p>
+<ul>
+<li>It was looking for a new machine to deploy the charm to!!</li>
+<li>Maybe this is what the subordinate charm is for ? Looking at the <a href="https://juju.is/docs/charm-writing/subordinates">subordinate charms</a> docs however, I see that I just need one instance of this on an existing node.</li>
+<li>use the <code>--to x</code> arg to deploy it to a known machine</li>
+</ul>
+<hr>
+<h2 id="deploy-to-machine-1">Deploy to machine 1</h2>
+<p>pick a machine from <code>juju status</code></p>
+<ul>
+<li>same machine as infra 2 (non k8s master)</li>
+</ul>
+<pre class="hljs"><code><div>cd ~/charms/builds
+juju deploy -m k8s ./remote-nfs-mount --to 1 --config "nfs-server=192.168.23.196" --config "nfs-target=/data/K8s" --config "local-target=/mnt/cluster-io"
+</div></code></pre>
+<p><strong>Error: hook failed: install</strong></p>
+<ul>
+<li>check logs</li>
+<li><code>juju ssh remote-nfs-mount/2</code></li>
+<li>examine <code>/var/log/juju/unit-remote-nfs-mount-2.log</code></li>
+</ul>
+<pre class="hljs"><code><div>2020-12-13 20:47:02 ERROR juju-log Hook error:
+Traceback (most recent call last):
+  File &quot;/var/lib/juju/agents/unit-remote-nfs-mount-2/.venv/lib/python3.8/site-packages/charms/reactive/__init__.py&quot;, line 71, in main
+    bus.discover()
+  File &quot;/var/lib/juju/agents/unit-remote-nfs-mount-2/.venv/lib/python3.8/site-packages/charms/reactive/bus.py&quot;, line 426, in discover
+    _register_handlers_from_file(search_path, filepath)
+  File &quot;/var/lib/juju/agents/unit-remote-nfs-mount-2/.venv/lib/python3.8/site-packages/charms/reactive/bus.py&quot;, line 466, in _register_handlers_from_file
+    _load_module(root, filepath)
+  File &quot;/var/lib/juju/agents/unit-remote-nfs-mount-2/.venv/lib/python3.8/site-packages/charms/reactive/bus.py&quot;, line 444, in _load_module
+    return importlib.import_module(package + module)
+  File &quot;/usr/lib/python3.8/importlib/__init__.py&quot;, line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1014, in _gcd_import
+  File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 991, in _find_and_load
+  File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 975, in _find_and_load_unlocked
+  File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 671, in _load_unlocked
+  File &quot;&lt;frozen importlib._bootstrap_external&gt;&quot;, line 779, in exec_module
+  File &quot;&lt;frozen importlib._bootstrap_external&gt;&quot;, line 916, in get_code
+  File &quot;&lt;frozen importlib._bootstrap_external&gt;&quot;, line 846, in source_to_code
+  File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 219, in _call_with_frames_removed
+  File &quot;/var/lib/juju/agents/unit-remote-nfs-mount-2/charm/reactive/remote_nfs_mount.py&quot;, line 128
+    mount_responses = []
+    ^
+SyntaxError: invalid syntax
+</div></code></pre>
+<ul>
+<li>but the error was not there. Reading the code carefully, I see that I was using a non existant <code>mount_options</code> variable. Fixed and re-deployed</li>
+<li>another error. Un-terminated format string in an earlier command</li>
+</ul>
+<hr>
+<h2 id="deploy-after-fix">Deploy after fix</h2>
+<pre class="hljs"><code><div>cd ~/charms/builds
+juju deploy -m k8s ./remote-nfs-mount --to 1 --config "nfs-server=192.168.23.196" --config "nfs-target=/data/K8s" --config "local-target=/mnt/cluster-io"
+</div></code></pre>
+<p>Worked great! Status shows the nfs export mount.</p>
+<p>Now try the relation and see if it creates app specific exports</p>
+<p><code>juju add-relation remote-nfs-mount kubernetes-worker</code></p>
+<p><strong>Error</strong></p>
+<ul>
+<li>hook failed in <code>juju status</code></li>
+<li>error logs on the machine shows another python issue.</li>
+</ul>
+<pre class="hljs"><code><div>2021-02-06 04:01:08 WARNING remote-nfs-mount-relation-joined Traceback (most recent call last):
+2021-02-06 04:01:08 WARNING remote-nfs-mount-relation-joined   File &quot;/var/lib/juju/agents/unit-remote-nfs-mount-6/charm/hooks/remote-nfs-mount-relation-joined&quot;, line 22, in &lt;module&gt;
+2021-02-06 04:01:08 WARNING remote-nfs-mount-relation-joined     main()
+2021-02-06 04:01:08 WARNING remote-nfs-mount-relation-joined   File &quot;/var/lib/juju/agents/unit-remote-nfs-mount-6/.venv/lib/python3.8/site-packages/charms/reactive/__init__.py&quot;, line 74, in main
+2021-02-06 04:01:08 WARNING remote-nfs-mount-relation-joined     bus.dispatch(restricted=restricted_mode)
+2021-02-06 04:01:08 WARNING remote-nfs-mount-relation-joined   File &quot;/var/lib/juju/agents/unit-remote-nfs-mount-6/.venv/lib/python3.8/site-packages/charms/reactive/bus.py&quot;, line 390, in dispatch
+2021-02-06 04:01:08 WARNING remote-nfs-mount-relation-joined     _invoke(other_handlers)
+2021-02-06 04:01:08 WARNING remote-nfs-mount-relation-joined   File &quot;/var/lib/juju/agents/unit-remote-nfs-mount-6/.venv/lib/python3.8/site-packages/charms/reactive/bus.py&quot;, line 359, in _invoke
+2021-02-06 04:01:08 WARNING remote-nfs-mount-relation-joined     handler.invoke()
+2021-02-06 04:01:08 WARNING remote-nfs-mount-relation-joined   File &quot;/var/lib/juju/agents/unit-remote-nfs-mount-6/.venv/lib/python3.8/site-packages/charms/reactive/bus.py&quot;, line 181, in invoke
+2021-02-06 04:01:08 WARNING remote-nfs-mount-relation-joined     self._action(*args)
+2021-02-06 04:01:08 WARNING remote-nfs-mount-relation-joined   File &quot;/var/lib/juju/agents/unit-remote-nfs-mount-6/charm/reactive/remote_nfs_mount.py&quot;, line 101, in refresh_relation_mounts
+2021-02-06 04:01:08 WARNING remote-nfs-mount-relation-joined     mount_interface = endpoint_from_flag('endpoint.remote-nfs-mount.joined')
+2021-02-06 04:01:08 WARNING remote-nfs-mount-relation-joined NameError: name 'endpoint_from_flag' is not defined
+2021-02-06 04:01:08 ERROR juju.worker.uniter.operation runhook.go:136 hook &quot;remote-nfs-mount-relation-joined&quot; (via explicit, bespoke hook script) failed: exit status 1
+2021-02-06 04:01:08 INFO juju.worker.uniter resolver.go:143 awaiting error resolution for &quot;relation-joined&quot; hook
+</div></code></pre>
+<p>Ok. Delete the charm</p>
+<pre class="hljs"><code><div>juju remove-application --force remote-nfs-mount
+</div></code></pre>
+<p>Fixed by looking at the source for the nfs charm. I needed a new import <code>from charms.reactive.relations import endpoint_from_flag, endpoint_from_name</code></p>
+<hr>
+<h2 id="deploy-after-fix">Deploy after fix</h2>
+<pre class="hljs"><code><div>cd ~/bitbucket/infrastructure/charms
+charm build remote-nfs.mount
+cd ~/charms/builds
+juju deploy -m k8s ./remote-nfs-mount --to 1 --config &quot;nfs-server=192.168.23.196&quot; --config &quot;nfs-target=/data/K8s&quot; --config &quot;local-target=/mnt/cluster-io&quot;
+</div></code></pre>
+<p>That went fine. Now relate</p>
+<pre class="hljs"><code><div>juju add-relation remote-nfs-mount kubernetes-worker
+</div></code></pre>
+<p>Gah! Again hook failed.</p>
+<pre class="hljs"><code><div>juju ssh remote-nfs-mount/7
+vi /var/log/juju/unit-remote-nfs-mount-7.log
+</div></code></pre>
+<p>Of all the stupidity!</p>
+<pre class="hljs"><code><div>2021-02-06 18:39:08 ERROR juju-log remote-nfs-mount:22: Hook error:
+Traceback (most recent call last):
+  File &quot;/var/lib/juju/agents/unit-remote-nfs-mount-7/.venv/lib/python3.8/site-packages/charms/reactive/__init__.py&quot;, line 74, in main
+    bus.dispatch(restricted=restricted_mode)
+  File &quot;/var/lib/juju/agents/unit-remote-nfs-mount-7/.venv/lib/python3.8/site-packages/charms/reactive/bus.py&quot;, line 390, in dispatch
+    _invoke(other_handlers)
+  File &quot;/var/lib/juju/agents/unit-remote-nfs-mount-7/.venv/lib/python3.8/site-packages/charms/reactive/bus.py&quot;, line 359, in _invoke
+    handler.invoke()
+  File &quot;/var/lib/juju/agents/unit-remote-nfs-mount-7/.venv/lib/python3.8/site-packages/charms/reactive/bus.py&quot;, line 181, in invoke
+    self._action(*args)
+  File &quot;/var/lib/juju/agents/unit-remote-nfs-mount-7/charm/reactive/remote_nfs_mount.py&quot;, line 138, in refresh_relation_mounts
+    local_path = os.path.join(nfs_root_mount, mount['application_name'])
+NameError: name 'os' is not defined
+</div></code></pre>
+<p>Add <code>import os</code> and try again. Script also uses the <code>PermissionsError</code> exception but that is described as a built in. Maybe no import needed for that one.</p>
+<h2 id="deploy-and-test-again">Deploy and test again</h2>
+<pre class="hljs"><code><div>cd ~/bitbucket/infrastructure/charms
+charm build remote-nfs.mount
+cd ~/charms/builds
+juju deploy -m k8s ./remote-nfs-mount --to 1 --config &quot;nfs-server=192.168.23.196&quot; --config &quot;nfs-target=/data/K8s&quot; --config &quot;local-target=/mnt/cluster-io&quot;
+juju add-relation remote-nfs-mount kubernetes-worker
+</div></code></pre>
+<p>Yay!!! Notes line shows</p>
+<blockquote>
+<p>192.168.23.196:/data/K8s -&gt; /mnt/cluster-io. Serving [kubernetes-worker]</p>
+</blockquote>
+<pre><font color="#4E9A06"><b>vamsi@MAAS</b></font>:<font color="#3465A4"><b>~</b></font>$ juju status
+Model  Controller       Cloud/Region     Version  SLA          Timestamp
+k8s    juju-controller  devmaas/default  2.8.6    unsupported  10:49:23-08:00
+
+App                    Version  Status  Scale  Charm                  Store       Rev  OS      Notes
+containerd             1.3.3    <font color="#4E9A06">active    </font><font color="#C4A000">2/3  </font>containerd             jujucharms   96  ubuntu  
+easyrsa                3.0.1    <font color="#4E9A06">active      </font>1  easyrsa                jujucharms  338  ubuntu  
+etcd                   3.4.5    <font color="#4E9A06">active      </font>1  etcd                   jujucharms  543  ubuntu  
+flannel                0.11.0   <font color="#4E9A06">active    </font><font color="#C4A000">2/3  </font>flannel                jujucharms  512  ubuntu  
+kubeapi-load-balancer  1.18.0   <font color="#4E9A06">active      </font>1  kubeapi-load-balancer  jujucharms  752  ubuntu  exposed
+kubernetes-master      1.19.7   <font color="#4E9A06">active      </font>1  kubernetes-master      jujucharms  908  ubuntu  
+kubernetes-worker      1.19.7   <font color="#4E9A06">active    </font><font color="#C4A000">1/2  </font>kubernetes-worker      jujucharms  711  ubuntu  exposed
+remote-nfs-mount                <font color="#4E9A06">active      </font>1  remote-nfs-mount       local        10  ubuntu  
+
+Unit                      Workload  Agent  Machine  Public address  Ports           Message
+easyrsa/0*                <font color="#4E9A06">active    idle   </font>0        192.168.23.103                  Certificate Authority connected.
+etcd/0*                   <font color="#4E9A06">active    idle   </font>0        192.168.23.103  2379/tcp        Healthy with 1 known peer
+kubeapi-load-balancer/0*  <font color="#4E9A06">active    idle   </font>0        192.168.23.103  443/tcp         Loadbalancer ready.
+kubernetes-master/0*      <font color="#4E9A06">active    idle   </font>0        192.168.23.103  6443/tcp        Kubernetes master running.
+  containerd/2            <font color="#4E9A06">active    idle   </font>         192.168.23.103                  Container runtime available
+  flannel/2               <font color="#4E9A06">active    idle   </font>         192.168.23.103                  Flannel subnet 10.1.6.1/24
+kubernetes-worker/0*      <font color="#4E9A06">active    idle   </font>1        192.168.23.104  80/tcp,443/tcp  Kubernetes worker running.
+  containerd/1*           <font color="#4E9A06">active    idle   </font>         192.168.23.104                  Container runtime available
+  flannel/1*              <font color="#4E9A06">active    idle   </font>         192.168.23.104                  Flannel subnet 10.1.14.1/24
+kubernetes-worker/1       <font color="#C4A000">unknown   lost   </font>2        192.168.23.105  80/tcp,443/tcp  agent lost, see &apos;juju show-status-log kubernetes-worker/1&apos;
+  containerd/0            <font color="#C4A000">unknown   lost   </font>         192.168.23.105                  agent lost, see &apos;juju show-status-log containerd/0&apos;
+  flannel/0               <font color="#C4A000">unknown   lost   </font>         192.168.23.105                  agent lost, see &apos;juju show-status-log flannel/0&apos;
+remote-nfs-mount/8*       <font color="#4E9A06">active    idle   </font>1        192.168.23.104                  192.168.23.196:/data/K8s -&gt; /mnt/cluster-io. Serving [kubernetes-worker]
+
+Machine  State    DNS             Inst id  Series  AZ       Message
+0        <font color="#4E9A06">started  </font>192.168.23.103  tiny1    focal   default  Deployed
+1        <font color="#4E9A06">started  </font>192.168.23.104  tiny2    focal   default  Deployed
+2        <font color="#CC0000">down     </font>192.168.23.105  big-boy  focal   default  Deployed
+</pre>
+<p>Check the NAS itself. Looks good!</p>
+<pre class="hljs"><code><div>juju ssh remote-nfs-mount/8
+ubuntu@tiny2:/$ cd /mnt/cluster-io/
+ubuntu@tiny2:/mnt/cluster-io$ ls -al
+total 4
+dr-xr-xr-x 1 root   root    186 Feb  6 18:51 .
+drwxr-xr-x 3 root   root   4096 Nov 27 21:44 ..
+drwxrwxrwx 1 root   root      0 Feb  6 18:51 kubernetes-worker
+</div></code></pre>
+<p>Check kubernetes storage configuration.</p>
+<pre><font color="#4E9A06"><b>vamsi@MAAS</b></font>:<font color="#3465A4"><b>~/charms/builds</b></font>$ kubectl get sc
+NAME                  PROVISIONER       RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+managed-nfs-storage   example.com/nfs   Delete          Immediate           false                  69d
+</pre>
+<p><strong>However, this is the old sc</strong> created via the yaml file. The new one is not showing up! Something else messed up. I might need to actually ask the forums for help!</p>
+<h1 id="what-be-the-problem">What be the problem!</h1>
+<p>Maybe the <code>provides:nfs</code> is the key instead of <code>provides: remote-nfs-mount</code>. Maybe that is the name of the relation that does it.</p>
+<p>Checked the source of the kubernets-worker as that is what is used in the examples.</p>
+<p>Yup. Right there in kubernetes-worker's <code>metadata.yaml</code> file</p>
+<pre class="hljs"><code><div><span class="hljs-attr">requires:</span>
+  <span class="hljs-string">...</span>
+  <span class="hljs-attr">nfs:</span>
+    <span class="hljs-attr">interface:</span> <span class="hljs-string">mount</span>
+</div></code></pre>
+<p>Reactive code looks for <code>fstype=nfs</code>. Blindly assuming semantic equivalence to linux mount-type and using <em>nfs4</em> was obviously wrong.</p>
+<p>Next steps</p>
+<ul>
+<li>provide <code>nfs</code> relation (change metadata.yaml)</li>
+<li>Also renamed <code>nfs-server</code> to <code>nfs4-server</code> to make it explicit.</li>
+<li>rename current random provides name to <code>nfs</code> and update code: mostly <code>endpoint.nfs.joined</code></li>
+<li>explicitly relate to <code>remote-nfs-mount:nfs</code> to make it clear that the app is remote-nfs-mount.</li>
+</ul>
+<h2 id="deploy-and-test-again">Deploy and test again</h2>
+<pre class="hljs"><code><div>cd ~/bitbucket/infrastructure/charms
+charm build remote-nfs-mount
+cd ~/charms/builds
+juju deploy -m k8s ./remote-nfs-mount --to 1 --config &quot;nfs4-server=192.168.23.196&quot; --config &quot;nfs-target=/data/K8s&quot; --config &quot;local-target=/mnt/cluster-io&quot;
+juju add-relation remote-nfs-mount:nfs kubernetes-worker
+</div></code></pre>
+<p><strong>Fix 1</strong> - Seemed to work ok but status was unchanged. When I looked at log, turns out I was checking for end-points for <code>endpoint.remote-nfs-mount.joined</code> instead of <code>endpoint.nfs.joined</code>. Fixing and restarting</p>
+<p>Ok. Seems to work now. Shows &quot;Serving kubernetes-worker&quot; in status!</p>
+<p>And Yay!!!! Same as the example in <a href="https://medium.com/@knobby/nfs-default-storage-in-kubernetes-with-cdk-847336cc4a72">Mike wilson's article</a> (Author of the nfs charm )</p>
+<pre class="hljs"><code><div>vamsi@MAAS:~/charms/builds$ kubectl get sc
+NAME                  PROVISIONER       RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+<span class="hljs-addition">+default (default)     fuseim.pri/ifs    Delete          Immediate           false                  86s</span>
+managed-nfs-storage   example.com/nfs   Delete          Immediate           false                  78d
+</div></code></pre>
+
+</body>
+</html>

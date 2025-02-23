@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>5-juju-kubeflow.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<!-- TOC -->
+<ul>
+<li><a href="#juju-and-kubeflow-on-top-of-kubernetes">Juju and Kubeflow on top of kubernetes</a></li>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#installation">Installation</a>
+<ul>
+<li><a href="#which-bundle">Which bundle</a></li>
+<li><a href="#overlay-notes">overlay notes</a></li>
+<li><a href="#customize-install-with-overlay">Customize install with overlay</a></li>
+<li><a href="#install-into-kubeflow-model">Install into kubeflow model</a>
+<ul>
+<li><a href="#create-custom-kubeflow-model">Create custom kubeflow model</a></li>
+<li><a href="#dry-run-deployment">Dry run deployment</a></li>
+<li><a href="#deploy">Deploy</a></li>
+<li><a href="#verify">Verify</a></li>
+<li><a href="#istio-setup">Istio setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#configure-kubeflow-dashboard-for-external-access">Configure Kubeflow dashboard for external access</a>
+<ul>
+<li><a href="#export-istio-ingress">Export istio-ingress</a>
+<ul>
+<li><a href="#metallb-prereqs">Metallb prereqs</a></li>
+<li><a href="#deploy-metallb">Deploy metallb</a></li>
+<li><a href="#security-setup">Security setup</a></li>
+<li><a href="#test-exposure">Test exposure</a></li>
+</ul>
+</li>
+<li><a href="#exploration">Exploration</a></li>
+</ul>
+</li>
+<li><a href="#history">History</a>
+<ul>
+<li><a href="#failed-attemps">Failed attemps</a></li>
+<li><a href="#overlays-are-different">Overlays are different</a></li>
+<li><a href="#configure-kubeflow-dashboard-for-external-access">Configure Kubeflow dashboard for external access</a></li>
+<li><a href="#portforwarding">Portforwarding</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1 id="juju-and-kubeflow-on-top-of-kubernetes">Juju and Kubeflow on top of kubernetes</h1>
+<blockquote>
+<p><strong>This is done after k8s storage is setup and juju is bootstrapped onto the k8ds cloud</strong>. See details in</p>
+<ul>
+<li><a href="./3-juju-k8s.md">3-juju-k8s</a></li>
+<li><a href="./4-juju-k8s-storage.md">4-juju-k8s-storage</a></li>
+</ul>
+<p>for final updates to this saga.</p>
+</blockquote>
+<p><em>Pre Requisites</em></p>
+<ul>
+<li>k8s cluster with storage</li>
+<li>juju bootstrapped onto that cluster</li>
+<li>A bunch of local routable IPs (<em>I reserved some in MAAS</em>) to expose kubeflow UI outside the cluster</li>
+</ul>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://discourse.charmhub.io/t/install-kubeflow/3670">Install Kubeflow - Oct 20</a>
+<ul>
+<li>Bootstrap controller into the k8s cloud</li>
+</ul>
+</li>
+<li><a href="https://discourse.charmhub.io/t/introduction-to-charmed-kubeflow/3749">Intro to Charmed Kubeflow - Oct 20</a>
+<ul>
+<li>K8s operator</li>
+</ul>
+</li>
+<li><a href="">Video installation</a>
+<ul>
+<li>Talks through a bunch of low level details (load balancing, proxy etc)</li>
+<li>Helped finalize the install.</li>
+</ul>
+</li>
+</ul>
+<h1 id="installation">Installation</h1>
+<p>Used overlays to customize the bundle the same way I did k8s (<em>with some differences</em>)</p>
+<h2 id="which-bundle">Which bundle</h2>
+<p><img src="./img/charmhub-kflite-stableversion.png" alt="Stable from charmhub"></p>
+<ul>
+<li>❌️ should have been <strong>54</strong> but that bundle always just hangs with juju 2.9 and k8s 1.21</li>
+<li>✅️ bundle 67 which I got from googling it worked (need to still verify if everything works though)</li>
+</ul>
+<h2 id="overlay-notes">overlay notes</h2>
+<ul>
+<li><a href="https://juju.is/docs/sdk/bundle-reference">Bundle Reference</a></li>
+<li><a href="https://kubernetes.io/docs/reference/labels-annotations-taints/">K8s well known labels</a></li>
+</ul>
+<blockquote>
+<p>See output of <code>kubectl get nodes --show-labels</code> to find current labels</p>
+</blockquote>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket$ kubectl get nodes --show-labels
+NAME      STATUS   ROLES    AGE   VERSION   LABELS
+big-boy   Ready    &lt;none&gt;   14h   v1.21.4   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,cuda=true,gpu=true,juju-application=kubernetes-worker,kubernetes.io/arch=amd64,kubernetes.io/hostname=big-boy,kubernetes.io/os=linux
+tiny2     Ready    &lt;none&gt;   14h   v1.21.4   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,juju-application=kubernetes-worker,kubernetes.io/arch=amd64,kubernetes.io/hostname=tiny2,kubernetes.io/os=linux
+</div></code></pre>
+<p>I find the following pre-existing labels</p>
+<ul>
+<li><code>beta.kubernetes.io/arch</code>=amd64</li>
+<li><code>beta.kubernetes.io/os</code>=linux</li>
+<li><code>juju-application</code>=kubernetes-worker</li>
+<li><code>kubernetes.io/arch</code>=amd64</li>
+<li><code>kubernetes.io/hostname</code>=tiny2</li>
+<li><code>kubernetes.io/os</code>=linux</li>
+<li><code>series</code> is replaced with a fixed: <code>bundle: kubernetes</code> as the substrate/target is not an OS but k8s</li>
+<li><code>to</code> placement is replaced by <code>placement: foo=bar</code> where <em>foo=bar</em> is a k8s node selector.
+<ul>
+<li>Since I just want to target one host I can use the pre-existing label <strong>kubernetes.io/hostname=big-boy</strong></li>
+<li>I could also have used <code>cuda=true, gpu=true</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="customize-install-with-overlay">Customize install with overlay</h2>
+<pre class="hljs"><code><div><span class="hljs-attr">name:</span> <span class="hljs-string">Kubeflow</span> <span class="hljs-string">lite</span> 
+<span class="hljs-attr">description:</span> <span class="hljs-string">customized</span> <span class="hljs-string">to</span> <span class="hljs-string">install</span> <span class="hljs-string">on</span> <span class="hljs-string">the</span> <span class="hljs-string">one</span> <span class="hljs-string">node</span> <span class="hljs-string">with</span> <span class="hljs-string">gpu</span> <span class="hljs-string">which</span> <span class="hljs-string">is</span> <span class="hljs-string">also</span> <span class="hljs-string">a</span> <span class="hljs-string">k8s</span> <span class="hljs-string">worker</span>
+<span class="hljs-attr">bundle:</span> <span class="hljs-string">kubernetes</span>
+
+<span class="hljs-attr">applications:</span>
+  <span class="hljs-attr">seldon-controller-manager:</span>
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">dex-auth:</span>    
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">mlmd:</span>    
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">kfp-viz:</span>    
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">istio-pilot:</span>    
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">jupyter-ui:</span>    
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">minio:</span>    
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">tfjob-operator:</span>    
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">kfp-persistence:</span>    
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">argo-controller:</span>    
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">kfp-db:</span>    
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">kfp-schedwf:</span>    
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">istio-ingressgateway:</span>    
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">kubeflow-dashboard:</span>    
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">kubeflow-volumes:</span>
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">kfp-api:</span>
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">kfp-ui:</span>
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">kubeflow-profiles:</span>
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">pytorch-operator:</span>
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">kfp-viewer:</span>
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">jupyter-controller:</span>
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">admission-webhook:</span>
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>
+  <span class="hljs-attr">oidc-gatekeeper:</span>
+    <span class="hljs-attr">placement:</span> <span class="hljs-string">kubernetes.io/hostname=big-boy</span>  
+</div></code></pre>
+<h2 id="install-into-kubeflow-model">Install into kubeflow model</h2>
+<h3 id="create-custom-kubeflow-model">Create custom kubeflow model</h3>
+<blockquote>
+<p>👉 a juju model created in k8s will automatically create a namespace with the same name.
+All artifcats in that model get created under that namespace.
+<strong>Note</strong>: This must be under the juju k8s cloud controller, not the MAAS controller.</p>
+</blockquote>
+<p>We install this into it's own model</p>
+<ul>
+<li>Allows KF to be kept separate from core k8s and my app pods</li>
+<li>As we add/remove stuff to/from KF, they keep going into that model</li>
+<li>KF model can be torn down entirely and redone if needed.</li>
+<li>Use the <strong>kubeflow</strong> model name. Worried something could be hardcoding it.</li>
+</ul>
+<p><code>juju add-model kubeflow</code> <em>this automatically makes it current, Otherwise do a <code>juju switch newModel</code></em></p>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/k8s/nfs$ juju add-model kubeflow
+Added 'kubeflow' model with credential 'myk8scloud' for user 'admin'
+</div></code></pre>
+<h3 id="dry-run-deployment">Dry run deployment</h3>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/configs/juju/bundles$ juju deploy -m kubeflow --dry-run ./charmed-kubeflow-lite-67-focal-bundle.yaml --overlay ./charmed-kubeflow-lite-67-focal-k8s-overlay.yaml
+</div></code></pre>
+<h3 id="deploy">Deploy</h3>
+<p><code>juju deploy -m kubeflow ./charmed-kubeflow-lite-67-focal-bundle.yaml --overlay ./charmed-kubeflow-lite-67-focal-k8s-overlay.yaml --debug</code></p>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/configs/juju/bundles$ juju deploy -m kubeflow ./charmed-kubeflow-lite-54-focal-bundle.yaml --overlay ./charmed-kubeflow-lite-54-focal-k8s-overlay.yaml --debug
+</div></code></pre>
+<p>To watch while deploying</p>
+<ul>
+<li>on the juju side <code>watch -n5 --color juju status --color</code></li>
+<li>on the k8s side <code>watch -n5 --color kubectl get all -n kubeflow</code></li>
+</ul>
+<h3 id="verify">Verify</h3>
+<pre class="hljs"><code><div>vamsi@MAAS:~/bitbucket/infrastructure/configs/juju/bundles$ kubectl get all -n kubeflow
+NAME                                     READY   STATUS    RESTARTS   AGE
+pod/admission-webhook-7bd59bb8d8-4m2qk   1/1     Running   0          77s
+pod/admission-webhook-operator-0         1/1     Running   0          110s
+pod/argo-controller-operator-0           1/1     Running   0          59s
+pod/dex-auth-ffd749879-rkq2s             1/1     Running   0          31s
+pod/dex-auth-operator-0                  1/1     Running   0          50s
+pod/istio-ingressgateway-operator-0      1/1     Running   0          43s
+pod/kfp-persistence-operator-0           1/1     Running   0          13s
+pod/kfp-viz-operator-0                   1/1     Running   0          10s
+pod/kubeflow-dashboard-operator-0        1/1     Running   0          6s
+pod/kubeflow-profiles-operator-0         1/1     Running   0          4s
+pod/kubeflow-volumes-operator-0          1/1     Running   0          2s
+pod/modeloperator-555bc5cbb6-f2bf2       1/1     Running   0          11m
+
+NAME                                    TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)     AGE
+service/admission-webhook               ClusterIP   10.152.183.27    &lt;none&gt;        443/TCP     98s
+service/admission-webhook-operator      ClusterIP   10.152.183.236   &lt;none&gt;        30666/TCP   111s
+service/argo-controller-operator        ClusterIP   10.152.183.125   &lt;none&gt;        30666/TCP   89s
+service/dex-auth                        ClusterIP   10.152.183.222   &lt;none&gt;        5556/TCP    32s
+service/dex-auth-operator               ClusterIP   10.152.183.172   &lt;none&gt;        30666/TCP   53s
+service/istio-ingressgateway-operator   ClusterIP   10.152.183.81    &lt;none&gt;        30666/TCP   44s
+service/kfp-persistence-operator        ClusterIP   10.152.183.65    &lt;none&gt;        30666/TCP   14s
+service/kfp-viz-operator                ClusterIP   10.152.183.198   &lt;none&gt;        30666/TCP   12s
+service/kubeflow-dashboard-operator     ClusterIP   10.152.183.66    &lt;none&gt;        30666/TCP   9s
+service/kubeflow-profiles-operator      ClusterIP   10.152.183.152   &lt;none&gt;        30666/TCP   6s
+service/kubeflow-volumes-operator       ClusterIP   10.152.183.171   &lt;none&gt;        30666/TCP   4s
+service/minio-operator                  ClusterIP   10.152.183.38    &lt;none&gt;        30666/TCP   1s
+service/modeloperator                   ClusterIP   10.152.183.83    &lt;none&gt;        17071/TCP   11m
+
+NAME                                READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/admission-webhook   1/1     1            1           77s
+deployment.apps/dex-auth            1/1     1            1           31s
+deployment.apps/modeloperator       1/1     1            1           11m
+
+NAME                                           DESIRED   CURRENT   READY   AGE
+replicaset.apps/admission-webhook-7bd59bb8d8   1         1         1       77s
+replicaset.apps/dex-auth-ffd749879             1         1         1       31s
+replicaset.apps/modeloperator-555bc5cbb6       1         1         1       11m
+
+NAME                                             READY   AGE
+statefulset.apps/admission-webhook-operator      1/1     110s
+statefulset.apps/argo-controller-operator        1/1     80s
+statefulset.apps/dex-auth-operator               1/1     50s
+statefulset.apps/istio-ingressgateway-operator   1/1     44s
+statefulset.apps/kfp-persistence-operator        1/1     13s
+statefulset.apps/kfp-viz-operator                1/1     10s
+statefulset.apps/kubeflow-dashboard-operator     1/1     7s
+statefulset.apps/kubeflow-profiles-operator      1/1     5s
+statefulset.apps/kubeflow-volumes-operator       1/1     2s
+</div></code></pre>
+<h3 id="istio-setup">Istio setup</h3>
+<p>Once completed, the <code>istio-ingressgateway/0</code> unit remains waiting. The operator needs to be authorized to talk to the api service (per https://charmed-kubeflow.io/docs/install)</p>
+<ul>
+<li>Grant istio operator API permissions: <code>kubectl patch role -n kubeflow istio-ingressgateway-operator -p '{&quot;apiVersion&quot;:&quot;rbac.authorization.k8s.io/v1&quot;,&quot;kind&quot;:&quot;Role&quot;,&quot;metadata&quot;:{&quot;name&quot;:&quot;istio-ingressgateway-operator&quot;},&quot;rules&quot;:[{&quot;apiGroups&quot;:[&quot;*&quot;],&quot;resources&quot;:[&quot;*&quot;],&quot;verbs&quot;:[&quot;*&quot;]}]}'</code></li>
+</ul>
+<p>Now if you do a <code>kubectl get service/istio-ingressgateway</code> you'll see that the ExternaIP is listed as <code>&lt;pending&gt;</code>. At this point, we need to add metallb so it can provide it an external ip from a pool.</p>
+<p><em>Alternately, we patch <code>istio-ingressgateway</code> to be a <code>NodePort</code> and then simply access it using the node's IP at the specified port</em>.</p>
+<h1 id="configure-kubeflow-dashboard-for-external-access">Configure Kubeflow dashboard for external access</h1>
+<p>This seems to have many complex pieces that need to come together. Took a combination of these reseources to get things fully (<em>actual understanding of the concepts not there yet</em>)</p>
+<ul>
+<li>https://charmed-kubeflow.io/docs/install
+<ul>
+<li>Which points to https://www.youtube.com/watch?v=M_Ama8ZY8OQ <em>pointed to from the above link</em></li>
+</ul>
+</li>
+<li>https://github.com/kubeflow/manifests/issues/974
+<ul>
+<li><em>Thomas Albrecht: a simpler way (instead of loadbalancer) could be Nodeports. Instead of setting up a Loadbalancer, the only thing you have to do is, patching ingres-gateway to NodePort instead of LoadBalancer</em></li>
+</ul>
+</li>
+<li>https://www.kubeflow.org/docs/distributions/microk8s/kubeflow-on-microk8s/</li>
+<li>👉 These articles by Nana clarified a whole bunch of things
+<ul>
+<li><a href="https://www.youtube.com/watch?v=80Ew_fsV4rM&amp;t=1s">Kubernetes ingress</a></li>
+<li><a href="https://www.youtube.com/watch?v=T4Z7visMM4E">Kubernetes service types</a>
+<ul>
+<li>And now I understand what Albrecht was saying about NodePort.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="export-istio-ingress">Export istio-ingress</h2>
+<p>Looks like <code>kubectl-dashboard</code> itself shuold not be exposed. There is this whole ecosystem of securiy, ingress and other stuff I do not understand yet.</p>
+<ul>
+<li>istio-ingress</li>
+<li>dex</li>
+<li>oidc</li>
+</ul>
+<h3 id="metallb-prereqs">Metallb prereqs</h3>
+<p>For a service of type <code>LoadBalancer</code>, we need a LoadBalancer component installed (<em>in the same namesapce?</em>) which will provide an IP</p>
+<ul>
+<li>In my case, reserve a block of IPs from DHCP <code>[192.168.23.10 - 192.168.23.99]</code> (<em>see how the MAAS subnets are setup</em>)</li>
+<li>All of these are routable from inside my network. <code>MAAS Master</code> is router and they will reach all the MAAS nodes. At the nodes, since this is a <code>LoadBalancer</code> service which layers on NodePort: <code>istio-ingressgateway</code> listens on every node. As long as request incoming via one of the LoadBalancer IPs reaches the node, it will reach the istio-ingressgateway service eventually.</li>
+</ul>
+<ul>
+<li>create a juju model (<em>k8ds namespace</em>) called <em>metallb-system</em> which is what all the examples yaml files assume. Simplest to keep it that way. <code>juju add-model metallb-system</code></li>
+<li><code>wget https://raw.githubusercontent.com/charmed-kubernetes/metallb-operator/master/docs/rbac-permissions-operators.yaml</code></li>
+<li><code>kubectl apply -f rbac-permissions-operators.yaml</code></li>
+</ul>
+<h3 id="deploy-metallb">Deploy metallb</h3>
+<p>Create a metallb-overlay.yaml file with the following contents</p>
+<pre class="hljs"><code><div><span class="hljs-attr">applications:</span>
+ <span class="hljs-attr">metallb-controller:</span>
+   <span class="hljs-attr">options:</span>
+     <span class="hljs-attr">iprange:</span> <span class="hljs-string">"192.168.23.10-192.168.23.99"</span>
+</div></code></pre>
+<ul>
+<li><code>cd ~/bitbucket/infrastructure/configs/juju/bundles</code></li>
+<li><code>juju deploy cs:~containers/metallb --overlay ./metallb-overlay.yaml</code> (<em>see https://jaas.ai/u/containers/metallb/bundle</em>)</li>
+<li><code>watch -n5 --color juju status --color</code></li>
+</ul>
+<p><em>Test</em>: <code>kubectl get services --all-namespace | grep istio</code> shows 192.168.23.10 as the external IP for the istio-ingressgateway. Yay!</p>
+<h3 id="security-setup">Security setup</h3>
+<p>To finalize (<em>all these UI compoents use dex. Not sure what oidc is yet</em>), the security guys should be told what IP the services should be reachable at and a basic auth setup. Take the ip from the <code>External IP</code> field of <code>kubectl get service/istio-ingressgateway -n kubeflow</code>.</p>
+<ul>
+<li><code>juju config dex-auth -m kubeflow public-url=http://192.168.23.10</code></li>
+<li><code>juju config oidc-gatekeeper -m kubeflow public-url=http://192.168.23.10</code></li>
+<li><code>juju config dex-auth -m kubeflow static-username=admin</code></li>
+<li><code>juju config dex-auth -m kubeflow static-password=letmein</code></li>
+</ul>
+<h3 id="test-exposure">Test exposure</h3>
+<p>Now hitting http://192.168.23.10 takes me to the kubeflow dashboard</p>
+<ul>
+<li>Give this some time. dex-auth's name/pwd take a while to flow through. Several minutes looks like</li>
+<li>If you get auth failed, try again after 5 minutes</li>
+</ul>
+<h2 id="exploration">Exploration</h2>
+<p>Just to see where kubefow-dashboard integrates in, did a <code>kubectl -n kubeflow describe service/istio-ingressgateway</code> and got the following</p>
+<pre class="hljs"><code><div>vamsi@MAAS:~$ kubectl describe -n kubeflow service/istio-ingressgateway
+Name:                     istio-ingressgateway
+Namespace:                kubeflow
+Labels:                   app.kubernetes.io/managed-by=juju
+                          app.kubernetes.io/name=istio-ingressgateway
+Annotations:              controller.juju.is/id: b34b9e53-7916-43e6-8779-20206d16a185
+                          model.juju.is/id: 664d9110-8a64-40ad-8de3-4d5325cc76b7
+Selector:                 app.kubernetes.io/name=istio-ingressgateway
+Type:                     LoadBalancer
+IP Family Policy:         SingleStack
+IP Families:              IPv4
+IP:                       10.152.183.143
+IPs:                      10.152.183.143
+LoadBalancer Ingress:     192.168.23.150
+Port:                     status-port  15020/TCP
+TargetPort:               15020/TCP
+NodePort:                 status-port  32709/TCP
+Endpoints:                10.1.50.81:15020
+Port:                     http2  80/TCP
+TargetPort:               80/TCP
+NodePort:                 http2  31507/TCP
+Endpoints:                10.1.50.81:80
+Port:                     https  443/TCP
+TargetPort:               443/TCP
+NodePort:                 https  32021/TCP
+Endpoints:                10.1.50.81:443
+Port:                     kiali  15029/TCP
+TargetPort:               15029/TCP
+NodePort:                 kiali  31052/TCP
+Endpoints:                10.1.50.81:15029
+Port:                     prometheus  15030/TCP
+TargetPort:               15030/TCP
+NodePort:                 prometheus  30350/TCP
+Endpoints:                10.1.50.81:15030
+Port:                     grafana  15031/TCP
+TargetPort:               15031/TCP
+NodePort:                 grafana  31992/TCP
+Endpoints:                10.1.50.81:15031
+Port:                     tracing  15032/TCP
+TargetPort:               15032/TCP
+NodePort:                 tracing  32710/TCP
+Endpoints:                10.1.50.81:15032
+Port:                     tls  15443/TCP
+TargetPort:               15443/TCP
+NodePort:                 tls  30695/TCP
+Endpoints:                10.1.50.81:15443
+Port:                     pilot  15011/TCP
+TargetPort:               15011/TCP
+NodePort:                 pilot  30415/TCP
+Endpoints:                10.1.50.81:15011
+Port:                     citadel  8060/TCP
+TargetPort:               8060/TCP
+NodePort:                 citadel  32110/TCP
+Endpoints:                10.1.50.81:8060
+Port:                     dns-tls  853/TCP
+TargetPort:               853/TCP
+NodePort:                 dns-tls  32637/TCP
+Endpoints:                10.1.50.81:853
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   &lt;none&gt;
+</div></code></pre>
+<ul>
+<li>Don't see any direct kubectl dashboard. Must be all related to http/https in that case</li>
+</ul>
+<h1 id="history">History</h1>
+<h2 id="failed-attemps">Failed attemps</h2>
+<p>Tried installing it into the <code>k8s-model</code> model but it bombed right away with 'storage configuration' and I had to go back to figuring out to add storage to juju. I either did not see or grok <a href="https://discourse.charmhub.io/t/setting-up-static-kubernetes-storage-tutorial/1193">Setting up static storage with kubernetes</a> and so started down a rabbit hole of figuring out nfs storage with charms. Wasted three months I think overall! Gah!!</p>
+<p>how I could use a charm that worked off my NAS.</p>
+<p>The <code>nfs</code> charm allows you to create any cluster machine into a NFS server. However, my cluster has a bunch of throwaway machines with limited storage expansion: did not want to use those as NFS servers. <em>In hind sight, if I had, I would be much further along and would have had to use my NAS only when storage needs required it. One more way, the lack of a proper startup mindset is hurting me</em>.</p>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Need to add k8s-storage explicitly first</li>
+<li>Then add <code>juju add-k8s</code></li>
+</ul>
+<h2 id="overlays-are-different">Overlays are different</h2>
+<ul>
+<li>Cannot use <code>placement: 0</code> switched to <code>to: ['0']</code> instead</li>
+<li><em>series not valid</em>: removed the <em>series : focal</em>, guess it depends on the kubernetes runtime not the ubuntu version.</li>
+<li><code>machines</code> not valid for kubernetes bundles. Looks like unlike plain juju, kubernetes bundles need their deployment to be handled via node-pools. Do I really care that these get installed on all the kubernetes machines ? Maybe</li>
+</ul>
+<p>✅️ See <a href="https://juju.is/docs/sdk/bundle-reference">Bundle Reference</a> and adjust overlay correctly</p>
+<h2 id="configure-kubeflow-dashboard-for-external-access">Configure Kubeflow dashboard for external access</h2>
+<p>This was tricky to figure out. Online examples showed plenty of things to try, the details of which I forget now. They involved exposing kubeflow-dashboard directly. kubectl shows that kubeflow-dashboard is serving at 8082</p>
+<ul>
+<li>kubectl forward-port: <code>kubectl port-forward -n kubeflow-model service/kubeflow-dashboard 8080:8082</code> and then look at localhost:8080</li>
+<li>kubectl proxy</li>
+</ul>
+<pre class="hljs"><code><div>kubectl port-forward -n kubeflow-model service/kubeflow-dashboard 8080:8082
+<span class="hljs-meta">
+&gt;</span><span class="bash"> Forwarding from 127.0.0.1:8080 -&gt; 8082</span>
+<span class="hljs-meta">&gt;</span><span class="bash"> Forwarding from [::1]:8080 -&gt; 8082</span>
+</div></code></pre>
+<p>None of these worked. Exposing via port-forward let me see the app but links inside were broken.</p>
+<h2 id="portforwarding">Portforwarding</h2>
+<p>Some of the docs use a metallb IP range which is not directly on the machine (they use .xip.io wirldcard DNS). In this case, they suggest</p>
+<ul>
+<li><code>ssh -D9999 ubuntu@node</code> and leaving it on. Then update networking to setup socks at this por on localhost. This performs SOCKS proxying (all networking on the machine gets tunneled over that port to <code>node</code>)</li>
+<li>Alternately, avoid the whole machine proxying and just setup proxying in firefox</li>
+<li>Using a naturally reachable set of IPs, I did not need any socks proxying.</li>
+</ul>
+
+</body>
+</html>

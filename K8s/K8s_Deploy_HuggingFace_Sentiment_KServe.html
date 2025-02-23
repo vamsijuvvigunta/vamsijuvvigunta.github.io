@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<!-- TOC -->
+<ul>
+<li><a href="#deploying-huggingface-inference-models-on-kserve">Deploying HuggingFace Inference models on KServe</a>
+<ul>
+<li><a href="#pre-requisite">Pre Requisite</a></li>
+<li><a href="#resources">Resources</a></li>
+</ul>
+</li>
+<li><a href="#develop-the-server">Develop the server</a>
+<ul>
+<li><a href="#python-pre-reqs">Python pre-reqs</a></li>
+<li><a href="#modelpy">Model.py</a></li>
+<li><a href="#old---containerizing">Old - Containerizing</a></li>
+<li><a href="#new---containerizing">New - Containerizing</a></li>
+<li><a href="#build-the-container">Build the container</a></li>
+<li><a href="#push-to-local-microk8s-registry">Push to local microk8s registry</a></li>
+</ul>
+</li>
+<li><a href="#test-service-locally">Test Service locally</a>
+<ul>
+<li><a href="#run-container-locally">run container locally</a></li>
+<li><a href="#generate-test-data">generate test data</a></li>
+<li><a href="#send-test-data-to-local-server">send test data to local server</a>
+<ul>
+<li><a href="#positive">Positive</a></li>
+<li><a href="#negative">Negative</a></li>
+<li><a href="#failed-attempt---3">Failed attempt - 3</a></li>
+<li><a href="#failed-attempt---2">Failed attempt - 2</a></li>
+<li><a href="#failed-attempt---1">Failed attempt - 1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1 id="deploying-huggingface-sentimentanalysis-inference-model-on-kserve">Deploying HuggingFace SentimentAnalysis Inference model on KServe</h1>
+<h2 id="pre-requisite">Pre Requisite</h2>
+<p>See <a href="../../../../docs/AI/AI-deploying-KServe.md">./AI-deploying-KServe.md</a> for basic KFServe pre-requisites</p>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://medium.com/mlearning-ai/deploying-a-huggingface-bert-model-with-kserve-3e521d69e596">Deploying a huggingface BERT model with KServe</a></li>
+</ul>
+<h1 id="building">Building</h1>
+<p><code>sudo docker build -t kserve_hf_sentiment:v1 -t localhost:32000/kserve_hf_sentiment:v1 -f model.Dockerfile .</code></p>
+<h1 id="develop-the-server">Develop the server</h1>
+<p>Simply copying from the article linked above just to get it running and testable from outside the cluster. Then I'll dig into how it works by customizing, swaggerUI etc.</p>
+<h2 id="python-pre-reqs">Python pre-reqs</h2>
+<p>Need to get some things into my python dev-env to get started on developing the code.</p>
+<ul>
+<li><code>pip install kserve --dryrun</code>, there is no mamba package for this
+<ul>
+<li>Seems to be installing all new packages. Instead of creating a new mamba env for this, I installed onto my existing mamba ml env</li>
+<li><code>pip install kserve</code>. Got a few error about jupyterlab3.6.3's environment needing new stuff. Can be ignored I think.</li>
+</ul>
+</li>
+</ul>
+<h2 id="modelpy">Model.py</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> typing <span class="hljs-keyword">import</span> Dict 
+
+<span class="hljs-keyword">import</span> kserve
+<span class="hljs-keyword">import</span> torch
+
+<span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoModelForSequenceClassification, AutoTokenizer
+<span class="hljs-keyword">from</span> kserve <span class="hljs-keyword">import</span> ModelServer
+<span class="hljs-keyword">import</span> logging
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KServeBERTSentimentModel</span><span class="hljs-params">(kserve.Model)</span>:</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name: str)</span>:</span>
+        super().__init__(name)
+        KSERVE_LOGGER_NAME = <span class="hljs-string">'kserve'</span>
+        self.logger = logging.getLogger(KSERVE_LOGGER_NAME)
+        self.name = name
+        self.ready = <span class="hljs-literal">False</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">load</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># Build tokenizer and model</span>
+        name = <span class="hljs-string">"distilbert-base-uncased-finetuned-sst-2-english"</span>
+        self.tokenizer = AutoTokenizer.from_pretrained(name)
+        self.model = AutoModelForSequenceClassification.from_pretrained(name, torchscript=<span class="hljs-literal">True</span>)
+        self.ready = <span class="hljs-literal">True</span>
+
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">predict</span><span class="hljs-params">(self, request: Dict, headers: Dict)</span> -&gt; Dict:</span>
+        
+        sequence = request[<span class="hljs-string">"sequence"</span>]
+        self.logger.info(<span class="hljs-string">f"sequence:-- <span class="hljs-subst">{sequence}</span>"</span>)
+
+        inputs = self.tokenizer(
+            sequence,
+            return_tensors=<span class="hljs-string">"pt"</span>,
+            max_length=<span class="hljs-number">128</span>,
+            padding=<span class="hljs-string">"max_length"</span>,
+            truncation=<span class="hljs-literal">True</span>,
+        )
+
+        <span class="hljs-comment"># run prediciton</span>
+        <span class="hljs-keyword">with</span> torch.no_grad():
+            predictions = self.model(**inputs)[<span class="hljs-number">0</span>]
+            scores = torch.nn.Softmax(dim=<span class="hljs-number">1</span>)(predictions)
+
+        results = [{<span class="hljs-string">"label"</span>: self.model.config.id2label[item.argmax().item()], <span class="hljs-string">"score"</span>: item.max().item()} <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> scores]
+        self.logger.info(<span class="hljs-string">f"results:-- <span class="hljs-subst">{results}</span>"</span>)
+
+        <span class="hljs-comment"># return dictonary, which will be json serializable</span>
+        <span class="hljs-keyword">return</span> {<span class="hljs-string">"predictions"</span>: results}
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+
+  model = KServeBERTSentimentModel(<span class="hljs-string">"bert-sentiment"</span>)
+  model.load()
+
+  model_server = ModelServer(http_port=<span class="hljs-number">8080</span>, workers=<span class="hljs-number">1</span>)
+  model_server.start([model])
+</div></code></pre>
+<p>From comments</p>
+<ul>
+<li>Seems to be for REST. What about gRPC ?
+<ul>
+<li><code>ModelServer</code> code has flags for grpc.</li>
+<li><code>kserve.Model</code> has code for grpc processing as well. So all good.</li>
+</ul>
+</li>
+<li>Quite different from a simple HF example. torchserve conversion effects ?</li>
+<li>ModelServer</li>
+</ul>
+<h2 id="old---containerizing">Old - Containerizing</h2>
+<ul>
+<li>The above link drops any mention of the dockerfile entirely</li>
+<li>Search seems to want me to use <a href="../../../../../infrastructure/FAQ-buildpacks.md">buildpacks</a> but I don't want to learn/debug yet another thing. Doesn't help that this being a heroku-initiated project, using heroku/.. stuff doesn't really inspire confidence when I want to build for k8s. <em>While this may work to automatically figure out the needed python packages and versions etc, gitOps etc demands a proper version controlled file</em>.</li>
+<li>Found an example from <a href="https://docs.arrikto.com/user/kale/serving/custom-models/create-model.html#what-you-ll-need">Arrikto KServe</a> that shows it. From there, updating to my versions</li>
+<li>python 3.10</li>
+<li>sub-dir of <code>model</code></li>
+<li>requirements
+<ul>
+<li>kserve=0.11</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">FROM</span> python:<span class="hljs-number">3.10</span>-slim
+
+<span class="hljs-keyword">COPY</span><span class="bash"> model model</span>
+
+<span class="hljs-keyword">WORKDIR</span><span class="bash"> model</span>
+<span class="hljs-keyword">RUN</span><span class="bash"> pip install --upgrade pip &amp;&amp; pip install -r requirements.txt</span>
+
+<span class="hljs-keyword">ENTRYPOINT</span><span class="bash"> [<span class="hljs-string">"python"</span>, <span class="hljs-string">"KServeBertSentimentModel.py"</span>]</span>
+</div></code></pre>
+<p>Digging into some more docs, I had to specify extra package index urls to use <code>cuda118</code> versions</p>
+<ul>
+<li>removed tornado, rayserve and only retained these.</li>
+</ul>
+<pre class="hljs"><code><div># requirements.txt
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch
+torchvision
+kserve==0.11
+protobuf
+</div></code></pre>
+<h2 id="new---containerizing">New - Containerizing</h2>
+<ul>
+<li>The containers built as shown above result in 7.75G</li>
+<li>Pushing it to dockerhub (<em>when tagged with <code>juvvi/...</code></em>) takes forever</li>
+<li>Pushing it to the microk8s registry (for later pull in pods) is much faster but still takes a non-trivial amount of time.</li>
+<li>So layering it so I'll have to take the push hit just once and after that all kserve images will be just the custom serving code.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-comment"># See base layers being built up to reduce layer size</span>
+<span class="hljs-comment"># infrastructure/docker-images/py-3.10-cu118-torch-kserve</span>
+<span class="hljs-keyword">FROM</span> py-<span class="hljs-number">3.10</span>-cu118-torch-kserve
+
+<span class="hljs-keyword">COPY</span><span class="bash"> model model</span>
+
+<span class="hljs-keyword">WORKDIR</span><span class="bash"> model</span>
+
+<span class="hljs-keyword">ENTRYPOINT</span><span class="bash"> [<span class="hljs-string">"python"</span>, <span class="hljs-string">"KServeBertSentimentModel.py"</span>]</span>
+</div></code></pre>
+<h2 id="build-the-container">Build the container</h2>
+<blockquote>
+<p>Note that the tag should include the dockerhub username <code>juvvi</code> if pushing to dockerhub. Can be retagged later on as well.</p>
+</blockquote>
+<pre class="hljs"><code><div>vamsi@hillops_dev:~/bitbucket/hillops/projects/learn/NLP/kserve-hf-sentiment$sudo docker build -t kserve-hf-sentiment:latest -f model.Dockerfile .
+
+.
+snip
+.
+Successfully built 4293049270a8
+Successfully tagged juvvi/kserve-hf-sentiment:latest
+</div></code></pre>
+<p>👉 Builds super-fast</p>
+<pre class="hljs"><code><div>(ml) vamsi@hillops_dev:~/bitbucket/hillops/projects/learn/NLP/kserve-hf-sentiment$sudo docker images
+REPOSITORY                                   TAG         IMAGE ID       CREATED          SIZE
+kserve-hf-sentiment                          latest      76f1b27086c8   12 seconds ago   7.75GB
+py-3.10-cu118-torch-kserve                   latest      2aab895be2a2   10 minutes ago   7.75GB
+localhost:32000/py-3.10-cu118-torch-kserve   latest      2aab895be2a2   10 minutes ago   7.75GB
+&lt;none&gt;                                       &lt;none&gt;      563ce8058845   12 minutes ago   7.25GB
+py-3.10-cu118-torch                          latest      ca74d9807219   40 minutes ago   7.25GB
+localhost:32000/py-3.10-cu118-torch          latest      ca74d9807219   40 minutes ago   7.25GB
+&lt;none&gt;                                       &lt;none&gt;      718ad7db4922   2 hours ago      128MB
+python                                       3.10-slim   629ddec3e227   5 weeks ago      128MB
+juvvi/frontend-samples                       latest      4d9e10057e07   4 months ago     196MB
+node                                         20-alpine   ade38d68438a   5 months ago     181MB
+</div></code></pre>
+<p>It shows the combined image size, but when pushing to the microk8s registry (still at localhost:32000 because of WSL port mapping magic), it is instantaneous: a few kB ?</p>
+<h2 id="push-to-local-microk8s-registry">Push to local microk8s registry</h2>
+<blockquote>
+<p>Note: Creating two heavy base layes: py-3.10-cu118-torch and py-3.10-cu118-torch-kserve (_based on py-3.10-cu118-torch) allow for a real small final container layer. Very fast to push.</p>
+</blockquote>
+<ul>
+<li><code>sudo docker tag 76f1b27086c8 localhost:32000/kserve-hf-sentiment</code></li>
+<li><code>sudo docker push localhost:32000/kserve-hf-sentiment</code></li>
+</ul>
+<pre class="hljs"><code><div>(ml) vamsi@hillops_dev:~/bitbucket/hillops/projects/learn/NLP/kserve-hf-sentiment$sudo docker push localhost:32000/kserve-hf-sentiment
+Using default tag: latest
+The push refers to repository [localhost:32000/kserve-hf-sentiment]
+e5c2729af2b2: Pushed
+3a80db614556: Mounted from py-3.10-cu118-torch-kserve
+fa2760060015: Mounted from py-3.10-cu118-torch-kserve
+938023a55faa: Mounted from py-3.10-cu118-torch-kserve
+343912e4eb79: Mounted from py-3.10-cu118-torch-kserve
+40d6e2f7a59c: Layer already exists
+dbfedca961be: Layer already exists
+da4afe124282: Layer already exists
+e96fe707bd25: Layer already exists
+571ade696b26: Layer already exists
+latest: digest: sha256:2a82aa96ae0d03076faf6a42c5bbd12b892458028164ba5fc301121d80e9f5c5 size: 2419
+</div></code></pre>
+<h1 id="test-service-locally">Test Service locally</h1>
+<p><a href="https://medium.com/mlearning-ai/deploying-a-huggingface-bert-model-with-kserve-3e521d69e596">Deploying a huggingface BERT model with KServe</a> did not include this step. <em>Leads me to think this was copied from some online exercise and simply re-packaged without any other value-add</em></p>
+<p>Using <a href="https://kserve.github.io/website/0.8/modelserving/v1beta1/custom/custom_model/">official kserve docs - How to write a custom predictor</a></p>
+<pre class="hljs"><code><div>@startuml
+start
+:Docker run myModel;
+:curl localhost:.. -d @/input.json;
+:examine output;
+stop
+@enduml
+</div></code></pre>
+<h2 id="run-container-locally">run container locally</h2>
+<p><code>docker run -ePORT=8080 -p8080:8080 dockerUserOrRegistry/image:version</code></p>
+<ul>
+<li>Not sure what <code>ePORT</code> is</li>
+<li><code>-p8080:8080</code> (<em>hostPort:containerPort</em>) creates a local port(<em>hostPort</em>) which forwards to a port inside the container (<em>containerPort</em>).</li>
+<li>Likely shoud add a <code>-d</code> to run detached so I can communicate with it from the same console window. If I do, use <code>docker attach</code> to bring it to the front.</li>
+</ul>
+<pre class="hljs"><code><div>(ml) 1 vamsi@hillops_dev:~$sudo docker run -p 8080:8080 kserve-hf-sentiment
+</div></code></pre>
+<p>went through and fixed a whole bunch of python errors</p>
+<ul>
+<li>missing ':'</li>
+<li>missing modules 'transformers'</li>
+</ul>
+<p>finally ended with it atleast launching</p>
+<pre class="hljs"><code><div>(ml) 1 vamsi@hillops_dev:~/bitbucket/hillops/projects/learn/NLP/kserve-hf-sentiment$sudo docker run -p 8080:8080 kserve-hf-sentiment
+tokenizer_config.json: 100%|██████████| 48.0/48.0 [00:00&lt;00:00, 386kB/s]
+config.json: 100%|██████████| 629/629 [00:00&lt;00:00, 4.66MB/s]
+vocab.txt: 100%|██████████| 232k/232k [00:00&lt;00:00, 3.31MB/s]
+model.safetensors: 100%|██████████| 268M/268M [00:02&lt;00:00, 97.9MB/s]
+INFO:kserve:Registering model: bert-sentiment
+INFO:kserve:Setting max asyncio worker threads as 32
+INFO:kserve:Starting uvicorn with 1 workers
+2024-01-26 17:51:54.497 uvicorn.error INFO:     Started server process [1]
+2024-01-26 17:51:54.498 uvicorn.error INFO:     Waiting for application startup.
+2024-01-26 17:51:54.507 1 kserve INFO [start():62] Starting gRPC server on [::]:8081
+2024-01-26 17:51:54.508 uvicorn.error INFO:     Application startup complete.
+2024-01-26 17:51:54.508 uvicorn.error INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+</div></code></pre>
+<h2 id="generate-test-data">generate test data</h2>
+<p>from this block of python code</p>
+<pre class="hljs"><code><div>        _sequence = request.get(<span class="hljs-string">"sequence"</span>, <span class="hljs-string">""</span>)
+</div></code></pre>
+<p>I would image a json like this (<em>text input</em>)</p>
+<pre class="hljs"><code><div>{
+    <span class="hljs-attr">"sequence"</span>: <span class="hljs-string">"The soup was awful"</span>
+}
+</div></code></pre>
+<h2 id="send-test-data-to-local-server">send test data to local server</h2>
+<p>Start the container this way to send the env var <code>LOGLEVEL=DEBUG</code></p>
+<p><code>(ml) vamsi@hillops_dev:~/$sudo docker run -eLOGLEVEL=&quot;DEBUG&quot; -p 8080:8080 kserve-hf-sentiment</code></p>
+<p>Run the positive and negative cases</p>
+<h3 id="positive">Positive</h3>
+<pre class="hljs"><code><div>{
+   <span class="hljs-attr">"sequence"</span> : <span class="hljs-string">"I loved the movie"</span>    
+}
+</div></code></pre>
+<pre class="hljs"><code><div>(ml) vamsi@hillops_dev:~$curl -H "Content-Type: application/json" localhost:8080/v1/models/bert-sentiment:predict -d @./test/input.json
+{"predictions":[{"label":"POSITIVE","score":0.9998657703399658}]}
+</div></code></pre>
+<h3 id="negative">Negative</h3>
+<pre class="hljs"><code><div>{
+   <span class="hljs-attr">"sequence"</span> : <span class="hljs-string">"I hated the lunch"</span>
+}
+</div></code></pre>
+<pre class="hljs"><code><div>(ml) vamsi@hillops_dev:~/bitbucket/hillops/projects/learn/NLP/kserve-hf-sentiment$curl -H "Content-Type: application/json" localhost:8080/v1/models/bert-sentiment:predict -d @./test/neg_input.json
+{"predictions":[{"label":"NEGATIVE","score":0.9994094371795654}]}
+</div></code></pre>
+<h3 id="failed-attempt---3">Failed attempt - 3</h3>
+<p>Tried to dump out the data coming in so I could see what it contained.</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">predict</span><span class="hljs-params">(self, request: Dict, headers: Dict)</span> -&gt; Dict:</span>
+
+        <span class="hljs-comment"># Dump the entire request out for debugging</span>
+        self.logger.debug(
+            json.dumps(request,indent=<span class="hljs-number">4</span>)
+        )
+</div></code></pre>
+<p>Just could not see the logs on this though. Turns out it was logging system malfunction. I had to keep the following in mind</p>
+<ul>
+<li><code>logging.basicConfig</code> is to be done just once. Not sure if some other piece of the code has already done it.</li>
+<li><code>logging.setLevel()</code> at the root level was ineffective. Not sure if it was something else since the formatString of the console output was different from what I eventually got</li>
+<li><code>logging.getLogger(..)</code>  to get my module logger and then setting level on this via env worked!</li>
+<li>send env var via docker run's <code>-e</code></li>
+</ul>
+<p><code>(ml) vamsi@hillops_dev:~$sudo docker run -eLOGLEVEL=&quot;DEBUG&quot; -p 8080:8080 kserve-hf-sentiment</code></p>
+<pre class="hljs"><code><div> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KServeBERTSentimentModel</span><span class="hljs-params">(kserve.Model)</span>:</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name: str)</span>:</span>
+        super().__init__(name)        
+
+        <span class="hljs-comment"># Logging</span>
+        _KSERVE_LOGGER_NAME=<span class="hljs-string">'KServeBERTSentimentModel'</span>
+        self._setupLogging(_KSERVE_LOGGER_NAME)
+        ....
+    
+    <span class="hljs-comment"># Inherit same handlers as root but allow overriding of loglevel</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_setupLogging</span><span class="hljs-params">(self, loggerName)</span>:</span>        
+        self.logger = logging.getLogger(loggerName)
+        <span class="hljs-keyword">if</span> <span class="hljs-string">"LOGLEVEL"</span> <span class="hljs-keyword">in</span> os.environ:
+            self.logger.setLevel(os.getenv(<span class="hljs-string">"LOGLEVEL"</span>).upper())
+</div></code></pre>
+<p>✔️ 😁 Finally figured that the proble was that my json file was the original copy-pasted garbage which did not have my actual keys. Modified them and all was good.</p>
+<p>Final logs that I see</p>
+<pre class="hljs"><code><div>DEBUG:KServeBERTSentimentModel:{                                                                                            &quot;sequence&quot;: &quot;I loved the movie&quot;                                                                                     }                                                                                                                       INFO:KServeBERTSentimentModel:sequence:--I loved the movie                                                              INFO:KServeBERTSentimentModel:results:-- [{'label': 'POSITIVE', 'score': 0.9998657703399658}]                           2024-01-26 23:18:32.691 kserve.trace requestId: N.A., preprocess_ms: 0.047922134, explain_ms: 0, predict_ms: 373.312473297, postprocess_ms: 0.002384186                                                               
+</div></code></pre>
+<h3 id="failed-attempt---2">Failed attempt - 2</h3>
+<blockquote>
+<p>Note: /v1/models/${MODEL_NAME} <code>:predict</code></p>
+</blockquote>
+<p><code>$curl localhost:8080/v1/models/bert-sentiment:predict -d @./test/input.json</code></p>
+<pre class="hljs"><code><div>vamsi@hillops_dev:~$curl localhost:8080/v1/models/bert-sentiment:predict -d @./test/input.json
+{"error":"AttributeError : 'bytes' object has no attribute 'get'"}
+</div></code></pre>
+<p>hmm.. what is the type of <code>request</code> then ?</p>
+<p>✔️ _Saw some other article that used content encoding via <code>-H &quot;Content-Type: application/json&quot;</code>. Using that make the input input a Dict rather than a byte-stream.</p>
+<h3 id="failed-attempt---1">Failed attempt - 1</h3>
+<p><code>$curl localhost:8080/v1/models/bert-sentiment/predict -d @./test/input.json</code></p>
+<pre class="hljs"><code><div>(ml) vamsi@hillops_dev:~$curl localhost:8080/v1/models/bert-sentiment/predict -d @./test/input.json
+{"detail":"Not Found"}
+</div></code></pre>
+<p>hmm.., getting this error on the console log</p>
+<pre class="hljs"><code><div>2024-01-26 18:16:55.215 uvicorn.access INFO:     172.17.0.1:58606 1 - &quot;POST /v1/models/bert-sentiment/predict HTTP/1.1&quot; 404 Not Found
+</div></code></pre>
+<p>✔️ Closer look. Messed up. should be <code>/v1/models/bert-sentiment:predict</code> instead of <code>/v1/models/bert-sentiment/predict</code>. The <code>404</code> should have alerted me to this.</p>
+
+</body>
+</html>
