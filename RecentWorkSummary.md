@@ -2,6 +2,7 @@
 
 <!-- TOC -->
 
+- [OSS contributions](#oss-contributions)
 - [K8s](#k8s)
 - [NLP](#nlp)
 - [LLMs](#llms)
@@ -10,7 +11,6 @@
     - [LLM - Tool calling](#llm---tool-calling)
     - [LLM - Agentic / Pregel](#llm---agentic--pregel)
 - [Rust](#rust)
-- [OSS contributions](#oss-contributions)
 - [Frontend](#frontend)
 
 <!-- /TOC -->
@@ -83,8 +83,25 @@ timeline
 ```
 ---
 
-The R&D portion of my sabbatical was about learning about the ML/GenAI/LLM side of things via web/mobile services. My goal was to explore and build up enough solutioning vocabulary in this new and exciting space: building a test-bed for experimentation was the first step. To keep me focused, I had chosen two concrete use cases of **text → animation** _(3D skeletal/IKE)_ and **text → process-flow** _(pi-calculus/BPML)_. The journey into these domains entailed a lot of switchbacks between breadth-first discovery and depth-first drill-downs. I also periodicaly refocussed on end-to-end progress so I wouldn't get stuck in rabbit holes. Consequently, many threads of exploratory study were being juggled, back-burnered, resumed or abandoned. The rapidly evolving landscape, while exciting, was also exhausting and frequently obsoleted my plans. Ultimately though, an agentic runtime based on a Pregel implementation seemed to be a key enabler: something that offered tantalizing possibilities for graph evolution and optimization in an LLM centered world.
+The R&D portion of my sabbatical was about learning about the ML/GenAI/LLM side of things via web/mobile services. My goal was to explore and build up enough solutioning vocabulary in this new and exciting space: building a test-bed for experimentation was the first step. To keep me focused, I had chosen a concrete use cases of **text → animation** _(3D skeletal/IKE)_. The journey into these domains entailed a lot of switchbacks between breadth-first discovery and depth-first drill-downs. I also periodicaly refocussed on end-to-end progress so I wouldn't get stuck in rabbit holes. Consequently, many threads of exploratory study were being juggled, back-burnered, resumed or abandoned. The rapidly evolving landscape, while exciting, was also exhausting and frequently obsoleted my plans. Ultimately though, an agentic runtime based on a Pregel implementation seemed to be a key enabler: something that offered tantalizing possibilities for graph evolution and optimization in an LLM centered world.
 
+## OSS contributions
+
+  - **rust-web-app** 
+    - [architecture notes on github](https://github.com/vamsi-juvvi/rust-web-app/tree/main/docs/00_base-rust-web-app)
+    - Refactor rust-web-app
+      - [Design/Coding docs](https://github.com/vamsi-juvvi/rust-web-app/tree/main/docs/01_refactor_lib_rpc_lib_web)
+      - [Jeremy Chones video describing the PRs - 2 Cool Pull Requests for Rust Web App Blueprint](https://www.youtube.com/watch?v=MHwpSZA2uNA) 
+    - [👉 PR: Adding gateway/worker architecture](https://github.com/vamsi-juvvi/rust-web-app/pull/1) needed the previously done refactoring split. I then proceeded to build a prototype _(which I use as my main testbed)_ that takes a `Gateway` which routes incoming RPC calls to different workers based on URL.
+      - [Design docs](https://github.com/vamsi-juvvi/rust-web-app/tree/main/docs/02_worker_architecture)
+ - **rust-genai**
+   - [👉 PR: Adding function calling to OpenAI/Groq adapters ](https://github.com/vamsi-juvvi/rust-genai/pull/1) _this was ultimately not merged as the author Jeremy Chone wanted to go a different direction_
+     - [Design/Code docs for the PR](https://github.com/vamsi-juvvi/rust-genai/blob/function_calling_openai/docs/add-function-calling/0-AddingFunctionCallingToGenAI.md) extensively documented this as it was an unsolicited PR into another author's repo and there were a lot of changes: I wanted to show that I had taken plenty of care to be a good guest.
+     - [👉 Documentation for get_weather tool calling example](https://github.com/vamsi-juvvi/rust-genai/blob/function_calling_openai/docs/add-function-calling/c06-code-and-traces.md) compares OpenAI's references python impl with the rust one I created.
+     - [👉 Documentation for set_temperature IOT tool calling example](https://github.com/vamsi-juvvi/rust-genai/blob/function_calling_openai/docs/add-function-calling/c07-code-and-traces.md) a more complex example that requires the LLM to sequence two tool calls in the right order.
+ - **React frontend to Rust Web App** (WIP) 
+   - Sample react front-end with athentication, session and refresh tokens, OAuth2 google/github auth with examples hitting various backend jsonrpc authenticated APIs.
+   
 ## K8s
 
 Concluding in early 2022 that K8s offered the most flexible way of deploying services, I decided to build one in my home-lab. A major consideration against using google or amazon's K8s during the learning phase was that I might end up with wayward resource usage and ruinously high bills.
@@ -220,23 +237,6 @@ Around early 2024, I decided to abandon scala and switch to Rust. Among the many
  - All you need is VSCode!
  - [2024 Rust start and OSS contributions](./Rust/Rust_2024_StartAndOSS.md) 
  - [2025 Loving intermediate rust](./Rust/Rust_2025_Intermediate.md)
-
- ## OSS contributions
-
-  - **rust-web-app** 
-    - [architecture notes on github](https://github.com/vamsi-juvvi/rust-web-app/tree/main/docs/00_base-rust-web-app)
-    - Refactor rust-web-app
-      - [Design/Coding docs](https://github.com/vamsi-juvvi/rust-web-app/tree/main/docs/01_refactor_lib_rpc_lib_web)
-      - [Jeremy Chones video describing the PRs - 2 Cool Pull Requests for Rust Web App Blueprint](https://www.youtube.com/watch?v=MHwpSZA2uNA) 
-    - [PR: Adding gateway/worker architecture](https://github.com/vamsi-juvvi/rust-web-app/pull/1) needed the previously done refactoring split. I then proceeded to build a prototype _(which I use as my main testbed)_ that takes a `Gateway` which routes incoming RPC calls to different workers based on URL.
-      - [Design docs](https://github.com/vamsi-juvvi/rust-web-app/tree/main/docs/02_worker_architecture)
- - **rust-genai**
-   - [PR: Adding function calling to OpenAI/Groq adapters ](https://github.com/vamsi-juvvi/rust-genai/pull/1) _this was ultimately not merged as the author Jeremy Chone wanted to go a different direction_
-     - [Design/Code docs for the PR](https://github.com/vamsi-juvvi/rust-genai/blob/function_calling_openai/docs/add-function-calling/0-AddingFunctionCallingToGenAI.md) extensively documented this as it was an unsolicited PR into another author's repo and there were a lot of changes: I wanted to show that I had taken plenty of care to be a good guest.
-     - [Documentation for get_weather tool calling example](https://github.com/vamsi-juvvi/rust-genai/blob/function_calling_openai/docs/add-function-calling/c06-code-and-traces.md) compares OpenAI's references python impl with the rust one I created.
-     - [Documentation for set_temperature IOT tool calling example](https://github.com/vamsi-juvvi/rust-genai/blob/function_calling_openai/docs/add-function-calling/c07-code-and-traces.md) a more complex example that requires the LLM to sequence two tool calls in the right order.
- - **React frontend to Rust Web App** (WIP) 
-   - Sample react front-end with athentication, session and refresh tokens, OAuth2 google/github auth with examples hitting various backend jsonrpc authenticated APIs.
       
 ## Frontend
 
