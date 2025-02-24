@@ -5,20 +5,20 @@
 
 # My implementation
 
-The `pregel-rs` impl seems odd. Either It does not hew closely to the pregel algo terminology _(unlike the neo4j)_ or maybe the impl was optimized to work with the advantages rust provides. Not clear. I want to see if I can come up with all this from scratch using the Neo4j interfaces as my guide and a standard graph library for rust. _I will need to quickly wrap up reading the rust book in that case_.
+The `pregel-rs` impl seems odd. Either It does not hew closely to the pregel algo terminology _(unlike the neo4j interfaces)_ or maybe the impl was optimized to work with the advantages rust provides. Not clear. I want to see if I can come up with all this from scratch using the Neo4j/databricks interfaces as my guide, using a standard rust graph library. _I will need to quickly wrap up reading the rust book in that cass as library design calls for more indepth knowledge_.
 
  - **Rust Graph Lib**  [petgraph](https://docs.rs/petgraph/latest/petgraph/)
    - serialization
    - export to graphviz
-   - [Tutotial/Review](https://hobbs.cz/rust-play/petgraph_review.html)
+   - [Tutorial/Review](https://hobbs.cz/rust-play/petgraph_review.html)
  - [SO Thread about Graph with arbitrary stucts](https://stackoverflow.com/questions/72983084/i-created-a-graph-with-petgraph-using-structs-as-nodes-but-i-cant-change-the-va)
  - [Banana - graph visualization C++/Qt](https://github.com/rrwick/Bandage) which uses [OGDF Graph Layout Algorithms in C++](https://github.com/ogdf/ogdf)
  - [Layout - A rust library that renders dot files into images](https://github.com/nadavrot/layout)
 
 
 ```bash
-cargo new pregel
-cd pregel
+cargo new --lib lib-pregel
+cd lib-pregel
 cargo add petgraph
 ```
 
@@ -45,7 +45,7 @@ From a cursory look and using [SO Thread about Graph with arbitrary stucts](http
 
 ## Impl - Petgraph
 
-petgraph seems to be a standard choice in graph libraries. So might as well figure some things out. This [Petgraph Review](https://hobbs.cz/rust-play/petgraph_review.html) seems to be a good starting point. He is actually using a rust notebook!
+petgraph seems to be a standard choice in rust graph libraries. So might as well figure some things out. This [Petgraph Review](https://hobbs.cz/rust-play/petgraph_review.html) seems to be a good starting point. He is actually using a rust notebook!
 
 
 # History
@@ -72,7 +72,7 @@ trait PregelNode<InMsg, OutMsg> {
 
 ## Combine messaging into one
 
-Don't think there is a way to express PregelNode in terms of `MessageInbox` and `MessageOutbox`. Seems vastly simpler to collapse it all as they all belong togehter anyway.
+Don't think there is a way to express PregelNode in terms of `MessageInbox` and `MessageOutbox`. Seems vastly simpler to collapse it all as they all belong together anyway.
 
 
 ```rust
@@ -88,7 +88,7 @@ trait PregelNode<InMsg, OutMsg> {
 
 ## Concretize Messages
 
-It was tempting to provide a small set of strongly types message classes and group them into an Enum.I feel that eventually we'll need generic JsonValue in here and allow the nodes to transform `Json->InputMessage` and `OutputMessage->Json`. However, that complexity and expense of conversion is not be needed right now. Lets see where I get stuck with concrete messages.
+It was tempting to provide a small set of strongly typed message classes and group them into an Enum. I feel that eventually we'll need generic JsonValue in here and allow the nodes to transform `Json->InputMessage` and `OutputMessage->Json`. However, that complexity, generality and expense of conversion is not needed right now. Lets see if get stuck with strongly typed concrete message types first.
 
 ```rust
 #[derive(Clone, Debug)]
@@ -172,9 +172,9 @@ impl PregelNode for AgentNode {
 
 ## Validate top down - create
 
-Frequently going from the top use case helps to not get stuck with an unworkable low level design or a low level design with terrible DX.
+Frequently going from the top use case helps to not get stuck with an unworkable low level design or a low level design resulting in terrible use-case DX.
 
-I saw a problem right in creating the pergraph MapGraph. **Petgraph's MapGraph needs Node, Edge** to be Copyable. VecDequeue is not _(note that Copyable in rust implies bitwise copy)_. Online examples showed non-copyable structs working with StableGraph. Will check that.
+I saw a problem right away in creating the pergraph MapGraph. **Petgraph's MapGraph needs Node, Edge** to be Copyable. VecDequeue is not _(note that Copyable in rust implies bitwise copy)_. Online examples showed non-copyable structs working with `StableGraph`. Will check that.
 
 ![](./img/LibPregel_Rust.svg)
 
@@ -225,7 +225,7 @@ fn main() {
 }
 ```
 
- - Cumbersome this three step process. Great candidate for hiding inside a `Pregel` instance which encapsulates the graph itself.
+ - Cumbersome, this three step process. Great candidate for hiding inside a `Pregel` instance which encapsulates the graph itself.
 
 ### Refactor into a Pregel instance 
 
@@ -572,7 +572,7 @@ If we are doing init messages, it seems to me that outputs should work the same 
 
  - Nodes state is controlled/reset by incoming messages
  - Can consider the collection of messages to be the state. 
-   - Nothing stops us from reprocessing those init messages in repetqed invoctions to produce the same output _(or memoize)_
+   - Nothing stops us from reprocessing those init messages in repeated invocations to produce the same output _(or memoize)_
    - However, pregel explicitly talks about de-activating Nodes if no incoming messages.
      - Drain the input messages then ?
      - Treat it like incoming data-packet which is consumed/processed
@@ -580,14 +580,14 @@ If we are doing init messages, it seems to me that outputs should work the same 
 
  ## Consolidating messaging - IO
 
-Even if pregeal specifies that putputs be collected and then sent in as inputs at start of ext super-step. I can totally see all this simply reduced to a plain function call.
+Even if pregeal specifies that outputs be collected and then sent in as inputs at start of ext super-step. I can totally see all this simply reduced to a plain function call.
 
  `exec(Vec<inMsg>) -> Result<OutMsg>`
 
   - Collect input messages _(mail box is with Pregel)_ per node
   - Each superstep
     - call each node and collect it's output
-    - Either serially or paralelly
+    - Either serially or parallelly
   - When Scale is massive like Google's
     - Central storage of all message data, unbounded memory
     - Best to have each Node store in/out msgs
@@ -636,18 +636,18 @@ pub trait PregelNode {
 }
 ```
 
-Message abstraction and waiting for superstep is all part of the algo, the Node abstraction does not need to expose it. If it turns out that paralell execution requires it, can always bring it back. For now, simple is good.
+Message abstraction and waiting for superstep is all part of the algo, the Node abstraction does not need to expose it. If it turns out that paralell execution requires it, can always bring it back. For now, simplify!
 
 ## Rusty - Impl associated type defaults
 
-In C++, I am used to creating typedefs for gnarly types: makes code much easier to read and elps in focusing on the core algo more than the mile long stl type decls. Rust however have some limitations around it _(all for good reasons, I'd assume, but its a pain nevertheless)_
+In C++, I am used to creating typedefs for gnarly types: makes code much easier to read and helps in focusing on the core algo more than the mile long stl type decls. Rust however has some limitations around it _(all for good reasons, I'd assume, but its a pain nevertheless)_
 
  - ✔️ type aliases at the module level.
  - 👎No type aliases at the struct level
     - Not a big deal as I can do it at the module level.
  - ✔️ `associated type`s at the trait level
     - This is great as the traits are meant to be a collection of behavior/functions and you can neatly express them in semantically meaningful types, whatever those are.
-    - Powerful as rust allows you to specify constraints on these associated types.
+    - Powerful: as rust allows you to specify constraints on these associated types.
     - However
         - 👎 traits have no data fields and you have to impl a trait for a struct. 
         - If that struct were to have multiple data structures using the associated types, how are you going to pre-declare them if you cannot reference the types ?  
@@ -669,7 +669,7 @@ Best I can do for now is ` type BoxedNodeTraitObjectType : Deref;`
 
 ## More rust offness - The Pimpl lives again
 
-> When you implement a trait for a struct, you cannot throuw in any helper methods in that same impl blocks. Only those methids listed in the trait can exist in the block!!! I want to keep related things close and keep the impl close too. Disappointing choice. 
+> When you implement a trait for a struct, you cannot throw in any helper methods in that same impl blocks. Only those methods listed in the trait can exist in the block!!! What a serious PITA! I want to keep related things close and keep the impl close too. Disappointing lang choice. 
 
 Finally switched to the typical `pimpl` idiomness
 
@@ -793,7 +793,7 @@ Tons more issues later, I reorganized the code to keep the BC happy
 
  - Avoid returning references (either return or into `mut ref` params)
  - Postpone learning about specifying lifetimes for such things, just get things working for now
- - Chaining multiple for_each blocks, each of them using the same mutable member is a serious issue. Essentially, there are multiple `FnMut` involved here implementing the closures and they both want to hold the mutable reference and the BC does not like this. You have to understand the implementation for this to make sense. Gah!! 
+ - Chaining multiple for_each blocks, each of them using the same mutable member is a serious issue. Essentially, there are multiple `FnMut` involved here implementing the closures and they all want to hold the mutable reference and the BC does not like this. You have to understand the low-level desugaring of `for_each` tounderstand this. Gah!! 
  - I'm sure I'll come up with better strategies as I grok the BC, Lifetimes and such better.
 
 # First working code
@@ -928,7 +928,7 @@ and the `Future` involved is the async block's output from `PregelNode.exec` `Fu
 
 ### MutexGuard is not sync
 
-Then the error changed to `MutexGuard` is not sync. This is the `mutex.lock()` I am using inside the async clsure! 
+Then the error changed to `MutexGuard` is not sync. This is the `mutex.lock()` I am using inside the async closure! 
 
 https://stackoverflow.com/questions/67277282/async-function-the-trait-stdmarkersend-is-not-implemented-for-stdsync. ALso see [Rust_Async_MT.md](../../../docs/Rust_Async_MT.md)
 
@@ -998,7 +998,7 @@ fn get_prompt_from_messages(
 Now, I am expecting every node impl to use logic like this. Naturally points to refactoring into a utility func.
 
  - Generics were the first thought!
- - However, enum type `AgenticMessage` can be a generic parameter but a variant _(that we are filtering on)_ cannot.
+ - However, while enum type `AgenticMessage` can be a generic parameter, a variant _(that we are filtering on)_ cannot.
  - This means, API will need to still take a filter that matches on the wanted type.
 
 **Starting with 👇**
