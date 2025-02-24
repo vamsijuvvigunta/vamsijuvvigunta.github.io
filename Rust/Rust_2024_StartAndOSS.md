@@ -55,7 +55,7 @@ I decided that I love the language. It is functional, so many things were simila
 
 I am listing some of the rust-specific notes I had taken while going through [Jeremy Chone's Rust Axum Full Course](https://www.youtube.com/watch?v=XZtlD_m59sM).cd .
 
-![Rust axum full course notes](./img/rust101_axum_fullcourse_notes.svg)
+![Rust axum full course notes](./img/rust101_axum_fullcourse_notes.svg) 
 
 # Update rust-web-app to include a LLM/NLP service API
 
