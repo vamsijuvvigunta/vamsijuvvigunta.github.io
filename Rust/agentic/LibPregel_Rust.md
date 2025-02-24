@@ -176,53 +176,7 @@ Frequently going from the top use case helps to not get stuck with an unworkable
 
 I saw a problem right in creating the pergraph MapGraph. **Petgraph's MapGraph needs Node, Edge** to be Copyable. VecDequeue is not _(note that Copyable in rust implies bitwise copy)_. Online examples showed non-copyable structs working with StableGraph. Will check that.
 
-```plantuml
- @startmindmap
- * = petgraph\nPregel
- **[#lightpink] == GraphMap
-
- ***[#yellow] **N** and **E** to be Copyable
- ***: Copy in rust is a memcpy and str, String 
- do not implement it and neither do many types.
- 
-That means node can only have an int or 
-some simple type;
-
-**[#lightgreen] == StableGraph
-***: Since we want stable ID,
-use StableGraph and implement
-mapping etc in the context;
-
-***[#lightgreen] **N** and **E** do not need to be Copyable
-
-***:ID stability is needed so we 
-can always map into the context;
-
-***:Why not GraphMap with an ID if
-most data is in an external context 
-anyway ?;
-
-****:want to atleast have name/desc
-during debug;
-
-****: even if we need to hit the context 
-to generate actual Display string
-for debug;
-
-**** Not a big deal either way.
-
-**[#yellow] Creation
-*** Factory
-**** create PetGraphNodes and arcs
-**** create PetGraphArc with () as data
-*** On creation, set the ID in the node?
-
-**[#yellow] Init
-*** Create nodes
-*** Add nodes to graph
-*** IDs of nodes for first super-step
-@endmindmap
-```
+![](./img/LibPregel_Rust.svg)
 
 this then changes code to 
 
@@ -352,64 +306,7 @@ impl PregelPetgraph {
 
 ### Single Node - Init, Iter, Termination, Output
 
-```plantuml
-@startmindmap
-* Status
-**:== Init
-no-op, the initial state of the node is the init;
-**:== Iter
-Single sep, no iteration;
-**:==Termination
-Terminates after one step;
-**:==Output
-None;
-
-***: Hold on to the node 
-at graph creation time 
-and simply access it;
-**** Similar but less nice
-****:Will have to be a //RefCell//
-or mutex anyway;
-****:Less risk of runtime errors
-with multipel mut access
-if we don't do this;
-
-***:Get the node at end 
-and fetch it's output;
-**** Ownership to the graph
-**** No need to store in driver
-**** Looks cleaner
-
-***[#lightgreen]:=== Consistency
-between single node 
-and networked case;
-
-****: Internal Node State
- - Json: Input
- - Deserialized Struct: Input
- - Struct: Output
- - Json : Output //message form//;
-
-****:For now, all outputs as JSON
-Value with custom Struct and 
-deserializer
-
-Use either format;
-
-****:Networked, all outputs flow
-via messages;
-
-****:Storing extra info inside in
-a different format might still 
-be valuable to avoid 
-deserialization
-
-**if** someone has access to the 
-node impl, they can get it direct 
-from the node;
-
-@endmindmap
-```
+![](./img/LibPregel_Rust-1.svg)
 
 ```rust
 use std::collections::HashMap;
