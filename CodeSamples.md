@@ -2,28 +2,28 @@
 <!-- TOC -->
 
 - [Git and code samples](#git-and-code-samples)
-    - [LLM - TANL - Python notebook](#llm---tanl---python-notebook)
-    - [OSS contributions - Rust and Docs](#oss-contributions---rust-and-docs)
-    - [LLM - Pregel infrastructure to compose agentic nodes - Rust](#llm---pregel-infrastructure-to-compose-agentic-nodes---rust)
+    - [Python - LLM - TANL](#python---llm---tanl)
+    - [Rust - OSS contributions](#rust---oss-contributions)
+    - [Rust - LLM - Pregel infrastructure to compose agentic nodes](#rust---llm---pregel-infrastructure-to-compose-agentic-nodes)
     - [Frontend](#frontend)
 
 <!-- /TOC -->
 
-## LLM - TANL - Python notebook
+## Python - LLM - TANL 
 
-The code at [amazon-science/tanl](https://github.com/amazon-science/tanl) implements the paper and was focused on evaluating against benchmarks. My goal was to see if I could extract it out as a library that could run as an NLP service. I also wanted to extract out their fine-tuning training data and see if I can achieve any better results with a more modern 2B class LM like Qwen or LLama. The following links list my notes and notebooks created ruing this effort.
+The code at [amazon-science/tanl](https://github.com/amazon-science/tanl) implements the paper, and therefore focused on evaluating against benchmarks. My goal was to see if I could extract it out as a library that could run as an NLP service. I also wanted to extract the data used for fine-tuning and attempt to achieve better benchmark scores with a more modern 2B class LM like Qwen or LLama-3.2. The following links list the notes and notebooks I created during this effort.
 
- - [👉 Github Fork - Notes, Plan and Progress on use of TANL research code](https://github.com/vamsi-juvvi/tanl/blob/main/notebooks/TANL.md)
- - [👉 Github Fork - Collection of notebooks to explore TANL annotations](https://github.com/vamsi-juvvi/tanl/tree/main/notebooks)
+ - [👉 Github Fork of Amazon TANL - Notes, Plan and Progress on use of TANL research code](https://github.com/vamsi-juvvi/tanl/blob/main/notebooks/TANL.md)
+ - [👉 Github Fork of Amazon TANL - Collection of notebooks to explore TANL annotations](https://github.com/vamsi-juvvi/tanl/tree/main/notebooks)
 
-> **Is any of this relevant in 2025❓** Yes! NLP tasks are still be relevant in the LLM era. When you semantically want NLP but also want low latency and predictability vs creativity. However, you can take advantage of SOTA language understanding baked into the SLM/LLM as well. 
+> **Is any of this relevant in 2025❓** Yes! NLP tasks are still relevant in the LLM era: when you want traditional NLP outputs but also want low latency and predictability. However, using small, fine-tuned LLMs, you not only get the speed but also the language understanding encoded into the LLM. 
 >
-> Additionally, experimental architecture can have a role to play. Since you typically have task-specific fine-tuning _(POS, NER, CoRef, SRL etc)_, it is worth a look to see if a multi-headed approach can put each of these tasks into separate forks all sharing the same backbone. The hope is that a single forward pass will yield multiple task-specific outcomes and avoid the latency/cost of multiple forward passes.
+> Additionally, experimental architecture can have a role to play. Since you typically have task-specific fine-tuning _(POS, NER, CoRef, SRL etc)_, it is worth a look to see if a multi-headed approach can put each of these tasks into separate forks _(of the head layer)_ all sharing the same NN backbone. The hope is that a single forward pass will yield multiple task-specific outcomes and avoid the latency/cost of multiple forward passes.
 >
 > NLP tasks like NER are also valuable in RAG for better query embedding.
 
 
-## OSS contributions - Rust and Docs
+## Rust - OSS contributions
 
   - **rust-web-app** 
     - [architecture notes on github](https://github.com/vamsi-juvvi/rust-web-app/tree/main/docs/00_base-rust-web-app)
@@ -40,7 +40,7 @@ The code at [amazon-science/tanl](https://github.com/amazon-science/tanl) implem
      - [Design/Code docs for the PR](https://github.com/vamsi-juvvi/rust-genai/blob/function_calling_openai/docs/add-function-calling/0-AddingFunctionCallingToGenAI.md) extensively documented this as it was an unsolicited PR into another author's repo and there were a lot of changes: I wanted to show that I had taken plenty of care to be a good guest.
 
 
-## LLM - Pregel infrastructure to compose agentic nodes - Rust
+## Rust - LLM - Pregel infrastructure to compose agentic nodes
 
  [LLM Agents.md](./LLM/LLM_Agents.md) includes some motivation behind `Pregel`. Essentially, a paralell graph processing algo out of Google from a while back. Caought references to it being the motivation behind `Langgraph` and `LlamaIndex` so decided to dig into it. Tons of great properties. Wanted to explore the dynamic graph morphing aspects of it so decided to build a version myself. Am listing the code in this repo for you to checkout.
 

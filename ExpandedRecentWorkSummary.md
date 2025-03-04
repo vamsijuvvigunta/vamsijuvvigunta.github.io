@@ -1,6 +1,7 @@
-<!-- TOC --> 
+<!-- TOC -->
+
 - [LinkedIn and Git](#linkedin-and-git)
-- [Python Experience](#python-experience)
+- [Python Experience - ML, LLM and related](#python-experience---ml-llm-and-related)
 - [Python experience - ANSYS Commercially shipped products](#python-experience---ansys-commercially-shipped-products)
 - [OSS contributions](#oss-contributions)
 - [K8s](#k8s)
@@ -10,9 +11,10 @@
     - [LLM - Medusa](#llm---medusa)
     - [LLM - Tool calling](#llm---tool-calling)
     - [LLM - Agentic / Pregel](#llm---agentic--pregel)
-- [Rust](#rust)
+- [Why Rust](#why-rust)
 - [Frontend](#frontend)
 
+<!-- /TOC -->
 
 ```mermaid
 timeline
@@ -40,7 +42,7 @@ timeline
          : OAuth2
 
     Arch/Deploy: Web/Mobile
-         : API Gateway <br> REST/JsonRPC
+         : API Gateway <br> REST/JsonRPC 
          : Gateway ⇄ Worker
          : React web
          : ReactNative mobile
@@ -83,20 +85,24 @@ timeline
 ```
 ---
 
-The R&D portion of my sabbatical was about learning about the ML/GenAI/LLM side of things via web/mobile services. My goal was to explore and build up enough solutioning vocabulary in this new and exciting space: building a test-bed for experimentation was the first step. To keep me focused, I had chosen a concrete use cases of **text → animation** _(3D skeletal/IKE)_. The journey into these domains entailed a lot of switchbacks between breadth-first discovery and depth-first drill-downs. I also periodicaly refocussed on end-to-end progress so I wouldn't get stuck in rabbit holes. Consequently, many threads of exploratory study were being juggled, back-burnered, resumed or abandoned. The rapidly evolving landscape, while exciting, was also exhausting and frequently obsoleted my plans. Ultimately though, an agentic runtime based on a Pregel implementation seemed to be a key enabler: something that offered tantalizing possibilities for graph evolution and optimization in an LLM centered world.
+The R&D portion of my sabbatical was spent learning about ML/GenAI/LLM: by working toward a project delivered via web services. My goal was to explore and build up enough solutioning vocabulary in this new and exciting space: building a test-bed for experimentation was the first step. To keep me focused, I had chosen a concrete use cases of **text → animation** _(3D skeletal/IKE)_. The journey into these domains entailed a lot of switchbacks between breadth-first discovery and depth-first drill-downs. I also periodicaly refocussed on end-to-end progress so I wouldn't get stuck in rabbit holes. Consequently, many threads of exploratory study were being juggled, back-burnered, resumed or abandoned. The rapidly evolving landscape, while exciting, was also exhausting and frequently obsoleted my plans. Ultimately though, an agentic runtime based on a Pregel implementation seemed to be a key enabler: something that offered tantalizing possibilities for graph evolution and optimization in an LLM centered world.
 
 ## LinkedIn and Git
 
  - [LinkedIn Profile](https://www.linkedin.com/in/vamsidharjuvvigunta/)
  - [Github](https://github.com/vamsi-juvvi)
 
-## Python Experience
+## Python Experience - ML, LLM and related
 
- - ML/AI related Python
+ - Exploring Prompting techniques via OpenAI's chat interface in python. Deeplearning.ai courses.
+ - Parse the IMSDB _(dataset on HF containing movie scripts)_ into structured output using `gpt-4o-mini`. That eventually failed because OpenAI thought it violated a content-filter. Switched to writing a traditional ANTLR based parser to read the format instead (also using python)
+ - Exploring word embedding models and APIs
+ - Explore Gradio
+ - Explore various parts of an NLP pipeline
 
 ## Python experience - ANSYS Commercially shipped products 
 
-I have extensive experience in production quality python code. I initiated and created the Python scripting framework used by all of Ansoft's simulation products _(Now ANSYS. Ansoft has been folded into ANSYS's electromagnetic simulation suite)_. The infrastructure work I did for this effort was non-trivial.
+I have good experience in production quality python code. I initiated and created the Python scripting framework used by all of Ansoft's simulation products _(Now ANSYS. Ansoft has been folded into ANSYS's electromagnetic simulation suite)_. The infrastructure work I did for this effort was non-trivial. Note that ANSYS/Ansoft has a huge installed base and used in practically every engineering, electronics and circuit-design company.
  - C++ runtime hosting .NET Runtime, taking care of keeping UI thread unblocked etc.
  - .NET runtime hosting the IronPython runtime
  - Bootstrapping _(think BIOS)_ C++ function pointers over to .NET and .NET functions over to C++. Both stored as opaque handles. An initial python module loaded at init time continues the initialization in python space.
@@ -104,7 +110,7 @@ I have extensive experience in production quality python code. I initiated and c
  - COM objects _(out C++ side scripting interface)_ were dynamically introspected at runtime and the definition is sent out as XML to the IronPython side. Heavy uses of `hasattr()`, `getattr()`, `setattr()` and `__call__` convert this XML into callable interfaces. Custom implementation of `doc` and `help` to explore the methods in various objects was also provided.
  - Python calls would be marshalled across to C++ as command sepecifications and executed on the COM servers on the C++ side
 
-On top of this, I replaced Ansoft's existing C _(dynamically loaded shared libs)_ plugins with Python plugins. Each plugin surface utilized it's own AppDomain _(.NET isolation concept)_ and had it's own python initialization modules and base-classes that the scripting user could extend. This is extensively used on a very widely installed user-base _(practically the entire ciruit and mechanical design industry)_. Later toward 2018 or so, I started an effort to convert the underlying COM objects into gRPC protobufs and custom python code-generation from the proto files.
+On top of this, I replaced Ansoft's existing C _(dynamically loaded shared libs)_ plugins with Python plugins. Each plugin surface utilized it's own AppDomain _(.NET isolation concept)_ and had it's own python initialization modules and base-classes that the scripting user could extend. Later toward 2018 or so, I started an effort to convert the underlying COM objects into gRPC protobufs and custom python code-generation from the proto files.
 
  - [The VB to IronPython translation document that I authored](https://www.youtube.com/watch?v=OSvnPwr6WhI) at the 1min mark.
  - [Python script recording](https://www.youtube.com/watch?v=0p6o3kjOnAI) around the 2 min mark  _(I also maintained the 3D rendering infrastructure, the math expressions parsing and created/maintained our custom Antlr based parser for the in-house micro-services)_.
@@ -154,14 +160,15 @@ Actually deploying on K8s, while theoretically nice-to-have, turned out to not b
  - [KServe based deployment of a BERT Sentiment classifier on K8s](./K8s/K8s_Deploy_HuggingFace_Sentiment_KServe.md)
 
 ## NLP
+
 > Mostly taken a backseat to LLM usage but I have a lot of jupyter notebooks and notes. Can share if needed
 
 Pre-ChatGPT era, NLU needed one to grok NLP. Study areas included dependency parsing, POS and CoRef resolution. Explored Spacy, Stanza and some HuggingFace libraries.
 
-Early papers suggested that BERT and the like were not particularly great at NLP tasks _(latency, accuracy)_. However, later on, there was this great paper out of Amazon [Structured prediction as translation between augmented natural Languages (TANL)](https://arxiv.org/pdf/2101.05779) that modeled traditional NLP problems as a seq-to-seq translation [amazon-science/tanl](https://github.com/amazon-science/tanl). They use a fine-tuning of FLAN and ended up with a small inference model that can be run locally. My goal was to extract the annotations and annotation parsing they use and use those in multi-shot/in-context learning or fine-tuning of current models  like quantized versions of Qwen or Llama.
+Early papers suggested that BERT and the like were not particularly great at NLP tasks _(latency, accuracy)_. However, later on, there was this great paper out of Amazon [Structured prediction as translation between augmented natural Languages (TANL)](https://arxiv.org/pdf/2101.05779) that modeled traditional NLP problems as a seq-to-seq translation [amazon-science/tanl](https://github.com/amazon-science/tanl). They use a fine-tuning of FLAN and ended up with a small inference model that can be run locally. My goal was to extract the annotations and annotation parsing they used, and subsequently, employ them in multi-shot/in-context learning or in fine-tuning of current models like quantized versions of Qwen or Llama.
 
- - [Github Fork - Notes, Plan and Progress on use of TANL research code](https://github.com/vamsi-juvvi/tanl/blob/main/notebooks/TANL.md)
- - [Github Fork - Collection of notebooks to explore TANL annotations](https://github.com/vamsi-juvvi/tanl/tree/main/notebooks)
+ - [Github Fork of TANL- Notes, Plan and Progress on use of TANL research code](https://github.com/vamsi-juvvi/tanl/blob/main/notebooks/TANL.md)
+ - [Github Fork of TANL - Collection of notebooks to explore TANL annotations](https://github.com/vamsi-juvvi/tanl/tree/main/notebooks)
 
 With all the LLM hype, Late 2023, I started switching periodically to see what the latest LLM stuff could do and at some point decided to explore how much could be done with plain LLM API calls. My conclusion: focus predominanty on LLMs but keep traditional NLP in mind too.
 
@@ -207,58 +214,57 @@ LLMs have been a big focus area the last two years.
  - https://github.com/extremebird/Hydra is a gem. Tons of stuff in there to chew on for a long time.
  - [multi-head LORA for PEFT](https://arxiv.org/pdf/2309.06922)
 
-When they talk about _Hydra_, it seems to be a _small H: hydra_. Just the wiring split utilizing the adapter model (_so two heads_). Not the actual medusa hydra arch from Karpathy's AI talk which talks about multiple actual outputs from the same shared backbone.
+When they talk about _Hydra_, it seems to be a _small H: hydra_: a split, utilizing the adapter model (_so two heads_). Not the actual HydraNet arch from Karpathy's AI talk which talks about multiple actual outputs from the same shared backbone.
 
-Still seems useful. Primarily
- - Paralell Adapter learns new patterns based on fine-tuning data
- - Series Adapater learns to combine existing/latent pre-trained knowledge in new ways for the target task
+Still, seems useful. Primarily:
+ - `Paralell Adapter` learns new patterns based on fine-tuning data
+ - `Series Adapater` learns to combine existing/latent pre-trained knowledge in new ways for the target task
 
 ### LLM - Medusa
 
-This is more along the lines of Karpathy's medusa. Took me a while to locate this, hopefully they left eough details for me to use it without needing to go down another rabbit hole.
+An architecture along the lines of Karpathy's HydraNet _([used in Tesla FSD's inference with sensor fusion - 7 min mark](https://www.youtube.com/watch?v=3SypMvnQT_s))_
 
 [Medusa: Simple framework for accelerating LLM generation with multiple decoding heads](https://www.together.ai/blog/medusa)
 
-This is based on [Stern et al., 2018](https://arxiv.org/abs/1811.03115) but that paper is about LLM architectures and paralellizing the token generation streams. This way multiple streams are generated in paralell and only one of em is selected. In grammar terms, conceptually going with a lookahead-assertion but where possible branches are evaluated parallelly.
-
-Can I use this to actually have multiple heads with each head handling a separate task ? Why not I guess, change the code so that I don't score among the paralell outputs and drop all but one: use all of them.
+This is based on [Stern et al., 2018](https://arxiv.org/abs/1811.03115) but that paper is about LLM architectures and paralellizing the token generation streams. This way multiple streams are generated in paralell and only one of them is selected. In grammar terms, conceptually going with a lookahead-assertion but where possible, branches are evaluated parallelly.
 
 ### LLM - Tool calling
 
-   - PR adding tool call support to rust-genai library.
-     - tools modeled as Rust lambdas that take a single struct param
-     - struct param and function automatically converted to a schema that OpenAPI wants for tools.
-     - The changes were extensive and hence heavily documented, however, ultimately the main author (Jeremy Chone) declined to merge and decided to go a different route.
+   - Contributed a PR [👉 Adding function calling to OpenAI/Groq adapters ](https://github.com/vamsi-juvvi/rust-genai/pull/1) adding tool-call support to the `rust-genai` library.
+     - tools are modeled as Rust closures/lambdas that take a single struct param
+     - struct param and function automatically converted to the JSON schema that OpenAPI requires for tool definitions.
+     - The changes were extensive and hence heavily documented, however, ultimately, the main author (Jeremy Chone) declined to merge and decided to go a different route.
    - Feb 2024, orphaned my fork of genai and rebuilt it as a layer based on genai's new tool call support.
 
 ### LLM - Agentic / Pregel
 
    - Agentic hype was off the charts starting mid 2024
-   - The underlying insight was that systems incorporating LLMs offered vast scope for tuning, control and optimization: the prompts used in such systems tended to be simpler and demanded less of an LLM. 
-   - The exact definition of the agent is almost beside the point, any executable node/function will do.
-   - Prompt Optimization and custom ensemble-of-experts, GANs etc all could be composed into any system: endless possibilities.
-   - Any single prompting use-case is just a degenerate, single-node network. Thus, I decided to base future efforts on fleshing out an agentic framework.
+   - The underlying insight was that systems incorporating LLMs offered vast scope for tuning, control and optimization: the prompts used by individual nodes in such systems tend to be simpler and demanded less of an LLM _(consequently can use smaller LLMs)_.
+   - The exact definition of an agent is almost beside the point, any executable node/function will do as a node in the graph.
+   - Prompt Optimization and custom ensemble-of-experts, GANs etc all could be composed into a system: endless possibilities.
+   - A simple prompting use-case is just a degenerate, single-node network. Thus, I decided to base future efforts on fleshing out an agentic framework.
    - Explored LangChain/LangGraph and LLamaIndex. Ultimately was disappointed, among other things _(shared input context with risk of races, outputs were dict slices into the same big dict, collision headaches)_, they had hidden the `Pregel` basis of their graphs. I thought this oversimplified the APIs and hid the possibilities of runtime graph evolution _(among other pregel properties)_.
-   - Built my own `Pregel` implementation in rust sticking close to the original papers _(neo4j and databricks have their own APIs which were instructive)_
+   - Built my own `Pregel` implementation in rust sticking close to the original papers _(neo4j and databricks have their own pregel APIs which were instructive)_
      - Pure message passing eliminates data races
      - Each `super-step` involves async execution of a subset of nodes and a join that waits for all. _(With a possibility of any-of, all-of, a/b in the join)_
-     - All super-step outputs usable as graph-outputs instead of forcing a synthetic stop node into the graph.
-     - Direct messaging outside of edge-only
-     - graph-level instrumentation to attach token/latency costs to edges and allow for graph algos to find shortest-paths/cheapest-cost at runtime based on server latency and such. Not sure if practical but the possibility exists if you don't bury the graph structure under your APIs.
+     - All super-step outputs are usable as graph-outputs instead of forcing a synthetic stop node into the graph.
+     - Direct messaging outside of restricting data flow along edges
+     - graph-level instrumentation to attach token/latency costs to edges and allow for graph algos to find shortest-paths/cheapest-cost at runtime based on server latency and such. Not sure if this will end up being practical but the possibility exists. Such evolution can be explored if you don't bury the graph structure under your APIs.
 
-## Rust
+## Why Rust
 
 Around early 2024, I decided to abandon scala and switch to Rust. Among the many things that made me move.
- - Scala's lack of one well documented and supported stack _(twitter's finagle, liftweb, play)_
+ - Scala's lack of atleast one well documented and supported stack _(twitter's finagle/finch, liftweb, play, scalatra etc)_
+ - Multiple competing and political moadic effects libraries _(zio, cats)_
  - Disintegration of lightbend
- - Talk of direct-scala, direct-zio muddying the waters
- - J. De Goes, The Zio guy, switching to rust
+ - Talk of direct-scala, direct-zio muddying the waters with upcoming syntax changes
+ - _J. De Goes_, The Zio guy, switching to rust
  - The number of extremely smart people around rust
- - MS and Linux adoptiuon of rust
+ - Microsoft and Linux adoption of rust
  - HuggingFace's fast tokenizers were written in rust
  - HuggingFace's candle is an all-rust runtime for any HF model you can download.
  - Well supported web frameworks _(axum)_ with excellent ergonomics and DX.
- - WebAssembly, WebView based desktop apps, WebServers all based on the same library code held a lot of promise
+ - WebAssembly, WebView based desktop apps, WebServers cover the many widely used deployment platforms: all based on the same library code. This holds a lot of promise. With AI PC's expected to come soon, the idea of your GPU accelerated code running on the browser via WebAssembly or as a desktop app via Tauri all with the same underlying library/crates sounds like a valuable possibility.
  - The beauty of functional coding, no garbage collection and no category-theory fanaticism that sometimes infects scala/zio/cats groups.
  - All you need is VSCode!
  - [2024 Rust start and OSS contributions](./Rust/Rust_2024_StartAndOSS.md) 
@@ -266,6 +272,10 @@ Around early 2024, I decided to abandon scala and switch to Rust. Among the many
       
 ## Frontend
 
-I have some experience with front-end development. Current experience is with a React stack _(past experience ranged from plain HTML/CSS to ScalaJS and Laminar)_.
+I have some experience with front-end development. Current experience in the web domain is with a React stack _(past experience ranged from plain HTML/CSS to ScalaJS and Laminar)_.
 
-After investing an inordinate amount of time in ScalaJS, Laminar and ScalablyTyped _(for converting typescript into ScalaJS)_, I decided to switch to a best-of-breed tool for UI and settled on React. React/TS for the web and ReactNative on mobile. This was a whole new ecosystem with Js, Ts, runtime bundlers, CORS and such but I managed to build myself a React front end with basic authentication setup to talk to a rust-web based server via JsonRPC calls. 
+ - React/Js/Ts/CSS for front-end _(previously ScalaJS & Laminar)_
+ - ReactNative for Mobile
+ - Both communicating over JsonRPC to backend server and authN via JWT _(OAuth2 is WIP)_
+
+[👉 Code - The React Frontend which talks to my rust web-server](./React/frontend/)
