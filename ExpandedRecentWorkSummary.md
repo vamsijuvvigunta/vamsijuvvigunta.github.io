@@ -1,4 +1,7 @@
-<!-- TOC -->
+<!-- TOC --> 
+- [LinkedIn and Git](#linkedin-and-git)
+- [Python Experience](#python-experience)
+- [Python experience - ANSYS Commercially shipped products](#python-experience---ansys-commercially-shipped-products)
 - [OSS contributions](#oss-contributions)
 - [K8s](#k8s)
 - [NLP](#nlp)
@@ -10,7 +13,7 @@
 - [Rust](#rust)
 - [Frontend](#frontend)
 
-<!-- /TOC -->
+
 ```mermaid
 timeline
                     
@@ -82,13 +85,31 @@ timeline
 
 The R&D portion of my sabbatical was about learning about the ML/GenAI/LLM side of things via web/mobile services. My goal was to explore and build up enough solutioning vocabulary in this new and exciting space: building a test-bed for experimentation was the first step. To keep me focused, I had chosen a concrete use cases of **text → animation** _(3D skeletal/IKE)_. The journey into these domains entailed a lot of switchbacks between breadth-first discovery and depth-first drill-downs. I also periodicaly refocussed on end-to-end progress so I wouldn't get stuck in rabbit holes. Consequently, many threads of exploratory study were being juggled, back-burnered, resumed or abandoned. The rapidly evolving landscape, while exciting, was also exhausting and frequently obsoleted my plans. Ultimately though, an agentic runtime based on a Pregel implementation seemed to be a key enabler: something that offered tantalizing possibilities for graph evolution and optimization in an LLM centered world.
 
+## LinkedIn and Git
+
+ - [LinkedIn Profile](https://www.linkedin.com/in/vamsidharjuvvigunta/)
+ - [Github](https://github.com/vamsi-juvvi)
+
 ## Python Experience
 
  - ML/AI related Python
- - ANSYS
 
- TODO - Second look at LinkedIn profile
- Expand Frontend section as well
+## Python experience - ANSYS Commercially shipped products 
+
+I have extensive experience in production quality python code. I initiated and created the Python scripting framework used by all of Ansoft's simulation products _(Now ANSYS. Ansoft has been folded into ANSYS's electromagnetic simulation suite)_. The infrastructure work I did for this effort was non-trivial.
+ - C++ runtime hosting .NET Runtime, taking care of keeping UI thread unblocked etc.
+ - .NET runtime hosting the IronPython runtime
+ - Bootstrapping _(think BIOS)_ C++ function pointers over to .NET and .NET functions over to C++. Both stored as opaque handles. An initial python module loaded at init time continues the initialization in python space.
+ - Python modules to prepare the programming environment for the scripting scenario _(logging, obtaining the main control object, alerts etc)_
+ - COM objects _(out C++ side scripting interface)_ were dynamically introspected at runtime and the definition is sent out as XML to the IronPython side. Heavy uses of `hasattr()`, `getattr()`, `setattr()` and `__call__` convert this XML into callable interfaces. Custom implementation of `doc` and `help` to explore the methods in various objects was also provided.
+ - Python calls would be marshalled across to C++ as command sepecifications and executed on the COM servers on the C++ side
+
+On top of this, I replaced Ansoft's existing C _(dynamically loaded shared libs)_ plugins with Python plugins. Each plugin surface utilized it's own AppDomain _(.NET isolation concept)_ and had it's own python initialization modules and base-classes that the scripting user could extend. This is extensively used on a very widely installed user-base _(practically the entire ciruit and mechanical design industry)_. Later toward 2018 or so, I started an effort to convert the underlying COM objects into gRPC protobufs and custom python code-generation from the proto files.
+
+ - [The VB to IronPython translation document that I authored](https://www.youtube.com/watch?v=OSvnPwr6WhI) at the 1min mark.
+ - [Python script recording](https://www.youtube.com/watch?v=0p6o3kjOnAI) around the 2 min mark  _(I also maintained the 3D rendering infrastructure, the math expressions parsing and created/maintained our custom Antlr based parser for the in-house micro-services)_.
+ - [Ansoft post-processing plots]() at 3:27 mark, 5:08 mark shows some sample screens of the post-processing. I am the primary author of all the plotting and on-plot measurement tools _(OpenGL, C++)_. Quite proud of the longevity of my code and how well it all turned out. The [eye diagrams](http://www.mweda.com/designer/ansoft-designer/reports/EyeMeasurements.htm) and their measurements in particular.
+
 
 ## OSS contributions
 
@@ -245,6 +266,6 @@ Around early 2024, I decided to abandon scala and switch to Rust. Among the many
       
 ## Frontend
 
-> Backburnered while I have the agentic framework built out enough to incorporate LLM and diffusion models.
+I have some experience with front-end development. Current experience is with a React stack _(past experience ranged from plain HTML/CSS to ScalaJS and Laminar)_.
 
 After investing an inordinate amount of time in ScalaJS, Laminar and ScalablyTyped _(for converting typescript into ScalaJS)_, I decided to switch to a best-of-breed tool for UI and settled on React. React/TS for the web and ReactNative on mobile. This was a whole new ecosystem with Js, Ts, runtime bundlers, CORS and such but I managed to build myself a React front end with basic authentication setup to talk to a rust-web based server via JsonRPC calls. 
