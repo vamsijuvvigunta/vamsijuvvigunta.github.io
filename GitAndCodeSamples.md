@@ -1,5 +1,3 @@
-> Angadi asked me to write up a one-page doc about what I have been upto. Will start and then reduce it as needed.
-
 <!-- TOC -->
 
 - [OSS contributions - Rust and Docs](#oss-contributions---rust-and-docs)
@@ -9,6 +7,21 @@
 
 <!-- /TOC -->
 ---
+
+## LLM - TANL - Python notebook
+
+During my NLP studies, I came across this interesting paper out of Amazon [Structured prediction as translation between augmented natural Languages (TANL)](https://arxiv.org/pdf/2101.05779) that modeled traditional NLP problems as a seq-to-seq translation [amazon-science/tanl](https://github.com/amazon-science/tanl) that tried to implement traditional NLP tasks _(NER, SRL, POS, CoRef)_ via a small LM. The goal was to achieve low latency and making use of existing pre-trained knowledge of the LM, fine tune it for NLP tasks (single or multi-task).
+
+The github code was related to evaluating against benchmarks, but my goal was to see if I could extract it out as a library that could run as an NLP service _(behind a JsonRPC API)_. I also wanted to extract out their fine-tuning training data and see if I can achieve any better results with a more modern 2B class LM like Qwen or LLama. The following links list my notes and notebooks that help me in this.
+
+ - [👉 Github Fork - Notes, Plan and Progress on use of TANL research code](https://github.com/vamsi-juvvi/tanl/blob/main/notebooks/TANL.md)
+ - [👉 Github Fork - Collection of notebooks to explore TANL annotations](https://github.com/vamsi-juvvi/tanl/tree/main/notebooks)
+
+>Basic NLP tasks can still be relevant in the LLM era. You want low latency, predictability vs creativity and synthesis: however, you can take advantage of language understanding baked into the SLM/LLM. Since you typically have task-specific fine-tuning _(POS, NER, CoRef, SRL etc)_, it is worth a look to see if a multi-headed approach can put each of these tasks into separate fork all sharing the same backbone. The hope is that a single forward pass will yield multiple task-specific outcomes and avoid the latency/cost of multiple forward passes.
+>
+> NLP tasks like NER are also valuable in RAG for better query embedding.
+
+
 
 ## OSS contributions - Rust and Docs
 
@@ -46,20 +59,6 @@ Some notes about Pregel and it's advantages
      - All super-step outputs usable as graph-outputs instead of forcing a synthetic stop node into the graph.
      - Direct messaging outside of edge-only
      - graph-level instrumentation to attach token/latency costs to edges and allow for graph algos to find shortest-paths/cheapest-cost at runtime based on server latency and such. Not sure if practical but the possibility exists if you don't bury the graph structure under your APIs.
-
-## LLM - TANL - Python notebook
-
-During my NLP studies, I came across this interesting paper out of Amazon [Structured prediction as translation between augmented natural Languages (TANL)](https://arxiv.org/pdf/2101.05779) that modeled traditional NLP problems as a seq-to-seq translation [amazon-science/tanl](https://github.com/amazon-science/tanl) that tried to implement traditional NLP tasks _(NER, SRL, POS, CoRef)_ via a small LM. The goal was to achieve low latency and making use of existing pre-trained knowledge of the LM, fine tune it for NLP tasks (single or multi-task).
-
-The github code was related to evaluating against benchmarks, but my goal was to see if I could extract it out as a library that could run as an NLP service _(behind a JsonRPC API)_. I also wanted to extract out their fine-tuning training data and see if I can achieve any better results with a more modern 2B class LM like Qwen or LLama. The following links list my notes and notebooks that help me in this.
-
- - [👉 Github Fork - Notes, Plan and Progress on use of TANL research code](https://github.com/vamsi-juvvi/tanl/blob/main/notebooks/TANL.md)
- - [👉 Github Fork - Collection of notebooks to explore TANL annotations](https://github.com/vamsi-juvvi/tanl/tree/main/notebooks)
-
->Basic NLP tasks can still be relevant in the LLM era. You want low latency, predictability vs creativity and synthesis: however, you can take advantage of language understanding baked into the SLM/LLM. Since you typically have task-specific fine-tuning _(POS, NER, CoRef, SRL etc)_, it is worth a look to see if a multi-headed approach can put each of these tasks into separate fork all sharing the same backbone. The hope is that a single forward pass will yield multiple task-specific outcomes and avoid the latency/cost of multiple forward passes.
->
-> NLP tasks like NER are also valuable in RAG for better query embedding.
-
 
 ## Frontend
 

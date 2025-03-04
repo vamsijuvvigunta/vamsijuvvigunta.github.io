@@ -1,7 +1,4 @@
-> Angadi asked me to write up a one-page doc about what I have been upto. Will start and then reduce it as needed.
-
 <!-- TOC -->
-
 - [OSS contributions](#oss-contributions)
 - [K8s](#k8s)
 - [NLP](#nlp)
@@ -84,6 +81,14 @@ timeline
 ---
 
 The R&D portion of my sabbatical was about learning about the ML/GenAI/LLM side of things via web/mobile services. My goal was to explore and build up enough solutioning vocabulary in this new and exciting space: building a test-bed for experimentation was the first step. To keep me focused, I had chosen a concrete use cases of **text → animation** _(3D skeletal/IKE)_. The journey into these domains entailed a lot of switchbacks between breadth-first discovery and depth-first drill-downs. I also periodicaly refocussed on end-to-end progress so I wouldn't get stuck in rabbit holes. Consequently, many threads of exploratory study were being juggled, back-burnered, resumed or abandoned. The rapidly evolving landscape, while exciting, was also exhausting and frequently obsoleted my plans. Ultimately though, an agentic runtime based on a Pregel implementation seemed to be a key enabler: something that offered tantalizing possibilities for graph evolution and optimization in an LLM centered world.
+
+## Python Experience
+
+ - ML/AI related Python
+ - ANSYS
+
+ TODO - Second look at LinkedIn profile
+ Expand Frontend section as well
 
 ## OSS contributions
 
