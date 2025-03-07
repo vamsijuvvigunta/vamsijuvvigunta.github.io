@@ -9,6 +9,14 @@
 
 <!-- /TOC -->
 
+## Jupyter notebooks - LLM
+
+These links will open the github notebooks directly in colab. I am hoping you have a `OPENAI_API_KEY` that you can use. Please enter that in your colab secrets and then allow the notebooks to use it.
+
+ - https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/LLM_Notebook_Logging.ipynb
+ - https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/LLM_Joke_and_Critique.ipynb
+ - https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/LLM_ToolCalling.ipynb
+
 ## Python - LLM - TANL 
 
 The code at [amazon-science/tanl](https://github.com/amazon-science/tanl) implements the paper, and therefore focused on evaluating against benchmarks. My goal was to see if I could extract it out as a library that could run as an NLP service. I also wanted to extract the data used for fine-tuning and attempt to achieve better benchmark scores with a more modern 2B class LM like Qwen or LLama-3.2. The following links list the notes and notebooks I created during this effort.
