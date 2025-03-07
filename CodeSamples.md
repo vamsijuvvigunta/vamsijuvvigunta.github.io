@@ -22,6 +22,16 @@ These links will open the github notebooks directly in colab. The actual files a
    - [Antlr grammar - Parser to parse the screenplay files](https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/StructuredScreenplay_Antlr.ipynb) OpenAI's APIs gave me `ContentFilter` errors. They mustve flagged it for copyright even though all I was asking for was parsing an existing screnplay. Instead of doing this formatting in chunks or utilizing a local LLM via Ollama etc, I decided to sharpen old Antlr parser generator skills and built a grammer to do this for me. _Just because a LLM can do the job does not mean it will actually do it. Sometimes traditional alternatives are needed_
      - [Parser grammar](./lib/python/imsdb/antlr/Screenplay.g4)
      - [README_DevelopingTheParser-2.md](./lib/python/imsdb/README_DevelopingTheParser-2.md)
+ - **NLP**: A collection of notebooks for exploring NLP concepts and python libs. Paused work on these mid 2024 as I switched over to exploring the potential of LLMs. Was a very valuable exercise though.
+   - [NLP - Processing and understanding text](https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/NLP_2018_ProcessingAndUnderstandingText.ipynb)
+   - [NLP - Exploring Word Embeddings](https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/NLP%20Word%20Embeddings.ipynb)
+   - [NLP - Rendering NLP Annotations](https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/NLP_AnnotationRendering.ipynb)
+   - [NLP - Exploring CoReference resolution](https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/NLP_CoRef.ipynb)
+   - [NLP - Exploring Huggingface Embeddings](https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/NLP_HuggingFace_Embeddings.ipynb)
+   - [NLP - Huggingface NLP tutorial series](https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/NLP_HuggingFace_tutorials.ipynb)
+   - [NLP - Text pre-processing](https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/NLP_PreProcessing.ipynb)
+   - [NLP - Stanford stanza](https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/NLP_Stanford_Stanza.ipynb)
+   - [NLP - Traditional feature engineering](https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/NLP_TraditionalTextFeatureEngineering.ipynb)
 
 ## Python - LLM - TANL 
 
