@@ -9,13 +9,19 @@
 
 <!-- /TOC -->
 
-## Jupyter notebooks - LLM
+## Jupyter notebooks - LLM 
 
-These links will open the github notebooks directly in colab. I am hoping you have a `OPENAI_API_KEY` that you can use. Please enter that in your colab secrets and then allow the notebooks to use it.
+These links will open the github notebooks directly in colab. The actual files are under **repo/nbs**. Some of the scripts call OpenAI APIs and need a `OPENAI_API_KEY`. They all use `gpt-4o-mini` which should currently be pretty inexpensive. I am hoping you have a `OPENAI_API_KEY` that you can use. Please enter that in your colab secrets and then allow the notebooks to use it.
 
- - https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/LLM_Notebook_Logging.ipynb
- - https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/LLM_Joke_and_Critique.ipynb
- - https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/LLM_ToolCalling.ipynb
+ - [Better debug logging in Notebooks](https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/LLM_Notebook_Logging.ipynb)
+ - [LLM - Generate Joke and Critique it - Gradio](https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/LLM_Joke_and_Critique.ipynb)
+ - [LLM - Higher level Tool Calling with PyDantic](https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/LLM_ToolCalling.ipynb)
+ - **Screenplay parsing** to parse loosely structured screenplays _(of actual movies)_ from the [HugginFace IMSDB dataset](https://huggingface.co/datasets/mattismegevand/IMSDb) into structured json so I can start using it for a **text -> animation** effort
+   - [Convert IMSDB database/jsonl into individual files](https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/Screenplay_Dataset_to_files.ipynb). The dataset is quite large and I do not have it on github. One sample file is listed at [./data/IMSDB/aladdin.txt](./data/IMSDB/aladdin.txt) and I will be using that in the next two notebooks.
+   - [LLM - Parsing semi structured screenplay using OpenAI's structured outputs and Pydantic](https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/LLM_StructuredOutput_Screenplay.ipynb)
+   - [Antlr grammar - Parser to parse the screenplay files](https://colab.research.google.com/github/juvvination/juvvination.github.io/blob/master/nbs/StructuredScreenplay_Antlr.ipynb) OpenAI's APIs gave me `ContentFilter` errors. They mustve flagged it for copyright even though all I was asking for was parsing an existing screnplay. Instead of doing this formatting in chunks or utilizing a local LLM via Ollama etc, I decided to sharpen old Antlr parser generator skills and built a grammer to do this for me. _Just because a LLM can do the job does not mean it will actually do it. Sometimes traditional alternatives are needed_
+     - [Parser grammar](./lib/python/imsdb/antlr/Screenplay.g4)
+     - [README_DevelopingTheParser-2.md](./lib/python/imsdb/README_DevelopingTheParser-2.md)
 
 ## Python - LLM - TANL 
 
