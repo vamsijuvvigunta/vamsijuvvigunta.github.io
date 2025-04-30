@@ -1,0 +1,17 @@
+options:
+  nfs4-server:
+    type: string
+    default:
+    description: The remote NFS V4 server's IP address/hostname
+  nfs-target:
+    type: string
+    default:
+    description: The path on the remote NFS server
+  local-target:
+    type: string
+    default:
+    description: Where to mount the NFS path on the local unit
+  mount-options:
+    type: string
+    default: auto,nofail,noatime,nolock,intr,tcp,actimeo=1800
+    description: What mount options should be used for the share

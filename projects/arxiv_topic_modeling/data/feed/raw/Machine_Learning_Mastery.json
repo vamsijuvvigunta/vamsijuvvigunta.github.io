@@ -1,0 +1,537 @@
+{
+    "title": "Machine Learning Mastery",
+    "fname": "Machine_Learning_Mastery",
+    "url": "https://machinelearningmastery.com/feed/",
+    "items": [
+        {
+            "title": "6 Lesser-Known Scikit-Learn Features That Will Save You Time",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "6 Lesser-Known Scikit-Learn Features That Will Save You Time"
+            },
+            "summary": "For many people studying data science, <a href=\"https://scikit-learn.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "For many people studying data science, <a href=\"https://scikit-learn."
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://machinelearningmastery.com/6-lesser-known-scikit-learn-features-that-will-save-you-time/"
+                }
+            ],
+            "link": "https://machinelearningmastery.com/6-lesser-known-scikit-learn-features-that-will-save-you-time/",
+            "id": "https://machinelearningmastery.com/?p=19420",
+            "guidislink": false,
+            "published": "Wed, 19 Mar 2025 11:00:22 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                19,
+                11,
+                0,
+                22,
+                2,
+                78,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Cornellius Yudha Wijaya"
+                }
+            ],
+            "author": "Cornellius Yudha Wijaya",
+            "author_detail": {
+                "name": "Cornellius Yudha Wijaya"
+            },
+            "media_content": [
+                {
+                    "url": "https://machinelearningmastery.com/wp-content/uploads/2025/03/mlm-6-sklearn-features-save-time.webp",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "Debugging PyTorch Machine Learning Models: A Step-by-Step Guide",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "Debugging PyTorch Machine Learning Models: A Step-by-Step Guide"
+            },
+            "summary": "Debugging machine learning models entails inspecting, discovering, and fixing possible errors in the internal mechanisms of these models.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "Debugging machine learning models entails inspecting, discovering, and fixing possible errors in the internal mechanisms of these models."
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://machinelearningmastery.com/debugging-pytorch-machine-learning-models-a-step-by-step-guide/"
+                }
+            ],
+            "link": "https://machinelearningmastery.com/debugging-pytorch-machine-learning-models-a-step-by-step-guide/",
+            "id": "https://machinelearningmastery.com/?p=19124",
+            "guidislink": false,
+            "published": "Tue, 18 Mar 2025 15:31:50 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                18,
+                15,
+                31,
+                50,
+                1,
+                77,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Iv\u00e1n Palomares Carrascosa"
+                }
+            ],
+            "author": "Iv\u00e1n Palomares Carrascosa",
+            "author_detail": {
+                "name": "Iv\u00e1n Palomares Carrascosa"
+            },
+            "media_content": [
+                {
+                    "url": "https://machinelearningmastery.com/wp-content/uploads/2025/02/mlm-ivanpc-pytorch-debugging-01.png",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "A Gentle Introduction to Transformers Library",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "A Gentle Introduction to Transformers Library"
+            },
+            "summary": "The transformers library is a Python library that provides a unified interface for working with different transformer models.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "The transformers library is a Python library that provides a unified interface for working with different transformer models."
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://machinelearningmastery.com/a-gentle-introduction-to-transformers-library/"
+                }
+            ],
+            "link": "https://machinelearningmastery.com/a-gentle-introduction-to-transformers-library/",
+            "id": "https://machinelearningmastery.com/?p=19386",
+            "guidislink": false,
+            "published": "Mon, 17 Mar 2025 19:02:09 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                17,
+                19,
+                2,
+                9,
+                0,
+                76,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Adrian Tam"
+                }
+            ],
+            "author": "Adrian Tam",
+            "author_detail": {
+                "name": "Adrian Tam"
+            },
+            "media_content": [
+                {
+                    "url": "https://machinelearningmastery.com/wp-content/uploads/2025/03/sdl-sanjaya-2rQoMZLVXHc-unsplash-scaled.jpg",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "The Roadmap for Mastering Language Models in 2025",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "The Roadmap for Mastering Language Models in 2025"
+            },
+            "summary": "Large language models (LLMs) are a big step forward in artificial intelligence.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "Large language models (LLMs) are a big step forward in artificial intelligence."
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://machinelearningmastery.com/the-roadmap-for-mastering-language-models-in-2025/"
+                }
+            ],
+            "link": "https://machinelearningmastery.com/the-roadmap-for-mastering-language-models-in-2025/",
+            "id": "https://machinelearningmastery.com/?p=19220",
+            "guidislink": false,
+            "published": "Mon, 17 Mar 2025 10:00:54 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                17,
+                10,
+                0,
+                54,
+                0,
+                76,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Kanwal Mehreen"
+                }
+            ],
+            "author": "Kanwal Mehreen",
+            "author_detail": {
+                "name": "Kanwal Mehreen"
+            },
+            "media_content": [
+                {
+                    "url": "https://machinelearningmastery.com/wp-content/uploads/2025/03/mlm-roadmap-mastering-lms-2025.png",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "Statistical Methods for Evaluating LLM Performance",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "Statistical Methods for Evaluating LLM Performance"
+            },
+            "summary": "The large language model (LLM) has become a cornerstone of many AI applications.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "The large language model (LLM) has become a cornerstone of many AI applications."
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://machinelearningmastery.com/statistical-methods-for-evaluating-llm-performance/"
+                }
+            ],
+            "link": "https://machinelearningmastery.com/statistical-methods-for-evaluating-llm-performance/",
+            "id": "https://machinelearningmastery.com/?p=19349",
+            "guidislink": false,
+            "published": "Fri, 14 Mar 2025 14:24:42 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                14,
+                14,
+                24,
+                42,
+                4,
+                73,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Cornellius Yudha Wijaya"
+                }
+            ],
+            "author": "Cornellius Yudha Wijaya",
+            "author_detail": {
+                "name": "Cornellius Yudha Wijaya"
+            },
+            "media_content": [
+                {
+                    "url": "https://machinelearningmastery.com/wp-content/uploads/2025/03/mlm-statistical-methods-evaluating-llms.webp",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "Understanding RAG Part VII: Vector Databases & Indexing Strategies",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "Understanding RAG Part VII: Vector Databases & Indexing Strategies"
+            },
+            "summary": "Be sure to check out the previous articles in this series: \u2022 <a href=\"https://machinelearningmastery.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "Be sure to check out the previous articles in this series: \u2022 <a href=\"https://machinelearningmastery."
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://machinelearningmastery.com/understanding-rag-part-vii-vector-databases-indexing-strategies/"
+                }
+            ],
+            "link": "https://machinelearningmastery.com/understanding-rag-part-vii-vector-databases-indexing-strategies/",
+            "id": "https://machinelearningmastery.com/?p=19142",
+            "guidislink": false,
+            "published": "Wed, 12 Mar 2025 12:55:45 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                12,
+                12,
+                55,
+                45,
+                2,
+                71,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Iv\u00e1n Palomares Carrascosa"
+                }
+            ],
+            "author": "Iv\u00e1n Palomares Carrascosa",
+            "author_detail": {
+                "name": "Iv\u00e1n Palomares Carrascosa"
+            },
+            "media_content": [
+                {
+                    "url": "https://machinelearningmastery.com/wp-content/uploads/2025/02/mlm-feature-understanding-rag-7.png",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "Mastering Time Series Forecasting: From ARIMA to LSTM",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "Mastering Time Series Forecasting: From ARIMA to LSTM"
+            },
+            "summary": "Time series forecasting is a statistical technique used to analyze historical data points and predict future values based on temporal patterns.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "Time series forecasting is a statistical technique used to analyze historical data points and predict future values based on temporal patterns."
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://machinelearningmastery.com/mastering-time-series-forecasting-from-arima-to-lstm/"
+                }
+            ],
+            "link": "https://machinelearningmastery.com/mastering-time-series-forecasting-from-arima-to-lstm/",
+            "id": "https://machinelearningmastery.com/?p=19317",
+            "guidislink": false,
+            "published": "Wed, 12 Mar 2025 11:00:00 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                12,
+                11,
+                0,
+                0,
+                2,
+                71,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Jayita Gulati"
+                }
+            ],
+            "author": "Jayita Gulati",
+            "author_detail": {
+                "name": "Jayita Gulati"
+            },
+            "media_content": [
+                {
+                    "url": "https://machinelearningmastery.com/wp-content/uploads/2025/03/mlm-black-grey-white-wave-design.png",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "A Complete Guide to Matrices for Machine Learning with Python",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "A Complete Guide to Matrices for Machine Learning with Python"
+            },
+            "summary": "Matrices are a key concept not only in linear algebra but also with regard to their prominent application and use in machine learning (ML) and data science.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "Matrices are a key concept not only in linear algebra but also with regard to their prominent application and use in machine learning (ML) and data science."
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://machinelearningmastery.com/a-complete-guide-to-matrices-for-machine-learning-with-python/"
+                }
+            ],
+            "link": "https://machinelearningmastery.com/a-complete-guide-to-matrices-for-machine-learning-with-python/",
+            "id": "https://machinelearningmastery.com/?p=19086",
+            "guidislink": false,
+            "published": "Tue, 11 Mar 2025 19:29:50 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                11,
+                19,
+                29,
+                50,
+                1,
+                70,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Iv\u00e1n Palomares Carrascosa"
+                }
+            ],
+            "author": "Iv\u00e1n Palomares Carrascosa",
+            "author_detail": {
+                "name": "Iv\u00e1n Palomares Carrascosa"
+            },
+            "media_content": [
+                {
+                    "url": "https://machinelearningmastery.com/wp-content/uploads/2025/03/mlm-matrices-python-ml.png",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "The Beginner\u2019s Guide to Language Models with Python",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "The Beginner\u2019s Guide to Language Models with Python"
+            },
+            "summary": "Language models &mdash; often known for the acronym LLM for Large Language Models, their large-scale version &mdash; fuel powerful AI applications like conversational chatbots, AI assistants, and other intelligent text and content generation apps.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "Language models &mdash; often known for the acronym LLM for Large Language Models, their large-scale version &mdash; fuel powerful AI applications like conversational chatbots, AI assistants, and other intelligent text and content generation apps."
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://machinelearningmastery.com/the-beginners-guide-to-language-models-with-python/"
+                }
+            ],
+            "link": "https://machinelearningmastery.com/the-beginners-guide-to-language-models-with-python/",
+            "id": "https://machinelearningmastery.com/?p=19244",
+            "guidislink": false,
+            "published": "Mon, 10 Mar 2025 17:36:33 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                10,
+                17,
+                36,
+                33,
+                0,
+                69,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Iv\u00e1n Palomares Carrascosa"
+                }
+            ],
+            "author": "Iv\u00e1n Palomares Carrascosa",
+            "author_detail": {
+                "name": "Iv\u00e1n Palomares Carrascosa"
+            },
+            "media_content": [
+                {
+                    "url": "https://machinelearningmastery.com/wp-content/uploads/2025/03/f5Kt3OlLQ5KTcYi7WEGj4g.webp",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "Understanding the DistilBart Model and ROUGE Metric",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "Understanding the DistilBart Model and ROUGE Metric"
+            },
+            "summary": "This post is in two parts; they are: \u2022 Understanding the Encoder-Decoder Architecture \u2022 Evaluating the Result of Summarization using ROUGE DistilBart is a \"distilled\" version of the BART model, a powerful sequence-to-sequence model for natural language generation, translation, and comprehension.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://machinelearningmastery.com/feed/",
+                "value": "This post is in two parts; they are: \u2022 Understanding the Encoder-Decoder Architecture \u2022 Evaluating the Result of Summarization using ROUGE DistilBart is a \"distilled\" version of the BART model, a powerful sequence-to-sequence model for natural language generation, translation, and comprehension."
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://machinelearningmastery.com/understanding-the-distilbart-model-and-rouge-metric/"
+                }
+            ],
+            "link": "https://machinelearningmastery.com/understanding-the-distilbart-model-and-rouge-metric/",
+            "id": "https://machinelearningmastery.com/?p=19289",
+            "guidislink": false,
+            "published": "Mon, 10 Mar 2025 12:51:36 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                10,
+                12,
+                51,
+                36,
+                0,
+                69,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Muhammad Asad Iqbal Khan"
+                }
+            ],
+            "author": "Muhammad Asad Iqbal Khan",
+            "author_detail": {
+                "name": "Muhammad Asad Iqbal Khan"
+            },
+            "media_content": [
+                {
+                    "url": "https://machinelearningmastery.com/wp-content/uploads/2025/03/svetlana-gumerova-nZVjwM1xWU0-unsplash.jpg",
+                    "medium": "image"
+                }
+            ]
+        }
+    ]
+}

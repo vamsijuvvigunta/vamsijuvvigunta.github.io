@@ -1,0 +1,45 @@
+# Deployment
+# machine - 0: m93p (i7 4 Core + 16GB RAM)
+#  - etcd
+#  - easyrsa
+#  - kubeapi-load-balancer
+#  - kubernetes-master
+#
+# machine - 1: m93p (i7 4 Core + 16GB RAM)
+#  - kubernetes-worker
+#  - metallb (eventually)
+#  - docker registry (eventually)
+#  - CI/CD (maybe)
+#
+# machine - 2: Threadripper 32 core + 64GB RAM + 2080Ti
+#  - kubernetes-worker
+description: overlay for dev-maas installation on 3 nodes
+series: focal
+
+machines:
+  '0':
+    constraints: tags=k8s,k8s_master
+  '1':
+    constraints: tags=k8s,k8s_worker
+  '2':
+    constraints: tags=k8s,k8s_worker,gpu
+
+# https://discourse.charmhub.io/t/charm-bundles/1058 says that 'services'
+# is deprecated, use applications instead.
+applications:
+
+  easyrsa:
+    num_units: 1
+    to: ['0']
+  etcd:
+    num_units: 1
+    to: ['0']
+  kubeapi-load-balancer:
+    num_units: 1    
+    to: ['0']
+  kubernetes-master:    
+    num_units: 1    
+    to: ['0']
+  kubernetes-worker:    
+    num_units: 2
+    to: ['1', '2']

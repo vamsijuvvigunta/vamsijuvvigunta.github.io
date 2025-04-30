@@ -1,0 +1,645 @@
+{
+    "03/16/2025": [
+        {
+            "authors": [
+                "Tianyuan Wang"
+            ],
+            "title": "Dynamic Angle Selection in X-Ray CT: A Reinforcement Learning Approach to Optimal Stopping",
+            "summary": "In industrial X-ray Computed Tomography (CT), the need for rapid in-line\ninspection is critical. Sparse-angle tomography plays a significant role in\nthis by reducing the required number of projections, thereby accelerating\nprocessing and conserving resources. Most existing methods aim to balance\nreconstruction quality and scanning time, typically relying on fixed scan\ndurations. Adaptive adjustment of the number of angles is essential; for\ninstance, more angles may be required for objects with complex geometries or\nnoisier projections. The concept of optimal stopping, which dynamically adjusts\nthis balance according to varying industrial needs, remains underutilized.\nBuilding on our previous work, we integrate optimal stopping into sequential\nOptimal Experimental Design (OED). We propose a novel method for computing the\npolicy gradient within the Actor-Critic framework, enabling the development of\nadaptive policies for informative angle selection and scan termination.\nAdditionally, we investigated the gap between simulation and real-world\napplications in the context of the developed learning-based method. Our trained\nmodel, developed using synthetic data, demonstrates reliable performance when\napplied to real-world data. This approach enhances the flexibility of CT\noperations and expands the applicability of sparse-angle tomography in\nindustrial settings.",
+            "published": "03/16/2025",
+            "primary_category": "cs.CV",
+            "categories": [
+                "cs.CV",
+                "cs.AI",
+                "cs.LG"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.12688v1",
+            "entry_url": "http://arxiv.org/abs/2503.12688v1"
+        },
+        {
+            "authors": [
+                "Naveen Krishnan"
+            ],
+            "title": "AI Agents: Evolution, Architecture, and Real-World Applications",
+            "summary": "This paper examines the evolution, architecture, and practical applications\nof AI agents from their early, rule-based incarnations to modern sophisticated\nsystems that integrate large language models with dedicated modules for\nperception, planning, and tool use. Emphasizing both theoretical foundations\nand real-world deployments, the paper reviews key agent paradigms, discusses\nlimitations of current evaluation benchmarks, and proposes a holistic\nevaluation framework that balances task effectiveness, efficiency, robustness,\nand safety. Applications across enterprise, personal assistance, and\nspecialized domains are analyzed, with insights into future research directions\nfor more resilient and adaptive AI agent systems.",
+            "published": "03/16/2025",
+            "primary_category": "cs.AI",
+            "categories": [
+                "cs.AI",
+                "68T05, 68T20",
+                "I.2.6; I.2.8; I.2.11"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.12687v1",
+            "entry_url": "http://arxiv.org/abs/2503.12687v1"
+        },
+        {
+            "authors": [
+                "Jacob Chmura",
+                "Jonah Dauvet",
+                "Sebastian Sabry"
+            ],
+            "title": "Plausibility Vaccine: Injecting LLM Knowledge for Event Plausibility",
+            "summary": "Despite advances in language modelling, distributional methods that build\nsemantic representations from co-occurrences fail to discriminate between\nplausible and implausible events. In this work, we investigate how plausibility\nprediction can be improved by injecting latent knowledge prompted from large\nlanguage models using parameter-efficient fine-tuning. We train 12 task\nadapters to learn various physical properties and association measures and\nperform adapter fusion to compose latent semantic knowledge from each task on\ntop of pre-trained AlBERT embeddings. We automate auxiliary task data\ngeneration, which enables us to scale our approach and fine-tune our learned\nrepresentations across two plausibility datasets. Our code is available at\nhttps://github.com/Jacob-Chmura/plausibility-vaccine.",
+            "published": "03/16/2025",
+            "primary_category": "cs.CL",
+            "categories": [
+                "cs.CL",
+                "cs.AI"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.12667v1",
+            "entry_url": "http://arxiv.org/abs/2503.12667v1"
+        },
+        {
+            "authors": [
+                "Yoo Yeon Sung",
+                "Hannah Kim",
+                "Dan Zhang"
+            ],
+            "title": "VeriLA: A Human-Centered Evaluation Framework for Interpretable Verification of LLM Agent Failures",
+            "summary": "AI practitioners increasingly use large language model (LLM) agents in\ncompound AI systems to solve complex reasoning tasks, these agent executions\noften fail to meet human standards, leading to errors that compromise the\nsystem's overall performance. Addressing these failures through human\nintervention is challenging due to the agents' opaque reasoning processes,\nmisalignment with human expectations, the complexity of agent dependencies, and\nthe high cost of manual inspection. This paper thus introduces a human-centered\nevaluation framework for Verifying LLM Agent failures (VeriLA), which\nsystematically assesses agent failures to reduce human effort and make these\nagent failures interpretable to humans. The framework first defines clear\nexpectations of each agent by curating human-designed agent criteria. Then, it\ndevelops a human-aligned agent verifier module, trained with human gold\nstandards, to assess each agent's execution output. This approach enables\ngranular evaluation of each agent's performance by revealing failures from a\nhuman standard, offering clear guidelines for revision, and reducing human\ncognitive load. Our case study results show that VeriLA is both interpretable\nand efficient in helping practitioners interact more effectively with the\nsystem. By upholding accountability in human-agent collaboration, VeriLA paves\nthe way for more trustworthy and human-aligned compound AI systems.",
+            "published": "03/16/2025",
+            "primary_category": "cs.AI",
+            "categories": [
+                "cs.AI",
+                "cs.CL",
+                "cs.HC"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.12651v1",
+            "entry_url": "http://arxiv.org/abs/2503.12651v1"
+        },
+        {
+            "authors": [
+                "Hao Mark Chen",
+                "Shell Xu Hu",
+                "Wayne Luk",
+                "Timothy Hospedales",
+                "Hongxiang Fan"
+            ],
+            "title": "FW-Merging: Scaling Model Merging with Frank-Wolfe Optimization",
+            "summary": "Model merging has emerged as a promising approach for multi-task learning\n(MTL), offering a data-efficient alternative to conventional fine-tuning.\nHowever, with the rapid development of the open-source AI ecosystem and the\nincreasing availability of fine-tuned foundation models, existing model merging\nmethods face two key limitations: (i) They are primarily designed for in-house\nfine-tuned models, making them less adaptable to diverse model sources with\npartially unknown model and task information, (ii) They struggle to scale\neffectively when merging numerous model checkpoints. To address these\nchallenges, we formulate model merging as a constrained optimization problem\nand introduce a novel approach: Frank-Wolfe Merging (FW-Merging). Inspired by\nFrank-Wolfe optimization, our approach iteratively selects the most relevant\nmodel in the pool to minimize a linear approximation of the objective function\nand then executes a local merging similar to the Frank-Wolfe update. The\nobjective function is designed to capture the desired behavior of the\ntarget-merged model, while the fine-tuned candidate models define the\nconstraint set. More importantly, FW-Merging serves as an orthogonal technique\nfor existing merging methods, seamlessly integrating with them to further\nenhance accuracy performance. Our experiments show that FW-Merging scales\nacross diverse model sources, remaining stable with 16 irrelevant models and\nimproving by 15.3% with 16 relevant models on 20 CV tasks, while maintaining\nconstant memory overhead, unlike the linear overhead of data-informed merging\nmethods. Compared with the state-of-the-art approaches, FW-Merging surpasses\nthe data-free merging method by 32.8% and outperforms the data-informed\nAdamerging by 8.39% when merging 20 ViT models.",
+            "published": "03/16/2025",
+            "primary_category": "cs.LG",
+            "categories": [
+                "cs.LG",
+                "cs.AI"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.12649v1",
+            "entry_url": "http://arxiv.org/abs/2503.12649v1"
+        },
+        {
+            "authors": [
+                "Anjali Dharmik"
+            ],
+            "title": "COVID 19 Diagnosis Analysis using Transfer Learning",
+            "summary": "Coronaviruses transmit COVID-19, a rapidly spreading disease. A Coronavirus\ninfection (COVID-19) was first discovered in December 2019 in Wuhan, China, and\nspread rapidly throughout the planet in exactly some months. because of this,\nthe virus can cause severe symptoms and even death, especially within the\nelderly and in people with medical conditions. The virus causes acute\nrespiratory infections in humans. the primary case was diagnosed in China in\n2019 and the pandemic started in 2020. Since the quantity of cases of COVID-19\nis increasing daily, there are only a limited number of test kits available in\nhospitals. So, to stop COVID-19 from spreading among people, an automatic\ndiagnosis system must be implemented. during this study, three pre-trained\nneural networks supported convolutional neural networks (VGG16, VGG19,\nResNet50) are proposed for detecting Coronavirus pneumonia infected patients\nthrough X-rays and computerized tomography (CT). By using cross-validation,\nwe've got implemented binary classifications with two classes (COVID-19, Normal\n(healthy)). Taking into consideration the results obtained, the pre-trained\nResNet50 model provides the simplest classification performance (97.77%\naccuracy, 100% sensitivity, 93.33% specificity, 98.00% F1-score) among the\nopposite three used models over 6259 images.",
+            "published": "03/16/2025",
+            "primary_category": "eess.IV",
+            "categories": [
+                "eess.IV",
+                "cs.AI",
+                "cs.CV"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.12642v1",
+            "entry_url": "http://arxiv.org/abs/2503.12642v1"
+        },
+        {
+            "authors": [
+                "Federico Ricciuti"
+            ],
+            "title": "LLMs' Leaning in European Elections",
+            "summary": "Many studies suggest that LLMs have left wing leans. The article extends the\nUS presidential election analysis made in previous works, where multiple LLMs\nwere asked to vote between Joe Biden and Donald Trump in a virtual election,\nand the results showed a clear lean of LLMs toward Joe Biden. This article\nconsiders natural follow-up questions that could arise from that experiment,\nsuch as: what is the extent of this phenomenon? Is it generalizable to multiple\nvirtual elections in other countries? The article considers virtual elections\nin ten european countries: Germany, France, Italy, Spain, Poland, Romania,\nNetherlands, Belgium, Czech Republic, and Sweden, and with four different LLMs:\ngpt4o, claude 3.5 sonnet, mistral-large, and gemini-2.0-flash.",
+            "published": "03/16/2025",
+            "primary_category": "cs.CY",
+            "categories": [
+                "cs.CY",
+                "cs.AI"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.13554v1",
+            "entry_url": "http://arxiv.org/abs/2503.13554v1"
+        },
+        {
+            "authors": [
+                "Philipp D. Siedler",
+                "Ian Gemp"
+            ],
+            "title": "LLM-Mediated Guidance of MARL Systems",
+            "summary": "In complex multi-agent environments, achieving efficient learning and\ndesirable behaviours is a significant challenge for Multi-Agent Reinforcement\nLearning (MARL) systems. This work explores the potential of combining MARL\nwith Large Language Model (LLM)-mediated interventions to guide agents toward\nmore desirable behaviours. Specifically, we investigate how LLMs can be used to\ninterpret and facilitate interventions that shape the learning trajectories of\nmultiple agents. We experimented with two types of interventions, referred to\nas controllers: a Natural Language (NL) Controller and a Rule-Based (RB)\nController. The NL Controller, which uses an LLM to simulate human-like\ninterventions, showed a stronger impact than the RB Controller. Our findings\nindicate that agents particularly benefit from early interventions, leading to\nmore efficient training and higher performance. Both intervention types\noutperform the baseline without interventions, highlighting the potential of\nLLM-mediated guidance to accelerate training and enhance MARL performance in\nchallenging environments.",
+            "published": "03/16/2025",
+            "primary_category": "cs.MA",
+            "categories": [
+                "cs.MA",
+                "cs.AI",
+                "cs.CL"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.13553v1",
+            "entry_url": "http://arxiv.org/abs/2503.13553v1"
+        },
+        {
+            "authors": [
+                "Heye Huang",
+                "Zheng Li",
+                "Hao Cheng",
+                "Haoran Wang",
+                "Junkai Jiang",
+                "Xiaopeng Li",
+                "Arkady Zgonnikov"
+            ],
+            "title": "Understanding Driver Cognition and Decision-Making Behaviors in High-Risk Scenarios: A Drift Diffusion Perspective",
+            "summary": "Ensuring safe interactions between autonomous vehicles (AVs) and human\ndrivers in mixed traffic systems remains a major challenge, particularly in\ncomplex, high-risk scenarios. This paper presents a cognition-decision\nframework that integrates individual variability and commonalities in driver\nbehavior to quantify risk cognition and model dynamic decision-making. First, a\nrisk sensitivity model based on a multivariate Gaussian distribution is\ndeveloped to characterize individual differences in risk cognition. Then, a\ncognitive decision-making model based on the drift diffusion model (DDM) is\nintroduced to capture common decision-making mechanisms in high-risk\nenvironments. The DDM dynamically adjusts decision thresholds by integrating\ninitial bias, drift rate, and boundary parameters, adapting to variations in\nspeed, relative distance, and risk sensitivity to reflect diverse driving\nstyles and risk preferences. By simulating high-risk scenarios with lateral,\nlongitudinal, and multidimensional risk sources in a driving simulator, the\nproposed model accurately predicts cognitive responses and decision behaviors\nduring emergency maneuvers. Specifically, by incorporating driver-specific risk\nsensitivity, the model enables dynamic adjustments of key DDM parameters,\nallowing for personalized decision-making representations in diverse scenarios.\nComparative analysis with IDM, Gipps, and MOBIL demonstrates that DDM more\nprecisely captures human cognitive processes and adaptive decision-making in\nhigh-risk scenarios. These findings provide a theoretical basis for modeling\nhuman driving behavior and offer critical insights for enhancing AV-human\ninteraction in real-world traffic environments.",
+            "published": "03/16/2025",
+            "primary_category": "cs.AI",
+            "categories": [
+                "cs.AI",
+                "cs.HC",
+                "cs.SI"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.12637v1",
+            "entry_url": "http://arxiv.org/abs/2503.12637v1"
+        },
+        {
+            "authors": [
+                "Amin Banayeeanzade",
+                "Mohammad Rostami"
+            ],
+            "title": "Hybrid Learners Do Not Forget: A Brain-Inspired Neuro-Symbolic Approach to Continual Learning",
+            "summary": "Continual learning is crucial for creating AI agents that can learn and\nimprove themselves autonomously. A primary challenge in continual learning is\nto learn new tasks without losing previously learned knowledge. Current\ncontinual learning methods primarily focus on enabling a neural network with\nmechanisms that mitigate forgetting effects. Inspired by the two distinct\nsystems in the human brain, System 1 and System 2, we propose a Neuro-Symbolic\nBrain-Inspired Continual Learning (NeSyBiCL) framework that incorporates two\nsubsystems to solve continual learning: A neural network model responsible for\nquickly adapting to the most recent task, together with a symbolic reasoner\nresponsible for retaining previously acquired knowledge from previous tasks.\nMoreover, we design an integration mechanism between these components to\nfacilitate knowledge transfer from the symbolic reasoner to the neural network.\nWe also introduce two compositional continual learning benchmarks and\ndemonstrate that NeSyBiCL is effective and leads to superior performance\ncompared to continual learning methods that merely rely on neural architectures\nto address forgetting.",
+            "published": "03/16/2025",
+            "primary_category": "cs.LG",
+            "categories": [
+                "cs.LG",
+                "cs.AI"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.12635v1",
+            "entry_url": "http://arxiv.org/abs/2503.12635v1"
+        }
+    ],
+    "03/17/2025": [
+        {
+            "authors": [
+                "Dmitrii Usenko",
+                "David Helman",
+                "Chen Giladi"
+            ],
+            "title": "Using 3D reconstruction from image motion to predict total leaf area in dwarf tomato plants",
+            "summary": "Accurate estimation of total leaf area (TLA) is crucial for evaluating plant\ngrowth, photosynthetic activity, and transpiration. However, it remains\nchallenging for bushy plants like dwarf tomatoes due to their complex canopies.\nTraditional methods are often labor-intensive, damaging to plants, or limited\nin capturing canopy complexity. This study evaluated a non-destructive method\ncombining sequential 3D reconstructions from RGB images and machine learning to\nestimate TLA for three dwarf tomato cultivars: Mohamed, Hahms Gelbe Topftomate,\nand Red Robin -- grown under controlled greenhouse conditions. Two experiments\n(spring-summer and autumn-winter) included 73 plants, yielding 418 TLA\nmeasurements via an \"onion\" approach. High-resolution videos were recorded, and\n500 frames per plant were used for 3D reconstruction. Point clouds were\nprocessed using four algorithms (Alpha Shape, Marching Cubes, Poisson's, Ball\nPivoting), and meshes were evaluated with seven regression models:\nMultivariable Linear Regression, Lasso Regression, Ridge Regression, Elastic\nNet Regression, Random Forest, Extreme Gradient Boosting, and Multilayer\nPerceptron. The Alpha Shape reconstruction ($\\alpha = 3$) with Extreme Gradient\nBoosting achieved the best performance ($R^2 = 0.80$, $MAE = 489 cm^2$).\nCross-experiment validation showed robust results ($R^2 = 0.56$, $MAE = 579\ncm^2$). Feature importance analysis identified height, width, and surface area\nas key predictors. This scalable, automated TLA estimation method is suited for\nurban farming and precision agriculture, offering applications in automated\npruning, resource efficiency, and sustainable food production. The approach\ndemonstrated robustness across variable environmental conditions and canopy\nstructures.",
+            "published": "03/17/2025",
+            "primary_category": "cs.CV",
+            "categories": [
+                "cs.CV",
+                "cs.AI"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.13778v1",
+            "entry_url": "http://arxiv.org/abs/2503.13778v1"
+        },
+        {
+            "authors": [
+                "Daniel J. Liebling",
+                "Malcolm Kane",
+                "Madeleine Grunde-Mclaughlin",
+                "Ian J. Lang",
+                "Subhashini Venugopalan",
+                "Michael P. Brenner"
+            ],
+            "title": "Towards AI-assisted Academic Writing",
+            "summary": "We present components of an AI-assisted academic writing system including\ncitation recommendation and introduction writing. The system recommends\ncitations by considering the user's current document context to provide\nrelevant suggestions. It generates introductions in a structured fashion,\nsituating the contributions of the research relative to prior work. We\ndemonstrate the effectiveness of the components through quantitative\nevaluations. Finally, the paper presents qualitative research exploring how\nresearchers incorporate citations into their writing workflows. Our findings\nindicate that there is demand for precise AI-assisted writing systems and\nsimple, effective methods for meeting those needs.",
+            "published": "03/17/2025",
+            "primary_category": "cs.AI",
+            "categories": [
+                "cs.AI"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.13771v1",
+            "entry_url": "http://arxiv.org/abs/2503.13771v1"
+        },
+        {
+            "authors": [
+                "Krti Tallam"
+            ],
+            "title": "From Autonomous Agents to Integrated Systems, A New Paradigm: Orchestrated Distributed Intelligence",
+            "summary": "The rapid evolution of artificial intelligence (AI) has ushered in a new era\nof integrated systems that merge computational prowess with human\ndecision-making. In this paper, we introduce the concept of Orchestrated\nDistributed Intelligence (ODI), a novel paradigm that reconceptualizes AI not\nas isolated autonomous agents, but as cohesive, orchestrated networks that work\nin tandem with human expertise. ODI leverages advanced orchestration layers,\nmulti-loop feedback mechanisms, and a high cognitive density framework to\ntransform static, record-keeping systems into dynamic, action-oriented\nenvironments. Through a comprehensive review of multi-agent system literature,\nrecent technological advances, and practical insights from industry forums, we\nargue that the future of AI lies in integrating distributed intelligence within\nhuman-centric workflows. This approach not only enhances operational efficiency\nand strategic agility but also addresses challenges related to scalability,\ntransparency, and ethical decision-making. Our work outlines key theoretical\nimplications and presents a practical roadmap for future research and\nenterprise innovation, aiming to pave the way for responsible and adaptive AI\nsystems that drive sustainable innovation in human organizations.",
+            "published": "03/17/2025",
+            "primary_category": "eess.SY",
+            "categories": [
+                "eess.SY",
+                "cs.AI",
+                "cs.SY"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.13754v2",
+            "entry_url": "http://arxiv.org/abs/2503.13754v2"
+        },
+        {
+            "authors": [
+                "Logan Engstrom",
+                "Andrew Ilyas",
+                "Benjamin Chen",
+                "Axel Feldmann",
+                "William Moses",
+                "Aleksander Madry"
+            ],
+            "title": "Optimizing ML Training with Metagradient Descent",
+            "summary": "A major challenge in training large-scale machine learning models is\nconfiguring the training process to maximize model performance, i.e., finding\nthe best training setup from a vast design space. In this work, we unlock a\ngradient-based approach to this problem. We first introduce an algorithm for\nefficiently calculating metagradients -- gradients through model training -- at\nscale. We then introduce a \"smooth model training\" framework that enables\neffective optimization using metagradients. With metagradient descent (MGD), we\ngreatly improve on existing dataset selection methods, outperform\naccuracy-degrading data poisoning attacks by an order of magnitude, and\nautomatically find competitive learning rate schedules.",
+            "published": "03/17/2025",
+            "primary_category": "stat.ML",
+            "categories": [
+                "stat.ML",
+                "cs.AI",
+                "cs.LG"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.13751v1",
+            "entry_url": "http://arxiv.org/abs/2503.13751v1"
+        },
+        {
+            "authors": [
+                "Kwabena Adu-Duodu",
+                "Stanly Wilson",
+                "Yinhao Li",
+                "Aanuoluwapo Oladimeji",
+                "Talea Huraysi",
+                "Masoud Barati",
+                "Charith Perera",
+                "Ellis Solaiman",
+                "Omer Rana",
+                "Rajiv Ranjan",
+                "Tejal Shah"
+            ],
+            "title": "A Circular Construction Product Ontology for End-of-Life Decision-Making",
+            "summary": "Efficient management of end-of-life (EoL) products is critical for advancing\ncircularity in supply chains, particularly within the construction industry\nwhere EoL strategies are hindered by heterogenous lifecycle data and data\nsilos. Current tools like Environmental Product Declarations (EPDs) and Digital\nProduct Passports (DPPs) are limited by their dependency on seamless data\nintegration and interoperability which remain significant challenges. To\naddress these, we present the Circular Construction Product Ontology (CCPO), an\napplied framework designed to overcome semantic and data heterogeneity\nchallenges in EoL decision-making for construction products. CCPO standardises\nvocabulary and facilitates data integration across supply chain stakeholders\nenabling lifecycle assessments (LCA) and robust decision-making. By aggregating\ndisparate data into a unified product provenance, CCPO enables automated EoL\nrecommendations through customisable SWRL rules aligned with European standards\nand stakeholder-specific circularity SLAs, demonstrating its scalability and\nintegration capabilities. The adopted circular product scenario depicts CCPO's\napplication while competency question evaluations show its superior performance\nin generating accurate EoL suggestions highlighting its potential to greatly\nimprove decision-making in circular supply chains and its applicability in\nreal-world construction environments.",
+            "published": "03/17/2025",
+            "primary_category": "cs.AI",
+            "categories": [
+                "cs.AI",
+                "cs.DB"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.13708v1",
+            "entry_url": "http://arxiv.org/abs/2503.13708v1"
+        },
+        {
+            "authors": [
+                "Jan Bronec",
+                "Jind\u0159ich Helcl"
+            ],
+            "title": "Atyaephyra at SemEval-2025 Task 4: Low-Rank NPO",
+            "summary": "We present a submission to the SemEval 2025 shared task on unlearning\nsensitive content from LLMs. Our approach employs negative preference\noptimization using low-rank adaptation. We show that we can utilize this\ncombination to cheaply compute additional regularization terms, which help with\nunlearning stabilization. The results of our approach significantly exceed the\nshared task baselines.",
+            "published": "03/17/2025",
+            "primary_category": "cs.CL",
+            "categories": [
+                "cs.CL",
+                "cs.AI",
+                "cs.LG",
+                "68T50 (Primary), 68T07 (Secondary)",
+                "I.2.7"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.13690v1",
+            "entry_url": "http://arxiv.org/abs/2503.13690v1"
+        },
+        {
+            "authors": [
+                "Qian Meng",
+                "Jin Peng Zhou",
+                "Kilian Q. Weinberger",
+                "Hadas Kress-Gazit"
+            ],
+            "title": "INPROVF: Leveraging Large Language Models to Repair High-level Robot Controllers from Assumption Violations",
+            "summary": "This paper presents INPROVF, an automatic framework that combines large\nlanguage models (LLMs) and formal methods to speed up the repair process of\nhigh-level robot controllers. Previous approaches based solely on formal\nmethods are computationally expensive and cannot scale to large state spaces.\nIn contrast, INPROVF uses LLMs to generate repair candidates, and formal\nmethods to verify their correctness. To improve the quality of these\ncandidates, our framework first translates the symbolic representations of the\nenvironment and controllers into natural language descriptions. If a candidate\nfails the verification, INPROVF provides feedback on potential unsafe behaviors\nor unsatisfied tasks, and iteratively prompts LLMs to generate improved\nsolutions. We demonstrate the effectiveness of INPROVF through 12 violations\nwith various workspaces, tasks, and state space sizes.",
+            "published": "03/17/2025",
+            "primary_category": "cs.RO",
+            "categories": [
+                "cs.RO",
+                "cs.AI",
+                "cs.FL",
+                "cs.SY",
+                "eess.SY"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.13660v1",
+            "entry_url": "http://arxiv.org/abs/2503.13660v1"
+        },
+        {
+            "authors": [
+                "Mert Cemri",
+                "Melissa Z. Pan",
+                "Shuyi Yang",
+                "Lakshya A. Agrawal",
+                "Bhavya Chopra",
+                "Rishabh Tiwari",
+                "Kurt Keutzer",
+                "Aditya Parameswaran",
+                "Dan Klein",
+                "Kannan Ramchandran",
+                "Matei Zaharia",
+                "Joseph E. Gonzalez",
+                "Ion Stoica"
+            ],
+            "title": "Why Do Multi-Agent LLM Systems Fail?",
+            "summary": "Despite growing enthusiasm for Multi-Agent Systems (MAS), where multiple LLM\nagents collaborate to accomplish tasks, their performance gains across popular\nbenchmarks remain minimal compared to single-agent frameworks. This gap\nhighlights the need to analyze the challenges hindering MAS effectiveness.\n  In this paper, we present the first comprehensive study of MAS challenges. We\nanalyze five popular MAS frameworks across over 150 tasks, involving six expert\nhuman annotators. We identify 14 unique failure modes and propose a\ncomprehensive taxonomy applicable to various MAS frameworks. This taxonomy\nemerges iteratively from agreements among three expert annotators per study,\nachieving a Cohen's Kappa score of 0.88. These fine-grained failure modes are\norganized into 3 categories, (i) specification and system design failures, (ii)\ninter-agent misalignment, and (iii) task verification and termination. To\nsupport scalable evaluation, we integrate MASFT with LLM-as-a-Judge. We also\nexplore if identified failures could be easily prevented by proposing two\ninterventions: improved specification of agent roles and enhanced orchestration\nstrategies. Our findings reveal that identified failures require more complex\nsolutions, highlighting a clear roadmap for future research. We open-source our\ndataset and LLM annotator.",
+            "published": "03/17/2025",
+            "primary_category": "cs.AI",
+            "categories": [
+                "cs.AI"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.13657v1",
+            "entry_url": "http://arxiv.org/abs/2503.13657v1"
+        },
+        {
+            "authors": [
+                "Florian Mai",
+                "David Kacz\u00e9r",
+                "Nicholas Kluge Corr\u00eaa",
+                "Lucie Flek"
+            ],
+            "title": "Superalignment with Dynamic Human Values",
+            "summary": "Two core challenges of alignment are 1) scalable oversight and 2) accounting\nfor the dynamic nature of human values. While solutions like recursive reward\nmodeling address 1), they do not simultaneously account for 2). We sketch a\nroadmap for a novel algorithmic framework that trains a superhuman reasoning\nmodel to decompose complex tasks into subtasks that are still amenable to\nhuman-level guidance. Our approach relies on what we call the part-to-complete\ngeneralization hypothesis, which states that the alignment of subtask solutions\ngeneralizes to the alignment of complete solutions. We advocate for the need to\nmeasure this generalization and propose ways to improve it in the future.",
+            "published": "03/17/2025",
+            "primary_category": "cs.AI",
+            "categories": [
+                "cs.AI"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.13621v1",
+            "entry_url": "http://arxiv.org/abs/2503.13621v1"
+        },
+        {
+            "authors": [
+                "Qin Liu",
+                "Wenxuan Zhou",
+                "Nan Xu",
+                "James Y. Huang",
+                "Fei Wang",
+                "Sheng Zhang",
+                "Hoifung Poon",
+                "Muhao Chen"
+            ],
+            "title": "MetaScale: Test-Time Scaling with Evolving Meta-Thoughts",
+            "summary": "One critical challenge for large language models (LLMs) for making complex\nreasoning is their reliance on matching reasoning patterns from training data,\ninstead of proactively selecting the most appropriate cognitive strategy to\nsolve a given task. Existing approaches impose fixed cognitive structures that\nenhance performance in specific tasks but lack adaptability across diverse\nscenarios. To address this limitation, we introduce METASCALE, a test-time\nscaling framework based on meta-thoughts -- adaptive thinking strategies\ntailored to each task. METASCALE initializes a pool of candidate meta-thoughts,\nthen iteratively selects and evaluates them using a multi-armed bandit\nalgorithm with upper confidence bound selection, guided by a reward model. To\nfurther enhance adaptability, a genetic algorithm evolves high-reward\nmeta-thoughts, refining and extending the strategy pool over time. By\ndynamically proposing and optimizing meta-thoughts at inference time, METASCALE\nimproves both accuracy and generalization across a wide range of tasks.\nExperimental results demonstrate that MetaScale consistently outperforms\nstandard inference approaches, achieving an 11% performance gain in win rate on\nArena-Hard for GPT-4o, surpassing o1-mini by 0.9% under style control. Notably,\nMETASCALE scales more effectively with increasing sampling budgets and produces\nmore structured, expert-level responses.",
+            "published": "03/17/2025",
+            "primary_category": "cs.CL",
+            "categories": [
+                "cs.CL",
+                "cs.AI",
+                "cs.LG"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.13447v1",
+            "entry_url": "http://arxiv.org/abs/2503.13447v1"
+        }
+    ],
+    "03/18/2025": [
+        {
+            "authors": [
+                "Susung Hong",
+                "Ira Kemelmacher-Shlizerman",
+                "Brian Curless",
+                "Steven M. Seitz"
+            ],
+            "title": "MusicInfuser: Making Video Diffusion Listen and Dance",
+            "summary": "We introduce MusicInfuser, an approach for generating high-quality dance\nvideos that are synchronized to a specified music track. Rather than attempting\nto design and train a new multimodal audio-video model, we show how existing\nvideo diffusion models can be adapted to align with musical inputs by\nintroducing lightweight music-video cross-attention and a low-rank adapter.\nUnlike prior work requiring motion capture data, our approach fine-tunes only\non dance videos. MusicInfuser achieves high-quality music-driven video\ngeneration while preserving the flexibility and generative capabilities of the\nunderlying models. We introduce an evaluation framework using Video-LLMs to\nassess multiple dimensions of dance generation quality. The project page and\ncode are available at https://susunghong.github.io/MusicInfuser.",
+            "published": "03/18/2025",
+            "primary_category": "cs.CV",
+            "categories": [
+                "cs.CV",
+                "cs.AI",
+                "cs.LG"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.14505v1",
+            "entry_url": "http://arxiv.org/abs/2503.14505v1"
+        },
+        {
+            "authors": [
+                "Kangfu Mei",
+                "Hossein Talebi",
+                "Mojtaba Ardakani",
+                "Vishal M. Patel",
+                "Peyman Milanfar",
+                "Mauricio Delbracio"
+            ],
+            "title": "The Power of Context: How Multimodality Improves Image Super-Resolution",
+            "summary": "Single-image super-resolution (SISR) remains challenging due to the inherent\ndifficulty of recovering fine-grained details and preserving perceptual quality\nfrom low-resolution inputs. Existing methods often rely on limited image\npriors, leading to suboptimal results. We propose a novel approach that\nleverages the rich contextual information available in multiple modalities --\nincluding depth, segmentation, edges, and text prompts -- to learn a powerful\ngenerative prior for SISR within a diffusion model framework. We introduce a\nflexible network architecture that effectively fuses multimodal information,\naccommodating an arbitrary number of input modalities without requiring\nsignificant modifications to the diffusion process. Crucially, we mitigate\nhallucinations, often introduced by text prompts, by using spatial information\nfrom other modalities to guide regional text-based conditioning. Each\nmodality's guidance strength can also be controlled independently, allowing\nsteering outputs toward different directions, such as increasing bokeh through\ndepth or adjusting object prominence via segmentation. Extensive experiments\ndemonstrate that our model surpasses state-of-the-art generative SISR methods,\nachieving superior visual quality and fidelity. See project page at\nhttps://mmsr.kfmei.com/.",
+            "published": "03/18/2025",
+            "primary_category": "cs.CV",
+            "categories": [
+                "cs.CV",
+                "cs.AI",
+                "cs.LG"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.14503v1",
+            "entry_url": "http://arxiv.org/abs/2503.14503v1"
+        },
+        {
+            "authors": [
+                "Thomas Kwa",
+                "Ben West",
+                "Joel Becker",
+                "Amy Deng",
+                "Katharyn Garcia",
+                "Max Hasin",
+                "Sami Jawhar",
+                "Megan Kinniment",
+                "Nate Rush",
+                "Sydney Von Arx",
+                "Ryan Bloom",
+                "Thomas Broadley",
+                "Haoxing Du",
+                "Brian Goodrich",
+                "Nikola Jurkovic",
+                "Luke Harold Miles",
+                "Seraphina Nix",
+                "Tao Lin",
+                "Neev Parikh",
+                "David Rein",
+                "Lucas Jun Koba Sato",
+                "Hjalmar Wijk",
+                "Daniel M. Ziegler",
+                "Elizabeth Barnes",
+                "Lawrence Chan"
+            ],
+            "title": "Measuring AI Ability to Complete Long Tasks",
+            "summary": "Despite rapid progress on AI benchmarks, the real-world meaning of benchmark\nperformance remains unclear. To quantify the capabilities of AI systems in\nterms of human capabilities, we propose a new metric: 50%-task-completion time\nhorizon. This is the time humans typically take to complete tasks that AI\nmodels can complete with 50% success rate. We first timed humans with relevant\ndomain expertise on a combination of RE-Bench, HCAST, and 66 novel shorter\ntasks. On these tasks, current frontier AI models such as Claude 3.7 Sonnet\nhave a 50% time horizon of around 50 minutes. Furthermore, frontier AI time\nhorizon has been doubling approximately every seven months since 2019, though\nthe trend may have accelerated in 2024. The increase in AI models' time\nhorizons seems to be primarily driven by greater reliability and ability to\nadapt to mistakes, combined with better logical reasoning and tool use\ncapabilities. We discuss the limitations of our results -- including their\ndegree of external validity -- and the implications of increased autonomy for\ndangerous capabilities. If these results generalize to real-world software\ntasks, extrapolation of this trend predicts that within 5 years, AI systems\nwill be capable of automating many software tasks that currently take humans a\nmonth.",
+            "published": "03/18/2025",
+            "primary_category": "cs.AI",
+            "categories": [
+                "cs.AI",
+                "cs.LG"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.14499v1",
+            "entry_url": "http://arxiv.org/abs/2503.14499v1"
+        },
+        {
+            "authors": [
+                "Chuxin Wang",
+                "Wenfei Yang",
+                "Xiang Liu",
+                "Tianzhu Zhang"
+            ],
+            "title": "State Space Model Meets Transformer: A New Paradigm for 3D Object Detection",
+            "summary": "DETR-based methods, which use multi-layer transformer decoders to refine\nobject queries iteratively, have shown promising performance in 3D indoor\nobject detection. However, the scene point features in the transformer decoder\nremain fixed, leading to minimal contributions from later decoder layers,\nthereby limiting performance improvement. Recently, State Space Models (SSM)\nhave shown efficient context modeling ability with linear complexity through\niterative interactions between system states and inputs. Inspired by SSMs, we\npropose a new 3D object DEtection paradigm with an interactive STate space\nmodel (DEST). In the interactive SSM, we design a novel state-dependent SSM\nparameterization method that enables system states to effectively serve as\nqueries in 3D indoor detection tasks. In addition, we introduce four key\ndesigns tailored to the characteristics of point cloud and SSM: The\nserialization and bidirectional scanning strategies enable bidirectional\nfeature interaction among scene points within the SSM. The inter-state\nattention mechanism models the relationships between state points, while the\ngated feed-forward network enhances inter-channel correlations. To the best of\nour knowledge, this is the first method to model queries as system states and\nscene points as system inputs, which can simultaneously update scene point\nfeatures and query features with linear complexity. Extensive experiments on\ntwo challenging datasets demonstrate the effectiveness of our DEST-based\nmethod. Our method improves the GroupFree baseline in terms of AP50 on ScanNet\nV2 (+5.3) and SUN RGB-D (+3.2) datasets. Based on the VDETR baseline, Our\nmethod sets a new SOTA on the ScanNetV2 and SUN RGB-D datasets.",
+            "published": "03/18/2025",
+            "primary_category": "cs.CV",
+            "categories": [
+                "cs.CV",
+                "cs.AI"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.14493v1",
+            "entry_url": "http://arxiv.org/abs/2503.14493v1"
+        },
+        {
+            "authors": [
+                "NVIDIA",
+                ":",
+                "Hassan Abu Alhaija",
+                "Jose Alvarez",
+                "Maciej Bala",
+                "Tiffany Cai",
+                "Tianshi Cao",
+                "Liz Cha",
+                "Joshua Chen",
+                "Mike Chen",
+                "Francesco Ferroni",
+                "Sanja Fidler",
+                "Dieter Fox",
+                "Yunhao Ge",
+                "Jinwei Gu",
+                "Ali Hassani",
+                "Michael Isaev",
+                "Pooya Jannaty",
+                "Shiyi Lan",
+                "Tobias Lasser",
+                "Huan Ling",
+                "Ming-Yu Liu",
+                "Xian Liu",
+                "Yifan Lu",
+                "Alice Luo",
+                "Qianli Ma",
+                "Hanzi Mao",
+                "Fabio Ramos",
+                "Xuanchi Ren",
+                "Tianchang Shen",
+                "Shitao Tang",
+                "Ting-Chun Wang",
+                "Jay Wu",
+                "Jiashu Xu",
+                "Stella Xu",
+                "Kevin Xie",
+                "Yuchong Ye",
+                "Xiaodong Yang",
+                "Xiaohui Zeng",
+                "Yu Zeng"
+            ],
+            "title": "Cosmos-Transfer1: Conditional World Generation with Adaptive Multimodal Control",
+            "summary": "We introduce Cosmos-Transfer, a conditional world generation model that can\ngenerate world simulations based on multiple spatial control inputs of various\nmodalities such as segmentation, depth, and edge. In the design, the spatial\nconditional scheme is adaptive and customizable. It allows weighting different\nconditional inputs differently at different spatial locations. This enables\nhighly controllable world generation and finds use in various world-to-world\ntransfer use cases, including Sim2Real. We conduct extensive evaluations to\nanalyze the proposed model and demonstrate its applications for Physical AI,\nincluding robotics Sim2Real and autonomous vehicle data enrichment. We further\ndemonstrate an inference scaling strategy to achieve real-time world generation\nwith an NVIDIA GB200 NVL72 rack. To help accelerate research development in the\nfield, we open-source our models and code at\nhttps://github.com/nvidia-cosmos/cosmos-transfer1.",
+            "published": "03/18/2025",
+            "primary_category": "cs.CV",
+            "categories": [
+                "cs.CV",
+                "cs.AI",
+                "cs.LG",
+                "cs.RO"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.14492v1",
+            "entry_url": "http://arxiv.org/abs/2503.14492v1"
+        },
+        {
+            "authors": [
+                "Shraddha Surana",
+                "Ashwin Srinivasan"
+            ],
+            "title": "Engineering Scientific Assistants using Interactive Structured Induction of Programs",
+            "summary": "We are interested in the construction of software that can act as scientific\nassistants to domain specialists. It is expected that such assistants will be\nneeded to accelerate the identification of ways to address complex problems\nrequiring urgent solutions. In this paper, our focus is not on a specific\nscientific problem, but on the software-engineering of such 'science\naccelerators'. Recent developments in 'No Code' techniques would seem to\nsuggest that scientist can simply hypothesise solutions simply by conversing\nwith a large language model (LLM). However, for complex scientific problems,\nthis seems unlikely given the current state of LLM technology. What does appear\nfeasible is that a software engineer can use LLMs to rapidly construct programs\nfor use by a domain-specialist, including the specialist's requirements\nexpressed in natural language. We propose the design of an interactive form of\n'structured' inductive programming in which a software-engineer and an LLM\ncollaboratively construct an 'assistant' for a scientific data analysis. The\npaper describes a simple implementation called iStrucInd that adapts a '2-way\nIntelligibility' protocol to implement the interaction between the software\nengineer and the LLM. We test the tool on two different non-trivial scientific\ndata analysis tasks. Specifically, we compare the system constructed by\niStrucInd against systems constructed manually and by Low Code/No Code methods\nalong dimensions of: (a) program performance; (b) program quality; and (c)\nprogramming effort. The results show iStrucInd allows a software engineer to\ndevelop better programs faster suggesting interactive structured induction can\nplay a useful role in the rapid construction of scientific assistants.",
+            "published": "03/18/2025",
+            "primary_category": "cs.AI",
+            "categories": [
+                "cs.AI",
+                "cs.SE"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.14488v1",
+            "entry_url": "http://arxiv.org/abs/2503.14488v1"
+        },
+        {
+            "authors": [
+                "Minglei Shi",
+                "Ziyang Yuan",
+                "Haotian Yang",
+                "Xintao Wang",
+                "Mingwu Zheng",
+                "Xin Tao",
+                "Wenliang Zhao",
+                "Wenzhao Zheng",
+                "Jie Zhou",
+                "Jiwen Lu",
+                "Pengfei Wan",
+                "Di Zhang",
+                "Kun Gai"
+            ],
+            "title": "DiffMoE: Dynamic Token Selection for Scalable Diffusion Transformers",
+            "summary": "Diffusion models have demonstrated remarkable success in various image\ngeneration tasks, but their performance is often limited by the uniform\nprocessing of inputs across varying conditions and noise levels. To address\nthis limitation, we propose a novel approach that leverages the inherent\nheterogeneity of the diffusion process. Our method, DiffMoE, introduces a\nbatch-level global token pool that enables experts to access global token\ndistributions during training, promoting specialized expert behavior. To\nunleash the full potential of the diffusion process, DiffMoE incorporates a\ncapacity predictor that dynamically allocates computational resources based on\nnoise levels and sample complexity. Through comprehensive evaluation, DiffMoE\nachieves state-of-the-art performance among diffusion models on ImageNet\nbenchmark, substantially outperforming both dense architectures with 3x\nactivated parameters and existing MoE approaches while maintaining 1x activated\nparameters. The effectiveness of our approach extends beyond class-conditional\ngeneration to more challenging tasks such as text-to-image generation,\ndemonstrating its broad applicability across different diffusion model\napplications. Project Page: https://shiml20.github.io/DiffMoE/",
+            "published": "03/18/2025",
+            "primary_category": "cs.CV",
+            "categories": [
+                "cs.CV",
+                "cs.AI"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.14487v1",
+            "entry_url": "http://arxiv.org/abs/2503.14487v1"
+        },
+        {
+            "authors": [
+                "Fardin Saad",
+                "Pradeep K. Murukannaiah",
+                "Munindar P. Singh"
+            ],
+            "title": "Gricean Norms as a Basis for Effective Collaboration",
+            "summary": "Effective human-AI collaboration hinges not only on the AI agent's ability to\nfollow explicit instructions but also on its capacity to navigate ambiguity,\nincompleteness, invalidity, and irrelevance in communication. Gricean\nconversational and inference norms facilitate collaboration by aligning unclear\ninstructions with cooperative principles. We propose a normative framework that\nintegrates Gricean norms and cognitive frameworks -- common ground, relevance\ntheory, and theory of mind -- into large language model (LLM) based agents. The\nnormative framework adopts the Gricean maxims of quantity, quality, relation,\nand manner, along with inference, as Gricean norms to interpret unclear\ninstructions, which are: ambiguous, incomplete, invalid, or irrelevant. Within\nthis framework, we introduce Lamoids, GPT-4 powered agents designed to\ncollaborate with humans. To assess the influence of Gricean norms in human-AI\ncollaboration, we evaluate two versions of a Lamoid: one with norms and one\nwithout. In our experiments, a Lamoid collaborates with a human to achieve\nshared goals in a grid world (Doors, Keys, and Gems) by interpreting both clear\nand unclear natural language instructions. Our results reveal that the Lamoid\nwith Gricean norms achieves higher task accuracy and generates clearer, more\naccurate, and contextually relevant responses than the Lamoid without norms.\nThis improvement stems from the normative framework, which enhances the agent's\npragmatic reasoning, fostering effective human-AI collaboration and enabling\ncontext-aware communication in LLM-based agents.",
+            "published": "03/18/2025",
+            "primary_category": "cs.MA",
+            "categories": [
+                "cs.MA",
+                "cs.AI",
+                "cs.CL"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.14484v1",
+            "entry_url": "http://arxiv.org/abs/2503.14484v1"
+        },
+        {
+            "authors": [
+                "Felipe Azua",
+                "Leopoldo Bertossi"
+            ],
+            "title": "Attribution Score Alignment in Explainable Data Management",
+            "summary": "Different attribution-scores have been proposed to quantify the relevance of\ndatabase tuples for a query answer from a database. Among them, we find Causal\nResponsibility, the Shapley Value, the Banzhaf Power-Index, and the Causal\nEffect. They have been analyzed in isolation, mainly in terms of computational\nproperties. In this work, we start an investigation into the alignment of these\nscores on the basis of the queries at hand; that is, on whether they induce\ncompatible rankings of tuples. We are able to identify vast classes of queries\nfor which some pairs of scores are always aligned, and others for which they\nare not. It turns out that the presence of exogenous tuples makes a crucial\ndifference in this regard.",
+            "published": "03/18/2025",
+            "primary_category": "cs.DB",
+            "categories": [
+                "cs.DB",
+                "cs.AI"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.14469v1",
+            "entry_url": "http://arxiv.org/abs/2503.14469v1"
+        },
+        {
+            "authors": [
+                "Bo Peng",
+                "Ruichong Zhang",
+                "Daniel Goldstein",
+                "Eric Alcaide",
+                "Haowen Hou",
+                "Janna Lu",
+                "William Merrill",
+                "Guangyu Song",
+                "Kaifeng Tan",
+                "Saiteja Utpala",
+                "Nathan Wilce",
+                "Johan S. Wind",
+                "Tianyi Wu",
+                "Daniel Wuttke",
+                "Christian Zhou-Zheng"
+            ],
+            "title": "RWKV-7 \"Goose\" with Expressive Dynamic State Evolution",
+            "summary": "We present RWKV-7 \"Goose\", a new sequence modeling architecture, along with\npre-trained language models that establish a new state-of-the-art in downstream\nperformance at the 3 billion parameter scale on multilingual tasks, and match\ncurrent SoTA English language performance despite being trained on dramatically\nfewer tokens than other top 3B models. Nevertheless, RWKV-7 models require only\nconstant memory usage and constant inference time per token. RWKV-7 introduces\na newly generalized formulation of the delta rule with vector-valued gating and\nin-context learning rates, as well as a relaxed value replacement rule. We show\nthat RWKV-7 can perform state tracking and recognize all regular languages,\nwhile retaining parallelizability of training. This exceeds the capabilities of\nTransformers under standard complexity conjectures, which are limited to\n$\\mathsf{TC}^0$. To demonstrate RWKV-7's language modeling capability, we also\npresent an extended open source 3.1 trillion token multilingual corpus, and\ntrain four RWKV-7 models ranging from 0.19 billion to 2.9 billion parameters on\nthis dataset.\n  To foster openness, reproduction, and adoption, we release our models and\ndataset component listing at https://huggingface.co/RWKV, and our training and\ninference code at https://github.com/RWKV/RWKV-LM all under the Apache 2.0\nLicense.",
+            "published": "03/18/2025",
+            "primary_category": "cs.CL",
+            "categories": [
+                "cs.CL",
+                "cs.AI",
+                "cs.LG",
+                "I.2.0; I.2.7"
+            ],
+            "pdf_url": "http://arxiv.org/pdf/2503.14456v1",
+            "entry_url": "http://arxiv.org/abs/2503.14456v1"
+        }
+    ]
+}

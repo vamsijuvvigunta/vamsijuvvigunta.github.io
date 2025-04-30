@@ -1,0 +1,32 @@
+name: remote-nfs-mount
+
+summary: Provides mount relation for external NFS4 exports
+
+maintainer: Vamsidhar Juvvigunta <Vamsidhar.Juvvigunta@MAAS>
+
+description: |
+  Mounts an NFS4 share via a specified mount point
+  Provides the 'nfs' endpoint with 'mount' interface (same as nfs charm)
+    so that any charm that can relate to nfs will work here except it 
+    uses an exteral mount.
+  Uses nfs4 capability of being able to mount sub-directories of the one
+  single export asif the sub-directory were also explicitly exported.
+
+tags:  
+  - storage
+  - network
+
+# This is not a subordinate (does not need to be running in the same container
+# as the apps it is related to).
+subordinate: false
+
+provides:
+  # The goal is to interface with kubernetes via nfs as shown in the examples of
+  # the nfs charm: except use an external nfs mount
+  # Needs the 'nfs` endpoint with mount interface as this is what kubernetes-worker
+  # expects (See it's charm code)
+  nfs:
+    interface: mount
+
+series:
+  - focal

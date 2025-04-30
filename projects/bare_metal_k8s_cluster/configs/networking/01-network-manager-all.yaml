@@ -1,0 +1,52 @@
+# Let NetworkManager manage all devices on this system
+#
+# https://netplan.io/examples#configuring-source-routing
+# USB Network: 192.168.23
+# Note: the a.b.c.d/24 refers to the 24 bits being the network address
+#       or routing prefix and the other (32-24) bits for the hosts.
+#
+# https://askubuntu.com/questions/1008571/how-can-i-configure-default-route-metric-with-dhcp-and-netplan
+#
+#                              MAAS Box
+#    Cluster subnet        Gateway to cluster
+#                          Gateway to lan
+#
+#                        |  192.168.1.195 | 
+#  | 192.168.23.x | -----|                | --- | 192.168.1.x & Internet |
+#                        |  192.168.23.1  |
+#                    ^^                     ^^
+#              enxd037457fc945            enp0s25
+#
+# Then add a bridge:br0 on the cluster network, so basically remove the 
+# enxd037457fc945 network to under the bridge and add the parameters block
+# https://fabianlee.org/2019/04/01/kvm-creating-a-bridged-network-with-netplan-on-ubuntu-bionic/
+#
+# Nameservers point to the regiond first (rackd will be on the 192.168.23.1 subnet) otherwise
+# if 8.8.8.8 is first, the dns resolution simply fails.
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s25:
+      dhcp4: true
+      dhcp6: false
+      nameservers: 
+        addresses: [192.168.1.195, 8.8.8.8]
+        search: [maas]
+    enxd037457fc945:
+      dhcp4: false
+      dhcp6: false
+
+  bridges:    
+    br0:
+      interfaces: [enxd037457fc945]          
+      addresses: [192.168.23.1/24]
+      dhcp4: false
+      dhcp6: false
+      nameservers: 
+        addresses: [192.168.1.195, 8.8.8.8]
+        search: [maas]
+      parameters:
+        stp: false
+        forward-delay: 0
+

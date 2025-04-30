@@ -1,0 +1,50 @@
+name: Kubeflow lite 
+description: customized to install on the one node with gpu which is also a k8s worker
+bundle: kubernetes
+applications:
+  seldon-controller-manager:
+    placement: kubernetes.io/hostname=big-boy
+  dex-auth:
+    placement: kubernetes.io/hostname=big-boy
+  mlmd:
+    placement: kubernetes.io/hostname=big-boy
+  kfp-viz:
+    placement: kubernetes.io/hostname=big-boy
+  istio-pilot:
+    placement: kubernetes.io/hostname=big-boy
+  jupyter-ui:
+    placement: kubernetes.io/hostname=big-boy
+  minio:
+    placement: kubernetes.io/hostname=big-boy
+  tfjob-operator:
+    placement: kubernetes.io/hostname=big-boy
+  kfp-persistence:
+    placement: kubernetes.io/hostname=big-boy
+  argo-controller:
+    placement: kubernetes.io/hostname=big-boy
+  kfp-db:
+    placement: kubernetes.io/hostname=big-boy
+  kfp-schedwf:
+    placement: kubernetes.io/hostname=big-boy
+  istio-ingressgateway:
+    placement: kubernetes.io/hostname=big-boy
+  kubeflow-dashboard:
+    placement: kubernetes.io/hostname=big-boy
+  kubeflow-volumes:
+    placement: kubernetes.io/hostname=big-boy
+  kfp-api:
+    placement: kubernetes.io/hostname=big-boy
+  kfp-ui:
+    placement: kubernetes.io/hostname=big-boy
+  kubeflow-profiles:
+    placement: kubernetes.io/hostname=big-boy
+  pytorch-operator:
+    placement: kubernetes.io/hostname=big-boy
+  kfp-viewer:
+    placement: kubernetes.io/hostname=big-boy
+  jupyter-controller:
+    placement: kubernetes.io/hostname=big-boy
+  admission-webhook:
+    placement: kubernetes.io/hostname=big-boy
+  oidc-gatekeeper:    
+    placement: kubernetes.io/hostname=big-boy

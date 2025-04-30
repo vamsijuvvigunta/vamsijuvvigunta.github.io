@@ -1,0 +1,1017 @@
+{
+    "title": "MarkTechPost",
+    "fname": "MarkTechPost",
+    "url": "https://www.marktechpost.com/feed/",
+    "items": [
+        {
+            "title": "Cloning, Forking, and Merging Repositories on GitHub: A Beginner\u2019s Guide",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "Cloning, Forking, and Merging Repositories on GitHub: A Beginner\u2019s Guide"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.marktechpost.com/2025/03/19/cloning-forking-and-merging-repositories-on-github-a-beginners-guide/"
+                }
+            ],
+            "link": "https://www.marktechpost.com/2025/03/19/cloning-forking-and-merging-repositories-on-github-a-beginners-guide/",
+            "comments": "https://www.marktechpost.com/2025/03/19/cloning-forking-and-merging-repositories-on-github-a-beginners-guide/#respond",
+            "authors": [
+                {
+                    "name": "Nikhil"
+                }
+            ],
+            "author": "Nikhil",
+            "author_detail": {
+                "name": "Nikhil"
+            },
+            "published": "Wed, 19 Mar 2025 18:51:34 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                19,
+                18,
+                51,
+                34,
+                2,
+                78,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "AI Shorts",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Applications",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Artificial Intelligence",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Basic Tutorials",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Editors Pick",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Staff",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Technology",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.marktechpost.com/?p=69883",
+            "guidislink": false,
+            "summary": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"696\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/an-illustration-of-a-developer-coding-on_N2SmrKCsRWax-_YTCUkUNg_64hdJLOMT5ivCTjso6e51Q.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/an-illustration-of-a-developer-coding-on_N2SmrKCsRWax-_YTCUkUNg_64hdJLOMT5ivCTjso6e51Q-150x150.png\" width=\"150\" />This comprehensive guide walks you through the essential GitHub operations of cloning, forking, and merging repositories. Whether you&#8217;re new to version control or looking to solidify your understanding of GitHub workflows, this tutorial will equip you with the fundamental skills needed to collaborate effectively on coding projects. Understanding GitHub Repositories GitHub repositories serve as central [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/19/cloning-forking-and-merging-repositories-on-github-a-beginners-guide/\">Cloning, Forking, and Merging Repositories on GitHub: A Beginner&#8217;s Guide</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"696\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/an-illustration-of-a-developer-coding-on_N2SmrKCsRWax-_YTCUkUNg_64hdJLOMT5ivCTjso6e51Q.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/an-illustration-of-a-developer-coding-on_N2SmrKCsRWax-_YTCUkUNg_64hdJLOMT5ivCTjso6e51Q-150x150.png\" width=\"150\" />This comprehensive guide walks you through the essential GitHub operations of cloning, forking, and merging repositories. Whether you&#8217;re new to version control or looking to solidify your understanding of GitHub workflows, this tutorial will equip you with the fundamental skills needed to collaborate effectively on coding projects. Understanding GitHub Repositories GitHub repositories serve as central [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/19/cloning-forking-and-merging-repositories-on-github-a-beginners-guide/\">Cloning, Forking, and Merging Repositories on GitHub: A Beginner&#8217;s Guide</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+            },
+            "content": [
+                {
+                    "type": "text/html",
+                    "language": null,
+                    "base": "https://www.marktechpost.com/feed/",
+                    "value": "<img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"696\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/an-illustration-of-a-developer-coding-on_N2SmrKCsRWax-_YTCUkUNg_64hdJLOMT5ivCTjso6e51Q.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/an-illustration-of-a-developer-coding-on_N2SmrKCsRWax-_YTCUkUNg_64hdJLOMT5ivCTjso6e51Q-150x150.png\" width=\"150\" />\n<p>This comprehensive guide walks you through the essential GitHub operations of cloning, forking, and merging repositories. Whether you&#8217;re new to version control or looking to solidify your understanding of GitHub workflows, this tutorial will equip you with the fundamental skills needed to collaborate effectively on coding projects.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-understanding-github-repositories\"><strong>Understanding GitHub Repositories</strong></h3>\n\n\n\n<p>GitHub repositories serve as central storage locations for projects, containing all files, folders, and the complete history of changes. Before diving into specific operations, it&#8217;s important to understand the difference between remote repositories (hosted on GitHub) and local repositories (on your computer). Working with GitHub typically involves creating a local copy of a repository through cloning or forking, making changes, and then integrating those changes through merging.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-remote-vs-local-repositories\"><strong>Remote vs. Local Repositories</strong></h3>\n\n\n\n<p>Repositories on GitHub are remote repositories. To work with them on your computer, you need to create local copies, which you can do by cloning or forking<a href=\"https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop\">1</a>. The main differences are:</p>\n\n\n\n<ul class=\"wp-block-list\">\n<li><strong>Remote repositories: </strong>Hosted on GitHub&#8217;s servers and accessible to collaborators<br /></li>\n\n\n\n<li><strong>Local repositories: </strong>Exist on your computer, allowing you to work offline and test changes before sharing<strong><br /></strong></li>\n</ul>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-cloning-repositories\"><strong>Cloning Repositories</strong></h3>\n\n\n\n<p>Cloning creates a local copy of a repository on your computer. This is the most direct way to start working with an existing project.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-what-is-cloning\"><strong>What is Cloning?</strong></h3>\n\n\n\n<p>When you clone a repository, you download a complete copy of the repository, including all files and commit history. This creates a connection to the original repository, allowing you to push changes back if you have write permissions.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-how-to-clone-using-https\"><strong>How to Clone Using HTTPS</strong></h3>\n\n\n\n<ol class=\"wp-block-list\">\n<li><strong>Find the Repository to Clone</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>Navigate to the GitHub repository you want to clone<br /></li>\n\n\n\n<li>Click the green &#8220;Code&#8221; button above the files list<br /></li>\n\n\n\n<li>Select the HTTPS option to get the repository URL<strong><br /></strong></li>\n</ul>\n</li>\n\n\n\n<li><strong>Clone the Repository Using Git</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>Open your terminal or command prompt<br /></li>\n\n\n\n<li>Navigate to the directory where you want to store the repository<br /></li>\n\n\n\n<li>Type the following command:</li>\n</ul>\n</li>\n</ol>\n\n\n\n<figure class=\"wp-block-image is-resized\"><img alt=\"\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXdjzcgLA1u_kg8JFn_rB-7mf_OM5D48Z2Nze5KxRrma2myLl81c9GSsbrgvfXB_7ZzpsT-DL3W15TkERk_ZuKTEd9Oi2RTNyUsHmwVEpdil6Qq1EtaQozxYmMXvf_GUJ4W0j2eh?key=UDRzaW3kvLvKkWrMPlQ6YGwt\" style=\"width: 822px; height: auto;\" /></figure>\n\n\n\n<ul class=\"wp-block-list\">\n<li>Press Enter to begin cloning<strong><br /></strong></li>\n</ul>\n\n\n\n<ol class=\"wp-block-list\" start=\"3\">\n<li><strong>Authenticate if Necessary</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>For private repositories, you&#8217;ll need to authenticate<br /></li>\n\n\n\n<li>GitHub no longer accepts password authentication for HTTPS<br /></li>\n\n\n\n<li>Use a Personal Access Token (PAT) instead, which you can generate in GitHub Settings \u2192 Developer settings \u2192 Personal access tokens<strong><br /></strong></li>\n</ul>\n</li>\n\n\n\n<li><strong>Start Working with the Cloned Repository</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>Navigate to the cloned repository directory using:</li>\n</ul>\n</li>\n</ol>\n\n\n\n<figure class=\"wp-block-image is-resized\"><img alt=\"\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXcaGXAmheKkoJvWa2nrL5V-YRK9T0qn99Lzekwzh3gaQ_FVGLUYGjrDqtqr4lQnL_8IhGKi9FebvpG5aMfRFpYttsQ2I9pYIpz99FK-P4RJ6_SJyc2kd-lPdGHDLvdgOjhVfEeg?key=UDRzaW3kvLvKkWrMPlQ6YGwt\" style=\"width: 512px; height: auto;\" /></figure>\n\n\n\n<ul class=\"wp-block-list\">\n<li>Now you can view, edit, and work with the files<strong><br /></strong></li>\n</ul>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-cloning-using-github-desktop\"><strong>Cloning Using GitHub Desktop</strong></h3>\n\n\n\n<p><strong>If you prefer a graphical interface:</strong></p>\n\n\n\n<ol class=\"wp-block-list\">\n<li><strong>In GitHub Desktop, click &#8220;File&#8221; \u2192 &#8220;Clone Repository&#8221;</strong><strong><br /></strong></li>\n\n\n\n<li><strong>Select the repository source:</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>Choose from your GitHub repositories<br /></li>\n\n\n\n<li>Enter a URL for any repository<br /></li>\n\n\n\n<li>Browse for a local repository<strong><br /></strong></li>\n</ul>\n</li>\n\n\n\n<li><strong>Choose the local path where you want to store the repository</strong><strong><br /></strong></li>\n\n\n\n<li><strong>Click &#8220;Clone&#8221; to finalize the process</strong><strong><br /></strong></li>\n</ol>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-forking-repositories\"><strong>Forking Repositories</strong></h3>\n\n\n\n<p>Forking is creating a personal copy of someone else&#8217;s repository in your GitHub account, which allows you to freely experiment with changes without affecting the original project.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-when-to-fork-instead-of-clone\"><strong>When to Fork Instead of Clone</strong></h3>\n\n\n\n<p><strong>You should fork a repository when:</strong></p>\n\n\n\n<ul class=\"wp-block-list\">\n<li>You don&#8217;t have write access to the original repository<br /></li>\n\n\n\n<li>You want to contribute to an open-source project<br /></li>\n\n\n\n<li>You want to use someone&#8217;s project as a starting point for your own work<strong><br /></strong></li>\n</ul>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-the-complete-forking-workflow\"><strong>The Complete Forking Workflow</strong></h3>\n\n\n\n<ol class=\"wp-block-list\">\n<li><strong>Fork the Repository</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>Navigate to the repository you want to fork<br /></li>\n\n\n\n<li>Click the &#8220;Fork&#8221; button in the top-right corner<br /></li>\n\n\n\n<li>Wait a few seconds for GitHub to create the fork in your account<strong><br /></strong></li>\n</ul>\n</li>\n\n\n\n<li><strong>Clone Your Forked Repository</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>After forking, clone the repository to your local machine using the methods described earlier<br /></li>\n\n\n\n<li>This creates a local copy of your fork, not the original repository<strong><br /></strong></li>\n</ul>\n</li>\n\n\n\n<li><strong>Make Changes and Push to Your Fork</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>Make the desired changes to the local copy<br /></li>\n\n\n\n<li>Commit your changes<br /></li>\n\n\n\n<li>Push the changes to your forked repository<strong><br /></strong></li>\n</ul>\n</li>\n\n\n\n<li><strong>Create a Pull Request (Optional)</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>If you want to contribute back to the original project, create a pull request<br /></li>\n\n\n\n<li>This proposes your changes to the original repository&#8217;s owner<strong><br /></strong></li>\n</ul>\n</li>\n</ol>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-understanding-the-relationship\"><strong>Understanding the Relationship</strong></h3>\n\n\n\n<p><strong>When you fork a repository:</strong></p>\n\n\n\n<ul class=\"wp-block-list\">\n<li>The original repository is called the &#8220;upstream repository&#8221;<br /></li>\n\n\n\n<li>Your copy is the &#8220;forked repository&#8221;<br /></li>\n\n\n\n<li>These repositories are separate, allowing independent development<br /></li>\n\n\n\n<li>You can sync changes from the upstream repository when needed<strong><br /></strong></li>\n</ul>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-working-with-your-repositories\"><strong>Working with Your Repositories</strong></h3>\n\n\n\n<p><strong>After cloning or forking a repository, you&#8217;ll need to make changes, commit them, and push them back to GitHub.</strong></p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-basic-git-commands-for-daily-work\"><strong>Basic Git Commands for Daily Work</strong></h3>\n\n\n\n<ol class=\"wp-block-list\">\n<li><strong>Check Repository Status</strong></li>\n</ol>\n\n\n\n<figure class=\"wp-block-image is-resized\"><img alt=\"\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXfs0BgO0BlrogFfcODXlge1h2sYlNUqePVPFk6KEkMJtAOEKVYL5xae87I9OPtQ5OLRkmiNpgjri_CRelPsyLTlHB04EEcP7wYkrj3oWXcEJXx8_IJpKqS79IMKz0oSBzG6iesh?key=UDRzaW3kvLvKkWrMPlQ6YGwt\" style=\"width: 516px; height: auto;\" /></figure>\n\n\n\n<ol class=\"wp-block-list\" start=\"2\">\n<li><strong>Create a New Branch for Your Changes</strong><strong><br /></strong></li>\n\n\n\n<li><strong>Add Your Changed Files</strong><strong><br /></strong></li>\n\n\n\n<li><strong>Or add all changes:</strong><strong><br /></strong></li>\n\n\n\n<li><strong>Commit Your Changes</strong><strong><br /></strong></li>\n\n\n\n<li><strong>Push Your Changes to GitHub</strong></li>\n</ol>\n\n\n\n<figure class=\"wp-block-image is-resized\"><img alt=\"\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXdV8O-jh4gDoOEImDOELCB0Wfkws7BN13c8nBHU9Vr7d4Rtzzobswp6nZ2fVRsjkjOH8_vlnBYcEJzSf8gS1PCwYIT1TMIAR4mWLyx17gDZy7d3Wut7UeTM1CAHth0HBIsuPQ6n?key=UDRzaW3kvLvKkWrMPlQ6YGwt\" style=\"width: 536px; height: auto;\" /></figure>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-merging-repositories-and-branches\"><strong>Merging Repositories and Branches</strong></h3>\n\n\n\n<p>Merging is Git&#8217;s way of integrating changes from one branch or repository into another.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-understanding-git-merge\"><strong>Understanding Git Merge</strong></h3>\n\n\n\n<p>Git merge combines multiple sequences of commits into one unified history. In typical scenarios, merging is used to combine two branches. When merging:</p>\n\n\n\n<ol class=\"wp-block-list\">\n<li>Git finds a common base commit between the branches<br /></li>\n\n\n\n<li>It creates a new &#8220;merge commit&#8221; that combines the changes<br /></li>\n\n\n\n<li>This merge commit has two parent commits (unlike regular commits)<strong><br /></strong></li>\n</ol>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-how-to-merge-branches\"><strong>How to Merge Branches</strong></h3>\n\n\n\n<ol class=\"wp-block-list\">\n<li><strong>Checkout the Target Branch</strong><strong><br /></strong></li>\n\n\n\n<li><strong>Ensure Your Branch is Up-to-Date</strong><strong><br /></strong></li>\n\n\n\n<li><strong>Merge the Source Branch</strong><strong><br /></strong></li>\n\n\n\n<li><strong>Handle Any Merge Conflicts</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>If Git encounters conflicting changes, it will mark them in the affected files<br /></li>\n\n\n\n<li>Edit these files to resolve the conflicts<br /></li>\n\n\n\n<li>After resolving, add the files and commit the merge<strong><br /></strong></li>\n</ul>\n</li>\n</ol>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-creating-and-managing-pull-requests\"><strong>Creating and Managing Pull Requests</strong></h3>\n\n\n\n<p>Pull requests are the primary way to contribute changes from a fork back to the original repository.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-creating-a-pull-request\"><strong>Creating a Pull Request</strong></h3>\n\n\n\n<ol class=\"wp-block-list\">\n<li><strong>Push Your Changes to Your Fork</strong><strong><br /></strong></li>\n\n\n\n<li><strong>Navigate to the Original Repository on GitHub</strong><strong><br /></strong></li>\n\n\n\n<li><strong>Click &#8220;Pull Requests&#8221; and then &#8220;New Pull Request&#8221;</strong><strong><br /></strong></li>\n\n\n\n<li><strong>Select the Base Repository/Branch and Your Fork/Branch</strong><strong><br /></strong></li>\n\n\n\n<li><strong>Review Your Changes and Create the Pull Request</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>Add a title and description<br /></li>\n\n\n\n<li>Explain what changes you&#8217;ve made and why<strong><br /></strong></li>\n</ul>\n</li>\n</ol>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-merging-a-pull-request\"><strong>Merging a Pull Request</strong></h3>\n\n\n\n<p>If you own the repository or have write access:</p>\n\n\n\n<ol class=\"wp-block-list\">\n<li><strong>Review the Pull Request</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>Check the code changes<br /></li>\n\n\n\n<li>Run tests if applicable<br /></li>\n\n\n\n<li>Consider feedback from other collaborators<strong><br /></strong></li>\n</ul>\n</li>\n\n\n\n<li><strong>Merge the Pull Request</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>On GitHub, navigate to the pull request<br /></li>\n\n\n\n<li>Click &#8220;Merge pull request&#8221; if everything looks good<br /></li>\n\n\n\n<li>For repositories with merge queues, you can click &#8220;Merge when ready&#8221;<strong><br /></strong></li>\n</ul>\n</li>\n</ol>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-best-practices-and-tips\"><strong>Best Practices and Tips</strong></h3>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-workflow-recommendations\"><strong>Workflow Recommendations</strong></h3>\n\n\n\n<ol class=\"wp-block-list\">\n<li><strong>Always Create Branches for New Features</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>Keep the main branch clean and stable<br /></li>\n\n\n\n<li>Create feature branches for new development<strong><br /></strong></li>\n</ul>\n</li>\n\n\n\n<li><strong>Pull Before You Push</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>Always pull the latest changes before pushing your own<br /></li>\n\n\n\n<li>This reduces merge conflicts<br /></li>\n</ul>\n</li>\n\n\n\n<li><strong>Write Clear Commit Messages</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>Use descriptive messages that explain why changes were made<br /></li>\n\n\n\n<li>Follow the convention of a short title and longer description if needed<strong><br /></strong></li>\n</ul>\n</li>\n</ol>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-common-pitfalls-to-avoid\"><strong>Common Pitfalls to Avoid</strong></h3>\n\n\n\n<ol class=\"wp-block-list\">\n<li><strong>Working Directly on the Main Branch</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>This can cause conflicts and confusion<br /></li>\n\n\n\n<li>Always create feature branches for new work<strong><br /></strong></li>\n</ul>\n</li>\n\n\n\n<li><strong>Not Updating Your Fork Regularly</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>Your fork can become outdated if the original repository changes<br /></li>\n\n\n\n<li>Learn how to sync your fork with the upstream repository<strong><br /></strong></li>\n</ul>\n</li>\n\n\n\n<li><strong>Pushing Large Binary Files to Git</strong><strong><br /></strong>\n<ul class=\"wp-block-list\">\n<li>Git is not optimized for binary files<br /></li>\n\n\n\n<li>Consider Git LFS (Large File Storage) for large binary files<strong><br /></strong></li>\n</ul>\n</li>\n</ol>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-conclusion\"><strong>Conclusion</strong></h3>\n\n\n\n<p>In this guide, we covered cloning, forking, and merging repositories on GitHub, essential for collaboration and version control. Cloning creates a local copy, forking allows independent development, and merging integrates changes efficiently. Pull requests facilitate structured contributions. Best practices include using feature branches, keeping repositories updated, and writing clear commit messages. By following these workflows, developers can collaborate effectively, reduce conflicts, and manage code efficiently, ensuring smooth project development and contribution to open-source or team-based projects.</p>\n<!-- CONTENT END 2 -->\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/19/cloning-forking-and-merging-repositories-on-github-a-beginners-guide/\">Cloning, Forking, and Merging Repositories on GitHub: A Beginner&#8217;s Guide</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+                }
+            ],
+            "wfw_commentrss": "https://www.marktechpost.com/2025/03/19/cloning-forking-and-merging-repositories-on-github-a-beginners-guide/feed/",
+            "slash_comments": "0",
+            "post-id": "69883"
+        },
+        {
+            "title": "This AI Paper Introduces a Latent Token Approach: Enhancing LLM Reasoning Efficiency with VQ-VAE Compression",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "This AI Paper Introduces a Latent Token Approach: Enhancing LLM Reasoning Efficiency with VQ-VAE Compression"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.marktechpost.com/2025/03/19/this-ai-paper-introduces-a-latent-token-approach-enhancing-llm-reasoning-efficiency-with-vq-vae-compression/"
+                }
+            ],
+            "link": "https://www.marktechpost.com/2025/03/19/this-ai-paper-introduces-a-latent-token-approach-enhancing-llm-reasoning-efficiency-with-vq-vae-compression/",
+            "comments": "https://www.marktechpost.com/2025/03/19/this-ai-paper-introduces-a-latent-token-approach-enhancing-llm-reasoning-efficiency-with-vq-vae-compression/#respond",
+            "authors": [
+                {
+                    "name": "Nikhil"
+                }
+            ],
+            "author": "Nikhil",
+            "author_detail": {
+                "name": "Nikhil"
+            },
+            "published": "Wed, 19 Mar 2025 18:44:42 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                19,
+                18,
+                44,
+                42,
+                2,
+                78,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "AI Paper Summary",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "AI Shorts",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Applications",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Artificial Intelligence",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Editors Pick",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Language Model",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Large Language Model",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Staff",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Tech News",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Technology",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.marktechpost.com/?p=69880",
+            "guidislink": false,
+            "summary": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"500\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-19-at-11.43.14\u202fAM-1024x736.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-19-at-11.43.14\u202fAM-150x150.png\" width=\"150\" />Large Language Models (LLMs) have shown significant improvements when explicitly trained on structured reasoning traces, allowing them to solve mathematical equations, infer logical conclusions, and navigate multistep planning tasks. However, the computational resources required to process these lengthy reasoning traces are substantial. Researchers continue to explore ways to enhance efficiency while maintaining the effectiveness of [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/19/this-ai-paper-introduces-a-latent-token-approach-enhancing-llm-reasoning-efficiency-with-vq-vae-compression/\">This AI Paper Introduces a Latent Token Approach: Enhancing LLM Reasoning Efficiency with VQ-VAE Compression</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"500\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-19-at-11.43.14\u202fAM-1024x736.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-19-at-11.43.14\u202fAM-150x150.png\" width=\"150\" />Large Language Models (LLMs) have shown significant improvements when explicitly trained on structured reasoning traces, allowing them to solve mathematical equations, infer logical conclusions, and navigate multistep planning tasks. However, the computational resources required to process these lengthy reasoning traces are substantial. Researchers continue to explore ways to enhance efficiency while maintaining the effectiveness of [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/19/this-ai-paper-introduces-a-latent-token-approach-enhancing-llm-reasoning-efficiency-with-vq-vae-compression/\">This AI Paper Introduces a Latent Token Approach: Enhancing LLM Reasoning Efficiency with VQ-VAE Compression</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+            },
+            "content": [
+                {
+                    "type": "text/html",
+                    "language": null,
+                    "base": "https://www.marktechpost.com/feed/",
+                    "value": "<img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"500\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-19-at-11.43.14\u202fAM-1024x736.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-19-at-11.43.14\u202fAM-150x150.png\" width=\"150\" />\n<p>Large Language Models (LLMs) have shown significant improvements when explicitly trained on structured reasoning traces, allowing them to solve mathematical equations, infer logical conclusions, and navigate multistep planning tasks. However, the computational resources required to process these lengthy reasoning traces are substantial. Researchers continue to explore ways to enhance efficiency while maintaining the effectiveness of these models.</p>\n\n\n\n<p>One of the primary challenges in LLM reasoning is the high computational cost associated with training and inference. When models process step-by-step reasoning traces in natural language, much of the text is used to maintain coherence rather than contribute to reasoning. This leads to inefficient memory usage and increased processing time. Current methods seek to mitigate this issue by abstracting reasoning steps into compressed representations without losing critical information. Despite these efforts, models that attempt to internalize reasoning traces through continuous latent space or multi-stage training often perform worse than those trained with full reasoning details.</p>\n\n\n\n<p>Existing solutions have aimed to reduce redundancy in reasoning traces by compressing intermediate steps. Some approaches use continuous latent representations, while others involve iterative reductions of reasoning sequences. However, these methods require complex training procedures and fail to maintain performance comparable to explicit textual reasoning. Researchers have sought an alternative approach that reduces computational demands while preserving reasoning capabilities. To address this, they have introduced a method that replaces parts of the reasoning process with latent discrete tokens, achieving improved efficiency without sacrificing accuracy.</p>\n\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter is-resized\"><img alt=\"\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXeB4fRdIFlLwQP4oFxiuQUi14MK_YD6IX9s3rztAS2cQbJYzr9tsNSQ0NN-eZgnemMNs8uYGtL4anRZyxZuAkLSqxYzqUCMonz5wvTnW-TGPfd1s1QhiNGGgTXnFIvrFulF6_9hyA?key=XWoUJI_kjYdWy7oFe3oBHekL\" style=\"width: 576px; height: auto;\" /></figure></div>\n\n\n<p>A research team from Meta AI and UC Berkeley proposed a novel technique that integrates discrete latent tokens into LLM reasoning. They employ a vector-quantized variational autoencoder (VQ-VAE) to convert a portion of the stepwise reasoning process into compact representations. The method involves replacing early reasoning steps with latent abstractions while retaining later steps in textual form. This hybrid representation ensures the model maintains interpretability while reducing the token length of reasoning sequences. The key innovation is the randomized mixing of latent and text tokens, which enables the model to adapt seamlessly to new reasoning structures without extensive retraining.</p>\n\n\n\n<p>The researchers developed a training strategy incorporating latent tokens into LLM reasoning traces. During training, a controlled number of reasoning steps are replaced with their corresponding latent representations, ensuring that the model learns to interpret both abstracted and explicit reasoning structures. The randomization of latent token replacements allows adaptability across different problem types, improving the model&#8217;s generalization ability. Limiting the number of textual reasoning steps reduces input size, making LLMs more computationally efficient while maintaining reasoning performance. Further, the researchers ensured that the extended vocabulary, including newly introduced latent tokens, could be seamlessly integrated into the model without requiring major modifications.</p>\n\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter is-resized\"><img alt=\"\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXfkc7B_iXT0W4KYDHIZSs6A-IGDN4UhYsYHch-K5YjpKd5EfjNMTRY0oA4MU71uxAB257jjHJ_Q85QehfSpi6pUOlmm2HvXYWKldZvGscB2Y4iCVaWP46sN8bSaYJUxahnMroYi?key=XWoUJI_kjYdWy7oFe3oBHekL\" style=\"width: 744px; height: auto;\" /></figure></div>\n\n\n<p>The proposed method demonstrated significant performance improvements across various benchmarks. The approach outperformed traditional chain-of-thought (CoT) models when applied to mathematical reasoning tasks. On the Math dataset, it achieved a 4.2% improvement over previous best-performing methods. In the GSM8K benchmark, the approach yielded a 4.1% gain, while in the Fresh-Gaokao-Math-2023 dataset, it outperformed existing models by 13.3%. The reduction in reasoning trace length was equally noteworthy, with an average decrease of 17%, which resulted in faster inference times and lower memory consumption. Evaluations on logical reasoning datasets such as ProntoQA and ProsQA further validated the approach&#8217;s effectiveness, with accuracy improvements of 1.2% and 18.7%, respectively. The model achieved 100% accuracy on simpler reasoning tasks, demonstrating its capacity for efficient logical deduction.</p>\n\n\n\n<p>The introduction of latent tokens has provided a significant step forward in optimizing LLM reasoning without compromising accuracy. By reducing the dependence on full-text reasoning sequences and leveraging discrete latent representations, the researchers have developed an approach that maintains efficiency while improving model generalization. The hybrid structure ensures that essential reasoning components are preserved, offering a practical solution to the challenge of balancing interpretability and computational efficiency. As LLMs continue to evolve, such methods may pave the way for more resource-efficient artificial intelligence systems that retain high levels of reasoning capability.<a href=\"https://pxl.to/6p7dm6p\"></a></p>\n\n\n\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n\n\n\n<p>Check out\u00a0<strong><em>the <a href=\"https://arxiv.org/abs/2502.03275\" rel=\"noreferrer noopener\" target=\"_blank\">Technical details</a>.</em></strong>\u00a0All credit for this research goes to the researchers of this project. Also,\u00a0feel free to follow us on\u00a0<strong><a href=\"https://x.com/intent/follow?screen_name=marktechpost\" rel=\"noreferrer noopener\" target=\"_blank\">Twitter</a></strong>\u00a0and don\u2019t forget to join our\u00a0<strong><a href=\"https://www.reddit.com/r/machinelearningnews/\" rel=\"noreferrer noopener\" target=\"_blank\">80k+ ML SubReddit</a></strong>.</p>\n<!-- CONTENT END 4 -->\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/19/this-ai-paper-introduces-a-latent-token-approach-enhancing-llm-reasoning-efficiency-with-vq-vae-compression/\">This AI Paper Introduces a Latent Token Approach: Enhancing LLM Reasoning Efficiency with VQ-VAE Compression</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+                }
+            ],
+            "wfw_commentrss": "https://www.marktechpost.com/2025/03/19/this-ai-paper-introduces-a-latent-token-approach-enhancing-llm-reasoning-efficiency-with-vq-vae-compression/feed/",
+            "slash_comments": "0",
+            "post-id": "69880"
+        },
+        {
+            "title": "NVIDIA Open-Sources cuOpt: An AI-Powered Decision Optimization Engine\u2013Unlocking Real-Time Optimization at an Unprecedented Scale",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "NVIDIA Open-Sources cuOpt: An AI-Powered Decision Optimization Engine\u2013Unlocking Real-Time Optimization at an Unprecedented Scale"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.marktechpost.com/2025/03/18/nvidia-open-sources-cuopt-an-ai-powered-decision-optimization-engine-unlocking-real-time-optimization-at-an-unprecedented-scale/"
+                }
+            ],
+            "link": "https://www.marktechpost.com/2025/03/18/nvidia-open-sources-cuopt-an-ai-powered-decision-optimization-engine-unlocking-real-time-optimization-at-an-unprecedented-scale/",
+            "comments": "https://www.marktechpost.com/2025/03/18/nvidia-open-sources-cuopt-an-ai-powered-decision-optimization-engine-unlocking-real-time-optimization-at-an-unprecedented-scale/#respond",
+            "authors": [
+                {
+                    "name": "Asif Razzaq"
+                }
+            ],
+            "author": "Asif Razzaq",
+            "author_detail": {
+                "name": "Asif Razzaq"
+            },
+            "published": "Wed, 19 Mar 2025 05:59:23 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                19,
+                5,
+                59,
+                23,
+                2,
+                78,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "Editors Pick",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "New Releases",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Open Source",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Staff",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Technology",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.marktechpost.com/?p=69877",
+            "guidislink": false,
+            "summary": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"390\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/a-vibrant-digital-representation-of-a-ge_JY7u_TMyRjuNiRSp2MU_sg_wtaR1bIMTLWaPlVzP8V5GQ-1024x574.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/a-vibrant-digital-representation-of-a-ge_JY7u_TMyRjuNiRSp2MU_sg_wtaR1bIMTLWaPlVzP8V5GQ-150x150.png\" width=\"150\" />Every day, organizations face complex logistical challenges\u2014from optimizing delivery routes and managing supply chains to streamlining production schedules. These tasks typically involve massive datasets and numerous variables, making manual or traditional computational methods inefficient or impractical. The pressure for businesses to improve efficiency, reduce operational costs, and enhance customer satisfaction underscores the need for more [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/18/nvidia-open-sources-cuopt-an-ai-powered-decision-optimization-engine-unlocking-real-time-optimization-at-an-unprecedented-scale/\">NVIDIA Open-Sources cuOpt: An AI-Powered Decision Optimization Engine&#8211;Unlocking Real-Time Optimization at an Unprecedented Scale</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"390\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/a-vibrant-digital-representation-of-a-ge_JY7u_TMyRjuNiRSp2MU_sg_wtaR1bIMTLWaPlVzP8V5GQ-1024x574.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/a-vibrant-digital-representation-of-a-ge_JY7u_TMyRjuNiRSp2MU_sg_wtaR1bIMTLWaPlVzP8V5GQ-150x150.png\" width=\"150\" />Every day, organizations face complex logistical challenges\u2014from optimizing delivery routes and managing supply chains to streamlining production schedules. These tasks typically involve massive datasets and numerous variables, making manual or traditional computational methods inefficient or impractical. The pressure for businesses to improve efficiency, reduce operational costs, and enhance customer satisfaction underscores the need for more [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/18/nvidia-open-sources-cuopt-an-ai-powered-decision-optimization-engine-unlocking-real-time-optimization-at-an-unprecedented-scale/\">NVIDIA Open-Sources cuOpt: An AI-Powered Decision Optimization Engine&#8211;Unlocking Real-Time Optimization at an Unprecedented Scale</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+            },
+            "content": [
+                {
+                    "type": "text/html",
+                    "language": null,
+                    "base": "https://www.marktechpost.com/feed/",
+                    "value": "<img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"390\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/a-vibrant-digital-representation-of-a-ge_JY7u_TMyRjuNiRSp2MU_sg_wtaR1bIMTLWaPlVzP8V5GQ-1024x574.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/a-vibrant-digital-representation-of-a-ge_JY7u_TMyRjuNiRSp2MU_sg_wtaR1bIMTLWaPlVzP8V5GQ-150x150.png\" width=\"150\" />\n<p>Every day, organizations face complex logistical challenges\u2014from optimizing delivery routes and managing supply chains to streamlining production schedules. These tasks typically involve massive datasets and numerous variables, making manual or traditional computational methods inefficient or impractical. The pressure for businesses to improve efficiency, reduce operational costs, and enhance customer satisfaction underscores the need for more powerful optimization tools. However, many existing optimization solutions either lack real-time capabilities or come at prohibitive costs, making them inaccessible to smaller companies and individual developers.</p>\n\n\n\n<p>NVIDIA announces the open-source release of cuOpt, an AI-powered decision optimization engine\u2014making the powerful software free for developers to unlock real-time optimization at an unprecedented scale. Initially available only as proprietary software, cuOpt combines GPU acceleration with advanced algorithms to rapidly solve complex optimization problems. Now, as an open-source tool, cuOpt allows broader access, enabling businesses and developers from diverse industries\u2014ranging from logistics to healthcare\u2014to integrate state-of-the-art optimization solutions directly into their workflows without incurring high licensing costs.</p>\n\n\n\n<p>At its core, NVIDIA cuOpt leverages parallel processing capabilities of GPUs to accelerate computations, significantly surpassing traditional CPU-based optimization methods. The software uses algorithms designed specifically to exploit GPU architecture, solving complex combinatorial optimization problems such as vehicle routing, job scheduling, and resource allocation far faster and more efficiently. By utilizing advanced heuristics and metaheuristics\u2014including evolutionary algorithms, tabu search, and simulated annealing\u2014cuOpt achieves substantial reductions in compute times, empowering real-time decision-making capabilities that were previously unattainable. Additionally, cuOpt integrates seamlessly with popular AI and data science frameworks, such as Python and RAPIDS, facilitating ease of use and adoption.</p>\n\n\n\n<p>Real-world performance insights underscore the transformative impact of cuOpt. According to NVIDIA, enterprises using cuOpt have reported dramatic improvements in their operational efficiencies. For instance, early adopters have experienced up to 20 times faster optimization compared to conventional CPU-driven solutions. This speed enables organizations to dynamically adjust routes and schedules based on real-time data, significantly reducing operational costs and improving service delivery. Moreover, cuOpt&#8217;s scalability ensures consistent performance improvements even as problem sizes grow exponentially, allowing organizations to confidently tackle increasingly complex optimization scenarios without sacrificing speed or accuracy.</p>\n\n\n\n<p>In conclusion, NVIDIA&#8217;s decision to open-source cuOpt represents a major milestone in democratizing advanced optimization technologies. By making this powerful tool freely available, NVIDIA has opened new doors for innovation, enabling businesses of all sizes and individual developers to leverage cutting-edge optimization capabilities. The wide availability of cuOpt encourages collaboration and continuous improvement within the community, setting a new standard in real-time decision optimization and operational excellence. Ultimately, organizations adopting cuOpt stand to significantly enhance their efficiency, responsiveness, and overall competitive advantage in an increasingly data-driven world.<a href=\"https://pxl.to/6p7dm6p\"></a></p>\n\n\n\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n\n\n\n<p>Check out\u00a0<strong><em>the <a href=\"https://blogs.nvidia.com/blog/cuopt-open-source/\" rel=\"noreferrer noopener\" target=\"_blank\">Technical details</a> and <a href=\"https://www.nvidia.com/en-us/ai-data-science/products/cuopt/\" rel=\"noreferrer noopener\" target=\"_blank\">Project Page</a>.</em></strong>\u00a0All credit for this research goes to the researchers of this project. Also,\u00a0feel free to follow us on\u00a0<strong><a href=\"https://x.com/intent/follow?screen_name=marktechpost\" rel=\"noreferrer noopener\" target=\"_blank\">Twitter</a></strong>\u00a0and don\u2019t forget to join our\u00a0<strong><a href=\"https://www.reddit.com/r/machinelearningnews/\" rel=\"noreferrer noopener\" target=\"_blank\">80k+ ML SubReddit</a></strong>.</p>\n<!-- CONTENT END 6 -->\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/18/nvidia-open-sources-cuopt-an-ai-powered-decision-optimization-engine-unlocking-real-time-optimization-at-an-unprecedented-scale/\">NVIDIA Open-Sources cuOpt: An AI-Powered Decision Optimization Engine&#8211;Unlocking Real-Time Optimization at an Unprecedented Scale</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+                }
+            ],
+            "wfw_commentrss": "https://www.marktechpost.com/2025/03/18/nvidia-open-sources-cuopt-an-ai-powered-decision-optimization-engine-unlocking-real-time-optimization-at-an-unprecedented-scale/feed/",
+            "slash_comments": "0",
+            "post-id": "69877"
+        },
+        {
+            "title": "IBM and Hugging Face Researchers Release SmolDocling: A 256M Open-Source Vision Language Model for Complete Document OCR",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "IBM and Hugging Face Researchers Release SmolDocling: A 256M Open-Source Vision Language Model for Complete Document OCR"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.marktechpost.com/2025/03/18/ibm-and-hugging-face-researchers-release-smoldocling-a-256m-open-source-vision-language-model-for-complete-document-ocr/"
+                }
+            ],
+            "link": "https://www.marktechpost.com/2025/03/18/ibm-and-hugging-face-researchers-release-smoldocling-a-256m-open-source-vision-language-model-for-complete-document-ocr/",
+            "comments": "https://www.marktechpost.com/2025/03/18/ibm-and-hugging-face-researchers-release-smoldocling-a-256m-open-source-vision-language-model-for-complete-document-ocr/#respond",
+            "authors": [
+                {
+                    "name": "Asif Razzaq"
+                }
+            ],
+            "author": "Asif Razzaq",
+            "author_detail": {
+                "name": "Asif Razzaq"
+            },
+            "published": "Wed, 19 Mar 2025 05:31:00 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                19,
+                5,
+                31,
+                0,
+                2,
+                78,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "AI Paper Summary",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "AI Shorts",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Applications",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Artificial Intelligence",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Computer Vision",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Editors Pick",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "New Releases",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Open Source",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Staff",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Tech News",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Technology",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.marktechpost.com/?p=69866",
+            "guidislink": false,
+            "summary": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"529\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-10.29.18\u202fPM-1024x778.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-10.29.18\u202fPM-150x150.png\" width=\"150\" />Converting complex documents into structured data has long posed significant challenges in the field of computer science. Traditional approaches, involving ensemble systems or very large foundational models, often encounter substantial hurdles such as difficulty in fine-tuning, generalization issues, hallucinations, and high computational costs. Ensemble systems, though efficient for specific tasks, frequently fail to generalize due [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/18/ibm-and-hugging-face-researchers-release-smoldocling-a-256m-open-source-vision-language-model-for-complete-document-ocr/\">IBM and Hugging Face Researchers Release SmolDocling: A 256M Open-Source Vision Language Model for Complete Document OCR</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"529\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-10.29.18\u202fPM-1024x778.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-10.29.18\u202fPM-150x150.png\" width=\"150\" />Converting complex documents into structured data has long posed significant challenges in the field of computer science. Traditional approaches, involving ensemble systems or very large foundational models, often encounter substantial hurdles such as difficulty in fine-tuning, generalization issues, hallucinations, and high computational costs. Ensemble systems, though efficient for specific tasks, frequently fail to generalize due [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/18/ibm-and-hugging-face-researchers-release-smoldocling-a-256m-open-source-vision-language-model-for-complete-document-ocr/\">IBM and Hugging Face Researchers Release SmolDocling: A 256M Open-Source Vision Language Model for Complete Document OCR</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+            },
+            "content": [
+                {
+                    "type": "text/html",
+                    "language": null,
+                    "base": "https://www.marktechpost.com/feed/",
+                    "value": "<img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"529\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-10.29.18\u202fPM-1024x778.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-10.29.18\u202fPM-150x150.png\" width=\"150\" />\n<p>Converting complex documents into structured data has long posed significant challenges in the field of computer science. Traditional approaches, involving ensemble systems or very large foundational models, often encounter substantial hurdles such as difficulty in fine-tuning, generalization issues, hallucinations, and high computational costs. Ensemble systems, though efficient for specific tasks, frequently fail to generalize due to their dependency on handcrafted pipelines for each sub-task. On the other hand, multimodal foundational models, although powerful, often suffer from high computational costs and reliability issues like hallucinations.</p>\n\n\n\n<p>Researchers from IBM and Hugging Face have recently addressed these challenges by releasing SmolDocling, a 256M open-source vision-language model (VLM) designed explicitly for end-to-end multi-modal document conversion tasks. Unlike larger foundational models, SmolDocling provides a streamlined solution that processes entire pages through a single model, significantly reducing complexity and computational demands. Its ultra-compact nature, at just 256 million parameters, makes it notably lightweight and resource-efficient. The researchers also developed a universal markup format called DocTags, which precisely captures page elements, their structures, and spatial contexts in a highly compact and clear form.</p>\n\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter size-large is-resized\"><img alt=\"\" class=\"wp-image-69868\" height=\"480\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-10.27.35\u202fPM-1-1024x480.png\" style=\"width: 768px; height: auto;\" width=\"1024\" /></figure></div>\n\n\n<p>SmolDocling leverages Hugging Face&#8217;s compact SmolVLM-256M as its architecture base, which features significant reductions in computational complexity through optimized tokenization and aggressive visual feature compression methods. Its main strength lies in the innovative DocTags format, providing structured markup that distinctly separates document layout, textual content, and visual information such as equations, tables, code snippets, and charts. SmolDocling utilizes curriculum learning for efficient training, which initially involves freezing its vision encoder and gradually fine-tuning it using enriched datasets that enhance visual-semantic alignment across different document elements. Additionally, the model\u2019s efficiency allows it to process entire document pages at lightning-fast speeds, averaging just 0.35 seconds per page on a consumer GPU while consuming under 500MB of VRAM.</p>\n\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter size-large is-resized\"><img alt=\"\" class=\"wp-image-69870\" height=\"600\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-10.28.00\u202fPM-1-1024x600.png\" style=\"width: 720px; height: auto;\" width=\"1024\" /></figure></div>\n\n\n<p>The performance data clearly positions SmolDocling at the forefront of current technologies. In comprehensive benchmark tests involving various document conversion tasks, SmolDocling outperformed substantially larger competing models. For example, in full-page document OCR tasks, SmolDocling achieved significantly better accuracy metrics, such as a notably lower edit distance (0.48) and higher F1-score (0.80), compared to models like Qwen2.5 VL (7B parameters) and Nougat (350M parameters). It also excelled in equation transcription, achieving a 0.95 F1-score, matching state-of-the-art models like GOT. Furthermore, SmolDocling set a new benchmark in code snippet recognition, demonstrating high precision and recall scores of 0.94 and 0.91 respectively.</p>\n\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter size-large is-resized\"><img alt=\"\" class=\"wp-image-69872\" height=\"442\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-10.28.17\u202fPM-1-1024x442.png\" style=\"width: 832px; height: auto;\" width=\"1024\" /></figure></div>\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter size-large is-resized\"><img alt=\"\" class=\"wp-image-69874\" height=\"514\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-10.28.34\u202fPM-1-1024x514.png\" style=\"width: 802px; height: auto;\" width=\"1024\" /></figure></div>\n\n\n<p>What sets SmolDocling apart from other document OCR solutions is its capability to handle diverse elements within documents, including intricate items such as code, charts, equations, and varied layouts. Its capabilities extend beyond typical scientific papers to reliably handle patents, forms, and business documentation. By offering comprehensive structured metadata through DocTags, SmolDocling eliminates ambiguity inherent in formats like HTML or Markdown, enhancing the downstream usability of document conversions. Its compact size enables large-scale batch processing at remarkably low resource demands, facilitating cost-effective deployments at scale.</p>\n\n\n\n<p>In conclusion, SmolDocling represents a significant breakthrough in document conversion technology, demonstrating that compact models can not only compete but substantially outperform larger foundational models in crucial tasks. The researchers have successfully demonstrated how targeted training, innovative data augmentation, and novel markup formats like DocTags can overcome traditional limitations associated with size and complexity. SmolDocling\u2019s release not only sets a new standard in efficiency and versatility for OCR technologies but also provides an invaluable resource for the community through openly available datasets and a highly efficient, compact model architecture. This marks a substantial advancement in document understanding and opens up exciting new possibilities for enterprise-level applications and broader accessibility.<a href=\"https://pxl.to/6p7dm6p\"></a></p>\n\n\n\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n\n\n\n<p>Check out\u00a0<strong><em>the <a href=\"https://arxiv.org/abs/2503.11576\" rel=\"noreferrer noopener\" target=\"_blank\">Paper </a>and <a href=\"https://huggingface.co/ds4sd/SmolDocling-256M-preview\" rel=\"noreferrer noopener\" target=\"_blank\">Model on Hugging Face</a>.</em></strong>\u00a0All credit for this research goes to the researchers of this project. Also,\u00a0feel free to follow us on\u00a0<strong><a href=\"https://x.com/intent/follow?screen_name=marktechpost\" rel=\"noreferrer noopener\" target=\"_blank\">Twitter</a></strong>\u00a0and don\u2019t forget to join our\u00a0<strong><a href=\"https://www.reddit.com/r/machinelearningnews/\" rel=\"noreferrer noopener\" target=\"_blank\">80k+ ML SubReddit</a></strong>.</p>\n<!-- CONTENT END 8 -->\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/18/ibm-and-hugging-face-researchers-release-smoldocling-a-256m-open-source-vision-language-model-for-complete-document-ocr/\">IBM and Hugging Face Researchers Release SmolDocling: A 256M Open-Source Vision Language Model for Complete Document OCR</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+                }
+            ],
+            "wfw_commentrss": "https://www.marktechpost.com/2025/03/18/ibm-and-hugging-face-researchers-release-smoldocling-a-256m-open-source-vision-language-model-for-complete-document-ocr/feed/",
+            "slash_comments": "0",
+            "post-id": "69866"
+        },
+        {
+            "title": "Building a Retrieval-Augmented Generation (RAG) System with FAISS and Open-Source LLMs",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "Building a Retrieval-Augmented Generation (RAG) System with FAISS and Open-Source LLMs"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.marktechpost.com/2025/03/18/building-a-retrieval-augmented-generation-rag-system-with-faiss-and-open-source-llms/"
+                }
+            ],
+            "link": "https://www.marktechpost.com/2025/03/18/building-a-retrieval-augmented-generation-rag-system-with-faiss-and-open-source-llms/",
+            "comments": "https://www.marktechpost.com/2025/03/18/building-a-retrieval-augmented-generation-rag-system-with-faiss-and-open-source-llms/#respond",
+            "authors": [
+                {
+                    "name": "Mohammad Asjad"
+                }
+            ],
+            "author": "Mohammad Asjad",
+            "author_detail": {
+                "name": "Mohammad Asjad"
+            },
+            "published": "Tue, 18 Mar 2025 18:22:48 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                18,
+                18,
+                22,
+                48,
+                1,
+                77,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "AI Shorts",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Artificial Intelligence",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Editors Pick",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Staff",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Tech News",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Technology",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Tutorials",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.marktechpost.com/?p=69863",
+            "guidislink": false,
+            "summary": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"464\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-11.19.34\u202fAM-1024x683.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-11.19.34\u202fAM-150x150.png\" width=\"150\" />Retrieval-augmented generation (RAG) has emerged as a powerful paradigm for enhancing the capabilities of large language models (LLMs). By combining LLMs&#8217; creative generation abilities with retrieval systems&#8217; factual accuracy, RAG offers a solution to one of LLMs&#8217; most persistent challenges: hallucination. In this tutorial, we&#8217;ll build a complete RAG system using: By the end of [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/18/building-a-retrieval-augmented-generation-rag-system-with-faiss-and-open-source-llms/\">Building a Retrieval-Augmented Generation (RAG) System with FAISS and Open-Source LLMs</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"464\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-11.19.34\u202fAM-1024x683.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-11.19.34\u202fAM-150x150.png\" width=\"150\" />Retrieval-augmented generation (RAG) has emerged as a powerful paradigm for enhancing the capabilities of large language models (LLMs). By combining LLMs&#8217; creative generation abilities with retrieval systems&#8217; factual accuracy, RAG offers a solution to one of LLMs&#8217; most persistent challenges: hallucination. In this tutorial, we&#8217;ll build a complete RAG system using: By the end of [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/18/building-a-retrieval-augmented-generation-rag-system-with-faiss-and-open-source-llms/\">Building a Retrieval-Augmented Generation (RAG) System with FAISS and Open-Source LLMs</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+            },
+            "content": [
+                {
+                    "type": "text/html",
+                    "language": null,
+                    "base": "https://www.marktechpost.com/feed/",
+                    "value": "<img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"464\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-11.19.34\u202fAM-1024x683.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-11.19.34\u202fAM-150x150.png\" width=\"150\" />\n<p>Retrieval-augmented generation (<a href=\"https://www.marktechpost.com/2024/11/25/retrieval-augmented-generation-rag-deep-dive-into-25-different-types-of-rag/\" target=\"_blank\">RAG</a>) has emerged as a powerful paradigm for enhancing the capabilities of large language models (LLMs). By combining LLMs&#8217; creative generation abilities with retrieval systems&#8217; factual accuracy, RAG offers a solution to one of LLMs&#8217; most persistent challenges: hallucination.</p>\n\n\n\n<p>In this tutorial, we&#8217;ll build a complete RAG system using:</p>\n\n\n\n<ul class=\"wp-block-list\">\n<li>FAISS (Facebook AI Similarity Search), as our vector database</li>\n\n\n\n<li>Sentence Transformers for creating high-quality embeddings</li>\n\n\n\n<li>An open-source LLM from Hugging Face (we&#8217;ll use a lightweight model compatible with CPU)</li>\n\n\n\n<li>A custom knowledge base that we&#8217;ll create</li>\n</ul>\n\n\n\n<p>By the end of this tutorial, you&#8217;ll have a functioning RAG system that can answer questions based on your documents with improved accuracy and relevance. This approach is valuable for building domain-specific assistants, customer support systems, or any application where grounding LLM responses in specific documents is important.</p>\n\n\n\n<p>Let us get started.</p>\n\n\n\n<p><strong>Step 1</strong>: Setting Up Our Environment</p>\n\n\n\n<p>First, we need to install all the required libraries. For this tutorial, we&#8217;ll use Google Colab.</p>\n\n\n\n<div class=\"dm-code-snippet dark dm-normal-version default no-background-mobile\" style=\"background-color: #abb8c3;\"><div class=\"control-language\"><div class=\"dm-buttons\"><div class=\"dm-buttons-left\"><div class=\"dm-button-snippet red-button\"></div><div class=\"dm-button-snippet orange-button\"></div><div class=\"dm-button-snippet green-button\"></div></div><div class=\"dm-buttons-right\"><a id=\"dm-copy-raw-code\"><span class=\"dm-copy-text\">Copy Code</span><span class=\"dm-copy-confirmed\" style=\"display: none;\">Copied</span><span class=\"dm-error-message\" style=\"display: none;\">Use a different Browser</span></a></div></div><pre class=\" no-line-numbers\"><code class=\" no-wrap language-php\" id=\"dm-code-raw\"># Install required packages\n!pip install -q transformers==4.34.0\n!pip install -q sentence-transformers==2.2.2\n!pip install -q faiss-cpu==1.7.4\n!pip install -q accelerate==0.23.0\n!pip install -q einops==0.7.0\n!pip install -q langchain==0.0.312\n!pip install -q langchain_community\n!pip install -q pypdf==3.15.1</code></pre></div></div>\n\n\n\n<p>Let&#8217;s also check if we have access to a GPU, which will speed up our model inference:</p>\n\n\n\n<div class=\"dm-code-snippet dark dm-normal-version default no-background-mobile\" style=\"background-color: #abb8c3;\"><div class=\"control-language\"><div class=\"dm-buttons\"><div class=\"dm-buttons-left\"><div class=\"dm-button-snippet red-button\"></div><div class=\"dm-button-snippet orange-button\"></div><div class=\"dm-button-snippet green-button\"></div></div><div class=\"dm-buttons-right\"><a id=\"dm-copy-raw-code\"><span class=\"dm-copy-text\">Copy Code</span><span class=\"dm-copy-confirmed\" style=\"display: none;\">Copied</span><span class=\"dm-error-message\" style=\"display: none;\">Use a different Browser</span></a></div></div><pre class=\" no-line-numbers\"><code class=\" no-wrap language-php\" id=\"dm-code-raw\">import torch\n\n\n# Check if GPU is available\nprint(f\"GPU available: {torch.cuda.is_available()}\")\nif torch.cuda.is_available():\n   print(f\"GPU name: {torch.cuda.get_device_name(0)}\")\nelse:\n   print(\"Running on CPU. We'll use a CPU-compatible model.\")</code></pre></div></div>\n\n\n\n<p><strong>Step 2</strong>: Creating Our Knowledge Base</p>\n\n\n\n<p>For this tutorial, we&#8217;ll create a simple knowledge base about AI concepts. In a real-world scenario, one can use it to import PDF documents, web pages, or databases.</p>\n\n\n\n<div class=\"dm-code-snippet dark dm-normal-version default no-background-mobile\" style=\"background-color: #abb8c3;\"><div class=\"control-language\"><div class=\"dm-buttons\"><div class=\"dm-buttons-left\"><div class=\"dm-button-snippet red-button\"></div><div class=\"dm-button-snippet orange-button\"></div><div class=\"dm-button-snippet green-button\"></div></div><div class=\"dm-buttons-right\"><a id=\"dm-copy-raw-code\"><span class=\"dm-copy-text\">Copy Code</span><span class=\"dm-copy-confirmed\" style=\"display: none;\">Copied</span><span class=\"dm-error-message\" style=\"display: none;\">Use a different Browser</span></a></div></div><pre class=\" no-line-numbers\"><code class=\" no-wrap language-php\" id=\"dm-code-raw\">import os\nimport tempfile\n\n\n# Create a temporary directory for our documents\ndocs_dir = tempfile.mkdtemp()\nprint(f\"Created temporary directory at {docs_dir}\")\n\n\n# Create sample documents about AI concepts\ndocuments = {\n   \"vector_databases.txt\": \"\"\"\n   Vector databases are specialized database systems designed to store, manage, and search vector embeddings efficiently.\n   They are crucial for machine learning applications, particularly those involving natural language processing and image recognition.\n  \n   Key features of vector databases include:\n   1. Fast similarity search using algorithms like HNSW, IVF, or exact search\n   2. Support for various distance metrics (cosine, euclidean, dot product)\n   3. Scalability for handling billions of vectors\n   4. Often support for metadata filtering alongside vector search\n  \n   Popular vector databases include FAISS (Facebook AI Similarity Search), Pinecone, Weaviate, Milvus, and Chroma.\n   FAISS specifically was developed by Facebook AI Research and is an open-source library for efficient similarity search.\n   \"\"\",\n  \n   \"embeddings.txt\": \"\"\"\n   Embeddings are dense vector representations of data in a continuous vector space.\n   They capture semantic meaning and relationships between entities by positioning similar items closer together in the vector space.\n  \n   Types of embeddings include:\n   1. Word embeddings (Word2Vec, GloVe)\n   2. Sentence embeddings (Universal Sentence Encoder, SBERT)\n   3. Document embeddings\n   4. Image embeddings\n   5. Audio embeddings\n  \n   Embeddings are created through various techniques, including neural networks trained on specific tasks.\n   Modern embedding models like those from OpenAI, Cohere, or Sentence Transformers can capture nuanced semantic relationships.\n  \n   The dimensionality of embeddings typically ranges from 100 to 1536 dimensions, with higher dimensions often capturing more information but requiring more storage and computation.\n   \"\"\",\n  \n   \"rag_systems.txt\": \"\"\"\n   Retrieval-Augmented Generation (RAG) is an AI architecture that combines information retrieval with text generation.\n  \n   The RAG process typically works as follows:\n   1. User query is converted into an embedding vector\n   2. Similar documents or passages are retrieved from a knowledge base using vector similarity\n   3. Retrieved content is provided as context to the language model\n   4. The language model generates a response informed by both its parameters and the retrieved information\n  \n   Benefits of RAG include:\n   1. Reduced hallucination compared to pure generative approaches\n   2. Up-to-date information without model retraining\n   3. Attribution of information sources\n   4. Lower computation costs than increasing model size\n  \n   RAG systems can be enhanced through techniques like reranking, query reformulation, and hybrid search approaches.\n   \"\"\"\n}\n\n\n# Write documents to files\nfor filename, content in documents.items():\n   with open(os.path.join(docs_dir, filename), 'w') as f:\n       f.write(content)\n      \nprint(f\"Created {len(documents)} documents in {docs_dir}\")</code></pre></div></div>\n\n\n\n<p><strong>Step 3</strong>: Loading and Processing Documents</p>\n\n\n\n<p>Now, let&#8217;s load these documents and process them for our RAG system:</p>\n\n\n\n<div class=\"dm-code-snippet dark dm-normal-version default no-background-mobile\" style=\"background-color: #abb8c3;\"><div class=\"control-language\"><div class=\"dm-buttons\"><div class=\"dm-buttons-left\"><div class=\"dm-button-snippet red-button\"></div><div class=\"dm-button-snippet orange-button\"></div><div class=\"dm-button-snippet green-button\"></div></div><div class=\"dm-buttons-right\"><a id=\"dm-copy-raw-code\"><span class=\"dm-copy-text\">Copy Code</span><span class=\"dm-copy-confirmed\" style=\"display: none;\">Copied</span><span class=\"dm-error-message\" style=\"display: none;\">Use a different Browser</span></a></div></div><pre class=\" no-line-numbers\"><code class=\" no-wrap language-php\" id=\"dm-code-raw\">from langchain_community.document_loaders import TextLoader\nfrom langchain.text_splitter import RecursiveCharacterTextSplitter\n\n\n# Initialize a list to store our documents\nall_documents = []\n\n\n# Load each text file\nfor filename in documents.keys():\n   file_path = os.path.join(docs_dir, filename)\n   loader = TextLoader(file_path)\n   loaded_docs = loader.load()\n   all_documents.extend(loaded_docs)\n\n\nprint(f\"Loaded {len(all_documents)} documents\")\n\n\n# Split documents into chunks\ntext_splitter = RecursiveCharacterTextSplitter(\n   chunk_size=500,\n   chunk_overlap=50,\n   separators=[\"nn\", \"n\", \".\", \" \", \"\"]\n)\n\n\ndocument_chunks = text_splitter.split_documents(all_documents)\nprint(f\"Created {len(document_chunks)} document chunks\")\n\n\n# Let's look at a sample chunk\nprint(\"nSample chunk content:\")\nprint(document_chunks[0].page_content)\nprint(f\"Source: {document_chunks[0].metadata}\")\n</code></pre></div></div>\n\n\n\n<p><strong>Step 4</strong>: Creating Embeddings</p>\n\n\n\n<p>Now, let&#8217;s convert our document chunks into vector embeddings:</p>\n\n\n\n<div class=\"dm-code-snippet dark dm-normal-version default no-background-mobile\" style=\"background-color: #abb8c3;\"><div class=\"control-language\"><div class=\"dm-buttons\"><div class=\"dm-buttons-left\"><div class=\"dm-button-snippet red-button\"></div><div class=\"dm-button-snippet orange-button\"></div><div class=\"dm-button-snippet green-button\"></div></div><div class=\"dm-buttons-right\"><a id=\"dm-copy-raw-code\"><span class=\"dm-copy-text\">Copy Code</span><span class=\"dm-copy-confirmed\" style=\"display: none;\">Copied</span><span class=\"dm-error-message\" style=\"display: none;\">Use a different Browser</span></a></div></div><pre class=\" no-line-numbers\"><code class=\" no-wrap language-php\" id=\"dm-code-raw\">from sentence_transformers import SentenceTransformer\nimport numpy as np\n\n\n# Initialize the embedding model\nmodel_name = \"sentence-transformers/all-MiniLM-L6-v2\"  # A good balance of speed and quality\nembedding_model = SentenceTransformer(model_name)\n\n\nprint(f\"Loaded embedding model: {model_name}\")\nprint(f\"Embedding dimension: {embedding_model.get_sentence_embedding_dimension()}\")\n\n\n# Create embeddings for all document chunks\ntexts = [doc.page_content for doc in document_chunks]\nembeddings = embedding_model.encode(texts)\n\n\nprint(f\"Created {len(embeddings)} embeddings with shape {embeddings.shape}\")</code></pre></div></div>\n\n\n\n<p><strong>Step 5</strong>: Building the FAISS Index</p>\n\n\n\n<p>Now we&#8217;ll build our FAISS index with these embeddings:</p>\n\n\n\n<div class=\"dm-code-snippet dark dm-normal-version default no-background-mobile\" style=\"background-color: #abb8c3;\"><div class=\"control-language\"><div class=\"dm-buttons\"><div class=\"dm-buttons-left\"><div class=\"dm-button-snippet red-button\"></div><div class=\"dm-button-snippet orange-button\"></div><div class=\"dm-button-snippet green-button\"></div></div><div class=\"dm-buttons-right\"><a id=\"dm-copy-raw-code\"><span class=\"dm-copy-text\">Copy Code</span><span class=\"dm-copy-confirmed\" style=\"display: none;\">Copied</span><span class=\"dm-error-message\" style=\"display: none;\">Use a different Browser</span></a></div></div><pre class=\" no-line-numbers\"><code class=\" no-wrap language-php\" id=\"dm-code-raw\">import faiss\n\n\n# Get the dimensionality of our embeddings\ndimension = embeddings.shape[1]\n\n\n# Create a FAISS index - we'll use a simple Flat L2 index for demonstration\n# For larger datasets, consider using indexes like IVF or HNSW for better performance\nindex = faiss.IndexFlatL2(dimension)  # L2 is Euclidean distance\n\n\n# Add our vectors to the index\nindex.add(embeddings.astype(np.float32))  # FAISS requires float32\n\n\nprint(f\"Created FAISS index with {index.ntotal} vectors\")\n\n\n# Create a mapping from index position to document chunk for retrieval\nindex_to_doc_chunk = {i: doc for i, doc in enumerate(document_chunks)}</code></pre></div></div>\n\n\n\n<p><strong>Step 6:</strong> Loading a Language Model</p>\n\n\n\n<p>Now let&#8217;s load an open-source language model from Hugging Face. We&#8217;ll use a smaller model that works well on CPU:</p>\n\n\n\n<div class=\"dm-code-snippet dark dm-normal-version default no-background-mobile\" style=\"background-color: #abb8c3;\"><div class=\"control-language\"><div class=\"dm-buttons\"><div class=\"dm-buttons-left\"><div class=\"dm-button-snippet red-button\"></div><div class=\"dm-button-snippet orange-button\"></div><div class=\"dm-button-snippet green-button\"></div></div><div class=\"dm-buttons-right\"><a id=\"dm-copy-raw-code\"><span class=\"dm-copy-text\">Copy Code</span><span class=\"dm-copy-confirmed\" style=\"display: none;\">Copied</span><span class=\"dm-error-message\" style=\"display: none;\">Use a different Browser</span></a></div></div><pre class=\" no-line-numbers\"><code class=\" no-wrap language-php\" id=\"dm-code-raw\">from transformers import AutoTokenizer, AutoModelForCausalLM\n\n\n# We'll use a smaller model that works on CPU\nmodel_id = \"TinyLlama/TinyLlama-1.1B-Chat-v1.0\"\n\n\n# Load the tokenizer and model\ntokenizer = AutoTokenizer.from_pretrained(model_id)\nmodel = AutoModelForCausalLM.from_pretrained(\n   model_id,\n   torch_dtype=torch.float32,  # Use float32 for CPU compatibility\n   device_map=\"auto\"  # Will use CPU if GPU is not available\n)\n\n\nprint(f\"Successfully loaded {model_id}\")</code></pre></div></div>\n\n\n\n<p><strong>Step 7</strong>: Creating Our RAG Pipeline</p>\n\n\n\n<p>Let&#8217;s create a function that combines retrieval and generation:</p>\n\n\n\n<div class=\"dm-code-snippet dark dm-normal-version default no-background-mobile\" style=\"background-color: #abb8c3;\"><div class=\"control-language\"><div class=\"dm-buttons\"><div class=\"dm-buttons-left\"><div class=\"dm-button-snippet red-button\"></div><div class=\"dm-button-snippet orange-button\"></div><div class=\"dm-button-snippet green-button\"></div></div><div class=\"dm-buttons-right\"><a id=\"dm-copy-raw-code\"><span class=\"dm-copy-text\">Copy Code</span><span class=\"dm-copy-confirmed\" style=\"display: none;\">Copied</span><span class=\"dm-error-message\" style=\"display: none;\">Use a different Browser</span></a></div></div><pre class=\" no-line-numbers\"><code class=\" no-wrap language-php\" id=\"dm-code-raw\">def rag_response(query, index, embedding_model, llm_model, llm_tokenizer, index_to_doc_map, top_k=3):\n   \"\"\"\n   Generate a response using the RAG pattern.\n\n\n   Args:\n       query: The user's question\n       index: FAISS index\n       embedding_model: Model to create embeddings\n       llm_model: Language model for generation\n       llm_tokenizer: Tokenizer for the language model\n       index_to_doc_map: Mapping from index positions to document chunks\n       top_k: Number of documents to retrieve\n\n\n   Returns:\n       response: The generated response\n       sources: The source documents used\n   \"\"\"\n   # Step 1: Convert query to embedding\n   query_embedding = embedding_model.encode([query])\n   query_embedding = query_embedding.astype(np.float32)  # Convert to float32 for FAISS\n\n\n   # Step 2: Search for similar documents\n   distances, indices = index.search(query_embedding, top_k)\n\n\n   # Step 3: Retrieve the actual document chunks\n   retrieved_docs = [index_to_doc_map[idx] for idx in indices[0]]\n\n\n   # Create context from retrieved documents\n   context = \"nn\".join([doc.page_content for doc in retrieved_docs])\n\n\n   # Step 4: Create prompt for the LLM (TinyLlama format)\n   prompt = f\"\"\"&lt;|system|>\nYou are a helpful AI assistant. Answer the question based only on the provided context.\nIf you don't know the answer based on the context, say \"I don't have enough information to answer this question.\"\n\n\nContext:\n{context}\n&lt;|user|>\n{query}\n&lt;|assistant|>\"\"\"\n\n\n   # Step 5: Generate response from LLM\n   input_ids = llm_tokenizer(prompt, return_tensors=\"pt\").input_ids.to(model.device)\n\n\n   generation_config = {\n       \"max_new_tokens\": 256,\n       \"temperature\": 0.7,\n       \"top_p\": 0.95,\n       \"do_sample\": True\n   }\n\n\n   # Generate the output\n   with torch.no_grad():\n       output = llm_model.generate(\n           input_ids=input_ids,\n           **generation_config\n       )\n\n\n   # Decode the output\n   generated_text = llm_tokenizer.decode(output[0], skip_special_tokens=True)\n\n\n   # Extract the assistant's response (remove the prompt)\n   response = generated_text.split(\"&lt;|assistant|>\")[-1].strip()\n\n\n   # Return both the response and the sources\n   sources = [(doc.page_content, doc.metadata) for doc in retrieved_docs]\n\n\n   return response, sources</code></pre></div></div>\n\n\n\n<p><strong>Step 8:</strong> Testing Our RAG System</p>\n\n\n\n<p>Let&#8217;s test our system with some questions:</p>\n\n\n\n<div class=\"dm-code-snippet dark dm-normal-version default no-background-mobile\" style=\"background-color: #abb8c3;\"><div class=\"control-language\"><div class=\"dm-buttons\"><div class=\"dm-buttons-left\"><div class=\"dm-button-snippet red-button\"></div><div class=\"dm-button-snippet orange-button\"></div><div class=\"dm-button-snippet green-button\"></div></div><div class=\"dm-buttons-right\"><a id=\"dm-copy-raw-code\"><span class=\"dm-copy-text\">Copy Code</span><span class=\"dm-copy-confirmed\" style=\"display: none;\">Copied</span><span class=\"dm-error-message\" style=\"display: none;\">Use a different Browser</span></a></div></div><pre class=\" no-line-numbers\"><code class=\" no-wrap language-php\" id=\"dm-code-raw\">#Define some test questions\ntest_questions = [\n   \"What is FAISS and what is it used for?\",\n   \"How do embeddings capture semantic meaning?\",\n   \"What are the benefits of RAG systems?\",\n   \"How does vector search work?\"\n]\n\n\n# Test our RAG pipeline\nfor question in test_questions:\n   print(f\"nn{'='*50}\")\n   print(f\"Question: {question}\")\n   print(f\"{'='*50}n\")\n\n\n   response, sources = rag_response(\n       query=question,\n       index=index,\n       embedding_model=embedding_model,\n       llm_model=model,\n       llm_tokenizer=tokenizer,\n       index_to_doc_map=index_to_doc_chunk,\n       top_k=2  # Retrieve top 2 most relevant chunks\n   )\n\n\n   print(f\"Response: {response}n\")\n\n\n   print(\"Sources:\")\n   for i, (content, metadata) in enumerate(sources):\n       print(f\"nSource {i+1}:\")\n       print(f\"Metadata: {metadata}\")\n       print(f\"Content snippet: {content[:100]}...\")</code></pre></div></div>\n\n\n\n<p><em>OUTPUT:</em></p>\n\n\n\n<figure class=\"wp-block-image\"><img alt=\"\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXdWriMIeDARfockI-zxdlnbZ3yp9Mgi01ctLKbwN0y2FRP8wb1FL_QxDrNeVmUloIaH8W0mxm2aewpK4MuyPIBmwSGumUW0OdlFAo51NXdpYvaVvG3VD1JilebdylNypadRvp_n?key=-ChbT4Ye95oT12F39A2Io0Vf\" /></figure>\n\n\n\n<p><strong>Step 9:</strong> Evaluating and Improving Our RAG System</p>\n\n\n\n<p>Let&#8217;s implement a simple evaluation function to assess the performance of our RAG system:</p>\n\n\n\n<div class=\"dm-code-snippet dark dm-normal-version default no-background-mobile\" style=\"background-color: #abb8c3;\"><div class=\"control-language\"><div class=\"dm-buttons\"><div class=\"dm-buttons-left\"><div class=\"dm-button-snippet red-button\"></div><div class=\"dm-button-snippet orange-button\"></div><div class=\"dm-button-snippet green-button\"></div></div><div class=\"dm-buttons-right\"><a id=\"dm-copy-raw-code\"><span class=\"dm-copy-text\">Copy Code</span><span class=\"dm-copy-confirmed\" style=\"display: none;\">Copied</span><span class=\"dm-error-message\" style=\"display: none;\">Use a different Browser</span></a></div></div><pre class=\" no-line-numbers\"><code class=\" no-wrap language-php\" id=\"dm-code-raw\">def evaluate_rag_response(question, response, retrieved_sources, ground_truth_sources=None):\n   \"\"\"\n   Simple evaluation of RAG response quality\n\n\n   Args:\n       question: The query\n       response: Generated response\n       retrieved_sources: Sources used for generation\n       ground_truth_sources: (Optional) Known correct sources\n\n\n   Returns:\n       evaluation metrics\n   \"\"\"\n   # Basic metrics\n   response_length = len(response.split())\n   num_sources = len(retrieved_sources)\n\n\n   # Simple relevance score - we'd use better methods in production\n   source_relevance = []\n   for content, _ in retrieved_sources:\n       # Count overlapping words between question and source\n       q_words = set(question.lower().split())\n       s_words = set(content.lower().split())\n       overlap = len(q_words.intersection(s_words))\n       source_relevance.append(overlap / len(q_words) if q_words else 0)\n\n\n   avg_relevance = sum(source_relevance) / len(source_relevance) if source_relevance else 0\n\n\n   return {\n       \"response_length\": response_length,\n       \"num_sources\": num_sources,\n       \"source_relevance_scores\": source_relevance,\n       \"avg_relevance\": avg_relevance\n   }\n\n\n# Evaluate one of our previous responses\nquestion = test_questions[0]\nresponse, sources = rag_response(\n   query=question,\n   index=index,\n   embedding_model=embedding_model,\n   llm_model=model,\n   llm_tokenizer=tokenizer,\n   index_to_doc_map=index_to_doc_chunk,\n   top_k=2\n)\n\n\n# Run evaluation\neval_results = evaluate_rag_response(question, response, sources)\nprint(f\"nEvaluation results for question: '{question}'\")\nfor metric, value in eval_results.items():\n   print(f\"{metric}: {value}\")\n</code></pre></div></div>\n\n\n\n<p><strong>Step 10</strong>: Advanced RAG Techniques &#8211; Query Expansion</p>\n\n\n\n<p>Let&#8217;s implement query expansion to improve retrieval:</p>\n\n\n\n<div class=\"dm-code-snippet dark dm-normal-version default no-background-mobile\" style=\"background-color: #abb8c3;\"><div class=\"control-language\"><div class=\"dm-buttons\"><div class=\"dm-buttons-left\"><div class=\"dm-button-snippet red-button\"></div><div class=\"dm-button-snippet orange-button\"></div><div class=\"dm-button-snippet green-button\"></div></div><div class=\"dm-buttons-right\"><a id=\"dm-copy-raw-code\"><span class=\"dm-copy-text\">Copy Code</span><span class=\"dm-copy-confirmed\" style=\"display: none;\">Copied</span><span class=\"dm-error-message\" style=\"display: none;\">Use a different Browser</span></a></div></div><pre class=\" no-line-numbers\"><code class=\" no-wrap language-php\" id=\"dm-code-raw\"># Here's the implementation of the expand_query function:\n\n\ndef expand_query(original_query, llm_model, llm_tokenizer):\n   \"\"\"\n   Generate multiple search queries from an original query to improve retrieval\n\n\n   Args:\n       original_query: The user's original question\n       llm_model: The language model for generating variations\n       llm_tokenizer: Tokenizer for the language model\n\n\n   Returns:\n       List of query variations including the original\n   \"\"\"\n   # Create a prompt for query expansion\n   prompt = f\"\"\"&lt;|system|>\nYou are a helpful assistant. Generate two alternative versions of the given search query.\nThe goal is to create variations that might help retrieve relevant information.\nOnly list the alternative queries, one per line. Do not include any explanations, numbering, or other text.\n&lt;|user|>\nGenerate alternative versions of this search query: \"{original_query}\"\n&lt;|assistant|>\"\"\"\n\n\n   # Generate variations\n   input_ids = llm_tokenizer(prompt, return_tensors=\"pt\").input_ids.to(llm_model.device)\n\n\n   with torch.no_grad():\n       output = llm_model.generate(\n           input_ids=input_ids,\n           max_new_tokens=100,\n           temperature=0.7,\n           do_sample=True\n       )\n\n\n   # Decode the output\n   generated_text = llm_tokenizer.decode(output[0], skip_special_tokens=True)\n\n\n   # Extract the generated variations\n   response_part = generated_text.split(\"&lt;|assistant|>\")[-1].strip()\n\n\n   # Split response by lines to get individual variations\n   variations = [line.strip() for line in response_part.split('n') if line.strip()]\n\n\n   # Ensure we have at least some variations\n   if not variations:\n       variations = [original_query]\n\n\n   # Add the original query and return the list with duplicates removed\n   all_queries = [original_query] + variations\n   return list(dict.fromkeys(all_queries))  # Remove duplicates while preserving order\n</code></pre></div></div>\n\n\n\n<p><strong>Step 11</strong>: Evaluating and Improving Our expand_query function</p>\n\n\n\n<p>Let&#8217;s implement a simple evaluation function to assess the performance of our expand_query function</p>\n\n\n\n<div class=\"dm-code-snippet dark dm-normal-version default no-background-mobile\" style=\"background-color: #abb8c3;\"><div class=\"control-language\"><div class=\"dm-buttons\"><div class=\"dm-buttons-left\"><div class=\"dm-button-snippet red-button\"></div><div class=\"dm-button-snippet orange-button\"></div><div class=\"dm-button-snippet green-button\"></div></div><div class=\"dm-buttons-right\"><a id=\"dm-copy-raw-code\"><span class=\"dm-copy-text\">Copy Code</span><span class=\"dm-copy-confirmed\" style=\"display: none;\">Copied</span><span class=\"dm-error-message\" style=\"display: none;\">Use a different Browser</span></a></div></div><pre class=\" no-line-numbers\"><code class=\" no-wrap language-php\" id=\"dm-code-raw\"># Example usage of expand_query function\ntest_query = \"How does FAISS help with vector search?\"\n\n\n# Generate query variations\nexpanded_queries = expand_query(\n   original_query=test_query,\n   llm_model=model,\n   llm_tokenizer=tokenizer\n)\n\n\nprint(f\"Original Query: {test_query}\")\nprint(f\"Expanded Queries:\")\nfor i, query in enumerate(expanded_queries):\n   print(f\"  {i+1}. {query}\")\n\n\n# Enhanced RAG with query expansion\nall_retrieved_docs = []\nall_scores = {}\n\n\n# Retrieve documents for each query variation\nfor query in expanded_queries:\n   # Get query embedding\n   query_embedding = embedding_model.encode([query]).astype(np.float32)\n\n\n   # Search in FAISS index\n   distances, indices = index.search(query_embedding, 3)\n\n\n   # Track document scores across queries (using 1/(1+distance) as score)\n   for idx, dist in zip(indices[0], distances[0]):\n       score = 1.0 / (1.0 + dist)\n       if idx in all_scores:\n           # Take max score if document retrieved by multiple query variations\n           all_scores[idx] = max(all_scores[idx], score)\n       else:\n           all_scores[idx] = score\n\n\n# Get top documents based on scores\ntop_indices = sorted(all_scores.keys(), key=lambda idx: all_scores[idx], reverse=True)[:3]\nexpanded_retrieved_docs = [index_to_doc_chunk[idx] for idx in top_indices]\n\n\nprint(\"nRetrieved documents using query expansion:\")\nfor i, doc in enumerate(expanded_retrieved_docs):\n   print(f\"nResult {i+1}:\")\n   print(f\"Source: {doc.metadata['source']}\")\n   print(f\"Content snippet: {doc.page_content[:150]}...\")\n\n\n# Now use these documents with the LLM to generate a response\ncontext = \"nn\".join([doc.page_content for doc in expanded_retrieved_docs])\n\n\n# Create prompt for the LLM\nprompt = f\"\"\"&lt;|system|>\nYou are a helpful AI assistant. Answer the question based only on the provided context.\nIf you don't know the answer based on the context, say \"I don't have enough information to answer this question.\"\n\n\nContext:\n{context}\n&lt;|user|>\n{test_query}\n&lt;|assistant|>\"\"\"\n\n\n# Generate response\ninput_ids = tokenizer(prompt, return_tensors=\"pt\").input_ids.to(model.device)\nwith torch.no_grad():\n   output = model.generate(\n       input_ids=input_ids,\n       max_new_tokens=256,\n       temperature=0.7,\n       top_p=0.95,\n       do_sample=True\n   )\n\n\n# Extract response\ngenerated_text = tokenizer.decode(output[0], skip_special_tokens=True)\nresponse = generated_text.split(\"&lt;|assistant|>\")[-1].strip()\n\n\nprint(\"nFinal RAG Response with Query Expansion:\")\nprint(response)</code></pre></div></div>\n\n\n\n<p><em>Output:</em></p>\n\n\n\n<figure class=\"wp-block-image\"><img alt=\"\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXcYMmnwc-GkaT1nO3oRQQJ_ElmGJ0od3dA1mkfTWE8kD-94U3j608ji_-ZEhfF-lwcM9Z4zs6DR_qw6YdgjxrAvEggR80Qy68fB9Ww6fJ9lUtm7BqUGixgdD7dr228Pj-ptD6p5?key=-ChbT4Ye95oT12F39A2Io0Vf\" /></figure>\n\n\n\n<p><em>FAISS can handle a wide range of vector types, including text, image, and audio, and can be integrated with popular <a href=\"https://www.marktechpost.com/2025/01/14/what-is-machine-learning-ml/\" target=\"_blank\">machine learning</a> frameworks such as TensorFlow, PyTorch, and Sklearn.</em></p>\n\n\n\n<p><strong>Conclusion</strong></p>\n\n\n\n<p>In this tutorial, we have built a complete RAG system using FAISS as our vector database and an open-source LLM. We implemented document processing, embedding generation, and vector indexing, and integrated these components with query expansion and hybrid search techniques to improve retrieval quality.</p>\n\n\n\n<p><strong>Further, we can consider:</strong></p>\n\n\n\n<ul class=\"wp-block-list\">\n<li>Implementing query reranking with cross-encoders</li>\n\n\n\n<li>Creating a web interface using Gradio or Streamlit</li>\n\n\n\n<li>Adding metadata filtering capabilities</li>\n\n\n\n<li>Experimenting with different embedding models</li>\n\n\n\n<li>Scaling the solution with more efficient FAISS indexes (HNSW, IVF)</li>\n\n\n\n<li>Fine-tuning the LLM on your domain-specific data</li>\n</ul>\n\n\n\n<p><strong>Useful resources:</strong></p>\n\n\n\n<ul class=\"wp-block-list\">\n<li><a href=\"https://python.langchain.com/docs/integrations/vectorstores/faiss/\">https://python.langchain.com/docs/integrations/vectorstores/faiss/</a>\u00a0</li>\n\n\n\n<li><a href=\"https://github.com/facebookresearch/faiss\">https://github.com/facebookresearch/faiss</a></li>\n</ul>\n\n\n\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n\n\n\n<p>Here is the <strong><em><a href=\"https://colab.research.google.com/drive/1C5_delgNLMa3AiGJxZnOH9E8Va6VsxMp\" rel=\"noreferrer noopener\" target=\"_blank\">Colab Notebook</a></em></strong>. Also,\u00a0don\u2019t forget to follow us on\u00a0<strong><a href=\"https://x.com/intent/follow?screen_name=marktechpost\" rel=\"noreferrer noopener\" target=\"_blank\">Twitter</a></strong>\u00a0and join our\u00a0<strong><a href=\"https://arxiv.org/abs/2406.09406\" rel=\"noreferrer noopener\" target=\"_blank\">Telegram Channel</a></strong>\u00a0and\u00a0<a href=\"https://www.linkedin.com/groups/13668564/\"><strong>LinkedIn Gr</strong></a><a href=\"https://www.linkedin.com/groups/13668564/\" rel=\"noreferrer noopener\" target=\"_blank\"><strong>oup</strong></a>. Don\u2019t Forget to join our\u00a0<strong><a href=\"https://www.reddit.com/r/machinelearningnews/\" rel=\"noreferrer noopener\" target=\"_blank\">80k+ ML SubReddit</a></strong>.</p>\n<!-- CONTENT END 10 -->\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/18/building-a-retrieval-augmented-generation-rag-system-with-faiss-and-open-source-llms/\">Building a Retrieval-Augmented Generation (RAG) System with FAISS and Open-Source LLMs</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+                }
+            ],
+            "wfw_commentrss": "https://www.marktechpost.com/2025/03/18/building-a-retrieval-augmented-generation-rag-system-with-faiss-and-open-source-llms/feed/",
+            "slash_comments": "0",
+            "post-id": "69863"
+        },
+        {
+            "title": "MemQ: Enhancing Knowledge Graph Question Answering with Memory-Augmented Query Reconstruction",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "MemQ: Enhancing Knowledge Graph Question Answering with Memory-Augmented Query Reconstruction"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.marktechpost.com/2025/03/18/memq-enhancing-knowledge-graph-question-answering-with-memory-augmented-query-reconstruction/"
+                }
+            ],
+            "link": "https://www.marktechpost.com/2025/03/18/memq-enhancing-knowledge-graph-question-answering-with-memory-augmented-query-reconstruction/",
+            "comments": "https://www.marktechpost.com/2025/03/18/memq-enhancing-knowledge-graph-question-answering-with-memory-augmented-query-reconstruction/#respond",
+            "authors": [
+                {
+                    "name": "Sana Hassan"
+                }
+            ],
+            "author": "Sana Hassan",
+            "author_detail": {
+                "name": "Sana Hassan"
+            },
+            "published": "Tue, 18 Mar 2025 18:01:25 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                18,
+                18,
+                1,
+                25,
+                1,
+                77,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "AI Paper Summary",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "AI Shorts",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Artificial Intelligence",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Editors Pick",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Language Model",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Large Language Model",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Staff",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Tech News",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Technology",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.marktechpost.com/?p=69860",
+            "guidislink": false,
+            "summary": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"614\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-10.59.37\u202fAM-1024x904.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-10.59.37\u202fAM-150x150.png\" width=\"150\" />LLMs have shown strong performance in Knowledge Graph Question Answering (KGQA) by leveraging planning and interactive strategies to query knowledge graphs. Many existing approaches rely on SPARQL-based tools to retrieve information, allowing models to generate accurate answers. Some methods enhance LLMs\u2019 reasoning abilities by constructing tool-based reasoning paths, while others employ decision-making frameworks that use [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/18/memq-enhancing-knowledge-graph-question-answering-with-memory-augmented-query-reconstruction/\">MemQ: Enhancing Knowledge Graph Question Answering with Memory-Augmented Query Reconstruction</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"614\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-10.59.37\u202fAM-1024x904.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-10.59.37\u202fAM-150x150.png\" width=\"150\" />LLMs have shown strong performance in Knowledge Graph Question Answering (KGQA) by leveraging planning and interactive strategies to query knowledge graphs. Many existing approaches rely on SPARQL-based tools to retrieve information, allowing models to generate accurate answers. Some methods enhance LLMs\u2019 reasoning abilities by constructing tool-based reasoning paths, while others employ decision-making frameworks that use [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/18/memq-enhancing-knowledge-graph-question-answering-with-memory-augmented-query-reconstruction/\">MemQ: Enhancing Knowledge Graph Question Answering with Memory-Augmented Query Reconstruction</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+            },
+            "content": [
+                {
+                    "type": "text/html",
+                    "language": null,
+                    "base": "https://www.marktechpost.com/feed/",
+                    "value": "<img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"614\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-10.59.37\u202fAM-1024x904.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-18-at-10.59.37\u202fAM-150x150.png\" width=\"150\" />\n<p>LLMs have shown strong performance in Knowledge Graph Question Answering (KGQA) by leveraging planning and interactive strategies to query knowledge graphs. Many existing approaches rely on SPARQL-based tools to retrieve information, allowing models to generate accurate answers. Some methods enhance LLMs\u2019 reasoning abilities by constructing tool-based reasoning paths, while others employ decision-making frameworks that use environmental feedback to interact with knowledge graphs. Although these strategies have improved KGQA accuracy, they often blur the distinction between tool use and actual reasoning. This confusion reduces interpretability, diminishes readability, and increases the risk of hallucinated tool invocations, where models generate incorrect or irrelevant responses due to over-reliance on parametric knowledge.</p>\n\n\n\n<p>To address these limitations, researchers have explored memory-augmented techniques that provide external knowledge storage to support complex reasoning. Prior work has integrated memory modules for long-term context retention, enabling more reliable decision-making. Early KGQA methods used key-value memory and graph neural networks to infer answers, while recent LLM-based approaches leverage large-scale models for enhanced reasoning. Some strategies employ supervised fine-tuning to improve understanding, while others use discriminative techniques to mitigate hallucinations. However, existing KGQA methods still struggle to separate reasoning from tool invocation, leading to a lack of focus on logical inference.&nbsp;</p>\n\n\n\n<p>Researchers from the Harbin Institute of Technology propose Memory-augmented Query Reconstruction (MemQ), a framework that separates reasoning from tool invocation in LLM-based KGQA. MemQ establishes a structured query memory using LLM-generated descriptions of decomposed query statements, enabling independent reasoning. This approach enhances readability by generating explicit reasoning steps and retrieving relevant memory based on semantic similarity. MemQ improves interpretability and reduces hallucinated tool use by eliminating unnecessary tool reliance. Experimental results show that MemQ achieves state-of-the-art performance on WebQSP and CWQ benchmarks, demonstrating its effectiveness in enhancing LLM-based KGQA reasoning.</p>\n\n\n\n<p>MemQ is designed to separate reasoning from tool invocation in LLM-based KGQA through three key tasks: memory construction, knowledge reasoning, and query reconstruction. Memory construction involves storing query statements with corresponding natural language descriptions for efficient retrieval. The knowledge reasoning process generates structured multi-step reasoning plans, ensuring logical progression in answering queries. Query reconstruction then retrieves relevant query statements based on semantic similarity and assembles them into a final query. MemQ enhances reasoning by fine-tuning LLMs with explanation-statement pairs and uses an adaptive memory recall strategy, outperforming prior methods on WebQSP and CWQ benchmarks with state-of-the-art results.</p>\n\n\n\n<p>The experiments assess MemQ\u2019s performance in knowledge graph question-answering using WebQSP and CWQ datasets. Hits@1 and F1 scores serve as evaluation metrics, with comparisons against tool-based baselines like RoG and ToG. MemQ, built on Llama2-7b, outperforms previous methods, showing improved reasoning via a memory-augmented approach. Analytical experiments highlight superior structural and edge accuracy. Ablation studies confirm MemQ\u2019s effectiveness in tool utilization and reasoning stability. Additional analyses explore reasoning errors, hallucinations, data efficiency, and model universality, demonstrating its adaptability across architectures. MemQ significantly enhances structured reasoning while reducing errors in multi-step queries.</p>\n\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter is-resized\"><img alt=\"\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXc9Gk7lQ-Q0V0bOLh3U_nYcdWjlPnbue3BCrdJG5SF-cYKxmgIXISGzi_74lvqc0zKs87KFRb9R5fSfhi6ofb_TGaa-7wZZvZqUIAJjd664bDyvKFBhnXUmqxtxDJTIdsgwlZVNAQ?key=v8qPNSbHAVpmRxH-RiNXTQ9g\" style=\"width: 740px; height: auto;\" /></figure></div>\n\n\n<p>In conclusion, the study introduces MemQ, a memory-augmented framework that separates LLM reasoning from tool invocation to reduce hallucinations in KGQA. MemQ improves query reconstruction and enhances reasoning clarity by incorporating a query memory module. The approach enables natural language reasoning while mitigating errors in tool usage. Experiments on WebQSP and CWQ benchmarks demonstrate that MemQ outperforms existing methods, achieving state-of-the-art results. By addressing the confusion between tool utilization and reasoning, MemQ enhances the readability and accuracy of LLM-generated responses, offering a more effective approach to KGQA.<a href=\"https://pxl.to/6p7dm6p\"></a></p>\n\n\n\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n\n\n\n<p>Check out\u00a0<strong><em>the <a href=\"https://arxiv.org/abs/2503.05193\" rel=\"noreferrer noopener\" target=\"_blank\">Paper</a>.</em></strong>\u00a0All credit for this research goes to the researchers of this project. Also,\u00a0feel free to follow us on\u00a0<strong><a href=\"https://x.com/intent/follow?screen_name=marktechpost\" rel=\"noreferrer noopener\" target=\"_blank\">Twitter</a></strong>\u00a0and don\u2019t forget to join our\u00a0<strong><a href=\"https://www.reddit.com/r/machinelearningnews/\" rel=\"noreferrer noopener\" target=\"_blank\">80k+ ML SubReddit</a></strong>.</p>\n<!-- CONTENT END 12 -->\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/18/memq-enhancing-knowledge-graph-question-answering-with-memory-augmented-query-reconstruction/\">MemQ: Enhancing Knowledge Graph Question Answering with Memory-Augmented Query Reconstruction</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+                }
+            ],
+            "wfw_commentrss": "https://www.marktechpost.com/2025/03/18/memq-enhancing-knowledge-graph-question-answering-with-memory-augmented-query-reconstruction/feed/",
+            "slash_comments": "0",
+            "post-id": "69860"
+        },
+        {
+            "title": "ByteDance Research Releases DAPO: A Fully Open-Sourced LLM Reinforcement Learning System at Scale",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "ByteDance Research Releases DAPO: A Fully Open-Sourced LLM Reinforcement Learning System at Scale"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.marktechpost.com/2025/03/17/bytedance-research-releases-dapo-a-fully-open-sourced-llm-reinforcement-learning-system-at-scale/"
+                }
+            ],
+            "link": "https://www.marktechpost.com/2025/03/17/bytedance-research-releases-dapo-a-fully-open-sourced-llm-reinforcement-learning-system-at-scale/",
+            "comments": "https://www.marktechpost.com/2025/03/17/bytedance-research-releases-dapo-a-fully-open-sourced-llm-reinforcement-learning-system-at-scale/#respond",
+            "authors": [
+                {
+                    "name": "Asif Razzaq"
+                }
+            ],
+            "author": "Asif Razzaq",
+            "author_detail": {
+                "name": "Asif Razzaq"
+            },
+            "published": "Tue, 18 Mar 2025 06:48:32 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                18,
+                6,
+                48,
+                32,
+                1,
+                77,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "AI Paper Summary",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "AI Shorts",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Applications",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Artificial Intelligence",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Editors Pick",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "New Releases",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Open Source",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Staff",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Tech News",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Technology",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.marktechpost.com/?p=69852",
+            "guidislink": false,
+            "summary": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"364\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-17-at-11.47.04\u202fPM-1024x536.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-17-at-11.47.04\u202fPM-150x150.png\" width=\"150\" />Reinforcement learning (RL) has become central to advancing Large Language Models (LLMs), empowering them with improved reasoning capabilities necessary for complex tasks. However, the research community faces considerable challenges in reproducing state-of-the-art RL techniques due to incomplete disclosure of key training details by major industry players. This opacity has limited the progress of broader scientific [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/17/bytedance-research-releases-dapo-a-fully-open-sourced-llm-reinforcement-learning-system-at-scale/\">ByteDance Research Releases DAPO: A Fully Open-Sourced LLM Reinforcement Learning System at Scale</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"364\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-17-at-11.47.04\u202fPM-1024x536.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-17-at-11.47.04\u202fPM-150x150.png\" width=\"150\" />Reinforcement learning (RL) has become central to advancing Large Language Models (LLMs), empowering them with improved reasoning capabilities necessary for complex tasks. However, the research community faces considerable challenges in reproducing state-of-the-art RL techniques due to incomplete disclosure of key training details by major industry players. This opacity has limited the progress of broader scientific [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/17/bytedance-research-releases-dapo-a-fully-open-sourced-llm-reinforcement-learning-system-at-scale/\">ByteDance Research Releases DAPO: A Fully Open-Sourced LLM Reinforcement Learning System at Scale</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+            },
+            "content": [
+                {
+                    "type": "text/html",
+                    "language": null,
+                    "base": "https://www.marktechpost.com/feed/",
+                    "value": "<img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"364\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-17-at-11.47.04\u202fPM-1024x536.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-17-at-11.47.04\u202fPM-150x150.png\" width=\"150\" />\n<p>Reinforcement learning (RL) has become central to advancing Large Language Models (LLMs), empowering them with improved reasoning capabilities necessary for complex tasks. However, the research community faces considerable challenges in reproducing state-of-the-art RL techniques due to incomplete disclosure of key training details by major industry players. This opacity has limited the progress of broader scientific efforts and collaborative research.</p>\n\n\n\n<p>Researchers from ByteDance, Tsinghua University, and the University of Hong Kong recently introduced DAPO (Dynamic Sampling Policy Optimization), an open-source large-scale reinforcement learning system designed for enhancing the reasoning abilities of Large Language Models. The DAPO system seeks to bridge the gap in reproducibility by openly sharing all algorithmic details, training procedures, and datasets. Built upon the verl framework, DAPO includes training codes and a thoroughly prepared dataset called DAPO-Math-17K, specifically designed for mathematical reasoning tasks.</p>\n\n\n\n<p>DAPO&#8217;s technical foundation includes four core innovations aimed at resolving key challenges in reinforcement learning. The first, &#8220;Clip-Higher,&#8221; addresses the issue of entropy collapse, a situation where models prematurely settle into limited exploration patterns. By carefully managing the clipping ratio in policy updates, this technique encourages greater diversity in model outputs. &#8220;Dynamic Sampling&#8221; counters inefficiencies in training by dynamically filtering samples based on their usefulness, thus ensuring a more consistent gradient signal. The &#8220;Token-level Policy Gradient Loss&#8221; offers a refined loss calculation method, emphasizing token-level rather than sample-level adjustments to better accommodate varying lengths of reasoning sequences. Lastly, &#8220;Overlong Reward Shaping&#8221; introduces a controlled penalty for excessively long responses, gently guiding models toward concise and efficient reasoning.</p>\n\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter size-large is-resized\"><img alt=\"\" class=\"wp-image-69855\" height=\"710\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-17-at-11.46.04\u202fPM-1-1024x710.png\" style=\"width: 684px; height: auto;\" width=\"1024\" /></figure></div>\n\n\n<p>In practical experimentation, DAPO has demonstrated significant improvements. Evaluations on the American Invitational Mathematics Examination (AIME) 2024 benchmark show that DAPO-trained models achieved a score of 50 points using the Qwen2.5-32B base model, improving on previous methods such as DeepSeek-R1-Zero-Qwen-32B, which achieved 47 points. Notably, DAPO attained this improvement with approximately half the training steps, underscoring the efficiency of the proposed methods. A systematic analysis revealed incremental enhancements from each introduced technique, moving from a baseline of 30 points (using GRPO alone) up to 50 points with the full DAPO methodology.</p>\n\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter size-large is-resized\"><img alt=\"\" class=\"wp-image-69853\" height=\"500\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-17-at-11.45.45\u202fPM-1024x500.png\" style=\"width: 660px; height: auto;\" width=\"1024\" /></figure></div>\n\n\n<p>Beyond quantitative results, DAPO&#8217;s training dynamics provided insights into the model&#8217;s evolving reasoning patterns. Initially, the models showed little reflective behavior, often proceeding linearly through tasks without reconsideration of previous steps. However, with ongoing training, the models progressively exhibited more reflective behaviors, demonstrating a form of iterative self-review. This shift highlights the capability of reinforcement learning not only to enhance existing reasoning pathways but also to cultivate entirely new cognitive strategies over time.</p>\n\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter size-large is-resized\"><img alt=\"\" class=\"wp-image-69857\" height=\"452\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-17-at-11.46.33\u202fPM-1-1024x452.png\" style=\"width: 706px; height: auto;\" width=\"1024\" /></figure></div>\n\n\n<p>In conclusion, the open-sourcing of DAPO represents a meaningful contribution to the reinforcement learning community, removing barriers previously created by inaccessible methodologies. By clearly documenting and providing comprehensive access to the system&#8217;s techniques, dataset, and code, this collaborative initiative invites further research and innovation. The combined efforts of ByteDance, Tsinghua University, and the University of Hong Kong showcase the potential of transparent and cooperative research to advance the collective understanding and practical capabilities of large-scale reinforcement learning systems.<a href=\"https://pxl.to/6p7dm6p\"></a></p>\n\n\n\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n\n\n\n<p>Check out\u00a0<strong><em>the <a href=\"https://dapo-sia.github.io/static/pdf/dapo_paper.pdf\" rel=\"noreferrer noopener\" target=\"_blank\">Paper</a> and <a href=\"https://dapo-sia.github.io/\" rel=\"noreferrer noopener\" target=\"_blank\">Project Page</a>.</em></strong>\u00a0All credit for this research goes to the researchers of this project. Also,\u00a0feel free to follow us on\u00a0<strong><a href=\"https://x.com/intent/follow?screen_name=marktechpost\" rel=\"noreferrer noopener\" target=\"_blank\">Twitter</a></strong>\u00a0and don\u2019t forget to join our\u00a0<strong><a href=\"https://www.reddit.com/r/machinelearningnews/\" rel=\"noreferrer noopener\" target=\"_blank\">80k+ ML SubReddit</a></strong>.</p>\n<!-- CONTENT END 14 -->\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/17/bytedance-research-releases-dapo-a-fully-open-sourced-llm-reinforcement-learning-system-at-scale/\">ByteDance Research Releases DAPO: A Fully Open-Sourced LLM Reinforcement Learning System at Scale</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+                }
+            ],
+            "wfw_commentrss": "https://www.marktechpost.com/2025/03/17/bytedance-research-releases-dapo-a-fully-open-sourced-llm-reinforcement-learning-system-at-scale/feed/",
+            "slash_comments": "0",
+            "post-id": "69852"
+        },
+        {
+            "title": "Speech-to-Speech Foundation Models Pave the Way for Seamless Multilingual Interactions",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "Speech-to-Speech Foundation Models Pave the Way for Seamless Multilingual Interactions"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.marktechpost.com/2025/03/17/speech-to-speech-foundation-models-pave-the-way-for-seamless-multilingual-interactions/"
+                }
+            ],
+            "link": "https://www.marktechpost.com/2025/03/17/speech-to-speech-foundation-models-pave-the-way-for-seamless-multilingual-interactions/",
+            "comments": "https://www.marktechpost.com/2025/03/17/speech-to-speech-foundation-models-pave-the-way-for-seamless-multilingual-interactions/#respond",
+            "authors": [
+                {
+                    "name": "Jean-marc Mommessin"
+                }
+            ],
+            "author": "Jean-marc Mommessin",
+            "author_detail": {
+                "name": "Jean-marc Mommessin"
+            },
+            "published": "Tue, 18 Mar 2025 06:25:15 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                18,
+                6,
+                25,
+                15,
+                1,
+                77,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "AI Startups",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Editors Pick",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Staff",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Tech News",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.marktechpost.com/?p=69849",
+            "guidislink": false,
+            "summary": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"696\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/an-illustration-of-a-voice-first-unified_mw3ssoiKSK-03j3t_1mdA_LHH4zW2MS9Odz00vJD5aXw.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/an-illustration-of-a-voice-first-unified_mw3ssoiKSK-03j3t_1mdA_LHH4zW2MS9Odz00vJD5aXw-150x150.png\" width=\"150\" />At NVIDIA GTC25, Gnani.ai experts unveiled groundbreaking advancements in voice AI, focusing on the development and deployment of Speech-to-Speech Foundation Models. This innovative approach promises to overcome the limitations of traditional cascaded voice AI architectures, ushering in an era of seamless, multilingual, and emotionally aware voice interactions. The Limitations of Cascaded Architectures Current state-of-the-art architecture [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/17/speech-to-speech-foundation-models-pave-the-way-for-seamless-multilingual-interactions/\">Speech-to-Speech Foundation Models Pave the Way for Seamless Multilingual Interactions</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"696\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/an-illustration-of-a-voice-first-unified_mw3ssoiKSK-03j3t_1mdA_LHH4zW2MS9Odz00vJD5aXw.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/an-illustration-of-a-voice-first-unified_mw3ssoiKSK-03j3t_1mdA_LHH4zW2MS9Odz00vJD5aXw-150x150.png\" width=\"150\" />At NVIDIA GTC25, Gnani.ai experts unveiled groundbreaking advancements in voice AI, focusing on the development and deployment of Speech-to-Speech Foundation Models. This innovative approach promises to overcome the limitations of traditional cascaded voice AI architectures, ushering in an era of seamless, multilingual, and emotionally aware voice interactions. The Limitations of Cascaded Architectures Current state-of-the-art architecture [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/17/speech-to-speech-foundation-models-pave-the-way-for-seamless-multilingual-interactions/\">Speech-to-Speech Foundation Models Pave the Way for Seamless Multilingual Interactions</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+            },
+            "content": [
+                {
+                    "type": "text/html",
+                    "language": null,
+                    "base": "https://www.marktechpost.com/feed/",
+                    "value": "<img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"696\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/an-illustration-of-a-voice-first-unified_mw3ssoiKSK-03j3t_1mdA_LHH4zW2MS9Odz00vJD5aXw.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/an-illustration-of-a-voice-first-unified_mw3ssoiKSK-03j3t_1mdA_LHH4zW2MS9Odz00vJD5aXw-150x150.png\" width=\"150\" />\n<p>At <a href=\"https://www.nvidia.com/gtc/\" rel=\"noreferrer noopener\" target=\"_blank\">NVIDIA GTC25</a>, <a href=\"http://gnani.ai\">Gnani.ai</a> experts unveiled groundbreaking advancements in voice AI, focusing on the development and deployment of Speech-to-Speech Foundation Models. This innovative approach promises to overcome the limitations of traditional cascaded voice AI architectures, ushering in an era of seamless, multilingual, and emotionally aware voice interactions.</p>\n\n\n\n<p><strong>The Limitations of Cascaded Architectures</strong></p>\n\n\n\n<p>Current state-of-the-art architecture powering voice agents involves a three-stage pipeline: Speech-to-Text (STT), Large Language Models (LLMs), and Text-to-Speech (TTS). While effective, this cascaded architecture suffers from significant drawbacks, primarily latency and error propagation. A cascaded architecture has multiple blocks in the pipeline, and each block will add its own latency. The cumulative latency across these stages can range from 2.5 to 3 seconds, leading to a poor user experience. Moreover, errors introduced in the STT stage propagate through the pipeline, compounding inaccuracies. This traditional architecture also loses critical paralinguistic features such as sentiment, emotion, and tone, resulting in monotonous and emotionally flat responses.</p>\n\n\n\n<p><strong>Introducing Speech-to-Speech Foundation Models</strong></p>\n\n\n\n<p>To address these limitations, Gnani.ai presents a novel Speech-to-Speech Foundation Model. This model directly processes and generates audio, eliminating the need for intermediate text representations. The key innovation lies in training a massive audio encoder with 1.5 million hours of labeled data across 14 languages, capturing nuances of emotion, empathy, and tonality. This model employs a nested XL encoder, retrained with comprehensive data, and an input audio projector layer to map audio features into textual embeddings. For real-time streaming, audio and text features are interleaved, while non-streaming use cases utilize an embedding merge layer. The LLM layer, initially based on Llama 8B, was expanded to include 14 languages, necessitating the rebuilding of tokenizers. An output projector model generates mel spectrograms, enabling the creation of hyper-personalized voices.</p>\n\n\n\n<p><img height=\"179\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXd6x6D2qw1TALmePlFHzh1M12ZQUrV_BhDwk_0vLoqFtjhgVw9-RsTjicQs0dXlp0SJt1LOoQPgawpJM-QeiKcKh_1iyCJwO161NOXD25ClcXPie4wJj0QSwN7VTxyAbxdWb56q?key=9speVM3E4aCkcNaxm41f2Y8p\" width=\"624\" /></p>\n\n\n\n<p><strong>Key Benefits and Technical Hurdles</strong></p>\n\n\n\n<p>The Speech-to-Speech model offers several significant benefits. Firstly, it significantly reduces latency, moving from 2 seconds to approximately 850-900 milliseconds for the first token output. Secondly, it enhances accuracy by fusing ASR with the LLM layer, improving performance, especially for short and long speeches. Thirdly, the model achieves emotional awareness by capturing and modeling tonality, stress, and rate of speech. Fourthly, it enables improved interruption handling through contextual awareness, facilitating more natural interactions. Finally, the model is designed to handle low bandwidth audio effectively, which is crucial for telephony networks. Building this model presented several challenges, notably the massive data requirements. The team created a crowd-sourced system with 4 million users to generate emotionally rich conversational data. They also leveraged foundation models for synthetic data generation and trained on 13.5 million hours of publicly available data. The final model comprises a 9 billion parameter model, with 636 million for the audio input, 8 billion for the LLM, and 300 million for the TTS system.</p>\n\n\n\n<p><strong>NVIDIA&#8217;s Role in Development</strong></p>\n\n\n\n<p>The development of this model was heavily reliant on the NVIDIA stack. NVIDIA Nemo was used for training encoder-decoder models, and NeMo Curator facilitated synthetic text data generation. NVIDIA EVA was employed to generate audio pairs, combining proprietary information with synthetic data.</p>\n\n\n\n<p><strong>Use Cases&nbsp;</strong></p>\n\n\n\n<p>Gnani.ai showcased two primary use cases: real-time language translation and customer support. The real-time language translation demo featured an AI engine facilitating a conversation between an English-speaking agent and a French-speaking customer. The customer support demo highlighted the model&#8217;s ability to handle cross-lingual conversations, interruptions, and emotional nuances.&nbsp;</p>\n\n\n\n<p><strong>Speech-to-Speech Foundation Model</strong></p>\n\n\n\n<p>The Speech-to-Speech Foundation Model represents a significant leap forward in voice AI. By eliminating the limitations of traditional architectures, this model enables more natural, efficient, and emotionally aware voice interactions. As the technology continues to evolve, it promises to transform various industries, from customer service to global communication.</p>\n<!-- CONTENT END 16 -->\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/17/speech-to-speech-foundation-models-pave-the-way-for-seamless-multilingual-interactions/\">Speech-to-Speech Foundation Models Pave the Way for Seamless Multilingual Interactions</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+                }
+            ],
+            "wfw_commentrss": "https://www.marktechpost.com/2025/03/17/speech-to-speech-foundation-models-pave-the-way-for-seamless-multilingual-interactions/feed/",
+            "slash_comments": "0",
+            "post-id": "69849"
+        },
+        {
+            "title": "Lowe\u2019s Revolutionizes Retail with AI: From Personalized Shopping to Proactive Customer Assistance",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "Lowe\u2019s Revolutionizes Retail with AI: From Personalized Shopping to Proactive Customer Assistance"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.marktechpost.com/2025/03/17/lowes-revolutionizes-retail-with-ai-from-personalized-shopping-to-proactive-customer-assistance/"
+                }
+            ],
+            "link": "https://www.marktechpost.com/2025/03/17/lowes-revolutionizes-retail-with-ai-from-personalized-shopping-to-proactive-customer-assistance/",
+            "comments": "https://www.marktechpost.com/2025/03/17/lowes-revolutionizes-retail-with-ai-from-personalized-shopping-to-proactive-customer-assistance/#respond",
+            "authors": [
+                {
+                    "name": "Jean-marc Mommessin"
+                }
+            ],
+            "author": "Jean-marc Mommessin",
+            "author_detail": {
+                "name": "Jean-marc Mommessin"
+            },
+            "published": "Tue, 18 Mar 2025 06:16:01 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                18,
+                6,
+                16,
+                1,
+                1,
+                77,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "AI Shorts",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Editors Pick",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Interview",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Staff",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Tech News",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Technology",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.marktechpost.com/?p=69846",
+            "guidislink": false,
+            "summary": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"580\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/m1-1-1024x853.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/m1-1-150x150.png\" width=\"150\" />Lowe&#8217;s, a leading home improvement retailer with 1,700 stores and 300,000 associates, is establishing itself as a pioneer in AI innovation. In a recent interview at Nvidia GTC25, Chandu Nair, Senior VP of Data, AI, and Innovation at Lowe&#8217;s, unveiled the company&#8217;s strategic vision, highlighting the transformative impact of AI on customer experience and operational [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/17/lowes-revolutionizes-retail-with-ai-from-personalized-shopping-to-proactive-customer-assistance/\">Lowe&#8217;s Revolutionizes Retail with AI: From Personalized Shopping to Proactive Customer Assistance</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"580\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/m1-1-1024x853.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/m1-1-150x150.png\" width=\"150\" />Lowe&#8217;s, a leading home improvement retailer with 1,700 stores and 300,000 associates, is establishing itself as a pioneer in AI innovation. In a recent interview at Nvidia GTC25, Chandu Nair, Senior VP of Data, AI, and Innovation at Lowe&#8217;s, unveiled the company&#8217;s strategic vision, highlighting the transformative impact of AI on customer experience and operational [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/17/lowes-revolutionizes-retail-with-ai-from-personalized-shopping-to-proactive-customer-assistance/\">Lowe&#8217;s Revolutionizes Retail with AI: From Personalized Shopping to Proactive Customer Assistance</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+            },
+            "content": [
+                {
+                    "type": "text/html",
+                    "language": null,
+                    "base": "https://www.marktechpost.com/feed/",
+                    "value": "<img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"580\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/m1-1-1024x853.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/m1-1-150x150.png\" width=\"150\" />\n<p>Lowe&#8217;s, a leading home improvement retailer with 1,700 stores and 300,000 associates, is establishing itself as a pioneer in AI innovation. In a recent interview at <a href=\"https://www.nvidia.com/gtc/\" rel=\"noreferrer noopener\" target=\"_blank\">Nvidia GTC25</a>, <a href=\"https://www.linkedin.com/in/chandhunair/\" rel=\"noreferrer noopener\" target=\"_blank\">Chandu Nair,</a> Senior VP of Data, AI, and Innovation at Lowe&#8217;s, unveiled the company&#8217;s strategic vision, highlighting the transformative impact of AI on customer experience and operational efficiency.</p>\n\n\n\n<p><strong>A Holistic AI Approach: The &#8220;Hobby Shop&#8221; Strategy</strong></p>\n\n\n\n<p>Lowe&#8217;s has embraced a comprehensive AI strategy, centered around three pivotal pillars: enhancing the customer shopping journey, empowering store associates, and optimizing internal operations. This approach, aptly named the &#8220;hobby shop&#8221; strategy, aims to bridge the persistent information and expertise gaps inherent in home improvement. &#8220;Most of us live in a dwelling at home, and it&#8217;s times a torque of keeping them home, and usually the problems are not about product discovery. It&#8217;s really about the problem,&#8221; Chandu explained, emphasizing the shift from mere product acquisition to problem-solving.</p>\n\n\n\n<p><strong>Mylow: Personalized AI-Powered Shopping Assistance</strong></p>\n\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter is-resized\"><img alt=\"\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXfXRmWpRIGOPwAmTxItVxWlYTj9dkmSTsH03MM1L16WPqlrTs9h2pMzRfucphngKbwqW-c65i-6tTa3V8guN5coOWQ0OKceW_nIEZSj7CLdzC1Vg4pVVI9vC0bD4T9NlH34pQXf?key=aO_Z2GGFMI6LZ5lNqqqGkbv0\" style=\"width: 498px; height: auto;\" /></figure></div>\n\n\n<p>A cornerstone of Lowe&#8217;s AI initiatives is Mylow, an AI-powered shopping assistant accessible via the <a href=\"https://www.lowes.com/ai\" rel=\"noreferrer noopener\" target=\"_blank\">Lowe&#8217;s app and website</a>. Mylow provides personalized guidance for home improvement projects, addressing the common challenge of navigating complex tasks.\u00a0</p>\n\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter is-resized\"><img alt=\"\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXfavhx22YScJd_vetf0GeeUqD6QNL80FxoEDtvd3zUeIC5MZ18dsLwW-oTDNogioJtsvJOiaOlOzPOnMEq6d4PLpqG1TT-9V3jg4tBOQG8f_XZlHBR1W7x0dfIHd4Rz8HnhGCN5LQ?key=aO_Z2GGFMI6LZ5lNqqqGkbv0\" style=\"width: 760px; height: auto;\" /></figure></div>\n\n\n<p>&#8220;It pulls all of our product catalog that curates the catalog of things that you need to actually build the race guard there,&#8221; Chandu elaborated, highlighting Mylow&#8217;s ability to curate relevant products. Furthermore, Mylow integrates instructional content, product recommendations, and pertinent YouTube videos, offering a holistic support system for customers. &#8220;If you are like me, then also watch a YouTube video to say, hey, how does it work?&#8221; Chandu added, reflecting the common practice of seeking visual guidance.</p>\n\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter is-resized\"><img alt=\"\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXcnB7e17GRhd1qF_jOfbezhdnvc30FxT920KiYJDR1YmyIfcyRirKr9mho9MRsyE4OV-htVloXgiLPmF0EFYUd0mq_9nJ8gjeMsevrUVwX7CdGj4v0hmOEIb3auF8uYEMXzmFJI?key=aO_Z2GGFMI6LZ5lNqqqGkbv0\" style=\"width: 756px; height: auto;\" /></figure></div>\n\n\n<p><strong>AI-Powered Store Companion for Associates</strong></p>\n\n\n\n<p>Lowe&#8217;s is equipping its 270,000 associates with an AI-powered store companion, a tool designed to enhance customer interactions and provide real-time assistance. Built on the same AI engine as Mylow, this companion answers customer queries and facilitates seamless support. Integrating computer vision (CNN) technology, the store&#8217;s video network identifies customers who have been dwelling in specific aisles and appear to require assistance. &#8220;you may be on an electrical island, you would not know, right? So you are leveraging computers so you can alert an Associate&#8221; Chandu detailed, illustrating the proactive nature of the system.</p>\n\n\n\n<p><strong>Computer Vision for Loss Prevention and Enhanced Security</strong></p>\n\n\n\n<p>In addition to customer assistance, Lowe&#8217;s employs computer vision at self-checkout stations to mitigate store theft, enhancing security and operational efficiency.</p>\n\n\n\n<p><strong>A Scalable AI Combination Approach</strong></p>\n\n\n\n<p>Lowe&#8217;s stands out for its successful deployment of a hybrid AI approach, combining traditional AI (CNN) with generative AI at scale. &#8220;We believe we are the only retailer out there using a combination of both Generative AI and configurations in the store. Such a scale to really assist our customers,&#8221; Chandu asserted, underscoring the company&#8217;s pioneering role. This integrated approach not only enhances customer service but also optimizes internal processes, solidifying Lowe&#8217;s position as a leader in AI-driven retail innovation.</p>\n<!-- CONTENT END 18 -->\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/17/lowes-revolutionizes-retail-with-ai-from-personalized-shopping-to-proactive-customer-assistance/\">Lowe&#8217;s Revolutionizes Retail with AI: From Personalized Shopping to Proactive Customer Assistance</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+                }
+            ],
+            "wfw_commentrss": "https://www.marktechpost.com/2025/03/17/lowes-revolutionizes-retail-with-ai-from-personalized-shopping-to-proactive-customer-assistance/feed/",
+            "slash_comments": "0",
+            "post-id": "69846"
+        },
+        {
+            "title": "Emerging Trends in Modern Machine Translation Using Large Reasoning Models",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "Emerging Trends in Modern Machine Translation Using Large Reasoning Models"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.marktechpost.com/2025/03/17/emerging-trends-in-modern-machine-translation-using-large-reasoning-models/"
+                }
+            ],
+            "link": "https://www.marktechpost.com/2025/03/17/emerging-trends-in-modern-machine-translation-using-large-reasoning-models/",
+            "comments": "https://www.marktechpost.com/2025/03/17/emerging-trends-in-modern-machine-translation-using-large-reasoning-models/#respond",
+            "authors": [
+                {
+                    "name": "Sajjad Ansari"
+                }
+            ],
+            "author": "Sajjad Ansari",
+            "author_detail": {
+                "name": "Sajjad Ansari"
+            },
+            "published": "Tue, 18 Mar 2025 05:08:36 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                18,
+                5,
+                8,
+                36,
+                1,
+                77,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "AI Paper Summary",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "AI Shorts",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Applications",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Artificial Intelligence",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Editors Pick",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Language Model",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Large Language Model",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Machine Learning",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Staff",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Tech News",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Technology",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.marktechpost.com/?p=69843",
+            "guidislink": false,
+            "summary": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"412\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-17-at-10.07.24\u202fPM-1024x606.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-17-at-10.07.24\u202fPM-150x150.png\" width=\"150\" />Machine Translation (MT) has emerged as a critical component of Natural Language Processing, facilitating automatic text conversion between languages to support global communication. While Neural Machine Translation (NMT) has revolutionized the field by employing deep learning techniques to capture complex linguistic patterns and contextual dependencies, significant challenges persist. Current NMT systems struggle with accurately translating [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/17/emerging-trends-in-modern-machine-translation-using-large-reasoning-models/\">Emerging Trends in Modern Machine Translation Using Large Reasoning Models</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.marktechpost.com/feed/",
+                "value": "<p><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"412\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-17-at-10.07.24\u202fPM-1024x606.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-17-at-10.07.24\u202fPM-150x150.png\" width=\"150\" />Machine Translation (MT) has emerged as a critical component of Natural Language Processing, facilitating automatic text conversion between languages to support global communication. While Neural Machine Translation (NMT) has revolutionized the field by employing deep learning techniques to capture complex linguistic patterns and contextual dependencies, significant challenges persist. Current NMT systems struggle with accurately translating [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/17/emerging-trends-in-modern-machine-translation-using-large-reasoning-models/\">Emerging Trends in Modern Machine Translation Using Large Reasoning Models</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+            },
+            "content": [
+                {
+                    "type": "text/html",
+                    "language": null,
+                    "base": "https://www.marktechpost.com/feed/",
+                    "value": "<img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"412\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-17-at-10.07.24\u202fPM-1024x606.png\" style=\"float: left; margin: 0 15px 15px 0;\" width=\"696\" /><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"150\" src=\"https://www.marktechpost.com/wp-content/uploads/2025/03/Screenshot-2025-03-17-at-10.07.24\u202fPM-150x150.png\" width=\"150\" />\n<p>Machine Translation (MT) has emerged as a critical component of Natural Language Processing, facilitating automatic text conversion between languages to support global communication. While Neural Machine Translation (NMT) has revolutionized the field by employing <a href=\"https://www.marktechpost.com/2025/01/15/what-is-deep-learning-2/\" target=\"_blank\">deep learning</a> techniques to capture complex linguistic patterns and contextual dependencies, significant challenges persist. Current NMT systems struggle with accurately translating idiomatic expressions, effectively handling low-resource languages with limited training data, and maintaining coherence across longer documents. These limitations substantially impact translation quality and usability in real-world scenarios.</p>\n\n\n\n<p>LLMs like GPT-4, LLaMA, and Qwen have revolutionized MT, showing impressive capabilities in zero-shot and few-shot translation scenarios without requiring extensive parallel corpora. Such LLMs achieve performance comparable to supervised systems, offering versatility in style transfer, summarization, and question-answering tasks. Building upon LLMs, Large Reasoning Models (LRMs) represent the next evolutionary step in MT. LRMs integrate reasoning capabilities through techniques like Chain-of-Thought reasoning, approaching translation as a dynamic reasoning task rather than a simple mapping exercise. This approach enables LRMs to address persistent challenges in translation, including contextual coherence, cultural nuances, and compositional generalization.</p>\n\n\n\n<p>Researchers from the MarcoPolo Team, Alibaba International Digital Commerce, and the University of Edinburgh present a transformative approach to MT by utilizing LRMs. Their position paper reframes translation as a dynamic reasoning task requiring deep contextual, cultural, and linguistic understanding rather than simple text-to-text mapping. The researchers identify three fundamental shifts enabled by LRMs, which are (a) contextual coherence for resolving ambiguities and preserving discourse structure across complex contexts, (b) cultural intentionality for adapting translations based on speaker intent and socio-linguistic norms, and (c) self-reflection capabilities that allow models to refine translations during inference iteratively. These shifts position LRMs as superior to both traditional NMT and LLM-based approaches.</p>\n\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter is-resized\"><img alt=\"\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXcHw8MKqSnEHbQlrh4ULLW-7yqLUZDUzLdpLW0VLDpAfBEZH4Hp2HTq_7RFpnGU_KyYmXWOzj-Yd3UWmdlvTEZaz3LSd1HC5ZXMNZ02Y4-xD0oQtejh8CuOVIpIJil0TDbU0P7DUw?key=oDmSyAA8Ee24GQZJwuLbf1Bt\" style=\"width: 686px; height: auto;\" /></figure></div>\n\n\n<p>Characteristics of LRMs in MT include Self-reflection and Auto-pivot translation. Self-reflection enables the models to perform error detection and correction during the translation process, which is valuable when handling ambiguous or noisy inputs, such as text containing typos or scrambled sentences that conventional systems struggle to interpret accurately. In the Auto-pivot translation phenomenon, LRMs automatically utilize high-resource languages as intermediaries when translating between low-resource language pairs, e.g., when translating from Irish to Chinese, the model internally reasons through English before generating the final output. However, this approach introduces potential challenges regarding computational efficiency and possible distortions when equivalent expressions don&#8217;t exist in the pivot language.</p>\n\n\n\n<p>When evaluated using metrics like BLEURT and COMET, no significant differences emerged between the four models tested, but models with lower scores produced better translations. For instance, DeepSeek-R1 generated superior translations compared to DeepSeek-V3. Moreover, the reasoning-enhanced models generate more diverse translations that may differ from reference translations while maintaining accuracy and natural expression. For example, for the sentence &#8220;\u6b63\u5728\u91c7\u6536\u7684\u662f\u679c\u56ed\u91cc\u7684 \u679c\u519c,&#8221; the reference translation is &#8220;The orchard worker in the orchard is harvesting.&#8221; DeepSeek-R1 translated it as &#8220;The orchard farmers are harvesting&#8221;, with a 0.7748 COMET score, and the translation generated by DeepSeek-V3 is &#8220;The orchard farmers are currently harvesting the fruits&#8221;, which received a COMET score of 0.8039.&nbsp;</p>\n\n\n\n<p>In this paper, researchers have explored the transformative potential of LRMs in MT. LRMs effectively address long-standing challenges using reasoning capabilities, including stylized translation, document-level translation, and multi-modal translation, while introducing innovative capabilities like self-reflection and auto-pivot language translation. However, significant limitations persist, particularly in complex reasoning tasks and specialized domains. While LRMs can successfully decipher simple ciphers, they struggle with complex cryptographic challenges and may generate hallucinated content when facing uncertainty. Future research includes improving LRM robustness when handling ambiguous or computationally intensive tasks.<a href=\"https://pxl.to/6p7dm6p\"></a></p>\n\n\n\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n\n\n\n<p>Check out\u00a0<strong><em>the <a href=\"https://arxiv.org/abs/2503.10351\" rel=\"noreferrer noopener\" target=\"_blank\">Paper</a>.</em></strong>\u00a0All credit for this research goes to the researchers of this project. Also,\u00a0feel free to follow us on\u00a0<strong><a href=\"https://x.com/intent/follow?screen_name=marktechpost\" rel=\"noreferrer noopener\" target=\"_blank\">Twitter</a></strong>\u00a0and don\u2019t forget to join our\u00a0<strong><a href=\"https://www.reddit.com/r/machinelearningnews/\" rel=\"noreferrer noopener\" target=\"_blank\">80k+ ML SubReddit</a></strong>.</p>\n<!-- CONTENT END 20 -->\n<p>The post <a href=\"https://www.marktechpost.com/2025/03/17/emerging-trends-in-modern-machine-translation-using-large-reasoning-models/\">Emerging Trends in Modern Machine Translation Using Large Reasoning Models</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>"
+                }
+            ],
+            "wfw_commentrss": "https://www.marktechpost.com/2025/03/17/emerging-trends-in-modern-machine-translation-using-large-reasoning-models/feed/",
+            "slash_comments": "0",
+            "post-id": "69843"
+        }
+    ]
+}

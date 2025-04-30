@@ -1,0 +1,15 @@
+#!/bin/sh -e
+
+# Allow traffic to be forwarded from enp0s25 to enxd037457fc945
+iptables -A FORWARD -i enp0s25 -j ACCEPT
+
+# Allow traffic to be forwarded from enxd037457fc945 to enp0s25
+iptables -A FORWARD -i enxd037457fc945 -j ACCEPT
+
+# You also need to set up NAT rules, and this is not going to be very nice, 
+# but we have to let the 'router' be the one that we masquerade sources as.
+
+iptables -t nat -A POSTROUTING -o enp0s25 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o enxd037457fc945 -j MASQUERADE
+
+exit 0

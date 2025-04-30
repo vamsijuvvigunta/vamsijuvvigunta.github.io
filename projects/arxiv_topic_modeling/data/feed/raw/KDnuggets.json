@@ -1,0 +1,537 @@
+{
+    "title": "KDnuggets",
+    "fname": "KDnuggets",
+    "url": "https://www.kdnuggets.com/feed",
+    "items": [
+        {
+            "title": "Web Scraping Fundamentals for Data Science",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "Web Scraping Fundamentals for Data Science"
+            },
+            "summary": "Data is the lifeblood of data science and the backbone of the AI revolution. Without it, there are no models, and sophisticated algorithms are worthless because there is no data to bring their usefulness to life.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "Data is the lifeblood of data science and the backbone of the AI revolution. Without it, there are no models, and sophisticated algorithms are worthless because there is no data to bring their usefulness to life."
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.kdnuggets.com/web-scraping-fundamentals-for-data-science"
+                }
+            ],
+            "link": "https://www.kdnuggets.com/web-scraping-fundamentals-for-data-science",
+            "id": "https://www.kdnuggets.com/?p=190277",
+            "guidislink": false,
+            "published": "Wed, 19 Mar 2025 14:00:11 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                19,
+                14,
+                0,
+                11,
+                2,
+                78,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Shittu Olumide"
+                }
+            ],
+            "author": "Shittu Olumide",
+            "author_detail": {
+                "name": "Shittu Olumide"
+            },
+            "media_content": [
+                {
+                    "url": "https://www.kdnuggets.com/wp-content/uploads/KDnuggets-Web-Scraping-Fundamentals-for-Data-Science.png",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "Building Agentic Application Using Streamlit and Langchain",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "Building Agentic Application Using Streamlit and Langchain"
+            },
+            "summary": "By combining AI agents, you can build an application that not only answers questions and searches the internet but also performs computations and visualizes data effectively.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "By combining AI agents, you can build an application that not only answers questions and searches the internet but also performs computations and visualizes data effectively."
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.kdnuggets.com/building-agentic-application-using-streamlit-and-langchain"
+                }
+            ],
+            "link": "https://www.kdnuggets.com/building-agentic-application-using-streamlit-and-langchain",
+            "id": "https://www.kdnuggets.com/?p=191061",
+            "guidislink": false,
+            "published": "Wed, 19 Mar 2025 12:00:53 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                19,
+                12,
+                0,
+                53,
+                2,
+                78,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Abid Ali Awan"
+                }
+            ],
+            "author": "Abid Ali Awan",
+            "author_detail": {
+                "name": "Abid Ali Awan"
+            },
+            "media_content": [
+                {
+                    "url": "https://www.kdnuggets.com/wp-content/uploads/awan_building_agentic_application_streamlit_langchain_7.png",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "Do I Need to Learn MicroPython as a Data Scientist?",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "Do I Need to Learn MicroPython as a Data Scientist?"
+            },
+            "summary": "A simple guide that tells you what you need to know about MicroPython and why you should use it as a Data Scientist",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "A simple guide that tells you what you need to know about MicroPython and why you should use it as a Data Scientist"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.kdnuggets.com/do-i-need-to-learn-micropython-as-a-data-scientist"
+                }
+            ],
+            "link": "https://www.kdnuggets.com/do-i-need-to-learn-micropython-as-a-data-scientist",
+            "id": "https://www.kdnuggets.com/?p=189845",
+            "guidislink": false,
+            "published": "Tue, 18 Mar 2025 16:00:23 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                18,
+                16,
+                0,
+                23,
+                1,
+                77,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Nisha Arya"
+                }
+            ],
+            "author": "Nisha Arya",
+            "author_detail": {
+                "name": "Nisha Arya"
+            },
+            "media_content": [
+                {
+                    "url": "https://www.kdnuggets.com/wp-content/uploads/nisha-micropython-1.png",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "Top 5 Data Visualization Tools for Data Scientists",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "Top 5 Data Visualization Tools for Data Scientists"
+            },
+            "summary": "Out of many data visualization tools, which five should you use? Three Python libraries, JavaScript, and R library should cover most of your data science needs.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "Out of many data visualization tools, which five should you use? Three Python libraries, JavaScript, and R library should cover most of your data science needs."
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.kdnuggets.com/top-5-data-visualization-tools-for-data-scientists"
+                }
+            ],
+            "link": "https://www.kdnuggets.com/top-5-data-visualization-tools-for-data-scientists",
+            "id": "https://www.kdnuggets.com/?p=184439",
+            "guidislink": false,
+            "published": "Tue, 18 Mar 2025 14:00:33 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                18,
+                14,
+                0,
+                33,
+                1,
+                77,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Nate Rosidi"
+                }
+            ],
+            "author": "Nate Rosidi",
+            "author_detail": {
+                "name": "Nate Rosidi"
+            },
+            "media_content": [
+                {
+                    "url": "https://www.kdnuggets.com/wp-content/uploads/Rosidi_Top_5_Data_Visualization_Tools_for_DS_3.png",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "Getting Started with AutoGluon: Your First Steps in Automated Machine Learning",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "Getting Started with AutoGluon: Your First Steps in Automated Machine Learning"
+            },
+            "summary": "Want to build powerful machine learning models in minutes, not weeks? AutoGluon makes it ridiculously easy &mdash; no PhD required!",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "Want to build powerful machine learning models in minutes, not weeks? AutoGluon makes it ridiculously easy &mdash; no PhD required!"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.kdnuggets.com/getting-started-with-autogluon-your-first-steps-in-automated-machine-learning"
+                }
+            ],
+            "link": "https://www.kdnuggets.com/getting-started-with-autogluon-your-first-steps-in-automated-machine-learning",
+            "id": "https://www.kdnuggets.com/?p=190460",
+            "guidislink": false,
+            "published": "Tue, 18 Mar 2025 11:56:39 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                18,
+                11,
+                56,
+                39,
+                1,
+                77,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Kanwal Mehreen"
+                }
+            ],
+            "author": "Kanwal Mehreen",
+            "author_detail": {
+                "name": "Kanwal Mehreen"
+            },
+            "media_content": [
+                {
+                    "url": "https://www.kdnuggets.com/wp-content/uploads/kdn-mehreen-autogluon-1.png",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "Build Your First Python Extension for VS Code in 7 Easy Steps",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "Build Your First Python Extension for VS Code in 7 Easy Steps"
+            },
+            "summary": "Do you want to create custom extensions for VS Code? Follow this guide to build, test, and publish your own extension in no time!",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "Do you want to create custom extensions for VS Code? Follow this guide to build, test, and publish your own extension in no time!"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.kdnuggets.com/build-your-first-python-extension-for-vs-code-in-7-easy-steps"
+                }
+            ],
+            "link": "https://www.kdnuggets.com/build-your-first-python-extension-for-vs-code-in-7-easy-steps",
+            "id": "https://www.kdnuggets.com/?p=189596",
+            "guidislink": false,
+            "published": "Mon, 17 Mar 2025 16:00:56 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                17,
+                16,
+                0,
+                56,
+                0,
+                76,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Kanwal Mehreen"
+                }
+            ],
+            "author": "Kanwal Mehreen",
+            "author_detail": {
+                "name": "Kanwal Mehreen"
+            },
+            "media_content": [
+                {
+                    "url": "https://www.kdnuggets.com/wp-content/uploads/Build-Your-First-Python-Extension-for-VS-Code-in-7-Easy-Steps-1.png",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "How to Fully Automate Data Cleaning with Python in 5 Steps",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "How to Fully Automate Data Cleaning with Python in 5 Steps"
+            },
+            "summary": "Data cleaning can be quite tedious and boring. But it doesn't have to be. Here's how you can automate most of the data cleaning steps with Python.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "Data cleaning can be quite tedious and boring. But it doesn't have to be. Here's how you can automate most of the data cleaning steps with Python."
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.kdnuggets.com/how-to-fully-automate-data-cleaning-with-python-in-5-steps"
+                }
+            ],
+            "link": "https://www.kdnuggets.com/how-to-fully-automate-data-cleaning-with-python-in-5-steps",
+            "id": "https://www.kdnuggets.com/?p=189037",
+            "guidislink": false,
+            "published": "Mon, 17 Mar 2025 14:00:58 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                17,
+                14,
+                0,
+                58,
+                0,
+                76,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Bala Priya C"
+                }
+            ],
+            "author": "Bala Priya C",
+            "author_detail": {
+                "name": "Bala Priya C"
+            },
+            "media_content": [
+                {
+                    "url": "https://www.kdnuggets.com/wp-content/uploads/bala-automate-data-cleaning-steps.jpg",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "5 AI Code Editors to Use in 2025",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "5 AI Code Editors to Use in 2025"
+            },
+            "summary": "Unlock the power of modern AI code editors with features like intelligent autocomplete, agentic chat, inline edits, terminal suggestions, and more.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "Unlock the power of modern AI code editors with features like intelligent autocomplete, agentic chat, inline edits, terminal suggestions, and more."
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.kdnuggets.com/5-ai-code-editors-to-use-in-2025"
+                }
+            ],
+            "link": "https://www.kdnuggets.com/5-ai-code-editors-to-use-in-2025",
+            "id": "https://www.kdnuggets.com/?p=189194",
+            "guidislink": false,
+            "published": "Mon, 17 Mar 2025 12:00:54 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                17,
+                12,
+                0,
+                54,
+                0,
+                76,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Abid Ali Awan"
+                }
+            ],
+            "author": "Abid Ali Awan",
+            "author_detail": {
+                "name": "Abid Ali Awan"
+            },
+            "media_content": [
+                {
+                    "url": "https://www.kdnuggets.com/wp-content/uploads/awan_5_ai_code_editor_2025_5.png",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "How to Secure Docker Containers with Best Practices",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "How to Secure Docker Containers with Best Practices"
+            },
+            "summary": "Learn how to protect your Docker containers from vulnerabilities and security threats by following these best practices.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "Learn how to protect your Docker containers from vulnerabilities and security threats by following these best practices."
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.kdnuggets.com/how-to-secure-docker-containers-with-best-practices"
+                }
+            ],
+            "link": "https://www.kdnuggets.com/how-to-secure-docker-containers-with-best-practices",
+            "id": "https://www.kdnuggets.com/?p=180163",
+            "guidislink": false,
+            "published": "Fri, 14 Mar 2025 14:00:16 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                14,
+                14,
+                0,
+                16,
+                4,
+                73,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Bala Priya C"
+                }
+            ],
+            "author": "Bala Priya C",
+            "author_detail": {
+                "name": "Bala Priya C"
+            },
+            "media_content": [
+                {
+                    "url": "https://www.kdnuggets.com/wp-content/uploads/secure-docker-containers.png",
+                    "medium": "image"
+                }
+            ]
+        },
+        {
+            "title": "Where to Find Machine Learning Papers Outside of arXiv",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "Where to Find Machine Learning Papers Outside of arXiv"
+            },
+            "summary": "A list of machine learning conferences that can give you access to the the newest papers out there.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.kdnuggets.com/feed",
+                "value": "A list of machine learning conferences that can give you access to the the newest papers out there."
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.kdnuggets.com/where-to-find-machine-learning-papers-outside-of-arxiv"
+                }
+            ],
+            "link": "https://www.kdnuggets.com/where-to-find-machine-learning-papers-outside-of-arxiv",
+            "id": "https://www.kdnuggets.com/?p=188177",
+            "guidislink": false,
+            "published": "Fri, 14 Mar 2025 12:00:11 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                14,
+                12,
+                0,
+                11,
+                4,
+                73,
+                0
+            ],
+            "authors": [
+                {
+                    "name": "Nisha Arya"
+                }
+            ],
+            "author": "Nisha Arya",
+            "author_detail": {
+                "name": "Nisha Arya"
+            },
+            "media_content": [
+                {
+                    "url": "https://www.kdnuggets.com/wp-content/uploads/nisha-ML-papers-1.png",
+                    "medium": "image"
+                }
+            ]
+        }
+    ]
+}

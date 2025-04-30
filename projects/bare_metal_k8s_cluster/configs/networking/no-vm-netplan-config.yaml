@@ -1,0 +1,41 @@
+# Let NetworkManager manage all devices on this system
+#
+# https://netplan.io/examples#configuring-source-routing
+# USB Network: 192.168.23
+# Note: the a.b.c.d/24 refers to the 24 bits being the network address
+#       or routing prefix and the other (32-24) bits for the hosts.
+#
+# https://askubuntu.com/questions/1008571/how-can-i-configure-default-route-metric-with-dhcp-and-netplan
+#
+#                              MAAS Box
+#    Cluster subnet        Gateway to cluster
+#                          Gateway to lan
+#
+#                        |  192.168.1.195 | 
+#  | 192.168.23.x | -----|                | --- | 192.168.1.x & Internet |
+#                        |  192.168.23.1  |
+#                    ^^                     ^^
+#              enxd037457fc945            enp0s25
+#
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s25:
+      dhcp4: true
+      gateway4: 192.168.1.1
+      routes:
+       - to: 192.168.23.0/24
+         via: 192.168.1.195
+         table: 102
+    enxd037457fc945:
+      addresses: [192.168.23.1/24]
+      dhcp4: false
+      routes:
+       - to: 192.168.1.0/24
+         via: 192.168.23.1
+         table: 101
+       - to: 0.0.0.0/24
+         via: 192.168.23.1
+         table: 101
+

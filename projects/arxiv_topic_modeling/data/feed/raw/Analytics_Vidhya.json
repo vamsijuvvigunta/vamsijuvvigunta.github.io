@@ -1,0 +1,682 @@
+{
+    "title": "Analytics Vidhya",
+    "fname": "Analytics_Vidhya",
+    "url": "https://www.analyticsvidhya.com/feed/",
+    "items": [
+        {
+            "title": "Nvidia\u2019s GTC 2025 Announcements That Shook the Stock Market",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "Nvidia\u2019s GTC 2025 Announcements That Shook the Stock Market"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.analyticsvidhya.com/blog/2025/03/nvidia-gtc-2025-shakes-stock-price/"
+                }
+            ],
+            "link": "https://www.analyticsvidhya.com/blog/2025/03/nvidia-gtc-2025-shakes-stock-price/",
+            "comments": "https://www.analyticsvidhya.com/blog/2025/03/nvidia-gtc-2025-shakes-stock-price/#respond",
+            "authors": [
+                {
+                    "name": "K.C. Sabreena Basheer"
+                }
+            ],
+            "author": "K.C. Sabreena Basheer",
+            "author_detail": {
+                "name": "K.C. Sabreena Basheer"
+            },
+            "published": "Wed, 19 Mar 2025 18:28:00 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                19,
+                18,
+                28,
+                0,
+                2,
+                78,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "Beginner",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Generative AI",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Generative AI Application",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.analyticsvidhya.com/?p=227073",
+            "guidislink": false,
+            "summary": "<p>Nvidia\u2019s annual GPU Technology Conference (GTC) has long been a highlight for the AI community. At this year\u2019s event, Nvidia CEO Jensen Huang unveiled a roadmap of new products and innovations aimed at scaling up artificial intelligence. This included next\u2010generation AI chips &#8211; Blackwell Ultra, Vera Rubin, etc., accelerated inferencing software, and even future breakthroughs [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/nvidia-gtc-2025-shakes-stock-price/\">Nvidia\u2019s GTC 2025 Announcements That Shook the Stock Market</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "<p>Nvidia\u2019s annual GPU Technology Conference (GTC) has long been a highlight for the AI community. At this year\u2019s event, Nvidia CEO Jensen Huang unveiled a roadmap of new products and innovations aimed at scaling up artificial intelligence. This included next\u2010generation AI chips &#8211; Blackwell Ultra, Vera Rubin, etc., accelerated inferencing software, and even future breakthroughs [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/nvidia-gtc-2025-shakes-stock-price/\">Nvidia\u2019s GTC 2025 Announcements That Shook the Stock Market</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>"
+            },
+            "wfw_commentrss": "https://www.analyticsvidhya.com/blog/2025/03/nvidia-gtc-2025-shakes-stock-price/feed/",
+            "slash_comments": "0",
+            "post-id": "227073"
+        },
+        {
+            "title": "How to Integrate yFiles with LlamaIndex for Knowledge Graph Visualization?",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "How to Integrate yFiles with LlamaIndex for Knowledge Graph Visualization?"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.analyticsvidhya.com/blog/2025/03/yfiles-with-llamaindex/"
+                }
+            ],
+            "link": "https://www.analyticsvidhya.com/blog/2025/03/yfiles-with-llamaindex/",
+            "comments": "https://www.analyticsvidhya.com/blog/2025/03/yfiles-with-llamaindex/#respond",
+            "authors": [
+                {
+                    "name": "Adarsh Balan"
+                }
+            ],
+            "author": "Adarsh Balan",
+            "author_detail": {
+                "name": "Adarsh Balan"
+            },
+            "published": "Wed, 19 Mar 2025 14:45:59 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                19,
+                14,
+                45,
+                59,
+                2,
+                78,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "Advanced",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Generative AI",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "blogathon",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.analyticsvidhya.com/?p=226995",
+            "guidislink": false,
+            "summary": "<p>yFiles is a powerful SDK designed to simplify the visualization of complex networks and data relationships. When combined with LlamaIndex, it becomes a powerful tool for visualizing and interacting with knowledge graphs in real time. This guide walks you through the integration process, highlights essential steps, and demonstrates key features for an impactful, useful and [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/yfiles-with-llamaindex/\">How to Integrate yFiles with LlamaIndex for Knowledge Graph Visualization?</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "<p>yFiles is a powerful SDK designed to simplify the visualization of complex networks and data relationships. When combined with LlamaIndex, it becomes a powerful tool for visualizing and interacting with knowledge graphs in real time. This guide walks you through the integration process, highlights essential steps, and demonstrates key features for an impactful, useful and [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/yfiles-with-llamaindex/\">How to Integrate yFiles with LlamaIndex for Knowledge Graph Visualization?</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>"
+            },
+            "wfw_commentrss": "https://www.analyticsvidhya.com/blog/2025/03/yfiles-with-llamaindex/feed/",
+            "slash_comments": "0",
+            "post-id": "226995"
+        },
+        {
+            "title": "A Comprehensive Guide to Smallpond",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "A Comprehensive Guide to Smallpond"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.analyticsvidhya.com/blog/2025/03/guide-to-smallpond/"
+                }
+            ],
+            "link": "https://www.analyticsvidhya.com/blog/2025/03/guide-to-smallpond/",
+            "comments": "https://www.analyticsvidhya.com/blog/2025/03/guide-to-smallpond/#respond",
+            "authors": [
+                {
+                    "name": "Kabyik Kayal"
+                }
+            ],
+            "author": "Kabyik Kayal",
+            "author_detail": {
+                "name": "Kabyik Kayal"
+            },
+            "published": "Wed, 19 Mar 2025 14:43:54 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                19,
+                14,
+                43,
+                54,
+                2,
+                78,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "Advanced",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Generative AI",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Guide",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "LLMs",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.analyticsvidhya.com/?p=226785",
+            "guidislink": false,
+            "summary": "<p>Following the groundbreaking impact of DeepSeek R1, DeepSeek AI continues to push the boundaries of innovation with its latest offering: Smallpond. This lightweight data processing framework combines the power of DuckDB for SQL analytics and 3FS for high-performance distributed storage, designed to efficiently handle petabyte-scale datasets. Smallpond promises to simplify data processing for AI and [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/guide-to-smallpond/\">A Comprehensive Guide to Smallpond</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "<p>Following the groundbreaking impact of DeepSeek R1, DeepSeek AI continues to push the boundaries of innovation with its latest offering: Smallpond. This lightweight data processing framework combines the power of DuckDB for SQL analytics and 3FS for high-performance distributed storage, designed to efficiently handle petabyte-scale datasets. Smallpond promises to simplify data processing for AI and [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/guide-to-smallpond/\">A Comprehensive Guide to Smallpond</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>"
+            },
+            "wfw_commentrss": "https://www.analyticsvidhya.com/blog/2025/03/guide-to-smallpond/feed/",
+            "slash_comments": "0",
+            "post-id": "226785"
+        },
+        {
+            "title": "10 NVIDIA GTC 2025 Announements that You Must Know",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "10 NVIDIA GTC 2025 Announements that You Must Know"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.analyticsvidhya.com/blog/2025/03/nvidia-gtc-announcements/"
+                }
+            ],
+            "link": "https://www.analyticsvidhya.com/blog/2025/03/nvidia-gtc-announcements/",
+            "comments": "https://www.analyticsvidhya.com/blog/2025/03/nvidia-gtc-announcements/#respond",
+            "authors": [
+                {
+                    "name": "Pankaj Singh"
+                }
+            ],
+            "author": "Pankaj Singh",
+            "author_detail": {
+                "name": "Pankaj Singh"
+            },
+            "published": "Wed, 19 Mar 2025 08:31:36 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                19,
+                8,
+                31,
+                36,
+                2,
+                78,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "Artificial Intelligence",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Generative AI",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.analyticsvidhya.com/?p=226921",
+            "guidislink": false,
+            "summary": "<p>I still remember last year&#8217;s NVIDIA GTC, Jensen Huang with its visionary approach along with a touch of humour introduced the developers with promises to redefine technology. From Blackwell architecture, Generative AI with NIM, GB200 AI Chip to Project Groot and other things, we got a glimpse into the future of technology. Now the future [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/nvidia-gtc-announcements/\">10 NVIDIA GTC 2025 Announements that You Must Know</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "<p>I still remember last year&#8217;s NVIDIA GTC, Jensen Huang with its visionary approach along with a touch of humour introduced the developers with promises to redefine technology. From Blackwell architecture, Generative AI with NIM, GB200 AI Chip to Project Groot and other things, we got a glimpse into the future of technology. Now the future [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/nvidia-gtc-announcements/\">10 NVIDIA GTC 2025 Announements that You Must Know</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>"
+            },
+            "wfw_commentrss": "https://www.analyticsvidhya.com/blog/2025/03/nvidia-gtc-announcements/feed/",
+            "slash_comments": "0",
+            "post-id": "226921"
+        },
+        {
+            "title": "Enhancing Multimodal RAG Capabilities Using Docling",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "Enhancing Multimodal RAG Capabilities Using Docling"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.analyticsvidhya.com/blog/2025/03/enhancing-multimodal-rag-capabilities-using-docling/"
+                }
+            ],
+            "link": "https://www.analyticsvidhya.com/blog/2025/03/enhancing-multimodal-rag-capabilities-using-docling/",
+            "comments": "https://www.analyticsvidhya.com/blog/2025/03/enhancing-multimodal-rag-capabilities-using-docling/#respond",
+            "authors": [
+                {
+                    "name": "Nibedita Dutta"
+                }
+            ],
+            "author": "Nibedita Dutta",
+            "author_detail": {
+                "name": "Nibedita Dutta"
+            },
+            "published": "Wed, 19 Mar 2025 05:23:20 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                19,
+                5,
+                23,
+                20,
+                2,
+                78,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "Advanced",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "RAG",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "blogathon",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.analyticsvidhya.com/?p=226831",
+            "guidislink": false,
+            "summary": "<p>Multimodal Retrieval-Augmented Generation (RAG) is a transformative innovation in AI, enabling systems to process and integrate diverse data types such as text, images, audio, and video. This capability is crucial in addressing the challenge of unstructured enterprise data, which predominantly consists of multimodal formats. By leveraging multimodal inputs, RAG enhances contextual understanding, improves accuracy, and [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/enhancing-multimodal-rag-capabilities-using-docling/\">Enhancing Multimodal RAG Capabilities Using Docling</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "<p>Multimodal Retrieval-Augmented Generation (RAG) is a transformative innovation in AI, enabling systems to process and integrate diverse data types such as text, images, audio, and video. This capability is crucial in addressing the challenge of unstructured enterprise data, which predominantly consists of multimodal formats. By leveraging multimodal inputs, RAG enhances contextual understanding, improves accuracy, and [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/enhancing-multimodal-rag-capabilities-using-docling/\">Enhancing Multimodal RAG Capabilities Using Docling</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>"
+            },
+            "wfw_commentrss": "https://www.analyticsvidhya.com/blog/2025/03/enhancing-multimodal-rag-capabilities-using-docling/feed/",
+            "slash_comments": "0",
+            "post-id": "226831"
+        },
+        {
+            "title": "3 AI Insights from Lex Fridman and Narendra Modi\u2019s Conversation",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "3 AI Insights from Lex Fridman and Narendra Modi\u2019s Conversation"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.analyticsvidhya.com/blog/2025/03/lex-fridman-and-narendra-modi/"
+                }
+            ],
+            "link": "https://www.analyticsvidhya.com/blog/2025/03/lex-fridman-and-narendra-modi/",
+            "comments": "https://www.analyticsvidhya.com/blog/2025/03/lex-fridman-and-narendra-modi/#respond",
+            "authors": [
+                {
+                    "name": "Nitika Sharma"
+                }
+            ],
+            "author": "Nitika Sharma",
+            "author_detail": {
+                "name": "Nitika Sharma"
+            },
+            "published": "Tue, 18 Mar 2025 20:49:55 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                18,
+                20,
+                49,
+                55,
+                1,
+                77,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "News",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.analyticsvidhya.com/?p=226892",
+            "guidislink": false,
+            "summary": "<p>On March 16, 2025, Lex Fridman welcomed Narendra Modi, Prime Minister of India, to hisPodcast (#460). The nearly three-hour talk covered leadership, spirituality, and technology. Beyond its personal and spiritual dimensions, the conversation offered deep insights into the mindset fueling India\u2019s rapid tech rise. Modi\u2019s focus on discipline, self-awareness, and a holistic life approach provides [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/lex-fridman-and-narendra-modi/\">3 AI Insights from Lex Fridman and Narendra Modi\u2019s Conversation</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "<p>On March 16, 2025, Lex Fridman welcomed Narendra Modi, Prime Minister of India, to hisPodcast (#460). The nearly three-hour talk covered leadership, spirituality, and technology. Beyond its personal and spiritual dimensions, the conversation offered deep insights into the mindset fueling India\u2019s rapid tech rise. Modi\u2019s focus on discipline, self-awareness, and a holistic life approach provides [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/lex-fridman-and-narendra-modi/\">3 AI Insights from Lex Fridman and Narendra Modi\u2019s Conversation</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>"
+            },
+            "wfw_commentrss": "https://www.analyticsvidhya.com/blog/2025/03/lex-fridman-and-narendra-modi/feed/",
+            "slash_comments": "0",
+            "post-id": "226892"
+        },
+        {
+            "title": "LLMs.txt Explained: The Web\u2019s New LLM-Ready Content Standard",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "LLMs.txt Explained: The Web\u2019s New LLM-Ready Content Standard"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.analyticsvidhya.com/blog/2025/03/llms-txt/"
+                }
+            ],
+            "link": "https://www.analyticsvidhya.com/blog/2025/03/llms-txt/",
+            "comments": "https://www.analyticsvidhya.com/blog/2025/03/llms-txt/#respond",
+            "authors": [
+                {
+                    "name": "Shaik Hamzah"
+                }
+            ],
+            "author": "Shaik Hamzah",
+            "author_detail": {
+                "name": "Shaik Hamzah"
+            },
+            "published": "Tue, 18 Mar 2025 19:56:00 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                18,
+                19,
+                56,
+                0,
+                1,
+                77,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "Generative AI",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Intermediate",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "LLMs",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.analyticsvidhya.com/?p=226769",
+            "guidislink": false,
+            "summary": "<p>Six months ago, LLMs.txt was introduced as a groundbreaking file format designed to make website documentation accessible for large language models (LLMs). Since its release, the standard has steadily gained traction among developers and content creators. Today, as discussions around Model Context Protocols (MCP) intensify, LLMs.txt is in the spotlight as a proven, AI-first documentation [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/llms-txt/\">LLMs.txt Explained: The Web&#8217;s New LLM-Ready Content Standard</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "<p>Six months ago, LLMs.txt was introduced as a groundbreaking file format designed to make website documentation accessible for large language models (LLMs). Since its release, the standard has steadily gained traction among developers and content creators. Today, as discussions around Model Context Protocols (MCP) intensify, LLMs.txt is in the spotlight as a proven, AI-first documentation [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/llms-txt/\">LLMs.txt Explained: The Web&#8217;s New LLM-Ready Content Standard</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>"
+            },
+            "wfw_commentrss": "https://www.analyticsvidhya.com/blog/2025/03/llms-txt/feed/",
+            "slash_comments": "0",
+            "post-id": "226769"
+        },
+        {
+            "title": "Mistral 3.1 vs Gemma 3: Which is the Better Model?",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "Mistral 3.1 vs Gemma 3: Which is the Better Model?"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.analyticsvidhya.com/blog/2025/03/mistral-3-1-vs-gemma-3/"
+                }
+            ],
+            "link": "https://www.analyticsvidhya.com/blog/2025/03/mistral-3-1-vs-gemma-3/",
+            "comments": "https://www.analyticsvidhya.com/blog/2025/03/mistral-3-1-vs-gemma-3/#respond",
+            "authors": [
+                {
+                    "name": "Soumil Jain"
+                }
+            ],
+            "author": "Soumil Jain",
+            "author_detail": {
+                "name": "Soumil Jain"
+            },
+            "published": "Tue, 18 Mar 2025 13:03:36 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                18,
+                13,
+                3,
+                36,
+                1,
+                77,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "Beginner",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Generative AI",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Generative AI Application",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.analyticsvidhya.com/?p=226804",
+            "guidislink": false,
+            "summary": "<p>The AI landscape is rapidly evolving, with smaller, lightweight models gaining prominence for their efficiency and scalability. After Google DeepMind launched its 27B model Gemma 3, Mistral AI has now released the Mistral 3.1 lightweight model of 24B parameters. This new, fast, and customizable model is redefining what lightweight models can do. It operates efficiently [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/mistral-3-1-vs-gemma-3/\">Mistral 3.1 vs Gemma 3: Which is the Better Model?</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "<p>The AI landscape is rapidly evolving, with smaller, lightweight models gaining prominence for their efficiency and scalability. After Google DeepMind launched its 27B model Gemma 3, Mistral AI has now released the Mistral 3.1 lightweight model of 24B parameters. This new, fast, and customizable model is redefining what lightweight models can do. It operates efficiently [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/mistral-3-1-vs-gemma-3/\">Mistral 3.1 vs Gemma 3: Which is the Better Model?</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>"
+            },
+            "wfw_commentrss": "https://www.analyticsvidhya.com/blog/2025/03/mistral-3-1-vs-gemma-3/feed/",
+            "slash_comments": "0",
+            "post-id": "226804"
+        },
+        {
+            "title": "JobFitAI: Comprehensive Resume Analyzer Project",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "JobFitAI: Comprehensive Resume Analyzer Project"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.analyticsvidhya.com/blog/2025/03/jobfitai/"
+                }
+            ],
+            "link": "https://www.analyticsvidhya.com/blog/2025/03/jobfitai/",
+            "comments": "https://www.analyticsvidhya.com/blog/2025/03/jobfitai/#respond",
+            "authors": [
+                {
+                    "name": "Krishnaveni Ponna"
+                }
+            ],
+            "author": "Krishnaveni Ponna",
+            "author_detail": {
+                "name": "Krishnaveni Ponna"
+            },
+            "published": "Tue, 18 Mar 2025 10:46:34 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                18,
+                10,
+                46,
+                34,
+                1,
+                77,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "Advanced",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Generative AI",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "LLMs",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "blogathon",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.analyticsvidhya.com/?p=226129",
+            "guidislink": false,
+            "summary": "<p>In today\u2019s competitive job market, making your resume stand out is crucial. JobFitAI is an innovative solution designed to help both job seekers and recruiters by analyzing resumes and offering actionable feedback. Traditional keyword-based filtering methods can overlook crucial nuances in a candidate\u2019s profile. To overcome these challenges, AI-powered systems can be leveraged to analyze [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/jobfitai/\">JobFitAI: Comprehensive Resume Analyzer Project</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "<p>In today\u2019s competitive job market, making your resume stand out is crucial. JobFitAI is an innovative solution designed to help both job seekers and recruiters by analyzing resumes and offering actionable feedback. Traditional keyword-based filtering methods can overlook crucial nuances in a candidate\u2019s profile. To overcome these challenges, AI-powered systems can be leveraged to analyze [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/jobfitai/\">JobFitAI: Comprehensive Resume Analyzer Project</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>"
+            },
+            "wfw_commentrss": "https://www.analyticsvidhya.com/blog/2025/03/jobfitai/feed/",
+            "slash_comments": "0",
+            "post-id": "226129"
+        },
+        {
+            "title": "How to Choose the Right Embedding for Your RAG Model",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "How to Choose the Right Embedding for Your RAG Model"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://www.analyticsvidhya.com/blog/2025/03/embedding-for-rag-models/"
+                }
+            ],
+            "link": "https://www.analyticsvidhya.com/blog/2025/03/embedding-for-rag-models/",
+            "comments": "https://www.analyticsvidhya.com/blog/2025/03/embedding-for-rag-models/#respond",
+            "authors": [
+                {
+                    "name": "Soumil Jain"
+                }
+            ],
+            "author": "Soumil Jain",
+            "author_detail": {
+                "name": "Soumil Jain"
+            },
+            "published": "Tue, 18 Mar 2025 08:11:07 +0000",
+            "published_parsed": [
+                2025,
+                3,
+                18,
+                8,
+                11,
+                7,
+                1,
+                77,
+                0
+            ],
+            "tags": [
+                {
+                    "term": "Generative AI Application",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "Intermediate",
+                    "scheme": null,
+                    "label": null
+                },
+                {
+                    "term": "RAG",
+                    "scheme": null,
+                    "label": null
+                }
+            ],
+            "id": "https://www.analyticsvidhya.com/?p=226665",
+            "guidislink": false,
+            "summary": "<p>Imagine a journalist piecing together a story\u2014not just relying on memory but searching archives and verifying facts. That\u2019s how a Retrieval-Augmented Generation (RAG) model works, retrieving real-time knowledge for better accuracy. Just like strong research skills, choosing the best embedding for the RAG model is also crucial for retrieving and ranking relevant information. The right [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/embedding-for-rag-models/\">How to Choose the Right Embedding for Your RAG Model</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "https://www.analyticsvidhya.com/feed/",
+                "value": "<p>Imagine a journalist piecing together a story\u2014not just relying on memory but searching archives and verifying facts. That\u2019s how a Retrieval-Augmented Generation (RAG) model works, retrieving real-time knowledge for better accuracy. Just like strong research skills, choosing the best embedding for the RAG model is also crucial for retrieving and ranking relevant information. The right [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2025/03/embedding-for-rag-models/\">How to Choose the Right Embedding for Your RAG Model</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>"
+            },
+            "wfw_commentrss": "https://www.analyticsvidhya.com/blog/2025/03/embedding-for-rag-models/feed/",
+            "slash_comments": "0",
+            "post-id": "226665"
+        }
+    ]
+}
