@@ -36,7 +36,7 @@ class KServeBERTSentimentModel(kserve.Model):
             self.logger.setLevel(os.getenv("LOGLEVEL").upper())
 
     def load(self):
-        # build tokensizer and model
+        # build tokenizer and model
         # Search at https://huggingface.co/models and follow some HF examples/tutorials
         _NLP_MODEL_NAME = "distilbert-base-uncased-finetuned-sst-2-english"
         self.tokenizer = AutoTokenizer.from_pretrained(_NLP_MODEL_NAME)
