@@ -1,0 +1,114 @@
+@startmindmap
+*:= Logging
+Tracing;
+**[#orange]:== Levels
+In order of verbosity
+and numerical values;
+***_ DEBUG
+***_ INFO
+***_ WARNING
+***_ ERROR
+
+**[#orange] == Choosing Levels
+***[#lightyellow]:Control routine logging 
+verbosity by setting log-levels
+in code or via env-vars. 
+
+Not by commenting on/off 
+the log statements;
+
+***[#lightpink]:=== ERROR | WARNING
+----
+logging.error(..)
+logging.exception(..) //only inside exception handler//
+logging.warning(..)
+logging.log(level=logging.ERROR)
+----
+You always want to see 
+errors and warning. your **catch** 
+block ideally logs errors or warnings.
+
+**except SomeException as e:**  
+   //logging.error//(f"Error : {e} during blah")
+
+**except SomeException as e:**  
+   //# Automatically pulls exception body//
+   //logging.exception//(msg)//
+
+Exception handlers can use //logging.exception(..)//
+//logging.error()// can be used anywhere;
+
+***[#lightpink]:=== INFO
+----
+**logging.info(..)**
+
+This is likely what your log level 
+should be during routine runs. Balance 
+between verbosity and clutter.
+
+Usually just **log thoughtful headlines**;
+
+
+***[#lightpink]:=== DEBUG
+----
+**logging.debug(..)**
+
+This is when you want to get max 
+info. Usually you are stumped and 
+need more detail than your info 
+statements provide and willing 
+to accept the verbosity.
+
+Usually dump everything.  
+IO data blocks, request headers,
+response headers, etc.;
+
+**[#orange] == Performance
+***:Usually don't worry till 
+profiling tells you to 
+care about it;
+
+***:=== Avoid logging in tight loops
+
+If you do have to log, this is a 
+great situation where commenting
+out logging statements after you 
+are done is practical;
+
+***:=== Formatting cost
+Things like //json.dumps// or similar
+incur some cost to actually 
+format data for log output.
+
+If you then don't log it, it is 
+a needless cost;
+
+****:Delay the formatting via
+a lazy call (lambda): evaluate if 
+
+  //logger.getEffectiveLevel()// 
+  //   >= //
+  //statement_log_level//
+
+Unless you stick this in a 
+wrapper, your code'll look 
+hella ugly! 
+
+Ugly code, beyond the aesthetics, 
+prevents the core of your algo 
+from jumping out at you and
+is actually harmful;
+
+***:=== Advanced
+ Explore queued logging systems
+ which queues log msgs and a 
+ separate thread handles actual 
+ logging;
+****:Essentially tradeoff the 
+synchronous cost of 
+
+//serialize → transmit_to_sink -> sink//
+
+with async/mt complexity and memory;
+
+@endmindmap
