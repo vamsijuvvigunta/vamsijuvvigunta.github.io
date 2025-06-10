@@ -259,7 +259,7 @@ Q: Tweet: "I love pockets on jeans"
 A:
 ```
 
-### Base practices
+### Best practices
 
 ![](../img/LLM_LearnPrompting_Basic_2024-1.svg)
 

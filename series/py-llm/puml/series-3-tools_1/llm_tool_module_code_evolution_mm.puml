@@ -1,0 +1,46 @@
+@startmindmap
+* = Evolution
+
+** 1️⃣ **fn ( BaseModel )**
+***[#yellow]: LLM builds understanding
+of a tool based on plain language.
+Specifying function doc strings, 
+and param doc strings will allow
+max influence on describing the 
+nuance and semantics to the LLM;
+
+***[#lightgreen]: //class GetWeather(BaseModel)://
+     location : str = Field(
+        **description="City and country e.g. San Jose, USA"**
+      )
+
+Any custom doc string. Obviates need for packing 
+and then parsing function's doc string to get 
+each param's docstring.;
+
+** 2️⃣ **fn (a, b, c)**
+***[#yellow] Any regular python function
+***[#lightgreen]:Dynamically build a 
+BaseModel from the various parameters
+
+deserializer, executor etc very similar 
+to that developed earlier;
+
+**: API Usability improvements. 
+Allowing simple python functions is very 
+nice. Now we are at the level of top 
+commercial //Agentic API// libs. 
+
+**Limitation** is that specifying docstrings for 
+each param and then splitting them out into 
+the function json is a pain. 
+
+If your LLM needs extra param docstring hints
+to target the correct function, consider using 
+the explicit BaseModel version and provide 
+docstrings for each param;
+
+
+** Various bug fixes and minor improvements
+
+@endmindmap

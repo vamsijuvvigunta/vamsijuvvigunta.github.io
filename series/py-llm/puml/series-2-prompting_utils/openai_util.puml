@@ -1,0 +1,28 @@
+@startmindmap
+* OpenAI Util
+
+left side
+
+** allow one-shot prompts
+** allow memory with chat history 
+**:👉 You'll need an OPENAI_API_KEY
+google it and get one. Free 
+service tier is good enough 
+for now;
+
+right side
+
+** 1️⃣ Get OpenAI Key
+**://role:system// is how you 
+specify the overall expected 
+behavior of the LLM for your 
+conversation. Since we are 
+asking it for a factual response, 
+we can leave it out.
+
+Seems to be renamed to 
+//role:developer// per current docs;
+** 2️⃣ our prompt is a //role:user// item
+**: 3️⃣ LLM response will be a 
+//role: assistant// msg;
+@endmindmap

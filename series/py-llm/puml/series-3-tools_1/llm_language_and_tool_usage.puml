@@ -1,0 +1,99 @@
+@startmindmap
+title When all you have is a hammer \n everything is a nail
+
+*[#orange] = LLM
+
+'-- Capability ------------------------------------
+**[#lightyellow] ➕ capability
+***[#yellow] 🔨 → Language understanding
+***[#yellow] 🔨     ➕ **new capability** →   ⁉️
+***[#lightyellow]:can **new capability** 
+be converted to plain 
+language ⁉️;
+****[#lightgreen]:Yes! We got ourselves 
+a 🔨 compatible nail!;
+
+****[#lightgreen]:Now the LLM can discover 
+and reason about the new 
+capability like any other 
+language bit;
+****[#lightyellow]:Ideally you map the new 
+concept to a known linguistic 
+construct
+
+or synthesizable by the LLM 
+from some known linguistic 
+concepts;
+
+'-- Tool  -----------------------------------------
+**[#yellow] == Tools
+***[#lightgreen]:The key insight was to 
+couple the linguistic concept 
+of **verbs** and **nouns** to the 
+programming concept of 
+**functions**;
+
+****[#yellow]:Introduces //verbs// 
+into your prompt context;
+
+****[#lightgreen]:LLM decides when, if at all, 
+it should: 
+
+**use a verb** 
+  and 
+**incorporate it's output**
+
+into it's generated text;
+
+****[#lightgreen]:===Deciding
+
+The LLM's //decision// takes 
+the form of an actual 
+or implied **classification**
+among atleast these two 
+classes
+
+              **call tool**
+            ⌈
+**Next** —
+            ⌊  
+              **generate text**;
+
+****[#lightgreen]:===Acting
+
+The LLM's //action// takes the 
+form of a function call;
+*****:figure out inputs and 
+limit to declared parameters;
+
+*****:format or convert parameters 
+per declared types;
+
+***** issue a tool_call
+***** incorporate the response
+
+'-- considerations
+***[#yellow] === Client
+****[#lightgreen]:This is where the **power** is!
+Any relevant data can be 
+fetched/generated. Interpret the 
+//verb(params)// however you like;
+*****_ It only looks like //function(params)//
+*****_ call a person ?
+*****_ execute function call ?
+*****_ search Internal docs ?
+*****_ DB Query ?
+*****_ Third party API ?
+*****_: //RAG// ish: respond 
+ with relevant docs ?;
+
+***[#yellow] === Process
+****:Prompt + Tools
+LLM 
+   → ⬜⬜⬛ incorporating tool output     
+   → ⬜⬛⬛ more tool calls if needed
+   → ⬛⬛⬛ generate final response
+
+↩ Generate text;
+
+@endmindmap

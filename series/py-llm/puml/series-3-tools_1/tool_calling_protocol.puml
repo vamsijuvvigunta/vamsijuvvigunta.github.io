@@ -1,0 +1,20 @@
+@startuml
+Client -> LLM ://role=**user**//\n     //Prompt//\n     //**Tools**//
+activate LLM
+
+LLM -> LLM : generate text
+LLM -> LLM : must call **get_weather**
+
+LLM -> Client: //tool_call//
+activate Client
+
+Client -> Client : **get_weather(loc)**
+Client -> LLM : //role=tool//\nreturn //get_weather(loc)//
+deactivate Client
+
+LLM -> LLM : Incorporate return of //tool_call//
+LLM -> LLM : generate text\n till completion\n or next tool_call
+LLM -> Client : generated text
+deactivate LLM
+
+@enduml

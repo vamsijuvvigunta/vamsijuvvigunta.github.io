@@ -1,0 +1,28 @@
+@startuml
+title = Prompts with tools
+Tool -> Tool : **get_weather(**\n  **BaseModel**\n**)**
+Client -> Tool : tool_json = get_json()
+Client -> LLM  : **tools** = [tool_json1, tool_json2,..]\n**chat_history**
+LLM -> LLM     : text_gen
+
+LLM -> Client  :**tool_call**(\n    **func_name**,\n    **tool_call_id**, **tool_arg_json_str**\n)
+activate Client #coral
+
+Client -> Client : lookup tool by name
+Client -> Tool : exec_tool(json_str)
+activate Tool #yellow
+Tool   -> Tool : **deserialize**(json_str)
+Tool   -> Tool : **validate()**
+Tool   -> Tool : **exec func(args)**
+return //func(args) → str//
+
+
+Client -> Client : chat_history.add(\n    **tool_call**\n)
+Client -> Client : chat_history.add(\n    **tool response**\n)
+Client -> LLM  : **tools** = [tool_json1, tool_json2,..]\n**chat_history**
+deactivate Client
+
+LLM -> LLM     : text_gen\n -with- \ntool response
+LLM -[#green]> Client  : **assistant** response
+
+@enduml

@@ -1,0 +1,39 @@
+@startuml
+title = Prompts with ToolCollection
+participant ToolCollection #lightgreen
+
+note left of ToolCollection
+    We could have a massive 
+    collection of tools and buildup 
+    **filtered-views** or **subsets** 
+    as different ToolCollection 
+    instances
+end note
+
+Client -> ToolCollection : register(tool1)
+Client -> ToolCollection : register(tool2)
+Client -> ToolCollection : register(tool..)
+Client -> ToolCollection : register(toolN)
+
+Client -> ToolCollection : **tool_json_vec** = **get_schemas()**
+Client -> LLM  : **tools** = **tool_json_vec**\n**chat_history**
+LLM -> LLM     : text_gen
+
+LLM -> Client  :**tool_call**(\n    **func_name**,\n    **tool_call_id**, **tool_arg_json_str**\n)
+activate Client #coral
+
+Client -> ToolCollection: **exec_tool**(\n   **func_name**,\n    **tool_arg_json_str**\n)
+activate ToolCollection #lightgreen
+ToolCollection -> ToolCollection: lookup tool
+ToolCollection -> ToolCollection: tool.exec
+return tool_response_str
+
+Client -> Client : chat_history.add(\n    **tool_call**\n)
+Client -> Client : chat_history.add(\n    **tool response**\n)
+Client -> LLM  : **tools** = **tool_json_vec**\n**chat_history**
+deactivate Client
+
+LLM -> LLM     : text_gen\n -with- \ntool response
+LLM -[#green]> Client  : **assistant** response
+
+@enduml

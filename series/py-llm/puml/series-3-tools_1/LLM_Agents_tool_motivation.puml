@@ -1,0 +1,53 @@
+@startmindmap
+*[#orange] = LLM Use
+** == Plain LLM
+*** Prompt
+*** Prompt Refinement
+*** COT/System2 process
+
+** LLM Limitation\n== Knowledge
+*** Frozen state of knowledge
+*** Limited state of knowledge
+***[#lightgrey] Overcome with RAG
+***[#lightgrey] Overcome with Finetune
+***[#lightgreen]:Overcome with on-demand
+knowledge in limited cases. 
+A dynamic pull-based RAG
+via tools;
+
+** LLM Limitation\n== Control
+***[#lightgreen]:expand control 
+**provide Tools**;
+
+***[#lightgrey]:expand control
+embeded as part of 
+a system;
+
+** LLM Limitation\n== Capability
+***: Capability normally just 
+limited to text generation;
+
+***[#lightgreen]:expand capability
+**provide tools**;
+
+***[#lightgrey]:expand capability
+provide prompt refinement using 
+other tools;
+
+***[#lightgrey]:expand capability
+Compound with other LLM/AI
+in the system
+
+Like MOE but outside the model;
+
+left side
+
+**[#lightgrey] ==In A system\nSystem Design\nimplications
+***: Much easier to refine
+and optimize
+compared to fine-tunes;
+
+***: Can be made modular
+and incrmentally improved;
+
+@endmindmap
