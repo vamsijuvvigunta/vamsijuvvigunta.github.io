@@ -159,7 +159,7 @@ class Tool:
 ```
 
 This class wraps a function-as-tool and generates the following members.
- - `name`: from the function's name. _Could potentially enhance to supply an override. Since the name is used by the LLM to figure out semantic applicability, we could see a case where the same function could need to be supplied to the LLM with different names in each scenario_.
+ - `name`: from the function's name. _Could potentially enhance to supply an override. Since the name is used by the LLM to figure out semantic applicability, we could see a case where the same function implementation could be supplied to the LLM with different names_.
  - `tool_schema`: the final OpenAI compatible schema. The `Tool.build_tool_call_items` creates this and will be described in a subsequent section.
  - `tool_arg_deserializer`: a Python lambda that eventually calls the underlying BaseModel's methods to deserialize the serialized JSON supplied by the LLM's tool_call. The `Tool.build_tool_call_items` creates this and will be described in a subsequent section.
  - `tool_func`: A Python lambda that executes the supplied `tool_fn` init parameter with the deserialized JSON. The `Tool.build_tool_call_items` creates this and will be described in a subsequent section.

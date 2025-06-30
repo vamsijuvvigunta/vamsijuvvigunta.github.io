@@ -2,7 +2,7 @@
 
 This is the first of my short series about developing LLM tool-calling in Python. This article focuses on some intermediate setups (logging, visual decluttering, and Colab runnability) that allow a strong foundation to build better traceability, clearer output, and a portfolio that can be exposed to prospective employers via runnable notebooks. The one redeeming reference to LLMs in this article demonstrates the utils applied to OpenAI text generation.
 
-![Series Roadmap](./img/series-progress-1.png)
+![Series Roadmap](./img/series-1/series-progress-1.png)
 
 ## TL;DR
 
@@ -106,7 +106,7 @@ class DisplayHTML:
 
 ### Sample Usage and Output
 
-![utils colorbox sample](../img/jupyter_utils_colorbox_sample.png)
+![utils colorbox sample](./img/series-1/jupyter_utils_colorbox_sample.png)
 
 ## Output as Markdown
 
@@ -186,7 +186,7 @@ class DisplayMarkdown:
 
 ### Sample Usage and Output
 
-![Markdown module sample output](../img/jupyter_utils_md_sample.png)
+![Markdown module sample output](./img/series-1/jupyter_utils_md_sample.png)
 
 ## Additional Formatting Options
 
@@ -198,7 +198,7 @@ Having your code print out log/traces is a great discipline to get into. There a
 
  - 🔗 [Python logging levels](https://docs.python.org/3/library/logging.html#logging-levels)
 
-![Python logging mind map](../img/jupyter_utils_logging_mmap.svg)
+![Python logging mind map](./img/series-1/jupyter_utils_logging_mmap.svg)
 
 ## Basic Logging Output in Jupyter
 
@@ -354,7 +354,7 @@ colorBox(res, title="OpenAI Response")
 
 ↪
 
-![OpenAI Completion in ColorBox](../img/oai_completion_colorbox.png)
+![OpenAI Completion in ColorBox](./img/series-1/oai_completion_colorbox.png)
 
 So much improvement! The entire HTML world is open to you, but just this simple coloring is effective enough. You can enhance the color-box function to take in other colors to indicate semantically meaningful states, stick emojis or icons in etc.
 
