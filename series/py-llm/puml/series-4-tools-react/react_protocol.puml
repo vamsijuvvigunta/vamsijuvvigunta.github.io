@@ -1,0 +1,37 @@
+@startuml
+title = ReAct protocol
+
+Client -> LLM ://role=**user**//\n     //Prompt//\n     //ReAct COT//\n     //**Actions**//
+activate LLM #orange
+
+group loop
+
+LLM -> LLM : generate COT thoughts
+LLM -[#orange]> Client: Thought: //thought//
+LLM -[#orange]> Client: Thought: //thought requires action//
+
+note left
+ All thoughts and action 
+ requests from the LLM Chat 
+ EndPoint come in as 
+ **role = assistant**
+end note
+
+LLM -[#green]> Client: Action: **this action**\n Action Input: **with this action input**
+
+activate Client #lightgreen
+
+Client -[#green]> Client : **action(action_input)**\n↪ output | error\n↪ observation
+Client -[#green]> LLM : //role=user//\nreturn //observation//
+deactivate Client
+
+LLM -> LLM : ➕ observations
+LLM -> LLM : Enough info ❓
+
+end
+
+LLM -[#orange]> Client: Thought: I now have the answer
+LLM -> Client: ✔️  **Answer**
+deactivate LLM
+
+@enduml
