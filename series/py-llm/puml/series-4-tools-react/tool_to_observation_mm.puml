@@ -1,0 +1,97 @@
+@startmindmap
+title = Observation Considerations
+
+*[#orange] = **Observation**
+
+**:=== The LLM's only window 
+=== into the environment
+----
+Any information that is generated
+ - Response
+ - Errors
+ - LLM errors
+
+Will be useful;
+
+**:=== Degrees Of Freedom
+----
+ - Traveling through the COT
+ - Branching the COT
+ - Action library
+
+Depends entirely on the observation
+and history.
+ 
+Craft observation thoughtfully;
+
+***[#lightpink]:**On Error**
+
+Current COT step has failed
+unwind and try something 
+else
+
+**↩ Backtrack**;
+
+***[#lightgreen]:**On Normal**
+or after backtracking;
+
+****:Continue COT implicit 
+in the history;
+
+****:Branch implicit COT
+toward a better fit 
+with objective;
+
+****:Backtrack to find 
+a better fit with objective;
+
+***[#lightyellow] **Discoverable Actions**
+****:Consider a **search_actions** 
+action to give the LLM complete 
+freedom in figuring out the best 
+action to attempt next
+
+Could be in addition to a static 
+list of actions or could be the 
+only action provided
+
+Might need special fine-tune on 
+the LLM;
+
+
+** === Observation
+***: **Factual**
+ Simply respond with 
+ action response or error;
+
+*** **plus** Guidance
+****[#lightpink]:**Missing Action**
+Provide additional info 
+to help the LLM backtrack 
+better;
+
+*****://Please pick from **{these}**//
+//available actions//;
+
+*****://**{that}** one is missing//
+//**{this}** might be a closer// 
+//match//;
+
+*****://**{that}** one is missing//
+//use the **{more_actions action}**// 
+//to find closer matches//;
+
+****[#lightgreen] **Extra Knowledge**
+*****://Here is additional information//
+//About the observation//
+
+//**{VectorDB Retreival}**//;
+
+****[#lightgreen] **Extra Actions**
+*****://Subsequent to this observation//
+//These additional actions might//
+//be of particular use//
+
+//**{VectorDB Action Retreival}**//;
+
+@endmindmap

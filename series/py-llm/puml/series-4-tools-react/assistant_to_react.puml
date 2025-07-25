@@ -1,0 +1,40 @@
+@startmindmap
+title = Map assistant response to ReAct
+
+*[#orange]:= **role=assistant**
+----
+Highly overloaded
+maps to multiple 
+ReAct concepts;
+
+** //ReAct// / **Thought**
+** //ReAct// / **Action**
+** //ReAct// / **Action Input**
+** //ReAct// / **Answer**
+
+**[#lightyellow]:== RegEx Pattern
+----
+
+//assistant// / **content** ⇒ //ReAct// 
+
+----
+👉 COT instructions need to enforce the 
+format in our ReAct prompt and then be
+consistent in the RegEx.
+
+ **^(** 
+ **     Thought ** 
+ **    |Action ** 
+ **    |Action Input ** 
+ **    |Answer ** 
+ **  )\s*:\s*(.*?)$ **;
+
+***_:
+OpenAI sometimes qualifies the action 
+ name with **function[s].** . A hint that 
+ they are generating a python module-like
+ artifact called **functions** to hold all 
+ the supplied actions.
+
+    //Action//: functions.my_action;    
+@endmindmap
